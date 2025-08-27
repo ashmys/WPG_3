@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://ivemsm3ah4e0"]
+
+[ext_resource type="PackedScene" uid="uid://dm6q6j77bde5b" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx(unity)/Dummy_Base.fbx" id="1_hghv2"]
+
+[node name="enemy" type="Node3D"]
+
+[node name="Dummy_Base" parent="." instance=ExtResource("1_hghv2")]
+
+[node name="Dummy_ArmLeft" parent="Dummy_Base/Dummy_Base/Dummy_Body" index="0"]
+transform = Transform3D(0.642788, 0.766044, 0, -0.766044, 0.642788, 0, 0, 0, 1, 0.200012, 0.7, -1.97491e-07)
+
+[node name="Dummy_ArmRight" parent="Dummy_Base/Dummy_Base/Dummy_Body" index="1"]
+transform = Transform3D(0.642788, -0.766044, 0, 0.766044, 0.642788, 0, 0, 0, 1, -0.200012, 0.7, -1.97491e-07)
+
+[editable path="Dummy_Base"]
