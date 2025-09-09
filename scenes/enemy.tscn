@@ -1,8 +1,8 @@
 [gd_scene load_steps=20 format=4 uid="uid://ofvu4hq5qafa"]
 
-[ext_resource type="Script" uid="uid://dthko1pqdfss4" path="res://Scripts/enemy.gd" id="1_hghv2"]
-[ext_resource type="Texture2D" uid="uid://cw0nriwmj2s3s" path="res://Assets/Walking_0.png" id="2_afpow"]
-[ext_resource type="Texture2D" uid="uid://brhh21kkdfoo6" path="res://Assets/Walking_3.png" id="3_287tu"]
+[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://Scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://c0opldmtt71cr" path="res://Assets/3D/Walking_1.png" id="2_afpow"]
+[ext_resource type="Texture2D" uid="uid://d2qbq3uf7xxd2" path="res://Assets/3D/Walking_3.png" id="3_287tu"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_287tu"]
 height = 1.69121

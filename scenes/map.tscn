@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://1f0vyjy80rt2"]
 
-[ext_resource type="Script" uid="uid://bfeotddwod1ya" path="res://scripts/map.gd" id="1_6q3n4"]
+[ext_resource type="Script" uid="uid://bfeotddwod1ya" path="res://Scripts/map.gd" id="1_6q3n4"]
 [ext_resource type="PackedScene" uid="uid://vvuih7dr6tgp" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Floor.fbx" id="1_myvm1"]
 [ext_resource type="PackedScene" uid="uid://btwfn7bp5qrrt" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Wall.fbx" id="2_q0mm3"]
 [ext_resource type="PackedScene" uid="uid://dlpnp7wfhmwfg" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Wall_Doorway.fbx" id="3_np2xp"]
@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://cew2t5jj7og8c" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/target_wall_small.fbx" id="10_dlo4w"]
 [ext_resource type="PackedScene" uid="uid://ddg8v8w4st44o" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Box_C.fbx" id="11_q6lx1"]
 [ext_resource type="PackedScene" uid="uid://bcnfbptwl87s8" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Dummy_Base.fbx" id="12_5qtum"]
-[ext_resource type="PackedScene" uid="uid://ivemsm3ah4e0" path="res://scenes/enemy.tscn" id="13_5qtum"]
+[ext_resource type="PackedScene" uid="uid://ofvu4hq5qafa" path="res://scenes/enemy.tscn" id="13_5qtum"]
 [ext_resource type="PackedScene" uid="uid://bnr5lts65upkf" path="res://Assets/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Floor_Dirt.fbx" id="14_ie368"]
 
 [sub_resource type="Environment" id="Environment_q0mm3"]

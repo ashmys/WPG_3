@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://0mfrmy62irk4"]
+
+[ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/player.tscn" id="1_aww0j"]
+[ext_resource type="PackedScene" uid="uid://ofvu4hq5qafa" path="res://scenes/enemy.tscn" id="2_l8qed"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]
+sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_7iucf"]
+sky_material = SubResource("ProceduralSkyMaterial_k2e0g")
+
+[sub_resource type="Environment" id="Environment_pcnys"]
+background_mode = 2
+sky = SubResource("Sky_7iucf")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="BoxMesh" id="BoxMesh_ck6vg"]
+
+[sub_resource type="NavigationMesh" id="NavigationMesh_vib1c"]
+vertices = PackedVector3Array(-24.5, 0.5, -24.5, -24.5, 0.5, 24.5, 24.5, 0.5, 24.5, 24.5, 0.5, -24.5)
+polygons = [PackedInt32Array(3, 2, 0), PackedInt32Array(0, 2, 1)]
+agent_height = 0.5
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_abgry"]
+size = Vector2(50, 50)
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_08www"]
+
+[node name="Main" type="Node"]
+
+[node name="Shader" type="Node" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Shader"]
+environment = SubResource("Environment_pcnys")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Shader"]
+transform = Transform3D(-0.866025, -0.419335, 0.27232, 0, 0.544639, 0.838671, -0.5, 0.72631, -0.471671, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Entity" type="Node" parent="."]
+
+[node name="Player" parent="Entity" instance=ExtResource("1_aww0j")]
+
+[node name="Enemy" parent="Entity" instance=ExtResource("2_l8qed")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.44589, 0.00385748, 1.06237)
+player_path = NodePath("../Player")
+
+[node name="Static_Objects" type="Node" parent="."]
+
+[node name="Cube" type="MeshInstance3D" parent="Static_Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.552472, 2.71216)
+mesh = SubResource("BoxMesh_ck6vg")
+
+[node name="NavigationRegion3D" type="NavigationRegion3D" parent="."]
+navigation_mesh = SubResource("NavigationMesh_vib1c")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="NavigationRegion3D"]
+
+[node name="Plane" type="MeshInstance3D" parent="NavigationRegion3D/StaticBody3D"]
+mesh = SubResource("PlaneMesh_abgry")
+skeleton = NodePath("../../../Static_Objects")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NavigationRegion3D/StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_08www")
