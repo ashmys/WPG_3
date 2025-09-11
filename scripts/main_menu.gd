@@ -2,10 +2,10 @@ extends Control
 
 @export var game_scene: PackedScene
 
-@onready var title: Label = $Title
-@onready var main_buttons: VBoxContainer = $MainButtons
-@onready var settings: Panel = $Settings
-@onready var credits: Panel = $Credits
+@export var title: Label
+@export var main_buttons: VBoxContainer
+@export var settings: Panel
+@export var credits: Panel
 
 func _ready() -> void:
 	show_main_menu()
@@ -14,8 +14,7 @@ func show_main_menu() -> void:
 	title.visible = true
 	main_buttons.visible = true
 	settings.visible = false
-	if credits:
-		credits.visible = false
+	credits.visible = false
 
 func _on_start_button_pressed() -> void:
 	if game_scene:

@@ -35,6 +35,7 @@ func _process(delta: float) -> void:
 	if not mouse_captured:
 		return
 
+	_handle_arrow_input(delta)
 	mouse_idle_time += delta
 
 	_update_camera_transform()
@@ -54,6 +55,16 @@ func _rotate_look(rot_input: Vector2) -> void:
 	look_rotation.x = clamp(look_rotation.x - rot_input.y * mouse_sensitivity, min_vertical_angle, max_vertical_angle)
 	look_rotation.y -= rot_input.x * mouse_sensitivity
 	_update_camera_transform()
+
+func _handle_arrow_input(delta: float) -> void:
+	var yaw_input := int(Input.is_action_pressed("ui_left")) - int(Input.is_action_pressed("ui_right"))
+	var pitch_input := int(Input.is_action_pressed("ui_up")) - int(Input.is_action_pressed("ui_down"))
+
+	if yaw_input or pitch_input:
+		mouse_idle_time = 0.0
+		var rad_per_sec := deg_to_rad(arrow_sensitivity)
+		look_rotation.y += yaw_input * rad_per_sec * delta
+		look_rotation.x = clamp(look_rotation.x + pitch_input * rad_per_sec * delta, min_vertical_angle, max_vertical_angle)
 
 # === Mouse Capture ===
 func _capture_mouse() -> void:
