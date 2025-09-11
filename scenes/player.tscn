@@ -12,6 +12,7 @@
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider")]
 collision_layer = 2
 collision_mask = 3
+floor_block_on_wall = false
 script = ExtResource("1_3vyb7")
 base_speed = 5.0
 sprint_speed = 7.0
@@ -30,7 +31,7 @@ script = ExtResource("3_qhqgy")
 [node name="Camera3D" type="Camera3D" parent="Head"]
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(0.8, 0, 0, 0, 0.4, 0, 0, 0, 0.8, 0, -0.122237, -0.309575)
+transform = Transform3D(0.64, 0, 0, 0, 0.266683, 0, 0, 0, 0.8, 0, -0.122237, -0.309575)
 mesh = SubResource("BoxMesh_g2els")
 
 [node name="Collider" type="CollisionShape3D" parent="."]

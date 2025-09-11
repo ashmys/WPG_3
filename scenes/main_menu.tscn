@@ -1,7 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://cn8ur4qy6vsfo"]
+[gd_scene load_steps=12 format=3 uid="uid://cn8ur4qy6vsfo"]
 
-[ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://scripts/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://scripts/systems/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://b0hwn32tf1x8d" path="res://scenes/development/Adi/main_map1_v1.1.tscn" id="2_ekxnf"]
+[ext_resource type="Script" uid="uid://chqps7623vldr" path="res://scripts/systems/settings.gd" id="3_bqqt6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 modulate_color = Color(0.789173, 0.789172, 0.789172, 1)
@@ -155,6 +156,7 @@ offset_bottom = 429.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ehe0")
+script = ExtResource("3_bqqt6")
 
 [node name="TitleTxt" type="Label" parent="Settings"]
 layout_mode = 1
@@ -351,7 +353,7 @@ text = "Back"
 [connection signal="pressed" from="MainButtons/Credits_Button" to="." method="_on_credits_button_pressed"]
 [connection signal="pressed" from="MainButtons/Exit_Button" to="." method="_on_exit_button_pressed"]
 [connection signal="pressed" from="Settings/Back_Button" to="." method="_on_back_button_pressed"]
-[connection signal="value_changed" from="Settings/SettingsContainer/MusicContainer/MusicSlider" to="Settings/SettingsContainer/MusicContainer/MusicSlider" method="_on_value_changed"]
-[connection signal="value_changed" from="Settings/SettingsContainer/SFXContainer/SFXSlider" to="Settings/SettingsContainer/SFXContainer/SFXSlider" method="_on_value_changed"]
-[connection signal="toggled" from="Settings/SettingsContainer/FullscreenControl" to="Settings/SettingsContainer/FullscreenControl" method="_on_toggled"]
+[connection signal="value_changed" from="Settings/SettingsContainer/MusicContainer/MusicSlider" to="Settings" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Settings/SettingsContainer/SFXContainer/SFXSlider" to="Settings" method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="Settings/SettingsContainer/FullscreenControl" to="Settings" method="_on_fullscreen_control_toggled"]
 [connection signal="pressed" from="Credits/Back_Button" to="." method="_on_back_button_pressed"]

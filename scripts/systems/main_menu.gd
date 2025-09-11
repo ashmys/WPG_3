@@ -9,6 +9,7 @@ extends Control
 
 func _ready() -> void:
 	show_main_menu()
+	AudioManager.play_music("main_menu")
 
 func show_main_menu() -> void:
 	title.visible = true
