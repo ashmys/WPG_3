@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Texture2D" uid="uid://c0opldmtt71cr" path="res://assets/models/characters/Walking_1.png" id="2_afpow"]
 [ext_resource type="Texture2D" uid="uid://d2qbq3uf7xxd2" path="res://assets/models/characters/Walking_3.png" id="3_287tu"]
-[ext_resource type="PackedScene" uid="uid://bqdvlhp4r0k8h" path="res://scenes/characters/valeria.tscn" id="4_5uy6h"]
+[ext_resource type="PackedScene" uid="uid://bqdvlhp4r0k8h" path="res://scenes/character_assets/valeria.tscn" id="4_5uy6h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_287tu"]
 

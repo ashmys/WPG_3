@@ -1,9 +1,9 @@
 [gd_scene load_steps=21 format=4 uid="uid://bljxrxrmkqoyc"]
 
-[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_23kvp"]
-[ext_resource type="Texture2D" uid="uid://c0opldmtt71cr" path="res://assets/models/characters/Walking_1.png" id="2_4e2ig"]
-[ext_resource type="Texture2D" uid="uid://d2qbq3uf7xxd2" path="res://assets/models/characters/Walking_3.png" id="3_lsk8u"]
-[ext_resource type="PackedScene" uid="uid://bs0bh0am02mtu" path="res://scenes/characters/Bobby001.tscn" id="4_23kvp"]
+[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_alh3u"]
+[ext_resource type="Texture2D" uid="uid://c0opldmtt71cr" path="res://assets/models/characters/Walking_1.png" id="2_q0ujy"]
+[ext_resource type="Texture2D" uid="uid://d2qbq3uf7xxd2" path="res://assets/models/characters/Walking_3.png" id="3_u4bm4"]
+[ext_resource type="PackedScene" uid="uid://cvc1ldhjp7xnd" path="res://scenes/character_assets/Bobby.tscn" id="4_alh3u"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_287tu"]
 
@@ -12,11 +12,11 @@ resource_name = "Ch01_body"
 transparency = 4
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 0.8)
-albedo_texture = ExtResource("2_4e2ig")
+albedo_texture = ExtResource("2_q0ujy")
 emission_enabled = true
 normal_enabled = true
 normal_scale = 0.0
-normal_texture = ExtResource("3_lsk8u")
+normal_texture = ExtResource("3_u4bm4")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_3djhw"]
 resource_name = "Ch01_Body"
@@ -302,11 +302,11 @@ resource_name = "Ch01_hair"
 transparency = 4
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.906332, 0.906332, 0.906332, 0.8)
-albedo_texture = ExtResource("2_4e2ig")
+albedo_texture = ExtResource("2_q0ujy")
 emission_enabled = true
 normal_enabled = true
 normal_scale = 0.0
-normal_texture = ExtResource("3_lsk8u")
+normal_texture = ExtResource("3_u4bm4")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_yxdh4"]
 resource_name = "Ch01_Eyelashes"
@@ -1219,7 +1219,7 @@ _data = {
 }
 
 [node name="Enemy" type="CharacterBody3D"]
-script = ExtResource("1_23kvp")
+script = ExtResource("1_alh3u")
 view_distance = 50.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -1713,8 +1713,8 @@ skin = SubResource("Skin_wvppf")
 mesh = SubResource("ArrayMesh_c652t")
 skin = SubResource("Skin_kw68d")
 
-[node name="Bobby001" parent="Walking" instance=ExtResource("4_23kvp")]
-transform = Transform3D(-0.7, 0, -1.05697e-07, 0, 0.7, 0, 1.05697e-07, 0, -0.7, 0, 0, 0)
+[node name="Bobby" parent="Walking" instance=ExtResource("4_alh3u")]
+transform = Transform3D(-0.7, 0, -6.11959e-08, 0, 0.7, 0, 6.11959e-08, 0, -0.7, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Walking"]
 libraries = {

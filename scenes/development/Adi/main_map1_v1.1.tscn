@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://b0hwn32tf1x8d"]
+[gd_scene load_steps=14 format=3 uid="uid://b0hwn32tf1x8d"]
 
-[ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/player.tscn" id="1_e132g"]
-[ext_resource type="PackedScene" uid="uid://ofvu4hq5qafa" path="res://scenes/enemy.tscn" id="2_cb1n1"]
+[ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_e132g"]
+[ext_resource type="PackedScene" uid="uid://ofvu4hq5qafa" path="res://scenes/entitys/enemy.tscn" id="2_cb1n1"]
+[ext_resource type="PackedScene" uid="uid://bljxrxrmkqoyc" path="res://scenes/entitys/enemy2.tscn" id="3_5fgx8"]
 [ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/textures/main_map1_v1.1.tres" id="3_wvgcv"]
 [ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="4_hdq63"]
 
@@ -56,6 +57,10 @@ can_freefly = true
 
 [node name="Enemy" parent="Entity" instance=ExtResource("2_cb1n1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.789721, 0.099881, 13.7143)
+player_path = NodePath("../Player")
+
+[node name="Enemy2" parent="Entity" instance=ExtResource("3_5fgx8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.76937, 0, 13.6014)
 player_path = NodePath("../Player")
 
 [node name="Static_Objects" type="Node" parent="."]
@@ -313,6 +318,20 @@ size = Vector3(10.9373, 0.488144, 13.0932)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/World Plane"]
 shape = SubResource("WorldBoundaryShape3D_hdq63")
+
+[node name="Interactable_Objects" type="Node" parent="Static_Objects"]
+
+[node name="Hiding_Objects" type="Node3D" parent="Static_Objects/Interactable_Objects"]
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="Static_Objects/Interactable_Objects/Hiding_Objects"]
+use_collision = true
+
+[node name="Bed" type="CSGBox3D" parent="Static_Objects/Interactable_Objects/Hiding_Objects/CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.77249, 0.921791, 13.3374)
+size = Vector3(3.89502, 0.633408, 1.61328)
+
+[node name="Point" type="Node3D" parent="Static_Objects/Interactable_Objects/Hiding_Objects/CSGCombiner3D/Bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.6, 0)
 
 [node name="Reference_Image" type="Node" parent="."]
 

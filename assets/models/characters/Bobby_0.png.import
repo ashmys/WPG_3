@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7jlfaflnxj3w"
-path.s3tc="res://.godot/imported/Bobby001_1.png-705821ac2655642be9397904a4a1d55e.s3tc.ctex"
+uid="uid://civttlc6ki80y"
+path.s3tc="res://.godot/imported/Bobby_0.png-a6acb596ab68581f30d3b5d6a84ac97e.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "bca41aea4f438165b996efaed30490be"
+"md5": "1546d6879d56a0e4bc2cc8aab980fe7b"
 }
 
 [deps]
 
-source_file="res://assets/models/characters/Bobby001_1.png"
-dest_files=["res://.godot/imported/Bobby001_1.png-705821ac2655642be9397904a4a1d55e.s3tc.ctex"]
+source_file="res://assets/models/characters/Bobby_0.png"
+dest_files=["res://.godot/imported/Bobby_0.png-a6acb596ab68581f30d3b5d6a84ac97e.s3tc.ctex"]
 
 [params]
 
