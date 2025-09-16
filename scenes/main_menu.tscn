@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cn8ur4qy6vsfo"]
+[gd_scene load_steps=11 format=3 uid="uid://cn8ur4qy6vsfo"]
 
 [ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://scripts/systems/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://b0hwn32tf1x8d" path="res://scenes/development/Adi/main_map1_v1.1.tscn" id="2_ekxnf"]
@@ -10,7 +10,7 @@ modulate_color = Color(0.789173, 0.789172, 0.789172, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28flt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+bg_color = Color(1, 1, 1, 0)
 draw_center = false
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
@@ -19,15 +19,6 @@ corner_radius_top_left = 30
 corner_radius_top_right = 30
 corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28flt"]
-corner_radius_top_left = 28
-corner_radius_top_right = 28
-corner_radius_bottom_right = 28
-corner_radius_bottom_left = 28
-shadow_color = Color(0, 0, 0, 0.282353)
-shadow_size = 5
-shadow_offset = Vector2(0, 3)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ce3w2"]
 color = Color(1, 1, 1, 1)
@@ -187,13 +178,13 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.968627, 0.968627, 0.968627, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Back"
@@ -323,7 +314,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 38
 text = "Deskripsi"
 
-[node name="Back_Button" type="Button" parent="Credits"]
+[node name="Back_Button2" type="Button" parent="Credits"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -337,13 +328,13 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.968627, 0.968627, 0.968627, 1)
-theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.592157, 0.592157, 0.592157, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_28flt")
+theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
 text = "Back"
@@ -356,4 +347,4 @@ text = "Back"
 [connection signal="value_changed" from="Settings/SettingsContainer/MusicContainer/MusicSlider" to="Settings" method="_on_music_slider_value_changed"]
 [connection signal="value_changed" from="Settings/SettingsContainer/SFXContainer/SFXSlider" to="Settings" method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="Settings/SettingsContainer/FullscreenControl" to="Settings" method="_on_fullscreen_control_toggled"]
-[connection signal="pressed" from="Credits/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Credits/Back_Button2" to="." method="_on_back_button_pressed"]

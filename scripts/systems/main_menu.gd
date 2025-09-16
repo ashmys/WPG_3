@@ -19,6 +19,7 @@ func show_main_menu() -> void:
 
 func _on_start_button_pressed() -> void:
 	if game_scene:
+		AudioManager.stop_music()
 		get_tree().change_scene_to_packed(game_scene)
 	else:
 		print("No game scene assigned.")

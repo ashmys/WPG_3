@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://ci7ykpu2dfbbu"
+path="res://.godot/imported/main menu_horror(slow pace).ogg-7af401a71bc5a975a0cf10c46f9deede.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/audios/musics/main menu_horror(slow pace).ogg"
+dest_files=["res://.godot/imported/main menu_horror(slow pace).ogg-7af401a71bc5a975a0cf10c46f9deede.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
