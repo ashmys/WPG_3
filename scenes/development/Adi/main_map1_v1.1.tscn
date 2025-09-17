@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_e132g"]
 [ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/textures/main_map1_v1.1.tres" id="3_wvgcv"]
 [ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="4_hdq63"]
-[ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/enemy.tscn" id="4_wxhnw"]
+[ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="4_wxhnw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -54,10 +54,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52452, 0, 10.0955)
 can_sprint = true
 can_freefly = true
 
-[node name="enemy" parent="Entity" node_paths=PackedStringArray("point", "player") instance=ExtResource("4_wxhnw")]
+[node name="enemy" parent="Entity" node_paths=PackedStringArray("points", "player") instance=ExtResource("4_wxhnw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 11.009208)
-point = [NodePath("../../Marker3D"), NodePath("../../Marker3D2")]
+points = [NodePath("../../Marker3D"), NodePath("../../Marker3D2"), NodePath("../../Marker3D3"), NodePath("../../Marker3D4"), NodePath("../../Marker3D5")]
 player = NodePath("../Player")
+speed_run = 3.0
+speed_walk = 1.0
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -358,3 +360,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.22169, 0, 9.65704)
 
 [node name="Marker3D2" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.4603, 0, 11.8986)
+
+[node name="Marker3D3" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.2492275, 0, 11.665717)
+
+[node name="Marker3D4" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.662481, 0, 7.4510794)
+
+[node name="Marker3D5" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.950951, 4.7683716e-07, 12.3461275)

@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" path="res://Assets/models/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/target_wall_small.fbx" id="10_dlo4w"]
 [ext_resource type="PackedScene" path="res://Assets/models/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Box_C.fbx" id="11_q6lx1"]
 [ext_resource type="PackedScene" path="res://Assets/models/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Dummy_Base.fbx" id="12_5qtum"]
-[ext_resource type="PackedScene" uid="uid://ofvu4hq5qafa" path="res://scenes/entitys/enemy.tscn" id="13_5qtum"]
+[ext_resource type="PackedScene" uid="uid://ofvu4hq5qafa" path="res://scenes/entitys/enemyold.tscn" id="13_5qtum"]
 [ext_resource type="PackedScene" path="res://Assets/models/KayKit_Prototype_Bits_1.0_FREE/Assets/fbx/Floor_Dirt.fbx" id="14_ie368"]
 
 [sub_resource type="Environment" id="Environment_q0mm3"]
