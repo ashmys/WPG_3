@@ -1,21 +1,17 @@
-[gd_scene load_steps=16 format=4 uid="uid://jc5brxiy3gq7"]
+[gd_scene load_steps=13 format=4 uid="uid://jc5brxiy3gq7"]
 
-[ext_resource type="Script" uid="uid://738w5le3my34" path="res://enemy.gd" id="1_7k104"]
-[ext_resource type="Texture2D" uid="uid://v4jkf0csoy3b" path="res://brackeys-proto-controller-main/proto_controller/Bobby001_0.png" id="2_iifgy"]
-[ext_resource type="Texture2D" uid="uid://dq2hnc6p2msjg" path="res://brackeys-proto-controller-main/proto_controller/Bobby001_1.png" id="3_epg4t"]
-[ext_resource type="Texture2D" uid="uid://bo3mtq7btsg6g" path="res://brackeys-proto-controller-main/proto_controller/Bobby001_2.png" id="4_3yqyl"]
+[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_7p1mj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
 radius = 0.397765
 height = 3.3245
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_7k104"]
-points = PackedVector3Array(0, 0.5, 0.5, 0.5, -0.5, 0.5, 0, 0.5, -0.5, -0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, -0.5, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_7p1mj"]
+size = Vector3(8.6657715, 4.678711, 14.068481)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ey2po"]
 resource_name = "Skin"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("2_iifgy")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -57,7 +53,6 @@ shadow_mesh = SubResource("ArrayMesh_b7rlj")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kehlu"]
 resource_name = "Hair"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_epg4t")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -99,7 +94,6 @@ shadow_mesh = SubResource("ArrayMesh_vk3ut")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1a0th"]
 resource_name = "Pants"
 vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("4_3yqyl")
 emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
@@ -138,10 +132,12 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_bh4bj")
 
-[node name="enemy" type="CharacterBody3D"]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.000264168, -0.0090974, 0.00149941)
+[node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent", "view")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 collision_mask = 3
-script = ExtResource("1_7k104")
+script = ExtResource("1_7p1mj")
+nav_agent = NodePath("NavigationAgent3D")
+view = NodePath("Area3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 1.6374, 0)
@@ -152,11 +148,11 @@ simplify_path = true
 debug_enabled = true
 
 [node name="Area3D" type="Area3D" parent="." groups=["pemain"]]
-transform = Transform3D(-4.35359e-08, 3.91305e-09, -1, 0.0895201, 0.995985, 7.77156e-16, 0.995985, -0.0895201, -4.37114e-08, 0, 1.06207, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8589745, 0)
 
 [node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(-1.78814e-07, -25, -4.37114e-07, 6, -1.19209e-06, 4.37113e-07, -2.62268e-07, -1.09278e-06, 10, 11.7243, 0.760717, 3.3038e-07)
-shape = SubResource("ConvexPolygonShape3D_7k104")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.5342407)
+shape = SubResource("BoxShape3D_7p1mj")
 debug_color = Color(0, 0, 0, 1)
 
 [node name="Skin" type="MeshInstance3D" parent="."]

@@ -30,6 +30,9 @@ extends CharacterBody3D
 @export var input_sprint := "sprint"
 @export var input_freefly := "freefly"
 
+# == VARIABLE ==
+var target
+
 # == CONSTANTS ==
 const GRAVITY_MULTIPLIER := 4.5
 
@@ -48,9 +51,10 @@ var dash_direction := Vector3.ZERO
 
 # == NODES ==
 @export_group("Nodes")
-@export var player_point := Node3D
-@export var head := Node3D
-@export var collider := CollisionShape3D
+@export var player_point : Node3D
+@export var head : Node3D
+@export var interact_raycast : RayCast3D
+@export var collider : CollisionShape3D
 var state_machine
 
 # == ENGINE CALLBACKS ==
@@ -65,6 +69,10 @@ func _unhandled_input(_event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	input_dir = Input.get_vector(input_left, input_right, input_forward, input_back)
 	_update_dash_cooldown(delta)
+
+	if interact_raycast.is_colliding():
+		target = interact_raycast.get_collider()
+		print(target)
 
 	if can_freefly and freeflying:
 		_handle_freefly(delta)

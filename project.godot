@@ -12,18 +12,23 @@ config_version=5
 
 config/name="WPG_3"
 run/main_scene="uid://cn8ur4qy6vsfo"
-config/features=PackedStringArray("4.4", "Forward Plus")
+config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 AudioManager="*res://scenes/systems/audio_manager.tscn"
+Global="*res://scripts/systems/global.gd"
 
 [display]
 
 window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
+
+[global_group]
+
+player=""
 
 [input]
 
