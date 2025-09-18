@@ -24,14 +24,11 @@ extends CharacterBody3D
 @export var input_right := "move_right"
 @export var input_forward := "move_up"
 @export var input_back := "move_down"
-@export var input_attack := "attack"
+@export var input_interact := "interact"
 @export var input_jump := "jump"
 @export var input_dash := "dash"
 @export var input_sprint := "sprint"
 @export var input_freefly := "freefly"
-
-# == VARIABLE ==
-var target
 
 # == CONSTANTS ==
 const GRAVITY_MULTIPLIER := 4.5
@@ -41,6 +38,7 @@ var input_dir := Vector2.ZERO
 var move_speed := 0.0
 var is_moving := false
 var is_dashing := false
+var is_hiding := false
 var freeflying := false
 
 # == DASH ==
@@ -53,8 +51,12 @@ var dash_direction := Vector3.ZERO
 @export_group("Nodes")
 @export var player_point : Node3D
 @export var head : Node3D
-@export var interact_raycast : RayCast3D
 @export var collider : CollisionShape3D
+
+# == UI NODES ==
+@export_group("UI Nodes")
+@export var interactText : Label
+
 var state_machine
 
 # == ENGINE CALLBACKS ==
@@ -69,10 +71,6 @@ func _unhandled_input(_event: InputEvent) -> void:
 func _physics_process(delta: float) -> void:
 	input_dir = Input.get_vector(input_left, input_right, input_forward, input_back)
 	_update_dash_cooldown(delta)
-
-	if interact_raycast.is_colliding():
-		target = interact_raycast.get_collider()
-		print(target)
 
 	if can_freefly and freeflying:
 		_handle_freefly(delta)

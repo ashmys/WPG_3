@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://8a38my28t4v7"]
+[gd_scene load_steps=7 format=3 uid="uid://8a38my28t4v7"]
 
 [ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player_camera.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://scripts/player/interact_raycast.gd" id="3_rlr1k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g2els"]
 
@@ -9,7 +10,7 @@
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "interact_raycast", "collider") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider") groups=["player"]]
 collision_layer = 2
 collision_mask = 3
 floor_block_on_wall = false
@@ -19,7 +20,6 @@ sprint_speed = 7.0
 jump_velocity = 9.0
 player_point = NodePath("CentralPoint")
 head = NodePath("Head")
-interact_raycast = NodePath("Head/Interact Raycast")
 collider = NodePath("Collider")
 
 [node name="CentralPoint" type="Node3D" parent="."]
@@ -35,9 +35,11 @@ script = ExtResource("3_qhqgy")
 transform = Transform3D(0.64, 0, 0, 0, 0.266683, 0, 0, 0, 0.8, 0, 0, -0.259499)
 mesh = SubResource("BoxMesh_g2els")
 
-[node name="Interact Raycast" type="RayCast3D" parent="Head"]
+[node name="Interact Raycast" type="RayCast3D" parent="Head" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, 2, 0)
+script = ExtResource("3_rlr1k")
+player = NodePath("../..")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
