@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ctmn1nbxsgqxi"
-path.s3tc="res://.godot/imported/Bobby_walk_0.png-998146843a02abc889a8339527855f5c.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bobby_walk_0.png-d24211346a3a1a3707d6e104e4936772.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/characters/Bobby_walk_0.png"
-dest_files=["res://.godot/imported/Bobby_walk_0.png-998146843a02abc889a8339527855f5c.s3tc.ctex"]
+source_file="res://assets/models/characters/Bobby_walk_0.png"
+dest_files=["res://.godot/imported/Bobby_walk_0.png-d24211346a3a1a3707d6e104e4936772.s3tc.ctex"]
 
 [params]
 

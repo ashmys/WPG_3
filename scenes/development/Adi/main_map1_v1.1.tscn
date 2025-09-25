@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://b0hwn32tf1x8d"]
+[gd_scene load_steps=16 format=3 uid="uid://b0hwn32tf1x8d"]
 
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_e132g"]
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="3_5fgx8"]
+[ext_resource type="PackedScene" path="res://scenes/character_assets/bobby_walk.tscn" id="3_fam4t"]
 [ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/textures/main_map1_v1.1.tres" id="3_wvgcv"]
 [ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/lemari_lowpoly_.tscn" id="4_fam4t"]
 [ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="4_hdq63"]
@@ -64,6 +65,19 @@ points = [NodePath("../../Enemy_Patrol_Marker/Marker3D"), NodePath("../../Enemy_
 player = NodePath("../Player")
 speed_run = 3.0
 speed_walk = 1.0
+
+[node name="enemy2" parent="Entity" node_paths=PackedStringArray("points", "player") instance=ExtResource("4_wxhnw")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.3798575, 0, 11.009208)
+points = [NodePath("../../Enemy_Patrol_Marker/Marker3D"), NodePath("../../Enemy_Patrol_Marker/Marker3D2"), NodePath("../../Enemy_Patrol_Marker/Marker3D3"), NodePath("../../Enemy_Patrol_Marker/Marker3D4"), NodePath("../../Enemy_Patrol_Marker/Marker3D5")]
+player = NodePath("../Player")
+speed_run = 3.0
+speed_walk = 1.0
+
+[node name="Bobby_walk" parent="Entity/enemy2" instance=ExtResource("3_fam4t")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="valeria001" parent="Entity/enemy2" index="4"]
+visible = false
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -354,32 +368,32 @@ shape = SubResource("WorldBoundaryShape3D_hdq63")
 [node name="Hideable_Object" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("3_5fgx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.642804, 0.6006377, 12.420755)
 
-[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object" instance=ExtResource("4_fam4t")]
-transform = Transform3D(-1.9670125e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.9670125e-08, 0, 0.75537634, 0)
-
-[node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object" index="1"]
+[node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1648989, 0)
 
 [node name="MeshInstance3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object/CollisionShape3D" index="0"]
 visible = false
 
-[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object" index="2"]
+[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.80820525, 0)
+
+[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object" instance=ExtResource("4_fam4t")]
+transform = Transform3D(-1.9670125e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.9670125e-08, 0, 0.75537634, 0)
 
 [node name="Hideable_Object3" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("3_5fgx8")]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -12.397949, 0.6006377, 3.706686)
 
-[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" instance=ExtResource("4_fam4t")]
-transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, 0.75537634, 0)
-
-[node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" index="1"]
+[node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1648989, 0)
 
 [node name="MeshInstance3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3/CollisionShape3D" index="0"]
 visible = false
 
-[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" index="2"]
+[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" index="1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.80820525, 0)
+
+[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" instance=ExtResource("4_fam4t")]
+transform = Transform3D(-1.7484556e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.7484556e-08, 0, 0.75537634, 0)
 
 [node name="Hideable_Object2" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("3_5fgx8")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3185225, 0.6006377, 12.420755)
@@ -452,6 +466,7 @@ text = "Left Click or Press [E] to interect"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[editable path="Entity/enemy2"]
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object2"]
