@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c0opldmtt71cr"
-path.s3tc="res://.godot/imported/Walking_1.png-9852db947172deff7860224eae6c109d.s3tc.ctex"
+path.s3tc="res://.godot/imported/Walking_1.png-a26ef1da7269c28b3a2dd60eee3a1b70.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,14 +11,16 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/characters/Walking_1.png"
-dest_files=["res://.godot/imported/Walking_1.png-9852db947172deff7860224eae6c109d.s3tc.ctex"]
+source_file="res://Assets/models/characters/Walking_1.png"
+dest_files=["res://.godot/imported/Walking_1.png-a26ef1da7269c28b3a2dd60eee3a1b70.s3tc.ctex"]
 
 [params]
 
 compress/mode=2
 compress/high_quality=false
 compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
 compress/hdr_compression=1
 compress/normal_map=0
 compress/channel_pack=0
@@ -26,6 +28,10 @@ mipmaps/generate=true
 mipmaps/limit=-1
 roughness/mode=0
 roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
 process/fix_alpha_border=true
 process/premult_alpha=false
 process/normal_map_invert_y=false
