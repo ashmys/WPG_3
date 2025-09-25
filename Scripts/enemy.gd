@@ -17,6 +17,7 @@ var last_seen_position: Vector3 = Vector3.ZERO
 var last_seen_time: float = -1.0
 var chase_memory_duration: float = 2.0
 var current_patrol_point: Marker3D
+var seen:bool = false
 
 func _ready() -> void:
 	if !nav_agent or !player or points.is_empty():
@@ -28,6 +29,15 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y -= GRAVITY * delta
+
+	var space_state = get_world_3d().direct_space_state
+	var query = PhysicsRayQueryParameters3D.create(global_position, player.global_position)
+	var result = space_state.intersect_ray(query)
+	
+	if result:
+		seen = true
+	else :
+		seen = false
 
 	match state:
 		State.PATROL:
@@ -67,7 +77,8 @@ func face_target(target: Vector3, delta: float) -> void:
 # Triggered when player enters vision
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
-		state = State.CHASE
+		if seen == true:
+			state = State.CHASE
 
 # Triggered when player leaves vision
 func _on_area_3d_body_exited(body: Node3D) -> void:
