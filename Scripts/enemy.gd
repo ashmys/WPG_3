@@ -10,7 +10,7 @@ const GRAVITY: float = 9.8
 @export var speed_run: float = 5.0
 @export var speed_walk: float = 2.0
 
-enum State { PATROL, CHASE, SEARCH }
+enum State { PATROL, CHASE, SEARCH, WAIT }
 var state: State = State.PATROL
 
 var last_seen_position: Vector3 = Vector3.ZERO
@@ -18,6 +18,8 @@ var last_seen_time: float = -1.0
 var chase_memory_duration: float = 2.0
 var current_patrol_point: Marker3D
 var seen:bool = false
+var wait_duration = 4.0          # how long to pause before patrol
+var wait_timer = 0.0
 
 func _ready() -> void:
 	if !nav_agent or !player or points.is_empty():
@@ -36,9 +38,8 @@ func _physics_process(delta: float) -> void:
 	
 	if result:
 		seen = true
-	else :
+	else:
 		seen = false
-
 	match state:
 		State.PATROL:
 			if nav_agent.is_navigation_finished():
@@ -49,11 +50,17 @@ func _physics_process(delta: float) -> void:
 			last_seen_position = player.global_position
 			last_seen_time = Time.get_ticks_msec() / 1000.0
 			act(player.global_position, speed_run, delta)
+			wait_timer = 0.0  # reset wait timer
 
 		State.SEARCH:
 			if Time.get_ticks_msec() / 1000.0 - last_seen_time < chase_memory_duration:
 				act(last_seen_position, speed_walk, delta)
 			else:
+				state = State.WAIT
+		
+		State.WAIT:
+			wait_timer += delta
+			if wait_timer >= wait_duration:
 				state = State.PATROL
 
 	move_and_slide()
