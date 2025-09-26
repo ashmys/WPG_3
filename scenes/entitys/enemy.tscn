@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://jc5brxiy3gq7"]
 
-[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://Scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="PackedScene" uid="uid://bqdvlhp4r0k8h" path="res://scenes/character_assets/valeria.tscn" id="4_5uy6h"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]

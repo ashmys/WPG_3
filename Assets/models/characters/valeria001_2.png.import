@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b026nbbd0xh66"
-path.s3tc="res://.godot/imported/valeria001_2.png-d06c6ba45feb4cb0a63423d3b907065b.s3tc.ctex"
+path.s3tc="res://.godot/imported/valeria001_2.png-90a4c02c31cee849dfd3f7bb258e9cf9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/characters/valeria001_2.png"
-dest_files=["res://.godot/imported/valeria001_2.png-d06c6ba45feb4cb0a63423d3b907065b.s3tc.ctex"]
+source_file="res://Assets/models/characters/valeria001_2.png"
+dest_files=["res://.godot/imported/valeria001_2.png-90a4c02c31cee849dfd3f7bb258e9cf9.s3tc.ctex"]
 
 [params]
 

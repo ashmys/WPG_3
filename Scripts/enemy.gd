@@ -40,6 +40,7 @@ func _physics_process(delta: float) -> void:
 		seen = true
 	else:
 		seen = false
+		
 	match state:
 		State.PATROL:
 			if nav_agent.is_navigation_finished():

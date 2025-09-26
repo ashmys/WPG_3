@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://c3apgmstfbhkn"
-path="res://.godot/imported/valeria001.fbx-5c474c2587453e85ee5d8b60845f7d72.scn"
+path="res://.godot/imported/valeria001.fbx-0ec81f14583eae91c44a15612431e5a9.scn"
 
 [deps]
 
-source_file="res://assets/models/characters/valeria001.fbx"
-dest_files=["res://.godot/imported/valeria001.fbx-5c474c2587453e85ee5d8b60845f7d72.scn"]
+source_file="res://Assets/models/characters/valeria001.fbx"
+dest_files=["res://.godot/imported/valeria001.fbx-0ec81f14583eae91c44a15612431e5a9.scn"]
 
 [params]
 
