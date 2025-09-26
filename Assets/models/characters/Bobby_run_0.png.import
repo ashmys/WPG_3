@@ -2,13 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD:Assets/models/characters/Walking_0.png.import
-uid="uid://3q57rj2rb5pd"
-path.s3tc="res://.godot/imported/Walking_0.png-4199ee39bf2ba7d1c4b5ca80fdfdc6cc.s3tc.ctex"
-=======
 uid="uid://ccu3h8w7baa0e"
 path.s3tc="res://.godot/imported/Bobby_run_0.png-b7470873a7a0b47c66073cd3ba4e88f4.s3tc.ctex"
->>>>>>> main:Assets/models/characters/Bobby_run_0.png.import
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -16,13 +11,8 @@ metadata={
 
 [deps]
 
-<<<<<<< HEAD:Assets/models/characters/Walking_0.png.import
-source_file="res://Assets/models/characters/Walking_0.png"
-dest_files=["res://.godot/imported/Walking_0.png-4199ee39bf2ba7d1c4b5ca80fdfdc6cc.s3tc.ctex"]
-=======
 source_file="res://Assets/models/characters/Bobby_run_0.png"
 dest_files=["res://.godot/imported/Bobby_run_0.png-b7470873a7a0b47c66073cd3ba4e88f4.s3tc.ctex"]
->>>>>>> main:Assets/models/characters/Bobby_run_0.png.import
 
 [params]
 

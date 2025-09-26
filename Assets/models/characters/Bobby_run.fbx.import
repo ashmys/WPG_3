@@ -3,22 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-<<<<<<< HEAD:Assets/models/characters/Walking.fbx.import
-uid="uid://d3oh8urracsp4"
-path="res://.godot/imported/Walking.fbx-9d1f612e2cc714ac7fd9ad00a2b899a3.scn"
-
-[deps]
-
-source_file="res://Assets/models/characters/Walking.fbx"
-dest_files=["res://.godot/imported/Walking.fbx-9d1f612e2cc714ac7fd9ad00a2b899a3.scn"]
-=======
 uid="uid://ce0jg7iuekf2y"
 valid=false
 
 [deps]
 
 source_file="res://Assets/models/characters/Bobby_run.fbx"
->>>>>>> main:Assets/models/characters/Bobby_run.fbx.import
 
 [params]
 

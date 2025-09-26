@@ -42,14 +42,6 @@ func _physics_process(delta: float) -> void:
 		if hit == player:
 			print("Player terlihat!")
 	
-<<<<<<< HEAD
-	if result:
-		seen = true
-	else:
-		seen = false
-		
-=======
->>>>>>> main
 	match state:
 		State.PATROL:
 			if nav_agent.is_navigation_finished():
@@ -68,9 +60,12 @@ func _physics_process(delta: float) -> void:
 			else:
 				state = State.WAIT
 				last_seen_time = 2.0
+				last_seen_time = 2.0
 		
 		State.WAIT:
 			wait_timer += delta
+			velocity.x = 0
+			velocity.z = 0
 			velocity.x = 0
 			velocity.z = 0
 			if wait_timer >= wait_duration:
@@ -97,6 +92,7 @@ func face_target(target: Vector3, delta: float) -> void:
 # Triggered when player enters vision
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
+		state = State.CHASE
 		state = State.CHASE
 
 # Triggered when player leaves vision
