@@ -9,12 +9,13 @@ const GRAVITY: float = 9.8
 @export var player: CharacterBody3D
 @export var speed_run: float = 5.0
 @export var speed_walk: float = 2.0
+@export var ray : RayCast3D
 
 enum State { PATROL, CHASE, SEARCH, WAIT }
 var state: State = State.PATROL
 
 var last_seen_position: Vector3 = Vector3.ZERO
-var last_seen_time: float = -1.0
+var last_seen_time: float = -2.0
 var chase_memory_duration: float = 2.0
 var current_patrol_point: Marker3D
 var seen:bool = false
@@ -31,16 +32,24 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if !is_on_floor():
 		velocity.y -= GRAVITY * delta
-
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(global_position, player.global_position)
-	var result = space_state.intersect_ray(query)
+		
 	
+	var dir = (player.global_position - global_position).normalized()
+	ray.target_position = dir * 100  # panjang ray, misal 100 unit
+	
+	if ray.is_colliding():
+		var hit = ray.get_collider()
+		if hit == player:
+			print("Player terlihat!")
+	
+<<<<<<< HEAD
 	if result:
 		seen = true
 	else:
 		seen = false
 		
+=======
+>>>>>>> main
 	match state:
 		State.PATROL:
 			if nav_agent.is_navigation_finished():
@@ -58,9 +67,12 @@ func _physics_process(delta: float) -> void:
 				act(last_seen_position, speed_walk, delta)
 			else:
 				state = State.WAIT
+				last_seen_time = 2.0
 		
 		State.WAIT:
 			wait_timer += delta
+			velocity.x = 0
+			velocity.z = 0
 			if wait_timer >= wait_duration:
 				state = State.PATROL
 
@@ -85,8 +97,7 @@ func face_target(target: Vector3, delta: float) -> void:
 # Triggered when player enters vision
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
-		if seen == true:
-			state = State.CHASE
+		state = State.CHASE
 
 # Triggered when player leaves vision
 func _on_area_3d_body_exited(body: Node3D) -> void:

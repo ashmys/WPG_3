@@ -1,0 +1,51 @@
+[remap]
+
+importer="texture"
+type="CompressedTexture2D"
+<<<<<<< HEAD:Assets/models/characters/Walking_3.png.import
+uid="uid://d2qbq3uf7xxd2"
+path.s3tc="res://.godot/imported/Walking_3.png-fda6156a221699ca084abf56a3788653.s3tc.ctex"
+=======
+uid="uid://b7n451jh6sklr"
+path.s3tc="res://.godot/imported/Bobby_run_2.png-0424991c59d82e415586c46c55102c86.s3tc.ctex"
+>>>>>>> main:Assets/models/characters/Bobby_run_2.png.import
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+<<<<<<< HEAD:Assets/models/characters/Walking_3.png.import
+source_file="res://Assets/models/characters/Walking_3.png"
+dest_files=["res://.godot/imported/Walking_3.png-fda6156a221699ca084abf56a3788653.s3tc.ctex"]
+=======
+source_file="res://Assets/models/characters/Bobby_run_2.png"
+dest_files=["res://.godot/imported/Bobby_run_2.png-0424991c59d82e415586c46c55102c86.s3tc.ctex"]
+>>>>>>> main:Assets/models/characters/Bobby_run_2.png.import
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/normal_map=0
+compress/channel_pack=0
+mipmaps/generate=true
+mipmaps/limit=-1
+roughness/mode=0
+roughness/src_normal=""
+process/channel_remap/red=0
+process/channel_remap/green=1
+process/channel_remap/blue=2
+process/channel_remap/alpha=3
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/normal_map_invert_y=false
+process/hdr_as_srgb=false
+process/hdr_clamp_exposure=false
+process/size_limit=0
+detect_3d/compress_to=0
