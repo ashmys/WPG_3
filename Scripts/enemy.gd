@@ -14,64 +14,90 @@ const GRAVITY: float = 9.8
 enum State { PATROL, CHASE, SEARCH, WAIT }
 var state: State = State.PATROL
 
+# pilih jenis enemy di Inspector
+enum EnemyType { COWOK, CEWEK }
+@export var enemy_type: EnemyType = EnemyType.COWOK
+
+# rute cowok dan cewek
+var cowok_route: Array[int] = [3, 1, 6, 4, 7, 11, 8, 10, 13]
+var cewek_route: Array[int] = [3, 2, 6, 3, 1, 5, 7, 12, 9]
+
+var patrol_route: Array[int] = []
+var patrol_index: int = 0
+var current_patrol_point: Marker3D
+
 var last_seen_position: Vector3 = Vector3.ZERO
 var last_seen_time: float = -2.0
 var chase_memory_duration: float = 2.0
-var current_patrol_point: Marker3D
-var seen:bool = false
-var wait_duration = 4.0          # how long to pause before patrol
+var wait_duration = 4.0
 var wait_timer = 0.0
+
 
 func _ready() -> void:
 	if !nav_agent or !player or points.is_empty():
 		push_error("Missing references: nav_agent, player, or patrol points.")
 		return
 
-	current_patrol_point = points.pick_random()
+	# tentukan rute sesuai tipe enemy
+	match enemy_type:
+		EnemyType.COWOK:
+			patrol_route = cowok_route
+			$Bobby.visible = true
+			$valeria.visible = false
+		EnemyType.CEWEK:
+			patrol_route = cewek_route
+			$Bobby.visible = false
+			$valeria.visible = true
+
+	# mulai dari titik pertama
+	patrol_index = 0
+	current_patrol_point = points[patrol_route[patrol_index]]
+
+	# langsung set target ke titik pertama biar ga dilewati
+	nav_agent.set_target_position(current_patrol_point.global_position)
+
+	# ray menghadap ke depan enemy
+	ray.target_position = Vector3.FORWARD * 100
+	
+	print(patrol_index)
+
 
 func _physics_process(delta: float) -> void:
-	if !is_on_floor():
-		velocity.y -= GRAVITY * delta
-		
-	
-	var dir = (player.global_position - global_position).normalized()
-	ray.target_position = dir * 100  # panjang ray, misal 100 unit
-	
-	if ray.is_colliding():
-		var hit = ray.get_collider()
-		if hit == player:
-			print("Player terlihat!")
-	
+	velocity.y = 0  # biar tetap nempel di lantai
+
 	match state:
 		State.PATROL:
 			if nav_agent.is_navigation_finished():
-				current_patrol_point = points.pick_random()
-			act(current_patrol_point.global_position, speed_walk, delta)
+				# pindah ke titik berikutnya
+				patrol_index = (patrol_index + 1) % patrol_route.size()
+				current_patrol_point = points[patrol_route[patrol_index]]
+				nav_agent.set_target_position(current_patrol_point.global_position)
+			else:
+				act(current_patrol_point.global_position, speed_walk, delta)
 
 		State.CHASE:
 			last_seen_position = player.global_position
 			last_seen_time = Time.get_ticks_msec() / 1000.0
 			act(player.global_position, speed_run, delta)
-			wait_timer = 0.0  # reset wait timer
+			wait_timer = 0.0  
 
 		State.SEARCH:
 			if Time.get_ticks_msec() / 1000.0 - last_seen_time < chase_memory_duration:
 				act(last_seen_position, speed_walk, delta)
 			else:
 				state = State.WAIT
-				last_seen_time = 2.0
-				last_seen_time = 2.0
-		
+
 		State.WAIT:
 			wait_timer += delta
 			velocity.x = 0
 			velocity.z = 0
-			velocity.x = 0
-			velocity.z = 0
 			if wait_timer >= wait_duration:
 				state = State.PATROL
+				# reset ke target patrol selanjutnya
+				nav_agent.set_target_position(current_patrol_point.global_position)
 
 	move_and_slide()
+
 
 func act(target: Vector3, speed: float, delta: float) -> void:
 	nav_agent.set_target_position(target)
@@ -79,30 +105,35 @@ func act(target: Vector3, speed: float, delta: float) -> void:
 	var destination = nav_agent.get_next_path_position()
 	var dir = (destination - global_position).normalized()
 
+	# sekarang ikut gerakan Y juga (bisa naik tangga)
 	velocity.x = dir.x * speed
+	velocity.y = dir.y * speed
 	velocity.z = dir.z * speed
 
 	face_target(destination, delta)
+
 
 func face_target(target: Vector3, delta: float) -> void:
 	var dir = (target - global_position).normalized()
 	dir.y = 0
 	rotation.y = lerp_angle(rotation.y, atan2(dir.x, dir.z), 5.0 * delta)
 
-# Triggered when player enters vision
+
+# kalau player masuk area penglihatan
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
 		state = State.CHASE
-		state = State.CHASE
 
-# Triggered when player leaves vision
+
+# kalau player keluar area penglihatan
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body == player:
 		state = State.SEARCH
 		last_seen_position = player.global_position
 		last_seen_time = Time.get_ticks_msec() / 1000.0
 
-# Optional: triggered by hearing sound
+
+# kalau enemy dengar suara (opsional)
 func _on_hear_sound() -> void:
 	last_seen_position = player.global_position
 	last_seen_time = Time.get_ticks_msec() / 1000.0
