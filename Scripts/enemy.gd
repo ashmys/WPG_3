@@ -47,7 +47,11 @@ func _ready() -> void:
 		EnemyType.CEWEK:
 			patrol_route = cewek_route
 			$Bobby.visible = false
+<<<<<<< HEAD
 			$Valeria.visible = true
+=======
+			$valeria.visible = true
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 
 	# mulai dari titik pertama
 	patrol_index = 0

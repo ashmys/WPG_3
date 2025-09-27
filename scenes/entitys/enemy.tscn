@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene load_steps=38 format=4 uid="uid://jc5brxiy3gq7"]
 
 [ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://Scripts/enemy.gd" id="1_hghv2"]
@@ -7,13 +8,26 @@
 [ext_resource type="Texture2D" uid="uid://b7n451jh6sklr" path="res://Assets/models/characters/Bobby_run_2.png" id="5_gpo01"]
 [ext_resource type="Texture2D" uid="uid://135ktkks3q3h" path="res://Assets/models/characters/valeria001_1.png" id="6_l18s2"]
 [ext_resource type="Texture2D" uid="uid://b026nbbd0xh66" path="res://Assets/models/characters/valeria001_2.png" id="7_tukg2"]
+=======
+[gd_scene load_steps=16 format=4 uid="uid://jc5brxiy3gq7"]
+
+[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://Scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Texture2D" uid="uid://ccu3h8w7baa0e" path="res://Assets/models/characters/Bobby_run_0.png" id="3_7s132"]
+[ext_resource type="PackedScene" uid="uid://bqdvlhp4r0k8h" path="res://scenes/character_assets/valeria.tscn" id="4_5uy6h"]
+[ext_resource type="Texture2D" uid="uid://cx3d82a3yoran" path="res://Assets/models/characters/Bobby_run_1.png" id="4_3450b"]
+[ext_resource type="Texture2D" uid="uid://b7n451jh6sklr" path="res://Assets/models/characters/Bobby_run_2.png" id="5_gpo01"]
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
 radius = 0.182907
 height = 2.60175
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7p1mj"]
+<<<<<<< HEAD
 size = Vector3(8.66577, 2.49377, 14.0685)
+=======
+size = Vector3(8.66577, 4.67871, 14.0685)
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_u23g4"]
 resource_name = "Skin"
@@ -579,6 +593,7 @@ _data = {
 &"Root|Walk": SubResource("Animation_rcx82")
 }
 
+<<<<<<< HEAD
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_208e5"]
 resource_name = "Material"
 vertex_color_use_as_albedo = true
@@ -813,6 +828,8 @@ _data = {
 &"idle": SubResource("Animation_xfx2k")
 }
 
+=======
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 [node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent", "view", "ray")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 collision_mask = 3
@@ -838,6 +855,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.53424)
 shape = SubResource("BoxShape3D_7p1mj")
 debug_color = Color(0, 0, 0, 1)
 
+<<<<<<< HEAD
+=======
+[node name="valeria" parent="." instance=ExtResource("4_5uy6h")]
+visible = false
+
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 [node name="RayCast3D" type="RayCast3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.51527, 0)
 target_position = Vector3(0, -1, 100)
@@ -1140,6 +1163,7 @@ libraries = {
 }
 autoplay = "Root|Walk"
 
+<<<<<<< HEAD
 [node name="Valeria" type="Node3D" parent="."]
 visible = false
 
@@ -1176,5 +1200,7 @@ libraries = {
 &"": SubResource("AnimationLibrary_s6jb3")
 }
 
+=======
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

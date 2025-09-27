@@ -77,8 +77,18 @@ environment = SubResource("Environment_pcnys")
 
 [node name="Entity" type="Node" parent="."]
 
+[node name="CharacterBody3D" type="CharacterBody3D" parent="Entity"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90788, 8.51469, 0.758907)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Entity/CharacterBody3D"]
+use_collision = true
+
 [node name="Player" parent="Entity" node_paths=PackedStringArray("interactText") instance=ExtResource("1_e132g")]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.90788, 3.66243, 0.758907)
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.90788, 8.51469, 0.758907)
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 can_sprint = true
 can_freefly = true
 interactText = NodePath("../../CanvasLayer/BoxContainer/InteractText")
@@ -86,11 +96,16 @@ interactText = NodePath("../../CanvasLayer/BoxContainer/InteractText")
 [node name="enemy" parent="Entity" node_paths=PackedStringArray("points", "player") instance=ExtResource("4_wxhnw")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.3362, 0.158801, 10.6159)
 points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../../Enemy_Patrol_Marker/Garasi"), NodePath("../../Enemy_Patrol_Marker/KMandi1"), NodePath("../../Enemy_Patrol_Marker/RTamu"), NodePath("../../Enemy_Patrol_Marker/Dapur"), NodePath("../../Enemy_Patrol_Marker/LR"), NodePath("../../Enemy_Patrol_Marker/Kamar1"), NodePath("../../Enemy_Patrol_Marker/DepanTangga"), NodePath("../../Enemy_Patrol_Marker/Kamar2"), NodePath("../../Enemy_Patrol_Marker/KMandi2"), NodePath("../../Enemy_Patrol_Marker/Balkon"), NodePath("../../Enemy_Patrol_Marker/Cuci"), NodePath("../../Enemy_Patrol_Marker/CCTV"), NodePath("../../Enemy_Patrol_Marker/Gudang")]
+<<<<<<< HEAD
 player = NodePath("../Player")
 enemy_type = 1
 
 [node name="CollisionShape3D2" parent="Entity/enemy/Area3D" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -1.09247, 6.53424)
+=======
+player = NodePath("../CharacterBody3D")
+enemy_type = 1
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -407,12 +422,17 @@ shape = SubResource("WorldBoundaryShape3D_hdq63")
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -12.3979, 0.600638, 3.70669)
 
 [node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" index="0"]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1649, 2.85294)
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1649, 0)
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 
 [node name="MeshInstance3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3/CollisionShape3D" index="0"]
 visible = false
 
 [node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" index="1"]
+<<<<<<< HEAD
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 3.3525)
 
 [node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" instance=ExtResource("4_fam4t")]
@@ -463,6 +483,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 3.47515)
 
 [node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object6" instance=ExtResource("4_fam4t")]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 1.44317e-07, 0.755376, 3.30158)
+=======
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 0)
+
+[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" instance=ExtResource("4_fam4t")]
+transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 0, 0.755376, 0)
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 
 [node name="Hideable_Object2" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("3_5fgx8")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.21977, 4.38571, 6.92453)
@@ -562,7 +588,10 @@ text = "Left Click or Press [E] to interect"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+<<<<<<< HEAD
 [editable path="Entity/enemy"]
+=======
+>>>>>>> 2c43b2986e8c1c769d80956030d2bcede1230dcd
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object4"]
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object5"]
