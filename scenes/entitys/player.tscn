@@ -1,10 +1,48 @@
-[gd_scene load_steps=7 format=3 uid="uid://8a38my28t4v7"]
+[gd_scene load_steps=10 format=3 uid="uid://8a38my28t4v7"]
 
 [ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player_camera.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://scripts/player/interact_raycast.gd" id="3_rlr1k"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_g2els"]
+
+[sub_resource type="Animation" id="Animation_rlr1k"]
+resource_name = "head_bobbing"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.1, -0.1, 0), Vector3(0, 0, 0), Vector3(0.1, -0.1, 0), Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_tsxeq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.1, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2nni0"]
+_data = {
+&"RESET": SubResource("Animation_tsxeq"),
+&"head_bobbing": SubResource("Animation_rlr1k")
+}
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
 
@@ -25,11 +63,14 @@ collider = NodePath("Collider")
 [node name="CentralPoint" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." node_paths=PackedStringArray("player", "player_point")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 script = ExtResource("3_qhqgy")
+player = NodePath("..")
+player_point = NodePath("../CentralPoint")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.1, 0, 0)
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
 transform = Transform3D(0.64, 0, 0, 0, 0.266683, 0, 0, 0, 0.8, 0, 0, -0.259499)
@@ -40,6 +81,11 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 
 target_position = Vector3(0, 2, 0)
 script = ExtResource("3_rlr1k")
 player = NodePath("../..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head"]
+libraries = {
+&"": SubResource("AnimationLibrary_2nni0")
+}
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

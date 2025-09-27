@@ -13,8 +13,9 @@ var min_vertical_angle: float = -PI / 2
 var max_vertical_angle: float = PI / 4
 
 # === Nodes ===
-@onready var player_point := $"../CentralPoint"
-@onready var player: CharacterBody3D = $".."
+@export_group("Nodes")
+@export var player: CharacterBody3D
+@export var player_point : Node3D
 
 # === Constants ===
 const DEFAULT_PITCH := deg_to_rad(-25)
