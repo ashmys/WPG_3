@@ -5,7 +5,6 @@ extends CharacterBody3D
 @export var player_point: Node3D
 @export var head: Node3D
 @export var collider: CollisionShape3D
-@export var anim_tree: AnimationTree
 
 # == CONFIGURATION ==
 @export_group("Configs")
@@ -35,12 +34,6 @@ extends CharacterBody3D
 # == CONSTANTS ==
 const GRAVITY_MULTIPLIER := 4.5
 
-# == VAR ==
-enum {STOP,IDLE,WALK,RUN}
-var curAnim := STOP
-var idle_cooldown := 1.0
-var idle_timer := 0.0
-
 # == STATE ==
 var input_dir := Vector2.ZERO
 var is_moving := false
@@ -69,8 +62,6 @@ func _physics_process(delta: float) -> void:
 	_handle_jump()
 	_apply_movement(delta)
 
-	_handle_animations()
-
 	move_and_slide()
 
 # == MOVEMENT & PHYSICS ==
@@ -78,6 +69,7 @@ func _physics_process(delta: float) -> void:
 func _apply_movement(delta: float) -> void:
 	if not can_move:
 		velocity = Vector3.ZERO
+		is_moving = false
 		return
 
 	is_sprint = can_sprint and Input.is_action_pressed(input_sprint)
@@ -85,24 +77,14 @@ func _apply_movement(delta: float) -> void:
 
 	var move_dir = Basis(Vector3.UP, head.rotation.y) * Vector3(input_dir.x, 0, input_dir.y)
 	if move_dir.length_squared() > 0:
-		idle_timer = 0.0
 		move_dir = move_dir.normalized()
 		velocity.x = move_dir.x * current_speed
 		velocity.z = move_dir.z * current_speed
 		is_moving = true
-		if !is_sprint:
-			curAnim = WALK
-		else:
-			curAnim = RUN
 	else:
 		velocity.x = move_toward(velocity.x, 0, current_speed)
 		velocity.z = move_toward(velocity.z, 0, current_speed)
 		is_moving = false
-		idle_timer += delta
-		if idle_timer >= idle_cooldown:
-			curAnim = IDLE
-		else:
-			curAnim = STOP
 
 	_update_model_rotation(move_dir, delta)
 
@@ -130,14 +112,3 @@ func _update_model_rotation(move_dir: Vector3, delta: float) -> void:
 	if move_dir.length_squared() > 0.0001:
 		var target_angle = atan2(move_dir.x, move_dir.z)
 		player_point.rotation.y = lerp_angle(player_point.rotation.y, target_angle, rotation_speed * delta)
-
-func _handle_animations():
-	match curAnim:
-		STOP:
-			anim_tree.set("parameters/Movement/transition_request","Stop")
-		IDLE:
-			anim_tree.set("parameters/Movement/transition_request","Idle")
-		WALK:
-			anim_tree.set("parameters/Movement/transition_request","Walk")
-		RUN:
-			anim_tree.set("parameters/Movement/transition_request","Run")

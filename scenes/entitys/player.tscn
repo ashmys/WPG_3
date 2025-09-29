@@ -3,8 +3,70 @@
 [ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player/player_camera.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://scripts/player/interact_raycast.gd" id="3_rlr1k"]
+[ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://scripts/player/player_camAnimation.gd" id="4_tsxeq"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_g2els"]
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
+animation = &"Running"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l1ko6"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ft406"]
+xfade_time = 0.3
+input_0/name = "RESET"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "Idle"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "Walk"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+input_3/name = "Run"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsxeq"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
+animation = &"Walking"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_csod7"]
+graph_offset = Vector2(-710.7414, 97.795074)
+nodes/output/position = Vector2(360, 160)
+nodes/RESET/node = SubResource("AnimationNodeAnimation_tsxeq")
+nodes/RESET/position = Vector2(-320, -20)
+nodes/Walking/node = SubResource("AnimationNodeAnimation_x3yh4")
+nodes/Walking/position = Vector2(-300, 360)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_l1ko6")
+nodes/Idle/position = Vector2(-300, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_rlr1k")
+nodes/Animation/position = Vector2(-300, 540)
+nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
+nodes/Movement/position = Vector2(160, 160)
+node_connections = [&"output", 0, &"Movement", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation"]
+
+[sub_resource type="Animation" id="Animation_2nni0"]
+resource_name = "Idle"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(-0.017453292, 0, 0), Vector3(0, 0, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_tsxeq"]
 length = 0.001
@@ -32,23 +94,6 @@ tracks/1/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_2nni0"]
-resource_name = "Idle"
-length = 2.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera3D:rotation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 1, 2),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 0,
-"values": [Vector3(0, 0, 0), Vector3(-0.017453292, 0, 0), Vector3(0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_hucg6"]
@@ -92,56 +137,11 @@ _data = {
 &"Walking": SubResource("Animation_rlr1k")
 }
 
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
-animation = &"Running"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l1ko6"]
-animation = &"Idle"
-
-[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ft406"]
-input_0/name = "Stop"
-input_0/auto_advance = false
-input_0/break_loop_at_end = false
-input_0/reset = true
-input_1/name = "Idle"
-input_1/auto_advance = false
-input_1/break_loop_at_end = false
-input_1/reset = true
-input_2/name = "Walk"
-input_2/auto_advance = false
-input_2/break_loop_at_end = false
-input_2/reset = true
-input_3/name = "Run"
-input_3/auto_advance = false
-input_3/break_loop_at_end = false
-input_3/reset = true
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsxeq"]
-animation = &"RESET"
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
-animation = &"Walking"
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_csod7"]
-graph_offset = Vector2(-561.90674, -80.10916)
-nodes/output/position = Vector2(360, 160)
-nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
-nodes/Movement/position = Vector2(160, 160)
-nodes/Walking/node = SubResource("AnimationNodeAnimation_x3yh4")
-nodes/Walking/position = Vector2(-300, 360)
-nodes/Idle/node = SubResource("AnimationNodeAnimation_l1ko6")
-nodes/Idle/position = Vector2(-300, 160)
-nodes/Animation/node = SubResource("AnimationNodeAnimation_rlr1k")
-nodes/Animation/position = Vector2(-300, 540)
-nodes/Stop/node = SubResource("AnimationNodeAnimation_tsxeq")
-nodes/Stop/position = Vector2(-320, -20)
-node_connections = [&"output", 0, &"Movement", &"Movement", 0, &"Stop", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation"]
-
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider", "anim_tree") groups=["player"]]
+[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider") groups=["player"]]
 collision_layer = 2
 collision_mask = 3
 floor_block_on_wall = false
@@ -149,7 +149,6 @@ script = ExtResource("1_3vyb7")
 player_point = NodePath("CentralPoint")
 head = NodePath("Head")
 collider = NodePath("Collider")
-anim_tree = NodePath("Head/AnimationTree")
 base_speed = 5.0
 sprint_speed = 7.0
 jump_velocity = 9.0
@@ -166,27 +165,28 @@ player_point = NodePath("../CentralPoint")
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Head"]
-transform = Transform3D(0.64, 0, 0, 0, 0.266683, 0, 0, 0, 0.8, 0, 0, -0.259499)
-mesh = SubResource("BoxMesh_g2els")
-
 [node name="Interact Raycast" type="RayCast3D" parent="Head" node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, 2, 0)
 script = ExtResource("3_rlr1k")
 player = NodePath("../..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Head"]
+[node name="AnimationTree" type="AnimationTree" parent="Head" node_paths=PackedStringArray("player", "head")]
+tree_root = SubResource("AnimationNodeBlendTree_csod7")
+anim_player = NodePath("AnimationPlayer")
+parameters/Movement/current_state = "RESET"
+parameters/Movement/transition_request = ""
+parameters/Movement/current_index = 0
+script = ExtResource("4_tsxeq")
+player = NodePath("../..")
+head = NodePath("..")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/AnimationTree"]
+root_node = NodePath("../..")
 libraries = {
 &"": SubResource("AnimationLibrary_2nni0")
 }
-
-[node name="AnimationTree" type="AnimationTree" parent="Head"]
-tree_root = SubResource("AnimationNodeBlendTree_csod7")
-anim_player = NodePath("../AnimationPlayer")
-parameters/Movement/current_state = "Stop"
-parameters/Movement/transition_request = ""
-parameters/Movement/current_index = 0
+playback_default_blend_time = 1.0
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
