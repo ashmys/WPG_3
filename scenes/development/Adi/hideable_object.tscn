@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://bcgjdyntdov1i" path="res://scripts/hideable_object.gd" id="1_r7i6f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hdq63"]
-size = Vector3(3, 3.8374023, 2)
+size = Vector3(1.5686646, 2.8388214, 1.1694946)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5fgx8"]
 size = Vector3(3, 0.5, 2)
