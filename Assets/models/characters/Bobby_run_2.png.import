@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7n451jh6sklr"
-path.s3tc="res://.godot/imported/Bobby_run_2.png-66688ec6bbf957fab2950d296fa8c126.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bobby_run_2.png-0424991c59d82e415586c46c55102c86.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/characters/Bobby_run_2.png"
-dest_files=["res://.godot/imported/Bobby_run_2.png-66688ec6bbf957fab2950d296fa8c126.s3tc.ctex"]
+source_file="res://Assets/models/characters/Bobby_run_2.png"
+dest_files=["res://.godot/imported/Bobby_run_2.png-0424991c59d82e415586c46c55102c86.s3tc.ctex"]
 
 [params]
 
