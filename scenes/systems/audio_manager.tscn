@@ -1,8 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dngiuhq5ehbk6"]
+[gd_scene load_steps=13 format=3 uid="uid://dngiuhq5ehbk6"]
 
 [ext_resource type="Script" uid="uid://ds32lkm14q26f" path="res://scripts/systems/audio_manager.gd" id="1_hrhdx"]
 [ext_resource type="AudioStream" uid="uid://ci7ykpu2dfbbu" path="res://assets/audios/musics/main menu_horror(slow pace).ogg" id="3_7ijxr"]
 [ext_resource type="Script" uid="uid://bptjoqr5aavn5" path="res://scripts/systems/audio_library_entry.gd" id="3_aac8q"]
+[ext_resource type="AudioStream" uid="uid://dl5an1b5uuj4b" path="res://assets/audios/sfx/footsteps-male-362053.wav" id="4_kix12"]
+[ext_resource type="AudioStream" uid="uid://dw3ig5igy5iwo" path="res://assets/audios/sfx/Suara detak jantung 2025-09-24 15_41.wav" id="5_3xok3"]
+[ext_resource type="AudioStream" uid="uid://dj1tjuhgbold6" path="res://assets/audios/sfx/Suara sirine polisi eropa 2025-09-20 21_42.wav" id="6_03wka"]
+[ext_resource type="AudioStream" uid="uid://d3y7una53e7rm" path="res://assets/audios/sfx/Suara Lemari 2025-09-30 23_48.wav" id="7_uydfr"]
 
 [sub_resource type="Resource" id="Resource_aac8q"]
 script = ExtResource("3_aac8q")
@@ -10,6 +14,31 @@ key = &"main_menu"
 stream = ExtResource("3_7ijxr")
 metadata/_custom_type_script = "uid://bptjoqr5aavn5"
 
+[sub_resource type="Resource" id="Resource_uxk66"]
+script = ExtResource("3_aac8q")
+key = &"footsteps"
+stream = ExtResource("4_kix12")
+metadata/_custom_type_script = "uid://bptjoqr5aavn5"
+
+[sub_resource type="Resource" id="Resource_hds1h"]
+script = ExtResource("3_aac8q")
+key = &"heartbeat"
+stream = ExtResource("5_3xok3")
+metadata/_custom_type_script = "uid://bptjoqr5aavn5"
+
+[sub_resource type="Resource" id="Resource_hl7fh"]
+script = ExtResource("3_aac8q")
+key = &"sirene_police"
+stream = ExtResource("6_03wka")
+metadata/_custom_type_script = "uid://bptjoqr5aavn5"
+
+[sub_resource type="Resource" id="Resource_m8juj"]
+script = ExtResource("3_aac8q")
+key = &"wardrobe"
+stream = ExtResource("7_uydfr")
+metadata/_custom_type_script = "uid://bptjoqr5aavn5"
+
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_hrhdx")
 music_library = Array[ExtResource("3_aac8q")]([SubResource("Resource_aac8q")])
+sfx_library = Array[ExtResource("3_aac8q")]([SubResource("Resource_uxk66"), SubResource("Resource_hds1h"), SubResource("Resource_hl7fh"), SubResource("Resource_m8juj")])

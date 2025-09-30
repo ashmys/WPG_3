@@ -8,13 +8,14 @@ var target : Object = null
 var _saved_transform : Transform3D
 
 func _physics_process(_delta: float) -> void:
-	player.interactText.hide()
-
 	if player.is_hiding:
 		player.interactText.show()
 		if Input.is_action_just_pressed("interact"):
 			_toggle_hide()
+	else:
+		player.interactText.hide()
 
+	#then check collider for hiding
 	if not is_colliding():
 		return
 
@@ -43,8 +44,9 @@ func _hide_player() -> void:
 	# Move to hiding spot
 	player.global_transform = target.hide_marker.global_transform
 
+	target.play_object_sfx()
 	player.is_hiding = true
-	print("Player is now hiding")
+	#print("Player is now hiding")
 
 func _unhide_player() -> void:
 	player.collider.disabled = false
@@ -54,4 +56,4 @@ func _unhide_player() -> void:
 	player.global_transform = _saved_transform
 
 	player.is_hiding = false
-	print("Player is no longer hiding")
+	#print("Player is no longer hiding")

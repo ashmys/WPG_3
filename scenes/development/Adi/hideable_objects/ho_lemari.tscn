@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dy6g0jk0v3tym"]
+
+[ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="1_xj13b"]
+[ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/lemari_lowpoly_.tscn" id="2_okvyb"]
+
+[node name="HO_Lemari" instance=ExtResource("1_xj13b")]
+sfx_name = "wardrobe"
+
+[node name="Interact_Collision" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006011963, 1.5, 0)
+
+[node name="Mesh_Placeholder" parent="." index="1"]
+visible = false
+
+[node name="lemari_lowpoly_" parent="." index="3" instance=ExtResource("2_okvyb")]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 1.3720667, 0)

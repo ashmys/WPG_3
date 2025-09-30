@@ -4,11 +4,15 @@ extends Control
 
 @export var title: Label
 @export var main_buttons: VBoxContainer
+@export var first_button: Button
+
 @export var settings: Panel
 @export var credits: Panel
 
 func _ready() -> void:
 	show_main_menu()
+	first_button.call_deferred("grab_focus")
+	
 	AudioManager.play_music("main_menu")
 
 func show_main_menu() -> void:

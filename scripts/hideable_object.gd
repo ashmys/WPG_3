@@ -1,8 +1,9 @@
 extends StaticBody3D
 
-# == NODES ==
-@onready var hide_marker: Marker3D = $Hide_Marker
+# == CONFIG ==
+@export var hide_marker: Marker3D
+@export var sfx_name: String
 
-func hide_in_object():
-	print("you are hiding")
+func play_object_sfx():
+	AudioManager.play_sfx(sfx_name)
 	

@@ -3,20 +3,20 @@
 [ext_resource type="Script" uid="uid://bcgjdyntdov1i" path="res://scripts/hideable_object.gd" id="1_r7i6f"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_hdq63"]
-size = Vector3(1.5686646, 2.8388214, 1.1694946)
+size = Vector3(1.1112671, 3, 1.7539063)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5fgx8"]
-size = Vector3(3, 0.5, 2)
 
-[node name="Hideable_Object" type="StaticBody3D" groups=["hideable_objects"]]
+[node name="Hideable_Object" type="StaticBody3D" node_paths=PackedStringArray("hide_marker") groups=["hideable_objects"]]
 script = ExtResource("1_r7i6f")
+hide_marker = NodePath("HidePoint_Marker")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="Interact_Collision" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("BoxShape3D_hdq63")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+[node name="Mesh_Placeholder" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
 mesh = SubResource("BoxMesh_5fgx8")
-skeleton = NodePath("../..")
 
-[node name="Hide_Marker" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.3890822, 0)
+[node name="HidePoint_Marker" type="Marker3D" parent="."]

@@ -30,7 +30,7 @@ thickness = 10
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16hvj"]
 
-[node name="MainMenu" type="Control" node_paths=PackedStringArray("title", "main_buttons", "settings", "credits")]
+[node name="MainMenu" type="Control" node_paths=PackedStringArray("title", "main_buttons", "first_button", "settings", "credits")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,6 +41,7 @@ script = ExtResource("1_l6cm7")
 game_scene = ExtResource("2_bqqt6")
 title = NodePath("Title")
 main_buttons = NodePath("MainButtons")
+first_button = NodePath("MainButtons/Start_Button")
 settings = NodePath("Settings")
 credits = NodePath("Credits")
 
@@ -65,9 +66,6 @@ text = "Mysterious RV"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Music" type="AudioStreamPlayer" parent="."]
-autoplay = true
-
 [node name="MainButtons" type="VBoxContainer" parent="."]
 layout_mode = 1
 offset_left = 133.0
@@ -79,8 +77,12 @@ theme_override_constants/separation = 25
 [node name="Start_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Exit_Button")
+focus_neighbor_bottom = NodePath("../Settings_Button")
+focus_next = NodePath("../Settings_Button")
+focus_previous = NodePath("../Exit_Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
@@ -93,8 +95,12 @@ text = "Start"
 [node name="Settings_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Start_Button")
+focus_neighbor_bottom = NodePath("../Credits_Button")
+focus_next = NodePath("../Credits_Button")
+focus_previous = NodePath("../Start_Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
@@ -107,8 +113,12 @@ text = "Settings"
 [node name="Credits_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Settings_Button")
+focus_neighbor_bottom = NodePath("../Exit_Button")
+focus_next = NodePath("../Exit_Button")
+focus_previous = NodePath("../Settings_Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
@@ -121,8 +131,12 @@ text = "Credits"
 [node name="Exit_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
+focus_neighbor_top = NodePath("../Credits_Button")
+focus_neighbor_bottom = NodePath("../Start_Button")
+focus_next = NodePath("../Start_Button")
+focus_previous = NodePath("../Credits_Button")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
