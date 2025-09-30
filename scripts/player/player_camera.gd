@@ -26,7 +26,6 @@ var mouse_captured := false
 var look_rotation := Vector3.ZERO
 var target_look_rotation := Vector3.ZERO
 var mouse_idle_time := 0.0
-var last_move_down_press_time := 0.0
 
 # === Lifecycle ===
 func _ready() -> void:

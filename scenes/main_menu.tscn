@@ -1,17 +1,17 @@
 [gd_scene load_steps=11 format=3 uid="uid://cn8ur4qy6vsfo"]
 
 [ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://scripts/systems/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="PackedScene" uid="uid://b0hwn32tf1x8d" path="res://scenes/development/Adi/main_map1_v1.1.tscn" id="2_ekxnf"]
+[ext_resource type="PackedScene" uid="uid://w8ynvalq0syi" path="res://scenes/development/Adi/main_map1_v2.tscn" id="2_bqqt6"]
 [ext_resource type="Script" uid="uid://chqps7623vldr" path="res://scripts/systems/settings.gd" id="3_bqqt6"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 modulate_color = Color(0.789173, 0.789172, 0.789172, 1)
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28flt"]
-
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
 bg_color = Color(1, 1, 1, 0)
 draw_center = false
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28flt"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ehe0"]
 bg_color = Color(0, 0, 0, 0.231373)
@@ -38,7 +38,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
-game_scene = ExtResource("2_ekxnf")
+game_scene = ExtResource("2_bqqt6")
 title = NodePath("Title")
 main_buttons = NodePath("MainButtons")
 settings = NodePath("Settings")
@@ -79,57 +79,57 @@ theme_override_constants/separation = 25
 [node name="Start_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
+theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Start"
 
 [node name="Settings_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
+theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Settings"
 
 [node name="Credits_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
+theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Credits"
 
 [node name="Exit_Button" type="Button" parent="MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
+theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
-theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Exit"
 
 [node name="Settings" type="Panel" parent="."]
@@ -178,15 +178,15 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.592157, 0.592157, 0.592157, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.592157, 0.592157, 0.592157, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
 text = "Back"
 
 [node name="SettingsContainer" type="VBoxContainer" parent="Settings"]
@@ -328,15 +328,15 @@ offset_bottom = -32.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 3
-theme_override_colors/font_hover_color = Color(0.592157, 0.592157, 0.592157, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
+theme_override_colors/font_hover_color = Color(0.592157, 0.592157, 0.592157, 1)
 theme_override_font_sizes/font_size = 50
-theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
+theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
 text = "Back"
 
 [connection signal="pressed" from="MainButtons/Start_Button" to="." method="_on_start_button_pressed"]
