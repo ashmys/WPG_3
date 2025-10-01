@@ -43,10 +43,13 @@ var current_patrol_point: Marker3D
 
 var last_seen_position: Vector3 = Vector3.ZERO
 var last_seen_time: float = -2.0
-var chase_memory_duration: float = 2.0
+var chase_memory_duration: float = 6.0
 var wait_duration = 4.0
 var wait_timer = 0.0
 var ray:bool = false
+var lost_sight_grace: float = 2.0  # detik
+var lost_sight_timer: float = 0.0
+
 
 
 func _ready() -> void:
@@ -88,7 +91,7 @@ func handle_animation(delta):
 			vwalk_value = lerpf(vwalk_value,0,blend_speed*delta)
 			vrun_value = lerpf(vrun_value,0,blend_speed*delta)
 		VWALK:
-			vwalk_value = lerpf(vwalk_value, 1.0, blend_speed * delta)
+			vwalk_value = lerpf(vwalk_value, 1.0, blend_speed*delta)
 			vrun_value = lerpf(vrun_value,0,blend_speed*delta)
 		VRUN:
 			vwalk_value = lerpf(vwalk_value,0,blend_speed*delta)
@@ -112,16 +115,33 @@ func update_tree():
 
 func _physics_process(delta: float) -> void:
 	velocity.y = 0  # biar tetap nempel di lantai
-	
-	var space_state = get_world_3d().direct_space_state
-	var query = PhysicsRayQueryParameters3D.create(global_position, player.global_position)
-	var result = space_state.intersect_ray(query)
-	
-	if result and result["collider"] == player:
-		ray = true
-		print(result["collider"])
+
+	# Cek apakah player terlihat (area + ray)
+	var player_visible = false
+
+	if view.overlaps_body(player):
+		var space_state = get_world_3d().direct_space_state
+		var query = PhysicsRayQueryParameters3D.create(global_position, player.global_position)
+		var result = space_state.intersect_ray(query)
+		if result and result["collider"] == player:
+			player_visible = true
+
+	# BONUS: kalau masih dekat (< 8 meter), tetap dianggap kelihatan meskipun ray terhalang
+#	if distance_to_player < 8.0:
+#		player_visible = true
+
+	# Update state berdasarkan visibilitas
+	if player_visible:
+		state = State.CHASE
+		lost_sight_timer = 0.0
+		last_seen_position = player.global_position
+		last_seen_time = Time.get_ticks_msec() / 1000.0
 	else:
-		ray = false
+		if state == State.CHASE:
+			lost_sight_timer += delta
+			if lost_sight_timer >= lost_sight_grace:
+				state = State.SEARCH
+
 
 	match state:
 		State.PATROL:
@@ -130,12 +150,11 @@ func _physics_process(delta: float) -> void:
 			if enemy_type == EnemyType.CEWEK:
 				curAnim = VWALK
 			if nav_agent.is_navigation_finished():
-				# pindah ke titik berikutnya
 				patrol_index = (patrol_index + 1) % patrol_route.size()
 				current_patrol_point = points[patrol_route[patrol_index]]
 				nav_agent.set_target_position(current_patrol_point.global_position)
 			else:
-				act(current_patrol_point.global_position, speed_walk, delta)
+				act(current_patrol_point.global_position, speed_walk, delta, false, true)
 
 		State.CHASE:
 			if enemy_type == EnemyType.COWOK:
@@ -144,12 +163,13 @@ func _physics_process(delta: float) -> void:
 				curAnim = VRUN
 			last_seen_position = player.global_position
 			last_seen_time = Time.get_ticks_msec() / 1000.0
-			act(player.global_position, speed_run, delta)
-			wait_timer = 0.0  
+			act(player.global_position, speed_run, delta, true, false)  # tanpa threshold
+			wait_timer = 0.0
 
 		State.SEARCH:
 			if Time.get_ticks_msec() / 1000.0 - last_seen_time < chase_memory_duration:
-				act(last_seen_position, speed_walk, delta)
+				var random_offset = Vector3(randf() * 2 - 1, 0, randf() * 2 - 1).normalized() * 2.0
+				act(last_seen_position + random_offset, speed_walk, delta)
 			else:
 				state = State.WAIT
 
@@ -178,19 +198,26 @@ func _physics_process(delta: float) -> void:
 		get_tree().call_deferred("reload_current_scene")
 
 
-func act(target: Vector3, speed: float, delta: float) -> void:
-	nav_agent.set_target_position(target)
+func act(target: Vector3, speed: float, delta: float, continuous: bool = false, use_threshold: bool = true) -> void:
+	# Kalau chase: selalu update target
+	if continuous:
+		nav_agent.set_target_position(target)
+	elif nav_agent.is_navigation_finished():
+		nav_agent.set_target_position(target)
 
 	var destination = nav_agent.get_next_path_position()
-	var dir = (destination - global_position).normalized()
 
-	# sekarang ikut gerakan Y juga (bisa naik tangga)
+	# hanya PATROL yang pakai threshold jarak
+	if use_threshold and global_position.distance_to(target) < 0.5:
+		velocity.x = 0
+		velocity.z = 0
+		return
+
+	var dir = (destination - global_position).normalized()
 	velocity.x = dir.x * speed
-	velocity.y = dir.y * speed
 	velocity.z = dir.z * speed
 
 	face_target(destination, delta)
-
 
 func face_target(target: Vector3, delta: float) -> void:
 	var dir = (target - global_position).normalized()
