@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bvc8j6a7nvnfd"
-path="res://.godot/imported/valeria.glb-0cd060f87ecf6b036ab9e5a8a289d4bf.scn"
+uid="uid://b3fusu50bvms7"
+path="res://.godot/imported/Bobby-anim.fbx-83df8ef2bf4615b7b3c02fdd60259511.scn"
 
 [deps]
 
-source_file="res://Assets/models/characters/valeria.glb"
-dest_files=["res://.godot/imported/valeria.glb-0cd060f87ecf6b036ab9e5a8a289d4bf.scn"]
+source_file="res://Assets/models/characters/Bobby-anim.fbx"
+dest_files=["res://.godot/imported/Bobby-anim.fbx-83df8ef2bf4615b7b3c02fdd60259511.scn"]
 
 [params]
 
@@ -30,7 +30,7 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
@@ -39,7 +39,7 @@ materials/extract_format=0
 materials/extract_path=""
 _subresources={
 "animations": {
-"Idle": {
+"Root|Idle": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -2095,7 +2095,7 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"Run": {
+"Root|Run": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -4151,7 +4151,7 @@ _subresources={
 "slice_99/start_frame": 0,
 "slices/amount": 0
 },
-"Walk": {
+"Root|Walk": {
 "save_to_file/enabled": false,
 "save_to_file/fallback_path": "",
 "save_to_file/keep_custom_tracks": "",
@@ -6209,5 +6209,7 @@ _subresources={
 }
 }
 }
-gltf/naming_version=2
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1
+fbx/naming_version=2
