@@ -31,7 +31,7 @@ var curAnim
 
 # pilih jenis enemy di Inspector
 enum EnemyType { COWOK, CEWEK }
-@export var enemy_type: EnemyType = EnemyType.CEWEK
+@export var enemy_type: EnemyType = EnemyType.COWOK
 
 # rute cowok dan cewek
 var cowok_route: Array[int] = [3, 1, 6, 4, 7, 11, 8, 10, 13]
@@ -49,6 +49,9 @@ var wait_timer = 0.0
 var ray:bool = false
 var lost_sight_grace: float = 2.0  # detik
 var lost_sight_timer: float = 0.0
+
+var patrol_cycle_count: int = 0
+var trigger_spawn_cycle: int = 4  # setelah 4 cycle, spawn enemy 2
 
 
 
@@ -114,7 +117,12 @@ func update_tree():
 
 
 func _physics_process(delta: float) -> void:
-	velocity.y = 0  # biar tetap nempel di lantai
+	
+	if not is_on_floor():
+		velocity.y -= GRAVITY * delta
+	else:
+		velocity.y = 0
+
 
 	# Cek apakah player terlihat (area + ray)
 	var player_visible = false
@@ -125,10 +133,6 @@ func _physics_process(delta: float) -> void:
 		var result = space_state.intersect_ray(query)
 		if result and result["collider"] == player:
 			player_visible = true
-
-	# BONUS: kalau masih dekat (< 8 meter), tetap dianggap kelihatan meskipun ray terhalang
-#	if distance_to_player < 8.0:
-#		player_visible = true
 
 	# Update state berdasarkan visibilitas
 	if player_visible:
@@ -142,17 +146,22 @@ func _physics_process(delta: float) -> void:
 			if lost_sight_timer >= lost_sight_grace:
 				state = State.SEARCH
 
-
 	match state:
 		State.PATROL:
 			if enemy_type == EnemyType.COWOK:
 				curAnim = BWALK
 			if enemy_type == EnemyType.CEWEK:
 				curAnim = VWALK
+
 			if nav_agent.is_navigation_finished():
 				patrol_index = (patrol_index + 1) % patrol_route.size()
 				current_patrol_point = points[patrol_route[patrol_index]]
 				nav_agent.set_target_position(current_patrol_point.global_position)
+
+				# ✅ cek apakah sudah kembali ke awal (cycle selesai)
+				if patrol_index == 0:
+					patrol_cycle_count += 1
+
 			else:
 				act(current_patrol_point.global_position, speed_walk, delta, false, true)
 
@@ -218,6 +227,9 @@ func act(target: Vector3, speed: float, delta: float, continuous: bool = false, 
 	velocity.z = dir.z * speed
 
 	face_target(destination, delta)
+
+
+
 
 func face_target(target: Vector3, delta: float) -> void:
 	var dir = (target - global_position).normalized()
