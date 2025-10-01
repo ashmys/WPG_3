@@ -1,13 +1,12 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxv5u5emywhmr"]
+[gd_scene load_steps=16 format=3 uid="uid://bc6fuq2h12slp"]
 
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_4n710"]
 [ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="2_bk1ep"]
-[ext_resource type="Script" uid="uid://bcgjdyntdov1i" path="res://Scripts/hideable_object.gd" id="3_5rbkw"]
-[ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/lemari_lowpoly_.tscn" id="4_uifso"]
+[ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/wardrobe.tscn" id="4_uifso"]
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="5_nwmp5"]
-[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://Assets/textures/main_map1_v1.1.tres" id="6_tnfjt"]
-[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://Assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
-[ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="8_bk1ep"]
+[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/materials/main_map1_v1.1.tres" id="6_tnfjt"]
+[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
+[ext_resource type="PackedScene" path="res://scenes/game_over.tscn" id="8_bk1ep"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]
 sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
@@ -28,9 +27,6 @@ polygons = [PackedInt32Array(1, 0, 2), PackedInt32Array(2, 0, 3), PackedInt32Arr
 agent_radius = 0.7
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hdq63"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_hdq63"]
-size = Vector3(1.5686646, 2.8388214, 1.1694946)
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_hdq63"]
 material = ExtResource("6_tnfjt")
@@ -70,29 +66,29 @@ player = NodePath("../Player")
 game_overUI = NodePath("../../CanvasLayer/GameOver")
 
 [node name="Skeleton3D" parent="Entity/enemy/Bobby/Root" index="0"]
-bones/2/rotation = Quaternion(-0.0459708, -0.05573375, 0.108542524, 0.9914631)
-bones/3/rotation = Quaternion(0.098414205, 0.7048071, -0.102544665, 0.69501525)
-bones/5/rotation = Quaternion(-0.110056624, 0.9916705, 0.042687826, -0.05152632)
-bones/6/rotation = Quaternion(0.101226136, -0.7043684, 0.105458096, 0.69462013)
-bones/13/rotation = Quaternion(0.07482316, 0.012652874, -0.99004894, 0.118509844)
-bones/14/rotation = Quaternion(0.0999687, 0.03130219, -0.1246115, 0.98666024)
-bones/16/position = Vector3(0.009713998, -0.01468999, 0.0005055963)
-bones/19/rotation = Quaternion(0.07482319, -0.012651349, 0.9900491, 0.11850791)
-bones/20/rotation = Quaternion(0.09996569, -0.03130176, 0.124611534, 0.98666054)
-bones/22/position = Vector3(-0.009714, -0.014690019, 0.00050559675)
+bones/2/rotation = Quaternion(-0.048545174, -0.058944397, 0.107251756, 0.99129516)
+bones/3/rotation = Quaternion(0.09600268, 0.70517355, -0.10004514, 0.6953451)
+bones/5/rotation = Quaternion(-0.11112084, 0.99181825, 0.040066626, -0.048409674)
+bones/6/rotation = Quaternion(0.10323403, -0.7040477, 0.10753757, 0.6943308)
+bones/13/rotation = Quaternion(0.0752647, 0.012242413, -0.9899502, 0.11909719)
+bones/14/rotation = Quaternion(0.10062341, 0.03128521, -0.12524848, 0.9865136)
+bones/16/position = Vector3(0.009715632, -0.014614326, 0.00078027253)
+bones/19/rotation = Quaternion(0.07526475, -0.0122408075, 0.98995036, 0.119095266)
+bones/20/rotation = Quaternion(0.10062044, -0.031284988, 0.12524667, 0.98651415)
+bones/22/position = Vector3(-0.009715632, -0.014614356, 0.000780273)
 
 [node name="Skeleton3D" parent="Entity/enemy/Valeria/Armature" index="0"]
-bones/1/position = Vector3(0.050982848, 3.835267, 0.10680358)
-bones/2/rotation = Quaternion(-0.105638534, -0.12675141, -0.020568902, 0.9860789)
-bones/3/rotation = Quaternion(0.0476469, 0.038108096, -0.002902279, 0.9981328)
-bones/4/rotation = Quaternion(-0.08847121, 0.15637168, 0.04767561, 0.9825721)
-bones/5/rotation = Quaternion(0.002825129, -0.038151424, 0.00017207417, 0.99926794)
-bones/10/rotation = Quaternion(0.054018077, 0.098277204, -0.9809504, 0.15861918)
-bones/11/rotation = Quaternion(0.09524924, 0.05291368, -0.13766381, 0.98446757)
-bones/12/rotation = Quaternion(0.048533034, -0.11355467, 0.9770474, 0.17357498)
-bones/13/rotation = Quaternion(0.11538124, -0.05334228, 0.1686208, 0.9774502)
-bones/14/position = Vector3(1.0835302, -1.1212126, -0.30725467)
-bones/16/position = Vector3(-1.0667179, -1.1049544, -0.33321747)
+bones/1/position = Vector3(0.12385489, 3.835267, 0.10680358)
+bones/2/rotation = Quaternion(-0.114389546, -0.10784862, -0.008811543, 0.9875253)
+bones/3/rotation = Quaternion(0.068623275, 0.038061325, -0.0041800006, 0.99690765)
+bones/4/rotation = Quaternion(-0.09131249, 0.17326291, 0.058851924, 0.978866)
+bones/5/rotation = Quaternion(0.002824995, -0.038151424, 0.00017206695, 0.99926794)
+bones/10/rotation = Quaternion(0.053729396, 0.09468333, -0.9813789, 0.15825193)
+bones/11/rotation = Quaternion(0.0867133, 0.05223206, -0.124762975, 0.98700905)
+bones/12/rotation = Quaternion(0.048707463, -0.10918371, 0.9772114, 0.17539829)
+bones/13/rotation = Quaternion(0.1051198, -0.051998984, 0.15398526, 0.9810884)
+bones/14/position = Vector3(1.117785, -1.1212126, -0.30725467)
+bones/16/position = Vector3(-1.116221, -1.1049544, -0.33321747)
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -394,45 +390,8 @@ shape = SubResource("WorldBoundaryShape3D_hdq63")
 
 [node name="Interactable_Objects" type="Node3D" parent="Static_Objects/NavigationRegion3D"]
 
-[node name="Hideable_Object" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.642804, 1.4387031, 15.508656)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11273956, -0.09347534)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2754829, 0)
-
-[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object" instance=ExtResource("4_uifso")]
-transform = Transform3D(-1.9670125e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.9670125e-08, 0, 0, 0)
-
-[node name="Hideable_Object3" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.24832, 0.600638, 3.70669)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03616333, 0.8176405, 0.07281494)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 0)
-
-[node name="lemari_lowpoly_2" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3" instance=ExtResource("4_uifso")]
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 0, 0.755, 0)
-
 [node name="Hideable_Object4" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 11.6609, 0.600638, 1.32324)
-
-[node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object4" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 1.1649, 3.01463)
-
-[node name="MeshInstance3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object4/CollisionShape3D" index="0"]
-visible = false
-
-[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object4" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 3.346)
 
 [node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object4" instance=ExtResource("4_uifso")]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 1.44317e-07, 0.755376, 3.30158)
@@ -440,39 +399,17 @@ transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 
 [node name="Hideable_Object5" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.0216, 0.600638, -7.83761)
 
-[node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object5" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1649, 2.92833)
-
-[node name="MeshInstance3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object5/CollisionShape3D" index="0"]
-visible = false
-
-[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object5" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 0)
-
 [node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object5" instance=ExtResource("4_uifso")]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 1.44317e-07, 0.755376, 3.30158)
 
 [node name="Hideable_Object6" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 4.90225, 4.23091, 0.137148)
 
-[node name="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object6" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0379028, 1.1649, 2.63818)
-
-[node name="MeshInstance3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object6/CollisionShape3D" index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.804699)
-visible = false
-
-[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object6" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 3.47515)
-
 [node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object6" instance=ExtResource("4_uifso")]
 transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 1.44317e-07, 0.755376, 3.30158)
 
 [node name="Hideable_Object2" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.21977, 4.38571, 6.92453)
-
-[node name="Hide_Marker" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object2" index="1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.380812, -1.77824, 0.183705)
 
 [node name="Reference_Image" type="Node" parent="."]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://chl54c4kuw3sa"
-path="res://.godot/imported/lemari_lowpoly_.fbx-0e04c62eea8d533491b3bc70fe4203e0.scn"
+path="res://.godot/imported/lemari_lowpoly_.fbx-5fee2d4422982e253861e0c4bcb2c3c5.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/lemari_lowpoly_.fbx"
-dest_files=["res://.godot/imported/lemari_lowpoly_.fbx-0e04c62eea8d533491b3bc70fe4203e0.scn"]
+source_file="res://assets/models/objects/lemari_lowpoly_.fbx"
+dest_files=["res://.godot/imported/lemari_lowpoly_.fbx-5fee2d4422982e253861e0c4bcb2c3c5.scn"]
 
 [params]
 
