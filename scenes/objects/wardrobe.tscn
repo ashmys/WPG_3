@@ -166,19 +166,19 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wauap")
 
-[node name="lemari_lowpoly_" type="Node3D"]
+[node name="Wardrobe" type="Node3D"]
 
 [node name="Cube_001" type="MeshInstance3D" parent="."]
-transform = Transform3D(122.2312, 0, 0, 0, -2.4871719e-05, 308.4068, 0, -208.63908, -3.676496e-05, 0, 2.972689, 1.786362e-08)
+transform = Transform3D(122.2312, 0, 0, 0, -2.4871719e-05, 308.4068, 0, -208.63908, -3.676496e-05, 0, 6.014881, 1.786362e-08)
 mesh = SubResource("ArrayMesh_bgfdv")
 skeleton = NodePath("")
 
 [node name="Cube_004" type="MeshInstance3D" parent="."]
-transform = Transform3D(100, 0, 0, 0, -1.0998423e-05, 99.99999, 0, -92.26145, -1.1920929e-05, 0.84371346, 0, 1.5616236)
+transform = Transform3D(100, 0, 0, 0, -1.0998423e-05, 99.99999, 0, -92.26145, -1.1920929e-05, 0.84371346, 3.0421925, 1.5616236)
 mesh = SubResource("ArrayMesh_s7tlp")
 skeleton = NodePath("")
 
 [node name="Cube_005" type="MeshInstance3D" parent="."]
-transform = Transform3D(97.1516, -21.863546, 0, -2.824948e-06, -1.0685144e-05, 99.99999, -23.69738, -89.63348, -1.1920929e-05, 0.84371346, 0, -1.5616236)
+transform = Transform3D(97.1516, -21.863546, 0, -2.824948e-06, -1.0685144e-05, 99.99999, -23.69738, -89.63348, -1.1920929e-05, 0.84371346, 3.0421925, -1.5616236)
 mesh = SubResource("ArrayMesh_mulhc")
 skeleton = NodePath("")
