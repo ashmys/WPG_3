@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buxihdq10edob"
-path.s3tc="res://.godot/imported/valeria_Pants Base Color.png-9cb07f4823b3817330fc5f77e8e88b11.s3tc.ctex"
+uid="uid://ckaiiaworrjq3"
+path.s3tc="res://.godot/imported/Bobby-anim_1.png-b8ae2a25dbd73b60c34eb166ce922902.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a307f60ca5a2a377e4749ac39d33069a"
+"md5": "f6e31f3fe0cd51e4b731090be27dec18"
 }
 
 [deps]
 
-source_file="res://Assets/models/characters/valeria_Pants Base Color.png"
-dest_files=["res://.godot/imported/valeria_Pants Base Color.png-9cb07f4823b3817330fc5f77e8e88b11.s3tc.ctex"]
+source_file="res://Assets/models/characters/Bobby-anim_1.png"
+dest_files=["res://.godot/imported/Bobby-anim_1.png-b8ae2a25dbd73b60c34eb166ce922902.s3tc.ctex"]
 
 [params]
 
