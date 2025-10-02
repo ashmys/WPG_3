@@ -7,7 +7,7 @@ size = Vector3(1.1112671, 3, 1.7539063)
 
 [sub_resource type="BoxMesh" id="BoxMesh_5fgx8"]
 
-[node name="Hideable_Object" type="StaticBody3D" node_paths=PackedStringArray("hide_marker") groups=["hideable_objects"]]
+[node name="Hideable_Object" type="StaticBody3D" node_paths=PackedStringArray("hide_marker") groups=["hide_object"]]
 script = ExtResource("1_r7i6f")
 hide_marker = NodePath("HidePoint_Marker")
 

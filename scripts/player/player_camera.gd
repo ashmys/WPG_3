@@ -10,7 +10,7 @@ extends Node3D
 var min_vertical_angle: float = -PI / 2
 
 @export_range(0.0, 90.0, 0.1, "radians_as_degrees")
-var max_vertical_angle: float = PI / 4
+var max_vertical_angle: float = PI / 2
 
 # === Nodes ===
 @export_group("Nodes")

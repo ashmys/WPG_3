@@ -1,11 +1,10 @@
-[gd_scene load_steps=17 format=3 uid="uid://dxv5u5emywhmr"]
+[gd_scene load_steps=15 format=3 uid="uid://dxv5u5emywhmr"]
 
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_4n710"]
 [ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="2_bk1ep"]
-[ext_resource type="Script" uid="uid://bcgjdyntdov1i" path="res://Scripts/hideable_object.gd" id="3_5rbkw"]
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="5_nwmp5"]
-[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://Assets/materials/main_map1_v1.1.tres" id="6_tnfjt"]
-[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://Assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
+[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/materials/main_map1_v1.1.tres" id="6_tnfjt"]
+[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="8_bk1ep"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]
@@ -66,29 +65,29 @@ player = NodePath("../Player")
 game_overUI = NodePath("../../CanvasLayer/GameOver")
 
 [node name="Skeleton3D" parent="Entity/enemy/Bobby/Root" index="0"]
-bones/2/rotation = Quaternion(-0.046013113, -0.05578619, 0.10852468, 0.9914601)
-bones/3/rotation = Quaternion(0.09837688, 0.7048129, -0.10250595, 0.69502044)
-bones/5/rotation = Quaternion(-0.11007688, 0.9916728, 0.042645145, -0.051475238)
-bones/6/rotation = Quaternion(0.10126238, -0.7043626, 0.10549563, 0.69461495)
-bones/13/rotation = Quaternion(0.074832395, 0.012644291, -0.99004686, 0.11852212)
-bones/14/rotation = Quaternion(0.09997158, 0.0313022, -0.12461432, 0.9866596)
-bones/16/position = Vector3(0.009714032, -0.014688408, 0.0005113386)
-bones/19/rotation = Quaternion(0.07483242, -0.012642771, 0.99004716, 0.118520126)
-bones/20/rotation = Quaternion(0.099968575, -0.031301767, 0.12461441, 0.98665994)
-bones/22/position = Vector3(-0.009714033, -0.014688437, 0.00051133905)
+bones/2/rotation = Quaternion(-0.050439663, -0.06134684, 0.10598328, 0.99119127)
+bones/3/rotation = Quaternion(0.0937361, 0.70550966, -0.097695224, 0.6956474)
+bones/5/rotation = Quaternion(-0.111653715, 0.99194956, 0.038103454, -0.04601987)
+bones/6/rotation = Quaternion(0.104318015, -0.70387197, 0.10865997, 0.69417226)
+bones/13/rotation = Quaternion(0.07662397, 0.011000715, -0.98965657, 0.12077965)
+bones/14/rotation = Quaternion(0.104872845, 0.03118436, -0.12922238, 0.98556125)
+bones/16/position = Vector3(0.009716535, -0.014572495, 0.00093213096)
+bones/19/rotation = Quaternion(0.07662402, -0.0109991515, 0.9896568, 0.12077735)
+bones/20/rotation = Quaternion(0.10486184, -0.031184517, 0.1292121, 0.9855637)
+bones/22/position = Vector3(-0.009716535, -0.0145725235, 0.0009321313)
 
 [node name="Skeleton3D" parent="Entity/enemy/Valeria/Armature" index="0"]
-bones/1/position = Vector3(0.047608, 3.8256571, 0.10680357)
-bones/2/rotation = Quaternion(-0.12906012, -0.12701105, -0.021925706, 0.9832248)
-bones/3/rotation = Quaternion(0.094631985, 0.037979748, -0.00576425, 0.99477094)
-bones/4/rotation = Quaternion(-0.08833716, 0.15581155, 0.047297575, 0.98269135)
-bones/5/rotation = Quaternion(0.002824578, -0.03815144, 0.00017204507, 0.99926794)
-bones/10/rotation = Quaternion(0.062041264, 0.077449635, -0.9842516, 0.1462917)
-bones/11/rotation = Quaternion(0.06987896, 0.052053325, -0.09683311, 0.99147916)
-bones/12/rotation = Quaternion(0.057050783, -0.09301662, 0.9789523, 0.17246918)
-bones/13/rotation = Quaternion(0.092176855, -0.0511059, 0.12871695, 0.9860647)
-bones/14/position = Vector3(1.1371189, -1.1320716, -0.2617141)
-bones/16/position = Vector3(-1.1693512, -1.1113945, -0.28312412)
+bones/1/position = Vector3(-0.016253598, 3.8335562, 0.10680357)
+bones/2/rotation = Quaternion(-0.08668849, -0.14449878, -0.030559717, 0.9852266)
+bones/3/rotation = Quaternion(0.0053762547, 0.038151037, -0.00032747127, 0.9992575)
+bones/4/rotation = Quaternion(-0.08612131, 0.1401463, 0.03720565, 0.9856764)
+bones/5/rotation = Quaternion(0.0028247791, -0.03815142, 0.00017205322, 0.99926794)
+bones/10/rotation = Quaternion(0.055187598, 0.09783486, -0.98115546, 0.15721528)
+bones/11/rotation = Quaternion(0.09756436, 0.05329724, -0.1403414, 0.983842)
+bones/12/rotation = Quaternion(0.04973158, -0.11370709, 0.9772138, 0.1721941)
+bones/13/rotation = Quaternion(0.11916947, -0.053914145, 0.17320877, 0.9761612)
+bones/14/position = Vector3(1.0691361, -1.1227261, -0.30093586)
+bones/16/position = Vector3(-1.0471448, -1.1057659, -0.3266822)
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -390,101 +389,14 @@ shape = SubResource("WorldBoundaryShape3D_hdq63")
 
 [node name="Interactable_Objects" type="Node3D" parent="Static_Objects/NavigationRegion3D"]
 
-[node name="Hideable_Object" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.642804, 1.4387031, 15.508656)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11273956, -0.09347534)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2754829, 0)
-
-[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1.9670125e-08, 0, 0.45, 0, 0.45, 0, -0.45, 0, -1.9670125e-08, 0, 0, 0)
-script = null
-
-[node name="Hideable_Object3" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.24832, 0.600638, 3.70669)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03616333, 0.8176405, 0.07281494)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 0)
-
-[node name="lemari_lowpoly_2" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 0, 0.755, 0)
-script = null
-
 [node name="Hideable_Object4" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 11.6609, 0.600638, 1.32324)
-
-[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object4"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 1.44317e-07, 0.755376, 3.30158)
-script = null
 
 [node name="Hideable_Object5" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 10.0216, 0.600638, -7.83761)
 
-[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object5"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 1.44317e-07, 0.755376, 3.30158)
-script = null
-
 [node name="Hideable_Object6" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(1, 0, 7.10543e-15, 0, 1, 0, -7.10543e-15, 0, 1, 4.90225, 4.23091, 0.137148)
-
-[node name="lemari_lowpoly_" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object6"]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.4, 0, -0.4, 0, -1.74846e-08, 1.44317e-07, 0.755376, 3.30158)
-script = null
 
 [node name="Hideable_Object2" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.21977, 4.38571, 6.92453)
@@ -562,7 +474,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7005, 4.69583, 1.74288)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("8_bk1ep")]
-visible = false
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
@@ -570,9 +481,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -149.5
+offset_left = -245.0
 offset_top = 210.0
-offset_right = 149.5
+offset_right = 245.0
 offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2

@@ -29,7 +29,8 @@ window/size/mode=2
 [global_group]
 
 player=""
-hideable_objects=""
+pickup_object=""
+hide_object=""
 
 [input]
 

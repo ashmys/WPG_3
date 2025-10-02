@@ -12,5 +12,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006011963, 1.5, 0)
 [node name="Mesh_Placeholder" parent="." index="1"]
 visible = false
 
-[node name="lemari_lowpoly_" parent="." index="3" instance=ExtResource("2_sxnmx")]
+[node name="Wardrobe" parent="." index="3" instance=ExtResource("2_sxnmx")]
 transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 0, 0, 0.45, 0, 0, 0)

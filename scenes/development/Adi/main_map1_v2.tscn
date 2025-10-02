@@ -1,18 +1,22 @@
-[gd_scene load_steps=15 format=3 uid="uid://w8ynvalq0syi"]
+[gd_scene load_steps=19 format=3 uid="uid://w8ynvalq0syi"]
 
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_lvxuh"]
+[ext_resource type="Texture2D" uid="uid://sdh2o7jct31v" path="res://assets/panorama/qwantani_moon_noon_puresky_1k.hdr" id="1_u7aas"]
 [ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="2_u7aas"]
-[ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/development/Adi/hideable_objects/ho_wardrobe.tscn" id="3_aprpj"]
+[ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="3_aprpj"]
+[ext_resource type="PackedScene" uid="uid://bl01dr3iti3hk" path="res://scenes/interactable_objects/pickup_objects/battery.tscn" id="5_8aleu"]
 [ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/materials/main_map1_v1.1.tres" id="5_pdv1o"]
-[ext_resource type="PackedScene" path="res://scenes/game_over.tscn" id="6_lvxuh"]
+[ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="6_lvxuh"]
 [ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="6_qkde4"]
+[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="8_p380l"]
+[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="10_pdv1o"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]
-sky_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
-ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
+panorama = ExtResource("1_u7aas")
+energy_multiplier = 0.5
 
 [sub_resource type="Sky" id="Sky_7iucf"]
-sky_material = SubResource("ProceduralSkyMaterial_k2e0g")
+sky_material = SubResource("PanoramaSkyMaterial_p380l")
 
 [sub_resource type="Environment" id="Environment_pcnys"]
 background_mode = 2
@@ -21,8 +25,9 @@ tonemap_mode = 2
 glow_enabled = true
 fog_enabled = true
 fog_mode = 1
+fog_light_color = Color(0.008676162, 0.034221668, 0.08469521, 1)
 fog_density = 1.0
-fog_sky_affect = 0.552
+fog_sky_affect = 0.9
 fog_depth_begin = 0.0
 
 [sub_resource type="NavigationMesh" id="NavigationMesh_vib1c"]
@@ -50,8 +55,10 @@ size = Vector2(50, 50)
 environment = SubResource("Environment_pcnys")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Shader"]
-transform = Transform3D(-0.8660253, -0.41933548, 0.27231967, 0, 0.5446391, 0.83867055, -0.50000024, 0.7263099, -0.47167122, 0, 0, 0)
+transform = Transform3D(-0.80757445, -0.54983777, -0.21331248, 0.04685862, -0.42036682, 0.9061436, -0.5879014, 0.7217828, 0.36524218, 0, 23.727104, 0)
+light_energy = 0.025
 shadow_enabled = true
+shadow_transmittance_bias = 1.04
 
 [node name="Entity" type="Node" parent="."]
 
@@ -72,29 +79,29 @@ game_overUI = NodePath("../../CanvasLayer/GameOver")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -1.09247, 6.53424)
 
 [node name="Skeleton3D" parent="Entity/enemy/Bobby/Root" index="0"]
-bones/2/rotation = Quaternion(-0.04343204, -0.052605793, 0.109541506, 0.9916386)
-bones/3/rotation = Quaternion(0.10031578, 0.7045117, -0.10451505, 0.69474936)
-bones/5/rotation = Quaternion(-0.10868323, 0.9915033, 0.045130182, -0.05542963)
-bones/6/rotation = Quaternion(0.09883794, -0.7047418, 0.10298367, 0.6949565)
-bones/13/rotation = Quaternion(0.07457154, 0.01232345, -0.9898084, 0.120691985)
-bones/14/rotation = Quaternion(0.09832206, 0.030916689, -0.122484535, 0.9871042)
-bones/16/position = Vector3(0.009715332, -0.014762088, 0.00013875976)
-bones/19/rotation = Quaternion(0.07457158, -0.012321979, 0.9898087, 0.120689854)
-bones/20/rotation = Quaternion(0.098319806, -0.030916428, 0.12248131, 0.9871047)
-bones/22/position = Vector3(-0.009715332, -0.014762117, 0.0001387601)
+bones/2/rotation = Quaternion(-0.036586132, -0.044215847, 0.1120329, 0.992046)
+bones/3/rotation = Quaternion(0.10507109, 0.70374894, -0.10943943, 0.6940609)
+bones/5/rotation = Quaternion(-0.105166964, 0.9911182, 0.052038647, -0.06258376)
+bones/6/rotation = Quaternion(0.09236936, -0.70570844, 0.09627799, 0.6958261)
+bones/13/rotation = Quaternion(0.072609894, 0.025494644, -0.98705244, 0.14073126)
+bones/14/rotation = Quaternion(0.13011014, 0.03089048, -0.15939392, 0.978116)
+bones/16/position = Vector3(0.009732762, -0.014516966, 0.0005869615)
+bones/19/rotation = Quaternion(0.07260997, -0.02549324, 0.9870529, 0.14072914)
+bones/20/rotation = Quaternion(0.13032116, -0.030899653, 0.15949476, 0.9780711)
+bones/22/position = Vector3(-0.009732764, -0.014516996, 0.0005869618)
 
 [node name="Skeleton3D" parent="Entity/enemy/Valeria/Armature" index="0"]
-bones/1/position = Vector3(-0.04241198, 3.8210378, 0.106803566)
-bones/2/rotation = Quaternion(-0.12703829, -0.14947547, -0.03693551, 0.9798746)
-bones/3/rotation = Quaternion(0.085150786, 0.038012505, -0.0051867333, 0.9956292)
-bones/4/rotation = Quaternion(-0.12905696, 0.1319692, 0.03479103, 0.9822006)
-bones/5/rotation = Quaternion(0.09123585, -0.037991874, 0.0055574137, 0.9950889)
-bones/10/rotation = Quaternion(0.080732726, 0.05438089, -0.98752993, 0.123731956)
-bones/11/rotation = Quaternion(0.06445593, 0.053552184, -0.085372165, 0.9928189)
-bones/12/rotation = Quaternion(0.076010056, -0.07851765, 0.9799222, 0.1667632)
-bones/13/rotation = Quaternion(0.10832902, -0.05236757, 0.14371882, 0.9822767)
-bones/14/position = Vector3(1.0588615, -1.1542445, -0.16893798)
-bones/16/position = Vector3(-1.0911628, -1.123922, -0.18406129)
+bones/1/position = Vector3(-0.03767011, 3.8211572, 0.106803544)
+bones/2/rotation = Quaternion(-0.1275435, -0.14829278, -0.03617613, 0.98001695)
+bones/3/rotation = Quaternion(0.08648683, 0.038008098, -0.005268114, 0.9955138)
+bones/4/rotation = Quaternion(-0.128122, 0.13314475, 0.035533454, 0.9821378)
+bones/5/rotation = Quaternion(0.089069076, -0.037999384, 0.0054254285, 0.9952855)
+bones/10/rotation = Quaternion(0.080744505, 0.054266848, -0.98754454, 0.123658255)
+bones/11/rotation = Quaternion(0.06435777, 0.053536072, -0.085252695, 0.99283636)
+bones/12/rotation = Quaternion(0.075954236, -0.07836785, 0.97993016, 0.16681214)
+bones/13/rotation = Quaternion(0.10782313, -0.05232653, 0.14305675, 0.9824311)
+bones/14/position = Vector3(1.0597473, -1.1541158, -0.16946211)
+bones/16/position = Vector3(-1.0934457, -1.1238915, -0.184425)
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -394,6 +401,17 @@ shape = SubResource("WorldBoundaryShape3D_hdq63")
 [node name="HO_Wardrobe" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("3_aprpj")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.737052, 0, 5.8039775)
 
+[node name="Battery" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_8aleu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 13)
+
+[node name="Battery2" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_8aleu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.879185, 0, 13)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Static_Objects"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.645449, 2.9830992, 4.0014086)
+shadow_enabled = true
+omni_range = 30.998247
+
 [node name="Reference_Image" type="Node" parent="."]
 
 [node name="IMG_Lantai 1" type="MeshInstance3D" parent="Reference_Image"]
@@ -469,6 +487,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7005, 4.69583, 1.74288)
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("6_lvxuh")]
 visible = false
 
+[node name="GameWin" parent="CanvasLayer" instance=ExtResource("8_p380l")]
+visible = false
+
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -488,5 +509,36 @@ theme_override_font_sizes/font_size = 32
 text = "Left Click or Press [E] to interect"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="BoxContainer2" type="BoxContainer" parent="CanvasLayer"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -149.5
+offset_right = 149.5
+offset_bottom = 45.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="TimerText" type="Label" parent="CanvasLayer/BoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 92
+text = "00:00"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Systems" type="Node" parent="."]
+
+[node name="GameManager" type="Node" parent="Systems" node_paths=PackedStringArray("timer", "timerText", "game_winUI")]
+script = ExtResource("10_pdv1o")
+game_scene = null
+timer = NodePath("Timer")
+timerText = NodePath("../../CanvasLayer/BoxContainer2/TimerText")
+game_winUI = NodePath("../../CanvasLayer/GameWin")
+
+[node name="Timer" type="Timer" parent="Systems/GameManager"]
+one_shot = true
+
+[connection signal="timeout" from="Systems/GameManager/Timer" to="Systems/GameManager" method="_on_timer_timeout"]
 
 [editable path="Entity/enemy"]
