@@ -35,15 +35,37 @@ var wait_timer = 0.0
 var lost_sight_timer: float = 0.0
 var lost_sight_grace: float = 2.0
 
+# anti-stuck
+var stuck_timer = 0.0
+var last_position = Vector3.ZERO
+
 func _ready() -> void:
 	game_overUI.visible = false
-	
+
+	visible = false
+	await get_tree().create_timer(2.0).timeout
+	visible = true
+
 	if !nav_agent or !player or points.is_empty():
 		push_error("Missing references: nav_agent, player, or patrol points.")
 		return
 
-	current_patrol_point = points[patrol_route[patrol_index]]
-	nav_agent.set_target_position(current_patrol_point.global_position)
+	current_patrol_point = get_patrol_marker(patrol_index)
+	if current_patrol_point:
+		nav_agent.set_target_position(current_patrol_point.global_position)
+	else:
+		push_warning("No valid initial patrol point found.")
+
+func get_patrol_marker(route_index: int) -> Marker3D:
+	if points.is_empty():
+		return null
+	var route_val = patrol_route[route_index] if route_index < patrol_route.size() else patrol_route[route_index % patrol_route.size()]
+	if route_val >= 0 and route_val < points.size():
+		return points[route_val]
+	else:
+		var safe_idx = int(route_val) % points.size()
+		push_warning("patrol_route value %s out of range -> using %d instead" % [route_val, safe_idx])
+		return points[safe_idx]
 
 func handle_animation(delta):
 	match curAnim:
@@ -66,15 +88,13 @@ func _physics_process(delta: float) -> void:
 	else:
 		velocity.y = 0
 
-	# deteksi player
 	var player_visible = false
-	if view.overlaps_body(player):
+	if view and view.overlaps_body(player):
 		var query = PhysicsRayQueryParameters3D.create(global_position, player.global_position)
 		var result = get_world_3d().direct_space_state.intersect_ray(query)
-		if result and result["collider"] == player:
+		if result and result.has("collider") and result["collider"] == player:
 			player_visible = true
 
-	# update state
 	if player_visible:
 		state = State.CHASE
 		lost_sight_timer = 0.0
@@ -91,10 +111,18 @@ func _physics_process(delta: float) -> void:
 			curAnim = WALK
 			if nav_agent.is_navigation_finished():
 				patrol_index = (patrol_index + 1) % patrol_route.size()
-				current_patrol_point = points[patrol_route[patrol_index]]
-				nav_agent.set_target_position(current_patrol_point.global_position)
+				current_patrol_point = get_patrol_marker(patrol_index)
+				if current_patrol_point:
+					nav_agent.set_target_position(current_patrol_point.global_position)
+				else:
+					push_warning("patrol point null after increment")
 			else:
-				act(current_patrol_point.global_position, speed_walk, delta)
+				if current_patrol_point:
+					act(current_patrol_point.global_position, speed_walk, delta)
+				else:
+					current_patrol_point = get_patrol_marker(patrol_index)
+					if current_patrol_point:
+						nav_agent.set_target_position(current_patrol_point.global_position)
 
 		State.CHASE:
 			curAnim = RUN
@@ -117,17 +145,30 @@ func _physics_process(delta: float) -> void:
 			velocity.z = 0
 			if wait_timer >= wait_duration:
 				state = State.PATROL
+				if current_patrol_point:
+					nav_agent.set_target_position(current_patrol_point.global_position)
+
+	# anti-stuck
+	if global_position.distance_to(last_position) < 0.02:
+		stuck_timer += delta
+		if stuck_timer > 2.0:
+			patrol_index = (patrol_index + 1) % patrol_route.size()
+			current_patrol_point = get_patrol_marker(patrol_index)
+			if current_patrol_point:
 				nav_agent.set_target_position(current_patrol_point.global_position)
+			stuck_timer = 0.0
+	else:
+		stuck_timer = 0.0
+	last_position = global_position
 
 	move_and_slide()
 	handle_animation(delta)
 
-	# game over jika ketemu player
 	if global_position.distance_to(player.global_position) < 1.5:
 		game_overUI.visible = true
 		state = State.WAIT
 		await get_tree().create_timer(2.0).timeout
-		get_tree().reload_current_scene()
+		get_tree().call_deferred("reload_current_scene")
 
 func act(target: Vector3, speed: float, delta: float, continuous: bool = false) -> void:
 	if continuous:
@@ -135,18 +176,29 @@ func act(target: Vector3, speed: float, delta: float, continuous: bool = false) 
 	elif nav_agent.is_navigation_finished():
 		nav_agent.set_target_position(target)
 
-	var destination = nav_agent.get_next_path_position()
-	if global_position.distance_to(target) < 0.5:
+	var destination: Vector3 = nav_agent.get_next_path_position()
+	if destination.is_equal_approx(Vector3.ZERO):
+		destination = nav_agent.get_target_position() if nav_agent.has_method("get_target_position") else target
+
+	if global_position.distance_to(destination) < 0.5:
 		velocity.x = 0
 		velocity.z = 0
 		return
 
-	var dir = (destination - global_position).normalized()
+	var diff = destination - global_position
+	if diff.length() <= 0.001:
+		velocity.x = 0
+		velocity.z = 0
+		return
+
+	var dir = diff.normalized()
 	velocity.x = dir.x * speed
 	velocity.z = dir.z * speed
 	face_target(destination, delta)
 
 func face_target(target: Vector3, delta: float) -> void:
-	var dir = (target - global_position).normalized()
+	var dir = (target - global_position)
 	dir.y = 0
-	rotation.y = lerp_angle(rotation.y, atan2(dir.x, dir.z), 5.0 * delta)
+	if dir.length() > 0.001:
+		dir = dir.normalized()
+		rotation.y = lerp_angle(rotation.y, atan2(dir.x, dir.z), 5.0 * delta)
