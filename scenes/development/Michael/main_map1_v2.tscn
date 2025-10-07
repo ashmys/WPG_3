@@ -29,9 +29,6 @@ agent_radius = 0.75
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_hdq63"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hdq63"]
-size = Vector3(1.5686646, 2.8388214, 1.1694946)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_hdq63"]
 material = ExtResource("6_tnfjt")
 size = Vector2(50, 50)

@@ -200,7 +200,7 @@ func _physics_process(delta: float) -> void:
 	update_tree()
 
 	# Cek apakah jarak sudah cukup dekat dengan player
-	if global_position.distance_to(player.global_position) < 1.5:
+	if global_position.distance_to(player.global_position) < 1.0:
 		game_overUI.visible = true
 		state = State.WAIT  # biar stop gerak setelah tangkap
 		await get_tree().create_timer(2.0).timeout
