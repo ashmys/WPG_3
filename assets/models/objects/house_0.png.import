@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds4vw5ugpw8ci"
-path.s3tc="res://.godot/imported/tekstur_selimutkasur.png-8cf94eebe1ee0a908d9437e3f7be5d5b.s3tc.ctex"
+uid="uid://dw53piyqodp88"
+path.s3tc="res://.godot/imported/house_0.png-e076b4e0919ab2346f8976ca495e21a1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "bfd7d49e3e0d9c4f4a77d7418f296d2b"
+}
 
 [deps]
 
-source_file="res://assets/textures/tekstur_selimutkasur.png"
-dest_files=["res://.godot/imported/tekstur_selimutkasur.png-8cf94eebe1ee0a908d9437e3f7be5d5b.s3tc.ctex"]
+source_file="res://assets/models/objects/house_0.png"
+dest_files=["res://.godot/imported/house_0.png-e076b4e0919ab2346f8976ca495e21a1.s3tc.ctex"]
 
 [params]
 

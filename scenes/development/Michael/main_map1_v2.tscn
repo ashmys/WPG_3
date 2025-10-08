@@ -1,12 +1,10 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxv5u5emywhmr"]
+[gd_scene load_steps=15 format=3 uid="uid://dxv5u5emywhmr"]
 
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_4n710"]
-[ext_resource type="Script" uid="uid://bcgjdyntdov1i" path="res://Scripts/hideable_object.gd" id="3_5rbkw"]
-[ext_resource type="PackedScene" uid="uid://cqedg7wws7yno" path="res://scenes/entitys/valeria.tscn" id="3_bk1ep"]
-[ext_resource type="PackedScene" uid="uid://csue1117ed0il" path="res://scenes/entitys/bobby.tscn" id="3_uifso"]
+[ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="2_bk1ep"]
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="5_nwmp5"]
-[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://Assets/materials/main_map1_v1.1.tres" id="6_tnfjt"]
-[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://Assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
+[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/materials/main_map1_v1.1.tres" id="6_tnfjt"]
+[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="8_bk1ep"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]
@@ -53,22 +51,18 @@ shadow_enabled = true
 
 [node name="Entity" type="Node" parent="."]
 
-[node name="EnemyCowok" parent="Entity" node_paths=PackedStringArray("points", "player", "game_overUI") instance=ExtResource("3_uifso")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.076128, 0, 6.7034492)
-points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../../Enemy_Patrol_Marker/Garasi"), NodePath("../../Enemy_Patrol_Marker/KMandi1"), NodePath("../../Enemy_Patrol_Marker/RTamu"), NodePath("../../Enemy_Patrol_Marker/Dapur"), NodePath("../../Enemy_Patrol_Marker/LR"), NodePath("../../Enemy_Patrol_Marker/Kamar1"), NodePath("../../Enemy_Patrol_Marker/DepanTangga"), NodePath("../../Enemy_Patrol_Marker/Kamar2"), NodePath("../../Enemy_Patrol_Marker/KMandi2"), NodePath("../../Enemy_Patrol_Marker/Balkon"), NodePath("../../Enemy_Patrol_Marker/Cuci"), NodePath("../../Enemy_Patrol_Marker/CCTV"), NodePath("../../Enemy_Patrol_Marker/Gudang")]
-player = NodePath("../Player")
-game_overUI = NodePath("../../CanvasLayer/GameOver")
-
-[node name="EnemyCewek" parent="Entity" node_paths=PackedStringArray("points", "player", "game_overUI") instance=ExtResource("3_bk1ep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.718784, 0, 6.7034492)
-points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../../Enemy_Patrol_Marker/Garasi"), NodePath("../../Enemy_Patrol_Marker/KMandi1"), NodePath("../../Enemy_Patrol_Marker/RTamu"), NodePath("../../Enemy_Patrol_Marker/Dapur"), NodePath("../../Enemy_Patrol_Marker/LR"), NodePath("../../Enemy_Patrol_Marker/Kamar1"), NodePath("../../Enemy_Patrol_Marker/DepanTangga"), NodePath("../../Enemy_Patrol_Marker/Kamar2"), NodePath("../../Enemy_Patrol_Marker/KMandi2"), NodePath("../../Enemy_Patrol_Marker/Balkon"), NodePath("../../Enemy_Patrol_Marker/Cuci"), NodePath("../../Enemy_Patrol_Marker/CCTV"), NodePath("../../Enemy_Patrol_Marker/Gudang")]
-player = NodePath("../Player")
-game_overUI = NodePath("../../CanvasLayer/GameOver")
-
 [node name="Player" parent="Entity" node_paths=PackedStringArray("interactText") instance=ExtResource("1_4n710")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9520102, 4.102605, 6.726186)
 can_freefly = true
 interactText = NodePath("../../CanvasLayer/BoxContainer/InteractText")
+
+[node name="enemy" parent="Entity" node_paths=PackedStringArray("nav_agent", "view", "points", "player", "game_overUI") instance=ExtResource("2_bk1ep")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -11.3362, 0.158801, 10.6159)
+nav_agent = NodePath("NavigationAgent3D")
+view = NodePath("Area3D")
+points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../../Enemy_Patrol_Marker/Garasi"), NodePath("../../Enemy_Patrol_Marker/KMandi1"), NodePath("../../Enemy_Patrol_Marker/RTamu"), NodePath("../../Enemy_Patrol_Marker/Dapur"), NodePath("../../Enemy_Patrol_Marker/LR"), NodePath("../../Enemy_Patrol_Marker/Kamar1"), NodePath("../../Enemy_Patrol_Marker/DepanTangga"), NodePath("../../Enemy_Patrol_Marker/Kamar2"), NodePath("../../Enemy_Patrol_Marker/KMandi2"), NodePath("../../Enemy_Patrol_Marker/Balkon"), NodePath("../../Enemy_Patrol_Marker/Cuci"), NodePath("../../Enemy_Patrol_Marker/CCTV"), NodePath("../../Enemy_Patrol_Marker/Gudang")]
+player = NodePath("../Player")
+game_overUI = NodePath("../../CanvasLayer/GameOver")
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -403,28 +397,6 @@ shape = SubResource("WorldBoundaryShape3D_hdq63")
 
 [node name="Interactable_Objects" type="Node3D" parent="Static_Objects/NavigationRegion3D"]
 
-[node name="Hideable_Object" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.642804, 1.4387031, 15.508656)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11273956, -0.09347534)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2754829, 0)
-
-[node name="Hideable_Object3" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.24832, 0.600638, 3.70669)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03616333, 0.8176405, 0.07281494)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 0)
-
 [node name="Hideable_Object4" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 11.6609, 0.600638, 1.32324)
 
@@ -510,7 +482,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.7005, 3.5993433, 1.74288)
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="GameOver" parent="CanvasLayer" instance=ExtResource("8_bk1ep")]
-visible = false
 
 [node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
 anchors_preset = 8
@@ -518,9 +489,9 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -149.5
+offset_left = -245.0
 offset_top = 210.0
-offset_right = 149.5
+offset_right = 245.0
 offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2

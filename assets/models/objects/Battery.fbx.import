@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bff7tevw2n75x"
-path="res://.godot/imported/Furniture.fbx-fc82a61791a7c130161c8be7521436c5.scn"
+uid="uid://b8f0a6woc80da"
+path="res://.godot/imported/Battery.fbx-e826aa82f2a8d682a2efcedf0af8ad2a.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/Furniture.fbx"
-dest_files=["res://.godot/imported/Furniture.fbx-fc82a61791a7c130161c8be7521436c5.scn"]
+source_file="res://assets/models/objects/Battery.fbx"
+dest_files=["res://.godot/imported/Battery.fbx-e826aa82f2a8d682a2efcedf0af8ad2a.scn"]
 
 [params]
 

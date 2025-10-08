@@ -2,17 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ds4vw5ugpw8ci"
-path.s3tc="res://.godot/imported/tekstur_selimutkasur.png-8cf94eebe1ee0a908d9437e3f7be5d5b.s3tc.ctex"
+uid="uid://kgnjglu8qtvc"
+path.s3tc="res://.godot/imported/Bed_0.png-8566a2c159936860b51cf23423ea936b.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
+generator_parameters={
+"md5": "a7f0b705e130a1f8605a68585041146c"
+}
 
 [deps]
 
-source_file="res://assets/textures/tekstur_selimutkasur.png"
-dest_files=["res://.godot/imported/tekstur_selimutkasur.png-8cf94eebe1ee0a908d9437e3f7be5d5b.s3tc.ctex"]
+source_file="res://assets/models/objects/Bed_0.png"
+dest_files=["res://.godot/imported/Bed_0.png-8566a2c159936860b51cf23423ea936b.s3tc.ctex"]
 
 [params]
 
