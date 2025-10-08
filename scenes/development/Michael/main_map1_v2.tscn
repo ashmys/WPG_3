@@ -52,18 +52,6 @@ shadow_enabled = true
 
 [node name="Entity" type="Node" parent="."]
 
-[node name="EnemyCowok" parent="Entity" node_paths=PackedStringArray("points", "player", "game_overUI") instance=ExtResource("3_uifso")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.076128, 0, 6.7034492)
-points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../../Enemy_Patrol_Marker/Garasi"), NodePath("../../Enemy_Patrol_Marker/KMandi1"), NodePath("../../Enemy_Patrol_Marker/RTamu"), NodePath("../../Enemy_Patrol_Marker/Dapur"), NodePath("../../Enemy_Patrol_Marker/LR"), NodePath("../../Enemy_Patrol_Marker/Kamar1"), NodePath("../../Enemy_Patrol_Marker/DepanTangga"), NodePath("../../Enemy_Patrol_Marker/Kamar2"), NodePath("../../Enemy_Patrol_Marker/KMandi2"), NodePath("../../Enemy_Patrol_Marker/Balkon"), NodePath("../../Enemy_Patrol_Marker/Cuci"), NodePath("../../Enemy_Patrol_Marker/CCTV"), NodePath("../../Enemy_Patrol_Marker/Gudang")]
-player = NodePath("../Player")
-game_overUI = NodePath("../../CanvasLayer/GameOver")
-
-[node name="EnemyCewek" parent="Entity" node_paths=PackedStringArray("points", "player", "game_overUI") instance=ExtResource("3_bk1ep")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.718784, 0, 6.7034492)
-points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../../Enemy_Patrol_Marker/Garasi"), NodePath("../../Enemy_Patrol_Marker/KMandi1"), NodePath("../../Enemy_Patrol_Marker/RTamu"), NodePath("../../Enemy_Patrol_Marker/Dapur"), NodePath("../../Enemy_Patrol_Marker/LR"), NodePath("../../Enemy_Patrol_Marker/Kamar1"), NodePath("../../Enemy_Patrol_Marker/DepanTangga"), NodePath("../../Enemy_Patrol_Marker/Kamar2"), NodePath("../../Enemy_Patrol_Marker/KMandi2"), NodePath("../../Enemy_Patrol_Marker/Balkon"), NodePath("../../Enemy_Patrol_Marker/Cuci"), NodePath("../../Enemy_Patrol_Marker/CCTV"), NodePath("../../Enemy_Patrol_Marker/Gudang")]
-player = NodePath("../Player")
-game_overUI = NodePath("../../CanvasLayer/GameOver")
-
 [node name="Player" parent="Entity" node_paths=PackedStringArray("interactText") instance=ExtResource("1_4n710")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9520102, 4.102605, 6.726186)
 can_freefly = true
@@ -76,31 +64,6 @@ view = NodePath("Area3D")
 points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../../Enemy_Patrol_Marker/Garasi"), NodePath("../../Enemy_Patrol_Marker/KMandi1"), NodePath("../../Enemy_Patrol_Marker/RTamu"), NodePath("../../Enemy_Patrol_Marker/Dapur"), NodePath("../../Enemy_Patrol_Marker/LR"), NodePath("../../Enemy_Patrol_Marker/Kamar1"), NodePath("../../Enemy_Patrol_Marker/DepanTangga"), NodePath("../../Enemy_Patrol_Marker/Kamar2"), NodePath("../../Enemy_Patrol_Marker/KMandi2"), NodePath("../../Enemy_Patrol_Marker/Balkon"), NodePath("../../Enemy_Patrol_Marker/Cuci"), NodePath("../../Enemy_Patrol_Marker/CCTV"), NodePath("../../Enemy_Patrol_Marker/Gudang")]
 player = NodePath("../Player")
 game_overUI = NodePath("../../CanvasLayer/GameOver")
-
-[node name="Skeleton3D" parent="Entity/enemy/Bobby/Root" index="0"]
-bones/2/rotation = Quaternion(-0.050439663, -0.06134684, 0.10598328, 0.99119127)
-bones/3/rotation = Quaternion(0.0937361, 0.70550966, -0.097695224, 0.6956474)
-bones/5/rotation = Quaternion(-0.111653715, 0.99194956, 0.038103454, -0.04601987)
-bones/6/rotation = Quaternion(0.104318015, -0.70387197, 0.10865997, 0.69417226)
-bones/13/rotation = Quaternion(0.07662397, 0.011000715, -0.98965657, 0.12077965)
-bones/14/rotation = Quaternion(0.104872845, 0.03118436, -0.12922238, 0.98556125)
-bones/16/position = Vector3(0.009716535, -0.014572495, 0.00093213096)
-bones/19/rotation = Quaternion(0.07662402, -0.0109991515, 0.9896568, 0.12077735)
-bones/20/rotation = Quaternion(0.10486184, -0.031184517, 0.1292121, 0.9855637)
-bones/22/position = Vector3(-0.009716535, -0.0145725235, 0.0009321313)
-
-[node name="Skeleton3D" parent="Entity/enemy/Valeria/Armature" index="0"]
-bones/1/position = Vector3(-0.016253598, 3.8335562, 0.10680357)
-bones/2/rotation = Quaternion(-0.08668849, -0.14449878, -0.030559717, 0.9852266)
-bones/3/rotation = Quaternion(0.0053762547, 0.038151037, -0.00032747127, 0.9992575)
-bones/4/rotation = Quaternion(-0.08612131, 0.1401463, 0.03720565, 0.9856764)
-bones/5/rotation = Quaternion(0.0028247791, -0.03815142, 0.00017205322, 0.99926794)
-bones/10/rotation = Quaternion(0.055187598, 0.09783486, -0.98115546, 0.15721528)
-bones/11/rotation = Quaternion(0.09756436, 0.05329724, -0.1403414, 0.983842)
-bones/12/rotation = Quaternion(0.04973158, -0.11370709, 0.9772138, 0.1721941)
-bones/13/rotation = Quaternion(0.11916947, -0.053914145, 0.17320877, 0.9761612)
-bones/14/position = Vector3(1.0691361, -1.1227261, -0.30093586)
-bones/16/position = Vector3(-1.0471448, -1.1057659, -0.3266822)
 
 [node name="Static_Objects" type="Node" parent="."]
 
@@ -406,28 +369,6 @@ size = Vector3(7.40333, 0.488144, 14.8693)
 shape = SubResource("WorldBoundaryShape3D_hdq63")
 
 [node name="Interactable_Objects" type="Node3D" parent="Static_Objects/NavigationRegion3D"]
-
-[node name="Hideable_Object" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.642804, 1.4387031, 15.508656)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.11273956, -0.09347534)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.2754829, 0)
-
-[node name="Hideable_Object3" type="StaticBody3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" groups=["hideable_objects"]]
-transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -15.24832, 0.600638, 3.70669)
-script = ExtResource("3_5rbkw")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.03616333, 0.8176405, 0.07281494)
-shape = SubResource("BoxShape3D_hdq63")
-
-[node name="Hide_Marker" type="Marker3D" parent="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object3"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.808205, 0)
 
 [node name="Hideable_Object4" parent="Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("5_nwmp5")]
 transform = Transform3D(1.31134e-07, 0, 1, 0, 1, 0, -1, 0, 1.31134e-07, 11.6609, 0.600638, 1.32324)
