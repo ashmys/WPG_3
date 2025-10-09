@@ -75,7 +75,8 @@ func _apply_movement(delta: float) -> void:
 	is_sprint = can_sprint and Input.is_action_pressed(input_sprint)
 	var current_speed = sprint_speed if is_sprint else base_speed
 
-	var move_dir = Basis(Vector3.UP, head.rotation.y) * Vector3(input_dir.x, 0, input_dir.y)
+	var cam_basis = head.global_transform.basis
+	var move_dir = (cam_basis.x * input_dir.x + cam_basis.z * input_dir.y)
 	if move_dir.length_squared() > 0:
 		move_dir = move_dir.normalized()
 		velocity.x = move_dir.x * current_speed
