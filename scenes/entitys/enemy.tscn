@@ -1619,6 +1619,7 @@ node_connections = [&"output", 0, &"Run", &"Walk", 0, &"Anim Idle", &"Walk", 1, 
 [node name="enemy" type="CharacterBody3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 collision_mask = 3
+floor_block_on_wall = false
 script = ExtResource("1_hghv2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
