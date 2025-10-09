@@ -1,10 +1,11 @@
-[gd_scene load_steps=15 format=3 uid="uid://dxv5u5emywhmr"]
+[gd_scene load_steps=16 format=3 uid="uid://dxv5u5emywhmr"]
 
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_4n710"]
 [ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="2_bk1ep"]
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="5_nwmp5"]
-[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/materials/main_map1_v1.1.tres" id="6_tnfjt"]
-[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
+[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://Assets/materials/main_map1_v1.1.tres" id="6_tnfjt"]
+[ext_resource type="PackedScene" uid="uid://b6os8tyhwtuum" path="res://scenes/interactable_objects/generator.tscn" id="7_4n710"]
+[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://Assets/images/Lantai 2 rumah.jpg" id="7_x1leh"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="8_bk1ep"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]
@@ -502,6 +503,9 @@ theme_override_font_sizes/font_size = 32
 text = "Left Click or Press [E] to interect"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="generator" parent="." instance=ExtResource("7_4n710")]
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 6.8505716, 0.06893492, -0.30562782)
 
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object4"]
 [editable path="Static_Objects/NavigationRegion3D/Interactable_Objects/Hideable_Object5"]

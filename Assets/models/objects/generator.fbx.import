@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cssxh4vu5nvcd"
-path="res://.godot/imported/Sofa.fbx-b532a925902e39dd5ccf253f19dfbd10.scn"
+uid="uid://bgghxwmwnwjfc"
+path="res://.godot/imported/generator.fbx-0af70bdc1e6eccf273b62d53ce1b9dd6.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/Sofa.fbx"
-dest_files=["res://.godot/imported/Sofa.fbx-b532a925902e39dd5ccf253f19dfbd10.scn"]
+source_file="res://Assets/models/objects/generator.fbx"
+dest_files=["res://.godot/imported/generator.fbx-0af70bdc1e6eccf273b62d53ce1b9dd6.scn"]
 
 [params]
 
