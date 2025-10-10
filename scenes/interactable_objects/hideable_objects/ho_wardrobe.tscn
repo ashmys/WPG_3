@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dy6g0jk0v3tym"]
 
-[ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="1_m66bp"]
+[ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/interactable_objects/hideable_objects/hideable_object.tscn" id="1_m66bp"]
 [ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/wardrobe.tscn" id="2_sxnmx"]
 
 [node name="HO_Wardrobe" instance=ExtResource("1_m66bp")]

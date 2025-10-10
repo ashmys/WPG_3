@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=3 uid="uid://b0hwn32tf1x8d"]
 
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="1_e132g"]
-[ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/development/Adi/hideable_object.tscn" id="3_5fgx8"]
-[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://Assets/materials/main_map1_v1.1.tres" id="3_wvgcv"]
+[ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/interactable_objects/hideable_objects/hideable_object.tscn" id="3_5fgx8"]
+[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/materials/main_map1_v1.1.tres" id="3_wvgcv"]
 [ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/wardrobe.tscn" id="4_fam4t"]
-[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://Assets/images/Lantai 2 rumah.jpg" id="4_hdq63"]
+[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="4_hdq63"]
 [ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="4_wxhnw"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_k2e0g"]

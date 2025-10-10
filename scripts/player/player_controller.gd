@@ -1,12 +1,10 @@
 extends CharacterBody3D
 
-# == NODES ==
 @export_group("Nodes")
 @export var player_point: Node3D
 @export var head: Node3D
 @export var collider: CollisionShape3D
 
-# == CONFIGURATION ==
 @export_group("Configs")
 @export var can_move := true
 @export var has_gravity := true
@@ -77,6 +75,7 @@ func _apply_movement(delta: float) -> void:
 
 	var cam_basis = head.global_transform.basis
 	var move_dir = (cam_basis.x * input_dir.x + cam_basis.z * input_dir.y)
+	move_dir.y = 0
 	if move_dir.length_squared() > 0:
 		move_dir = move_dir.normalized()
 		velocity.x = move_dir.x * current_speed

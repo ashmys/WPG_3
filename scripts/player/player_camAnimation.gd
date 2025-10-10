@@ -6,6 +6,7 @@ extends AnimationTree
 # == VAR ==
 enum {RESET,IDLE,WALK,RUN}
 var curAnim := RESET
+var anim_speed := 1.0
 var idle_cooldown := 1.0
 
 func _physics_process(_delta: float) -> void:
@@ -29,3 +30,5 @@ func _physics_process(_delta: float) -> void:
 			set("parameters/Movement/transition_request","Walk")
 		RUN:
 			set("parameters/Movement/transition_request","Run")
+	
+	set("parameters/TimeScale/scale", anim_speed)

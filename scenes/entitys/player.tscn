@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://8a38my28t4v7"]
+[gd_scene load_steps=22 format=3 uid="uid://8a38my28t4v7"]
 
 [ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player/player_camera.gd" id="3_qhqgy"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://scripts/player/player_camAnimation.gd" id="4_tsxeq"]
 [ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/pickup_mechanic.gd" id="5_hucg6"]
 [ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
+[ext_resource type="PackedScene" uid="uid://c1vf1u1lkumnh" path="res://scenes/objects/phone.tscn" id="7_l1ko6"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
 animation = &"Running"
@@ -35,11 +36,14 @@ input_3/reset = true
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsxeq"]
 animation = &"RESET"
 
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_l1ko6"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
 animation = &"Walking"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_csod7"]
-nodes/output/position = Vector2(360, 160)
+graph_offset = Vector2(-329.81277, 19.974724)
+nodes/output/position = Vector2(540, 180)
 nodes/RESET/node = SubResource("AnimationNodeAnimation_tsxeq")
 nodes/RESET/position = Vector2(-320, -20)
 nodes/Walking/node = SubResource("AnimationNodeAnimation_x3yh4")
@@ -50,7 +54,9 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_rlr1k")
 nodes/Animation/position = Vector2(-300, 540)
 nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
 nodes/Movement/position = Vector2(160, 160)
-node_connections = [&"output", 0, &"Movement", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation"]
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_l1ko6")
+nodes/TimeScale/position = Vector2(340, 140)
+node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation", &"TimeScale", 0, &"Movement"]
 
 [sub_resource type="Animation" id="Animation_2nni0"]
 resource_name = "Idle"
@@ -191,6 +197,7 @@ anim_player = NodePath("AnimationPlayer")
 parameters/Movement/current_state = "RESET"
 parameters/Movement/transition_request = ""
 parameters/Movement/current_index = 0
+parameters/TimeScale/scale = 1.0
 script = ExtResource("4_tsxeq")
 player = NodePath("../..")
 head = NodePath("..")
@@ -202,11 +209,13 @@ libraries = {
 }
 playback_default_blend_time = 1.0
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Head"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.9003609)
-shadow_enabled = true
+[node name="phone" parent="Head" instance=ExtResource("7_l1ko6")]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.23243374, -0.36907816, -0.48507154)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/phone"]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.11394608)
 spot_range = 20.0
-spot_angle = 25.0
+spot_angle = 30.0
 
 [node name="Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)

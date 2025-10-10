@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://c30nvnvv7qbj8"]
+
+[ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/interactable_objects/hideable_objects/hideable_object.tscn" id="1_ofvhn"]
+[ext_resource type="PackedScene" uid="uid://bof8lu2cj7bp2" path="res://scenes/objects/bed.tscn" id="2_anam7"]
+
+[node name="Bed" instance=ExtResource("1_ofvhn")]
+
+[node name="Interact_Collision" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.81884766, 0)
+
+[node name="Mesh_Placeholder" parent="." index="1"]
+visible = false
+
+[node name="HidePoint_Marker" parent="." index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.57, 0)
+
+[node name="Bed" parent="." index="3" instance=ExtResource("2_anam7")]
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 37.65, 0, -50, -1.6457338e-06, 0, 0, 0)
