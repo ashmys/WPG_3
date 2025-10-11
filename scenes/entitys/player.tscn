@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://8a38my28t4v7"]
+[gd_scene load_steps=23 format=3 uid="uid://8a38my28t4v7"]
 
 [ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player/player_camera.gd" id="3_qhqgy"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/pickup_mechanic.gd" id="5_hucg6"]
 [ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
 [ext_resource type="PackedScene" uid="uid://c1vf1u1lkumnh" path="res://scenes/objects/phone.tscn" id="7_l1ko6"]
+[ext_resource type="Script" uid="uid://dognjc0ie57wr" path="res://scripts/mechanics/climb_stair.gd" id="8_ft406"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
 animation = &"Running"
@@ -36,13 +37,11 @@ input_3/reset = true
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsxeq"]
 animation = &"RESET"
 
-[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_l1ko6"]
-
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
 animation = &"Walking"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_csod7"]
-graph_offset = Vector2(-329.81277, 19.974724)
+graph_offset = Vector2(-235.42926, 19.483154)
 nodes/output/position = Vector2(540, 180)
 nodes/RESET/node = SubResource("AnimationNodeAnimation_tsxeq")
 nodes/RESET/position = Vector2(-320, -20)
@@ -54,9 +53,7 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_rlr1k")
 nodes/Animation/position = Vector2(-300, 540)
 nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
 nodes/Movement/position = Vector2(160, 160)
-nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_l1ko6")
-nodes/TimeScale/position = Vector2(340, 140)
-node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation", &"TimeScale", 0, &"Movement"]
+node_connections = [&"output", 0, &"Movement", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation"]
 
 [sub_resource type="Animation" id="Animation_2nni0"]
 resource_name = "Idle"
@@ -150,6 +147,9 @@ radius = 0.3
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
 radius = 0.3
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_x3yh4"]
+height = 0.712677
+
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider") groups=["player"]]
 collision_layer = 2
 collision_mask = 3
@@ -169,6 +169,8 @@ transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 
 [node name="Head" type="Node3D" parent="." node_paths=PackedStringArray("player", "player_point")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 script = ExtResource("3_qhqgy")
+min_vertical_angle = -1.5533430342749532
+max_vertical_angle = 1.5533430342749532
 player = NodePath("..")
 player_point = NodePath("../CentralPoint")
 
@@ -193,17 +195,15 @@ player = NodePath("../../..")
 
 [node name="AnimationTree" type="AnimationTree" parent="Head" node_paths=PackedStringArray("player", "head")]
 tree_root = SubResource("AnimationNodeBlendTree_csod7")
-anim_player = NodePath("AnimationPlayer")
+anim_player = NodePath("../AnimationPlayer")
 parameters/Movement/current_state = "RESET"
 parameters/Movement/transition_request = ""
 parameters/Movement/current_index = 0
-parameters/TimeScale/scale = 1.0
 script = ExtResource("4_tsxeq")
 player = NodePath("../..")
 head = NodePath("..")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Head/AnimationTree"]
-root_node = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Head"]
 libraries = {
 &"": SubResource("AnimationLibrary_2nni0")
 }
@@ -224,3 +224,11 @@ shape = SubResource("CapsuleShape3D_g2els")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Collider"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_g2els")
+
+[node name="ClimbStair_Area3D" type="Area3D" parent="." node_paths=PackedStringArray("chara")]
+script = ExtResource("8_ft406")
+chara = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClimbStair_Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35871887, 0)
+shape = SubResource("CylinderShape3D_x3yh4")

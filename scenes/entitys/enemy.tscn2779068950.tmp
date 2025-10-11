@@ -1,0 +1,119 @@
+[gd_scene load_steps=13 format=3 uid="uid://jc5brxiy3gq7"]
+
+[ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Script" uid="uid://gspyubnm75dm" path="res://scripts/enemy/enemy_animation.gd" id="2_otfum"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
+radius = 0.3
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_kxjud"]
+radius = 0.3
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7p1mj"]
+size = Vector3(10, 5, 25)
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
+animation = &"Running"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l1ko6"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ft406"]
+xfade_time = 0.3
+input_0/name = "RESET"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "Idle"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "Walk"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+input_3/name = "Run"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsxeq"]
+animation = &"RESET"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_l1ko6"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
+animation = &"Walking"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_jxmnh"]
+graph_offset = Vector2(-394.53494, -32.857666)
+nodes/output/position = Vector2(540, 180)
+nodes/RESET/node = SubResource("AnimationNodeAnimation_tsxeq")
+nodes/RESET/position = Vector2(-320, -20)
+nodes/Walking/node = SubResource("AnimationNodeAnimation_x3yh4")
+nodes/Walking/position = Vector2(-300, 360)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_l1ko6")
+nodes/Idle/position = Vector2(-300, 160)
+nodes/Animation/node = SubResource("AnimationNodeAnimation_rlr1k")
+nodes/Animation/position = Vector2(-300, 540)
+nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
+nodes/Movement/position = Vector2(160, 160)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_l1ko6")
+nodes/TimeScale/position = Vector2(340, 140)
+node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation", &"TimeScale", 0, &"Movement"]
+
+[node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent", "area_view", "ray_view", "anim_tree")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
+collision_mask = 3
+wall_min_slide_angle = 0.08726646
+floor_block_on_wall = false
+floor_max_angle = 1.4835298
+script = ExtResource("1_hghv2")
+nav_agent = NodePath("NavigationAgent3D")
+area_view = NodePath("head/Area3D")
+ray_view = NodePath("head/RayCast3D")
+state = null
+is_patrol = null
+speed_run = null
+speed_walk = null
+blend_speed = null
+anim_tree = NodePath("AnimationTree")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1, 0)
+shape = SubResource("CapsuleShape3D_7xaro")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_kxjud")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+debug_enabled = true
+
+[node name="head" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
+
+[node name="Area3D" type="Area3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1589744, 0)
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="head/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15026951, 11.979)
+shape = SubResource("BoxShape3D_7p1mj")
+debug_color = Color(0, 0, 0, 1)
+
+[node name="RayCast3D" type="RayCast3D" parent="head"]
+target_position = Vector3(0, 0, 10)
+hit_from_inside = true
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendTree_jxmnh")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Movement/current_state = "RESET"
+parameters/Movement/transition_request = ""
+parameters/Movement/current_index = 0
+parameters/TimeScale/scale = 1.0
+script = ExtResource("2_otfum")
+
+[connection signal="body_entered" from="head/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="head/Area3D" to="." method="_on_area_3d_body_exited"]

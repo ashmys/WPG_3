@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://jc5brxiy3gq7"]
+[gd_scene load_steps=7 format=3 uid="uid://jc5brxiy3gq7"]
 
 [ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_hghv2"]
+[ext_resource type="Script" uid="uid://dognjc0ie57wr" path="res://scripts/mechanics/climb_stair.gd" id="2_otfum"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
 radius = 0.3
@@ -9,14 +10,22 @@ radius = 0.3
 radius = 0.3
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7p1mj"]
-size = Vector3(8.6657715, 3.0753632, 13.875748)
+size = Vector3(10, 5, 25)
 
-[node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent", "view")]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_jxmnh"]
+height = 0.712677
+
+[node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("nav_agent", "area_view", "ray_view")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+collision_layer = 2
 collision_mask = 3
+wall_min_slide_angle = 0.08726646
+floor_block_on_wall = false
+floor_max_angle = 1.4835298
 script = ExtResource("1_hghv2")
 nav_agent = NodePath("NavigationAgent3D")
-view = NodePath("Area3D")
+area_view = NodePath("head/Area3D")
+ray_view = NodePath("head/RayCast3D")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1, 0)
@@ -28,22 +37,29 @@ mesh = SubResource("CapsuleMesh_kxjud")
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
 debug_enabled = true
 
-[node name="Area3D" type="Area3D" parent="." groups=["pemain"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.8589745, 0)
-collision_mask = 3
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3016932, 6.6306076)
-shape = SubResource("BoxShape3D_7p1mj")
-debug_color = Color(0, 0, 0, 1)
-
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 
+[node name="Area3D" type="Area3D" parent="head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.1589744, 0)
+collision_mask = 3
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="head/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.15026951, 11.979)
+shape = SubResource("BoxShape3D_7p1mj")
+debug_color = Color(0, 0, 0, 1)
+
 [node name="RayCast3D" type="RayCast3D" parent="head"]
 target_position = Vector3(0, 0, 10)
-hit_back_faces = false
+hit_from_inside = true
 
-[connection signal="area_entered" from="Area3D" to="." method="_on_area_3d_area_entered"]
-[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
-[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
+[node name="ClimbStair_Area3D" type="Area3D" parent="." node_paths=PackedStringArray("chara")]
+script = ExtResource("2_otfum")
+chara = NodePath("..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ClimbStair_Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35871887, 0)
+shape = SubResource("CylinderShape3D_jxmnh")
+
+[connection signal="body_entered" from="head/Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="head/Area3D" to="." method="_on_area_3d_body_exited"]

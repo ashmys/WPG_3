@@ -982,3 +982,4 @@ libraries = {
 &"": SubResource("AnimationLibrary_7h5v5")
 }
 autoplay = "Idle"
+playback_default_blend_time = 0.3

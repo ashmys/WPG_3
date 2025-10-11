@@ -32,6 +32,7 @@ window/stretch/mode="viewport"
 player=""
 pickup_object=""
 hide_object=""
+stairs=""
 
 [input]
 
