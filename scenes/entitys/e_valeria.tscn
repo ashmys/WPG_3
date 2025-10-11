@@ -1,7 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://yry8nniu7iht"]
 
 [ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="1_vptdu"]
-[ext_resource type="Script" uid="uid://gspyubnm75dm" path="res://scripts/enemy/enemy_animation.gd" id="2_en0je"]
 [ext_resource type="PackedScene" uid="uid://ci3m26biaugbt" path="res://scenes/character_assets/valeria.tscn" id="3_q0kd0"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l1ko6"]
@@ -25,11 +24,13 @@ input_2/reset = true
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
 animation = &"Run"
 
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_vptdu"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
 animation = &"Walk"
 
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_vptdu"]
-graph_offset = Vector2(-690.1386, 135.79614)
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_rjll5"]
+graph_offset = Vector2(-319.52576, 81.62538)
 nodes/output/position = Vector2(540, 180)
 nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
 nodes/Movement/position = Vector2(160, 160)
@@ -39,41 +40,49 @@ nodes/Idle/node = SubResource("AnimationNodeAnimation_l1ko6")
 nodes/Idle/position = Vector2(-260, 0)
 nodes/Run/node = SubResource("AnimationNodeAnimation_rlr1k")
 nodes/Run/position = Vector2(-260, 380)
-node_connections = [&"output", 0, &"Movement", &"Movement", 0, &"Idle", &"Movement", 1, &"Walk", &"Movement", 2, &"Run"]
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_vptdu")
+nodes/TimeScale/position = Vector2(380, 160)
+node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"Idle", &"Movement", 1, &"Walk", &"Movement", 2, &"Run", &"TimeScale", 0, &"Movement"]
 
 [node name="e_valeria" instance=ExtResource("1_vptdu")]
 
-[node name="MeshInstance3D" parent="CollisionShape3D" index="0"]
-visible = false
-
-[node name="AnimationTree" type="AnimationTree" parent="." index="3" node_paths=PackedStringArray("chara")]
-root_node = NodePath("../valeria")
-tree_root = SubResource("AnimationNodeBlendTree_vptdu")
-anim_player = NodePath("../valeria/AnimationPlayer")
-parameters/Movement/current_state = "Idle"
-parameters/Movement/transition_request = ""
-parameters/Movement/current_index = 0
-script = ExtResource("2_en0je")
-chara = NodePath("..")
-
-[node name="valeria" parent="." index="4" instance=ExtResource("3_q0kd0")]
+[node name="valeria" parent="." index="0" instance=ExtResource("3_q0kd0")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 
 [node name="Skeleton3D" parent="valeria/Armature" index="0"]
-bones/1/position = Vector3(-0.12203514, 3.819747, 0.106803596)
-bones/2/rotation = Quaternion(-0.109846584, -0.1695237, -0.048658904, 0.9781757)
-bones/3/rotation = Quaternion(0.044856172, 0.038113043, -0.0027322867, 0.9982624)
-bones/4/rotation = Quaternion(-0.139147, 0.1120271, 0.021550022, 0.9836787)
-bones/5/rotation = Quaternion(0.11584107, -0.037893783, 0.0070561846, 0.9925196)
-bones/10/rotation = Quaternion(0.078077756, 0.06048798, -0.98672026, 0.12895098)
-bones/11/rotation = Quaternion(0.071527116, 0.053597853, -0.09571129, 0.9913882)
-bones/12/rotation = Quaternion(0.07268117, -0.085159905, 0.9795003, 0.16746469)
-bones/13/rotation = Quaternion(0.115510084, -0.05308377, 0.1549825, 0.979704)
-bones/14/position = Vector3(1.0553071, -1.1505624, -0.18453348)
-bones/16/position = Vector3(-1.0651132, -1.1212722, -0.20347315)
+bones/0/position = Vector3(0, 0, 0)
+bones/1/position = Vector3(-0.14889, 3.8195498, 0.10680357)
+bones/1/rotation = Quaternion(0.99603546, -2.338199e-07, 2.3988475e-08, -0.088956885)
+bones/2/rotation = Quaternion(-0.09037421, -0.1764473, -0.050923932, 0.9788287)
+bones/3/rotation = Quaternion(0.003277115, 0.038151376, -0.00019960894, 0.99926656)
+bones/4/rotation = Quaternion(-0.1409474, 0.10529428, 0.016935887, 0.98425615)
+bones/5/rotation = Quaternion(0.12009103, -0.037874453, 0.007315061, 0.9920133)
+bones/6/rotation = Quaternion(0.99759424, -2.2503814e-07, 1.4750535e-07, 0.06932474)
+bones/9/rotation = Quaternion(-0.076825075, -4.231682e-15, -1.831652e-08, 0.9970446)
+bones/10/rotation = Quaternion(0.07242424, 0.07079638, -0.98530173, 0.13756147)
+bones/11/rotation = Quaternion(0.08071136, 0.053505838, -0.11005179, 0.98919743)
+bones/12/rotation = Quaternion(0.06689251, -0.09325333, 0.97891736, 0.16896787)
+bones/13/rotation = Quaternion(0.11882017, -0.053471223, 0.1625259, 0.97806334)
+bones/14/position = Vector3(1.0571994, -1.1437856, -0.21293029)
+bones/14/rotation = Quaternion(-0.0015666039, 0.014443744, -0.7521733, 0.65880525)
+bones/16/position = Vector3(-1.0540968, -1.1173259, -0.23436812)
+bones/16/rotation = Quaternion(-0.0049233586, -0.017771155, 0.7700558, 0.6377101)
+bones/18/position = Vector3(0.74321216, 0.47284925, -0.10718885)
+bones/18/rotation = Quaternion(-0.70562875, 0.0069095953, -0.00688145, 0.70851463)
+bones/19/rotation = Quaternion(0.9122425, 0.0051580956, 0.006304214, -0.40956992)
+bones/20/rotation = Quaternion(-0.30986816, -4.5500284e-09, 0.001760907, 0.9507779)
+bones/21/position = Vector3(0.12763934, -0.93591917, 1.3462869)
+bones/21/rotation = Quaternion(0.9997669, -4.431067e-06, 0.021475397, -0.0022449908)
+bones/22/position = Vector3(-0.8114722, 0.47284925, -0.10718885)
+bones/22/rotation = Quaternion(-0.70562875, -0.0069095953, 0.00688145, 0.70851463)
+bones/23/rotation = Quaternion(0.9122425, -0.0051580956, -0.006304214, -0.40956992)
+bones/24/rotation = Quaternion(-0.30986816, 4.5500284e-09, -0.001760907, 0.9507779)
+bones/25/position = Vector3(-0.1045587, -0.93604815, 1.3142292)
+bones/25/rotation = Quaternion(0.9997669, 4.431067e-06, -0.021475397, -0.0022449908)
 
-[node name="AnimationPlayer" parent="valeria" index="1"]
-autoplay = ""
-speed_scale = 1.75
+[node name="AnimationTree" parent="." index="4"]
+root_node = NodePath("../valeria")
+tree_root = SubResource("AnimationNodeBlendTree_rjll5")
+anim_player = NodePath("../valeria/AnimationPlayer")
 
 [editable path="valeria"]

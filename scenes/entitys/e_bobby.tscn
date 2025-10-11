@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://d2npgl64yk6cq"]
+
+[ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="1_r3imu"]
+[ext_resource type="PackedScene" uid="uid://hhtmsyl4wg5i" path="res://scenes/character_assets/Bobby.tscn" id="2_a3qmd"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l1ko6"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ft406"]
+xfade_time = 0.3
+input_0/name = "Idle"
+input_0/auto_advance = false
+input_0/break_loop_at_end = false
+input_0/reset = true
+input_1/name = "Walk"
+input_1/auto_advance = false
+input_1/break_loop_at_end = false
+input_1/reset = true
+input_2/name = "Run"
+input_2/auto_advance = false
+input_2/break_loop_at_end = false
+input_2/reset = true
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
+animation = &"Run"
+
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_vptdu"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
+animation = &"Walk"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_judic"]
+graph_offset = Vector2(-205.23471, 222.80936)
+nodes/output/position = Vector2(540, 180)
+nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
+nodes/Movement/position = Vector2(160, 160)
+nodes/Walk/node = SubResource("AnimationNodeAnimation_x3yh4")
+nodes/Walk/position = Vector2(-260, 200)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_l1ko6")
+nodes/Idle/position = Vector2(-260, 0)
+nodes/Run/node = SubResource("AnimationNodeAnimation_rlr1k")
+nodes/Run/position = Vector2(-260, 380)
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_vptdu")
+nodes/TimeScale/position = Vector2(380, 160)
+node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"Idle", &"Movement", 1, &"Walk", &"Movement", 2, &"Run", &"TimeScale", 0, &"Movement"]
+
+[node name="e_bobby" instance=ExtResource("1_r3imu")]
+
+[node name="Bobby" parent="." index="0" instance=ExtResource("2_a3qmd")]
+transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
+
+[node name="Skeleton3D" parent="Bobby/Root" index="0"]
+bones/2/rotation = Quaternion(-0.036860943, -0.044559754, 0.112133145, 0.9920091)
+bones/3/rotation = Quaternion(0.105169475, 0.7037327, -0.1095411, 0.6940464)
+bones/5/rotation = Quaternion(-0.105379514, 0.9911344, 0.051695812, -0.062253706)
+bones/6/rotation = Quaternion(0.0925354, -0.7056845, 0.09645015, 0.6958046)
+bones/13/rotation = Quaternion(0.07286391, 0.020619823, -0.9869079, 0.14240319)
+bones/14/rotation = Quaternion(0.11648514, 0.029941784, -0.14293861, 0.9823968)
+bones/16/position = Vector3(0.009727687, -0.01458834, 0.00045645496)
+bones/19/rotation = Quaternion(0.0728632, -0.020623224, 0.986908, 0.14240192)
+bones/20/rotation = Quaternion(0.11648271, -0.029942371, 0.14293602, 0.9823974)
+bones/22/position = Vector3(-0.009727687, -0.01458837, 0.0004564553)
+
+[node name="AnimationTree" parent="." index="4"]
+root_node = NodePath("../Bobby")
+tree_root = SubResource("AnimationNodeBlendTree_judic")
+anim_player = NodePath("../Bobby/AnimationPlayer")
+
+[editable path="Bobby"]

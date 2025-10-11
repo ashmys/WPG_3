@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/pickup_mechanic.gd" id="5_hucg6"]
 [ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
 [ext_resource type="PackedScene" uid="uid://c1vf1u1lkumnh" path="res://scenes/objects/phone.tscn" id="7_l1ko6"]
-[ext_resource type="Script" uid="uid://dognjc0ie57wr" path="res://scripts/mechanics/climb_stair.gd" id="8_ft406"]
+[ext_resource type="PackedScene" uid="uid://bfv446m4eumm8" path="res://scenes/mechanics/climb_stair_area_3d.tscn" id="8_ft406"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
 animation = &"Running"
@@ -37,11 +37,13 @@ input_3/reset = true
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_tsxeq"]
 animation = &"RESET"
 
+[sub_resource type="AnimationNodeTimeScale" id="AnimationNodeTimeScale_ft406"]
+
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_x3yh4"]
 animation = &"Walking"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_csod7"]
-graph_offset = Vector2(-235.42926, 19.483154)
+graph_offset = Vector2(-361.9994, 92.300125)
 nodes/output/position = Vector2(540, 180)
 nodes/RESET/node = SubResource("AnimationNodeAnimation_tsxeq")
 nodes/RESET/position = Vector2(-320, -20)
@@ -53,7 +55,9 @@ nodes/Animation/node = SubResource("AnimationNodeAnimation_rlr1k")
 nodes/Animation/position = Vector2(-300, 540)
 nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
 nodes/Movement/position = Vector2(160, 160)
-node_connections = [&"output", 0, &"Movement", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation"]
+nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_ft406")
+nodes/TimeScale/position = Vector2(360, 160)
+node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"RESET", &"Movement", 1, &"Idle", &"Movement", 2, &"Walking", &"Movement", 3, &"Animation", &"TimeScale", 0, &"Movement"]
 
 [sub_resource type="Animation" id="Animation_2nni0"]
 resource_name = "Idle"
@@ -142,13 +146,10 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
-radius = 0.1
+radius = 0.3
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
-radius = 0.1
-
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_x3yh4"]
-height = 0.712677
+radius = 0.3
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider") groups=["player"]]
 collision_layer = 2
@@ -158,21 +159,20 @@ floor_max_angle = 1.4835298
 script = ExtResource("1_3vyb7")
 player_point = NodePath("CentralPoint")
 head = NodePath("Head")
-collider = NodePath("Collider")
+collider = NodePath("Chara_Collider")
 base_speed = 5.0
 sprint_speed = 7.0
 jump_velocity = 9.0
 
 [node name="CentralPoint" type="Node3D" parent="."]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1, 0)
 
-[node name="Head" type="Node3D" parent="." node_paths=PackedStringArray("player", "player_point")]
+[node name="Head" type="Node3D" parent="." node_paths=PackedStringArray("player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
 script = ExtResource("3_qhqgy")
 min_vertical_angle = -1.5533430342749532
 max_vertical_angle = 1.5533430342749532
 player = NodePath("..")
-player_point = NodePath("../CentralPoint")
 
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
@@ -199,6 +199,7 @@ anim_player = NodePath("../AnimationPlayer")
 parameters/Movement/current_state = "RESET"
 parameters/Movement/transition_request = ""
 parameters/Movement/current_index = 0
+parameters/TimeScale/scale = 1.0
 script = ExtResource("4_tsxeq")
 player = NodePath("../..")
 head = NodePath("..")
@@ -217,18 +218,13 @@ transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0
 spot_range = 20.0
 spot_angle = 30.0
 
-[node name="Collider" type="CollisionShape3D" parent="."]
+[node name="Chara_Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_g2els")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Collider"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Chara_Collider"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_g2els")
 
-[node name="ClimbStair_Area3D" type="Area3D" parent="." node_paths=PackedStringArray("chara")]
-script = ExtResource("8_ft406")
+[node name="ClimbStair_Area3D" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("8_ft406")]
 chara = NodePath("..")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="ClimbStair_Area3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35871887, 0)
-shape = SubResource("CylinderShape3D_x3yh4")

@@ -3,6 +3,7 @@ extends CharacterBody3D
 const GRAVITY_MULTIPLIER:= 4.5
 
 @export_group("Nodes")
+@export var collider: CollisionShape3D
 @export var nav_agent: NavigationAgent3D
 @export var area_view: Area3D
 @export var ray_view: RayCast3D
@@ -19,6 +20,7 @@ enum State { PATROL, CHASE, SEARCH, IDLE }
 @export var blend_speed: float = 15.0
 
 var is_moving := false
+var stuck := false
 
 var patrol_index: int = 0
 var player_visible: bool = false
@@ -28,6 +30,9 @@ var last_seen_time: float = -2.0
 
 var wait_timer: float = 0.0
 var lost_sight_timer: float = 0.0
+
+var searching_time: float = 10.0 
+var waiting_time: float = 1.0
 
 func _ready() -> void:
 	if !nav_agent or !player or patrol_points.is_empty(): return
@@ -41,7 +46,9 @@ func _physics_process(delta: float) -> void:
 	if velocity.x == 0.0 and velocity.z == 0.0:
 		is_moving = false
 	
-	_apply_gravity(delta)
+	if not is_on_floor() and not stuck:
+		_apply_gravity(delta)
+	
 	_check_visibility()
 	_handle_state_transitions()
 	_execute_state_behavior(delta)
@@ -49,12 +56,10 @@ func _physics_process(delta: float) -> void:
 	_check_game_over()
 
 func _apply_gravity(delta: float) -> void:
-	if not is_on_floor():
-		velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
+	velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
 
 func _check_visibility() -> void:
 	ray_view.target_position = ray_view.to_local(player.head.global_position)
-	ray_view.force_raycast_update()
 	
 	if not player or not ray_view or not area_view:
 		player_visible = false
@@ -91,7 +96,7 @@ func _execute_state_behavior(delta: float) -> void:
 			wait_timer = 0.0
 		State.SEARCH:
 			var time_since_seen = Time.get_ticks_msec() / 1000.0 - last_seen_time
-			if time_since_seen < 6.0:
+			if time_since_seen < searching_time:
 				var offset = Vector3(randf() * 2 - 1, 0, randf() * 2 - 1).normalized() * 2.0
 				#print("Searching near last seen at", last_seen_position + offset)
 				_act(last_seen_position + offset, speed_run, delta)
@@ -102,7 +107,7 @@ func _execute_state_behavior(delta: float) -> void:
 			wait_timer += delta
 			velocity.x = 0.0
 			velocity.z = 0.0
-			if wait_timer >= 11.0 and is_patrol:
+			if wait_timer >= waiting_time and is_patrol:
 				#print("Wait over, resuming patrol")
 				state = State.PATROL
 				_set_patrol_target()

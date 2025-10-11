@@ -1,6 +1,5 @@
-[gd_scene load_steps=14 format=4 uid="uid://dnaf25yc15sdx"]
+[gd_scene load_steps=13 format=4 uid="uid://dnaf25yc15sdx"]
 
-[ext_resource type="Script" uid="uid://iqne7aodqqrl" path="res://scripts/mechanics/door.gd" id="1_uw3m6"]
 [ext_resource type="Texture2D" uid="uid://dw53piyqodp88" path="res://assets/models/objects/house_0.png" id="1_yar34"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uqbjy"]
@@ -116,10 +115,9 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r22b5")
 
 [node name="door" type="Node3D"]
-script = ExtResource("1_uw3m6")
 
 [node name="Dinding Pintu" type="MeshInstance3D" parent="."]
-transform = Transform3D(100.5, 0, 0, 0, -8.7859894e-07, 201, 0, -20.1, -8.785989e-06, 0, 2.014469, 0)
+transform = Transform3D(101, 0, 0, 0, -8.7859894e-07, 201, 0, -20.1, -8.785989e-06, 0, 2.014469, 0)
 mesh = SubResource("ArrayMesh_uw3m6")
 skeleton = NodePath("")
 
@@ -139,8 +137,6 @@ shape = SubResource("ConcavePolygonShape3D_vedx6")
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, -0.5932646, 1.2049916, 0.028344154)
 node_b = NodePath("../RigidBody3D")
 angular_limit/enable = true
-angular_limit/lower = 0.0
-angular_limit/bias = 0.01
 angular_limit/relaxation = 1.5
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
