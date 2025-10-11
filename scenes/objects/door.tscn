@@ -115,7 +115,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_r22b5")
 
-[node name="Door" type="Node3D"]
+[node name="door" type="Node3D"]
 script = ExtResource("1_uw3m6")
 
 [node name="Dinding Pintu" type="MeshInstance3D" parent="."]

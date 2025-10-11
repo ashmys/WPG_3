@@ -138,5 +138,6 @@ shadow_mesh = SubResource("ArrayMesh_5ltm7")
 
 [node name="Phone_on" type="MeshInstance3D" parent="."]
 transform = Transform3D(10, 0, 0, 0, -8.729164e-07, 1.26, 0, -19.97, -5.507635e-08, 0, 0, 0)
+layers = 2
 mesh = SubResource("ArrayMesh_i6d1p")
 skeleton = NodePath("")

@@ -4,10 +4,10 @@
 [ext_resource type="Script" uid="uid://dognjc0ie57wr" path="res://scripts/mechanics/climb_stair.gd" id="2_otfum"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
-radius = 0.3
+radius = 0.1
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_kxjud"]
-radius = 0.3
+radius = 0.1
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_7p1mj"]
 size = Vector3(10, 5, 25)
@@ -35,6 +35,9 @@ shape = SubResource("CapsuleShape3D_7xaro")
 mesh = SubResource("CapsuleMesh_kxjud")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+path_desired_distance = 0.5
+target_desired_distance = 0.5
+path_max_distance = 0.51
 debug_enabled = true
 
 [node name="head" type="Node3D" parent="."]
