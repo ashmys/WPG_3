@@ -1,0 +1,75 @@
+[gd_scene load_steps=2 format=3 uid="uid://csya31j4gesq0"]
+
+[ext_resource type="Script" uid="uid://buwwy5pl5028k" path="res://Scripts/intro_narration.gd" id="1_wqyn5"]
+
+[node name="IntroNarration" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wqyn5")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 97.0
+offset_top = -125.0
+offset_right = -27.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 35
+text = "my name is Selene im 16 years old, it's been two day since my parent left me for business trip 
+
+i had to attend highschool 
+
+my day went well without any problem
+
+time pass and it's afternoon, the bell class rang
+
+the highschool class is done for this day
+
+on way home, i saw two person beating up a guy
+
+i reach my phone to take a picture for my safety
+
+it was a dumb decision....
+
+bright flash coming up from my phone, alerted both of them 
+
+i ran as fast as i can from them 
+
+I ran to my home without looking back
+
+now im at home, i must be safe
+
+
+but.... where's my wallet? "
+
+[node name="Label" type="Label" parent="RichTextLabel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
