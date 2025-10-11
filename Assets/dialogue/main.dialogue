@@ -1,0 +1,23 @@
+~ start
+Selene: The power is out
+Selene: I need to find a flashlight => END 
+
+~ battery
+Selene: Oh shoot, it run out of battery
+Selene: I better find a new one => END
+
+~ downstair
+Selene: Alright, now let's go find out why the power is out => END
+
+~ before_garage
+Selene: What's that sound, I should check it out => END
+
+~ garage
+Selene: Who is that ?
+Selene: Isn't he the person I met this afternoon ?
+Selene: I better call the police
+
+...
+
+Selene: My Phone is die
+Selene: I need to find a way to recharge my Phone

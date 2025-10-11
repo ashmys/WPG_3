@@ -1,18 +1,21 @@
 [gd_scene load_steps=21 format=3 uid="uid://033isodapq8y"]
 
-[ext_resource type="Texture2D" uid="uid://sdh2o7jct31v" path="res://assets/panorama/qwantani_moon_noon_puresky_1k.hdr" id="1_6bq2b"]
+[ext_resource type="Texture2D" uid="uid://sdh2o7jct31v" path="res://Assets/panorama/qwantani_moon_noon_puresky_1k.hdr" id="1_6bq2b"]
+[ext_resource type="Script" uid="uid://c8n7j3ruoqa1l" path="res://scenes/development/Adi/main_map_1_v_3.gd" id="1_osq7s"]
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="2_2ks80"]
-[ext_resource type="PackedScene" uid="uid://yry8nniu7iht" path="res://scenes/entitys/e_valeria.tscn" id="3_eg8y4"]
+[ext_resource type="Resource" uid="uid://clatxubm27qpd" path="res://Assets/dialogue/main.dialogue" id="2_eg8y4"]
+[ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="3_osq7s"]
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="4_eg8y4"]
 [ext_resource type="PackedScene" uid="uid://dnaf25yc15sdx" path="res://scenes/objects/door.tscn" id="5_eg8y4"]
 [ext_resource type="PackedScene" uid="uid://bl01dr3iti3hk" path="res://scenes/interactable_objects/pickup_objects/battery.tscn" id="5_y8bx0"]
 [ext_resource type="PackedScene" uid="uid://cwitn2k3gv7xt" path="res://scenes/objects/house.tscn" id="6_2ks80"]
+[ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://Assets/materials/main_map1_v1.1.tres" id="6_oglvg"]
+[ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://Assets/images/Lantai 2 rumah.jpg" id="7_81ke0"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="8_48jyq"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="8_eg8y4"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="9_y8bx0"]
 [ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="9_yqpw0"]
-[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="10_28xvs"]
-[ext_resource type="PackedScene" uid="uid://ex8r2coc48ot" path="res://scenes/objects/car.tscn" id="10_oglvg"]
+[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://Scripts/systems/game_manager.gd" id="10_28xvs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
 panorama = ExtResource("1_6bq2b")
@@ -52,6 +55,8 @@ size = Vector2(1000, 1000)
 size = Vector3(75, 0.15, 75)
 
 [node name="Main" type="Node"]
+script = ExtResource("1_osq7s")
+dialogue_resource = ExtResource("2_eg8y4")
 
 [node name="Shader" type="Node3D" parent="."]
 
@@ -77,7 +82,53 @@ patrol_points = [NodePath("../../Enemy_Patrol_Marker/ParkirLuar"), NodePath("../
 player = NodePath("../Player")
 game_overUI = NodePath("../../CanvasLayer/GameOver")
 
-[node name="Static_Objects" type="Node3D" parent="."]
+[node name="CollisionShape3D2" parent="Entity/enemy/Area3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90735e-06, -1.09247, 6.53424)
+
+[node name="Skeleton3D" parent="Entity/enemy/Bobby/Root" index="0"]
+bones/2/rotation = Quaternion(-0.040154748, -0.048607305, 0.110489495, 0.9918756)
+bones/3/rotation = Quaternion(0.10224994, 0.7042057, -0.10651837, 0.6944733)
+bones/5/rotation = Quaternion(-0.106688894, 0.99137497, 0.04840688, -0.058736365)
+bones/6/rotation = Quaternion(0.095155634, -0.7053, 0.0991672, 0.695459)
+bones/13/rotation = Quaternion(0.07301655, 0.023646865, -0.98748624, 0.13776974)
+bones/14/rotation = Quaternion(0.12561378, 0.031150566, -0.15449908, 0.9794799)
+bones/16/position = Vector3(0.0097374935, -0.0144504495, 0.00070858723)
+bones/19/rotation = Quaternion(0.07301659, -0.023645498, 0.9874865, 0.13776757)
+bones/20/rotation = Quaternion(0.12561062, -0.031150531, 0.15449539, 0.979481)
+bones/22/position = Vector3(-0.0097374935, -0.014450479, 0.0007085875)
+
+[node name="Skeleton3D" parent="Entity/enemy/Valeria/Armature" index="0"]
+bones/0/position = Vector3(0, 0, 0)
+bones/1/position = Vector3(0.05782453, 3.8267312, 0.10680358)
+bones/1/rotation = Quaternion(0.99603546, -2.338199e-07, 2.3988475e-08, -0.088956885)
+bones/2/rotation = Quaternion(-0.12792218, -0.12445662, -0.02015891, 0.9837379)
+bones/3/rotation = Quaternion(0.09291137, 0.037985947, -0.0056594484, 0.9949335)
+bones/4/rotation = Quaternion(-0.08871708, 0.15820791, 0.04886426, 0.9821975)
+bones/5/rotation = Quaternion(0.0028246152, -0.03815144, 0.00017204693, 0.99926794)
+bones/6/rotation = Quaternion(0.99759424, -2.2503814e-07, 1.4750535e-07, 0.06932474)
+bones/9/rotation = Quaternion(-0.076825075, -4.231682e-15, -1.831652e-08, 0.9970446)
+bones/10/rotation = Quaternion(0.05810208, 0.08170297, -0.9836151, 0.14983425)
+bones/11/rotation = Quaternion(0.069713265, 0.051748373, -0.09761002, 0.9914306)
+bones/12/rotation = Quaternion(0.052957334, -0.09615405, 0.9788179, 0.17281605)
+bones/13/rotation = Quaternion(0.08882049, -0.050921213, 0.12559761, 0.9867843)
+bones/14/position = Vector3(1.1525321, -1.1273738, -0.28141207)
+bones/14/rotation = Quaternion(-0.0015666039, 0.014443744, -0.7521733, 0.65880525)
+bones/16/position = Vector3(-1.1809388, -1.1086174, -0.30474836)
+bones/16/rotation = Quaternion(-0.0049233586, -0.017771155, 0.7700558, 0.6377101)
+bones/18/position = Vector3(0.74321216, 0.47284925, -0.10718885)
+bones/18/rotation = Quaternion(-0.70562875, 0.0069095953, -0.00688145, 0.70851463)
+bones/19/rotation = Quaternion(0.9122425, 0.0051580956, 0.006304214, -0.40956992)
+bones/20/rotation = Quaternion(-0.30986816, -4.5500284e-09, 0.001760907, 0.9507779)
+bones/21/position = Vector3(0.12763934, -0.93591917, 1.3462869)
+bones/21/rotation = Quaternion(0.9997669, -4.431067e-06, 0.021475397, -0.0022449908)
+bones/22/position = Vector3(-0.8114722, 0.47284925, -0.10718885)
+bones/22/rotation = Quaternion(-0.70562875, -0.0069095953, 0.00688145, 0.70851463)
+bones/23/rotation = Quaternion(0.9122425, -0.0051580956, -0.006304214, -0.40956992)
+bones/24/rotation = Quaternion(-0.30986816, 4.5500284e-09, -0.001760907, 0.9507779)
+bones/25/position = Vector3(-0.1045587, -0.93604815, 1.3142292)
+bones/25/rotation = Quaternion(0.9997669, 4.431067e-06, -0.021475397, -0.0022449908)
+
+[node name="Static_Objects" type="Node" parent="."]
 
 [node name="NavigationRegion3D" type="NavigationRegion3D" parent="Static_Objects"]
 navigation_mesh = SubResource("NavigationMesh_vib1c")
