@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="WPG_3"
-run/main_scene="uid://cn8ur4qy6vsfo"
+run/main_scene="uid://csya31j4gesq0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -19,6 +19,11 @@ config/icon="res://icon.svg"
 
 AudioManager="*res://scenes/systems/audio_manager.tscn"
 Global="*res://scripts/systems/global.gd"
+DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+
+[dialogue_manager]
+
+runtime/balloon_path="res://Assets/dialogue/balloon.tscn"
 
 [display]
 
@@ -26,6 +31,10 @@ window/size/viewport_width=1920
 window/size/viewport_height=1080
 window/size/mode=2
 window/stretch/mode="viewport"
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 [global_group]
 
@@ -93,6 +102,10 @@ wheel_down={
 "events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":16,"position":Vector2(231, 9),"global_position":Vector2(240, 57),"factor":1.0,"button_index":5,"canceled":false,"pressed":true,"double_click":false,"script":null)
 ]
 }
+
+[internationalization]
+
+locale/translations_pot_files=PackedStringArray("res://Assets/dialogue/main.dialogue")
 
 [rendering]
 
