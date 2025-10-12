@@ -1,9 +1,9 @@
 [gd_scene load_steps=12 format=3 uid="uid://cn8ur4qy6vsfo"]
 
-[ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://Scripts/systems/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="PackedScene" uid="uid://033isodapq8y" path="res://scenes/development/Adi/main_map1_v3.tscn" id="2_bqqt6"]
-[ext_resource type="Script" uid="uid://chqps7623vldr" path="res://Scripts/systems/settings.gd" id="3_bqqt6"]
-[ext_resource type="Texture2D" uid="uid://cdoy2rndyh7pp" path="res://Assets/images/main menu.png" id="4_wu84c"]
+[ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://scripts/systems/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="PackedScene" uid="uid://bkmiwoy63unon" path="res://scenes/development/Adi/main_map_v4.tscn" id="2_wu84c"]
+[ext_resource type="Script" uid="uid://chqps7623vldr" path="res://scripts/systems/settings.gd" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://cdoy2rndyh7pp" path="res://assets/images/main menu.png" id="4_wu84c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 modulate_color = Color(0.789173, 0.789172, 0.789172, 1)
@@ -39,14 +39,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
-game_scene = ExtResource("2_bqqt6")
-title = NodePath("Title")
-main_buttons = NodePath("MainButtons")
-first_button = NodePath("MainButtons/Start_Button")
-settings = NodePath("Settings")
-credits = NodePath("Credits")
+game_scene = ExtResource("2_wu84c")
+title = NodePath("Panel/TitleText")
+main_buttons = NodePath("Panel/MainButtons")
+first_button = NodePath("Panel/MainButtons/Start_Button")
+settings = NodePath("Panel/Settings")
+credits = NodePath("Panel/Credits")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -55,32 +55,38 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_n45e2")
 
-[node name="MainMenu" type="Sprite2D" parent="Background"]
+[node name="MainMenu_Image" type="TextureRect" parent="Panel"]
 z_index = -1
-position = Vector2(960, 534)
-texture = ExtResource("4_wu84c")
-
-[node name="Title" type="Label" parent="."]
 layout_mode = 1
-offset_left = 76.0
-offset_top = 58.0
-offset_right = 1121.0
-offset_bottom = 266.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wu84c")
+stretch_mode = 6
+
+[node name="TitleText" type="Label" parent="Panel"]
+layout_mode = 0
+offset_left = 75.0
+offset_top = 46.0
+offset_right = 1155.0
+offset_bottom = 254.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 152
 text = "Mysterious RV"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MainButtons" type="VBoxContainer" parent="."]
+[node name="MainButtons" type="VBoxContainer" parent="Panel"]
 layout_mode = 1
-offset_left = 133.0
-offset_top = 326.0
-offset_right = 417.0
-offset_bottom = 849.0
+offset_left = 103.0
+offset_top = 288.0
+offset_right = 407.0
+offset_bottom = 868.0
 theme_override_constants/separation = 25
 
-[node name="Start_Button" type="Button" parent="MainButtons"]
+[node name="Start_Button" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Exit_Button")
@@ -98,7 +104,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Start"
 
-[node name="Settings_Button" type="Button" parent="MainButtons"]
+[node name="Settings_Button" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Start_Button")
@@ -116,7 +122,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Settings"
 
-[node name="Credits_Button" type="Button" parent="MainButtons"]
+[node name="Credits_Button" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Settings_Button")
@@ -134,7 +140,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Credits"
 
-[node name="Exit_Button" type="Button" parent="MainButtons"]
+[node name="Exit_Button" type="Button" parent="Panel/MainButtons"]
 layout_mode = 2
 size_flags_vertical = 3
 focus_neighbor_top = NodePath("../Credits_Button")
@@ -152,10 +158,9 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Exit"
 
-[node name="Settings" type="Panel" parent="."]
+[node name="Settings" type="Panel" parent="Panel"]
 visible = false
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -164,12 +169,10 @@ offset_left = -814.0
 offset_top = -429.0
 offset_right = 814.0
 offset_bottom = 429.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ehe0")
 script = ExtResource("3_bqqt6")
 
-[node name="TitleTxt" type="Label" parent="Settings"]
+[node name="TitleTxt" type="Label" parent="Panel/Settings"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -184,7 +187,7 @@ text = "Settings"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back_Button" type="Button" parent="Settings"]
+[node name="Back_Button" type="Button" parent="Panel/Settings"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -209,7 +212,7 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
 text = "Back"
 
-[node name="SettingsContainer" type="VBoxContainer" parent="Settings"]
+[node name="SettingsContainer" type="VBoxContainer" parent="Panel/Settings"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -224,18 +227,18 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 50
 
-[node name="MusicContainer" type="HBoxContainer" parent="Settings/SettingsContainer"]
+[node name="MusicContainer" type="HBoxContainer" parent="Panel/Settings/SettingsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 50
 
-[node name="Txt" type="Label" parent="Settings/SettingsContainer/MusicContainer"]
+[node name="Txt" type="Label" parent="Panel/Settings/SettingsContainer/MusicContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "Music"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="MusicSlider" type="HSlider" parent="Settings/SettingsContainer/MusicContainer"]
+[node name="MusicSlider" type="HSlider" parent="Panel/Settings/SettingsContainer/MusicContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -246,18 +249,18 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="SFXContainer" type="HBoxContainer" parent="Settings/SettingsContainer"]
+[node name="SFXContainer" type="HBoxContainer" parent="Panel/Settings/SettingsContainer"]
 layout_mode = 2
 theme_override_constants/separation = 100
 
-[node name="Txt" type="Label" parent="Settings/SettingsContainer/SFXContainer"]
+[node name="Txt" type="Label" parent="Panel/Settings/SettingsContainer/SFXContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 text = "SFX"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="SFXSlider" type="HSlider" parent="Settings/SettingsContainer/SFXContainer"]
+[node name="SFXSlider" type="HSlider" parent="Panel/Settings/SettingsContainer/SFXContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -268,16 +271,15 @@ max_value = 1.0
 step = 0.05
 value = 1.0
 
-[node name="FullscreenControl" type="CheckButton" parent="Settings/SettingsContainer"]
+[node name="FullscreenControl" type="CheckButton" parent="Panel/Settings/SettingsContainer"]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
 theme_override_styles/focus = SubResource("StyleBoxEmpty_16hvj")
 text = "Fullscreen"
 
-[node name="Credits" type="Panel" parent="."]
+[node name="Credits" type="Panel" parent="Panel"]
 visible = false
-layout_mode = 1
-anchors_preset = 8
+layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
@@ -286,11 +288,9 @@ offset_left = -814.0
 offset_top = -429.0
 offset_right = 814.0
 offset_bottom = 429.0
-grow_horizontal = 2
-grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ehe0")
 
-[node name="TitleTxt" type="Label" parent="Credits"]
+[node name="TitleTxt" type="Label" parent="Panel/Credits"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -305,7 +305,7 @@ text = "Credits"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="CreditsTxt" type="Label" parent="Credits"]
+[node name="CreditsTxt" type="Label" parent="Panel/Credits"]
 layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
@@ -318,7 +318,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 38
 text = "Deskripsi"
 
-[node name="CreditsTxt2" type="Label" parent="Credits"]
+[node name="CreditsTxt2" type="Label" parent="Panel/Credits"]
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -334,7 +334,7 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 38
 text = "Deskripsi"
 
-[node name="Back_Button2" type="Button" parent="Credits"]
+[node name="Back_Button2" type="Button" parent="Panel/Credits"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -359,12 +359,12 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
 text = "Back"
 
-[connection signal="pressed" from="MainButtons/Start_Button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="MainButtons/Settings_Button" to="." method="_on_settings_button_pressed"]
-[connection signal="pressed" from="MainButtons/Credits_Button" to="." method="_on_credits_button_pressed"]
-[connection signal="pressed" from="MainButtons/Exit_Button" to="." method="_on_exit_button_pressed"]
-[connection signal="pressed" from="Settings/Back_Button" to="." method="_on_back_button_pressed"]
-[connection signal="value_changed" from="Settings/SettingsContainer/MusicContainer/MusicSlider" to="Settings" method="_on_music_slider_value_changed"]
-[connection signal="value_changed" from="Settings/SettingsContainer/SFXContainer/SFXSlider" to="Settings" method="_on_sfx_slider_value_changed"]
-[connection signal="toggled" from="Settings/SettingsContainer/FullscreenControl" to="Settings" method="_on_fullscreen_control_toggled"]
-[connection signal="pressed" from="Credits/Back_Button2" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Panel/MainButtons/Start_Button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="Panel/MainButtons/Settings_Button" to="." method="_on_settings_button_pressed"]
+[connection signal="pressed" from="Panel/MainButtons/Credits_Button" to="." method="_on_credits_button_pressed"]
+[connection signal="pressed" from="Panel/MainButtons/Exit_Button" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="Panel/Settings/Back_Button" to="." method="_on_back_button_pressed"]
+[connection signal="value_changed" from="Panel/Settings/SettingsContainer/MusicContainer/MusicSlider" to="Panel/Settings" method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="Panel/Settings/SettingsContainer/SFXContainer/SFXSlider" to="Panel/Settings" method="_on_sfx_slider_value_changed"]
+[connection signal="toggled" from="Panel/Settings/SettingsContainer/FullscreenControl" to="Panel/Settings" method="_on_fullscreen_control_toggled"]
+[connection signal="pressed" from="Panel/Credits/Back_Button2" to="." method="_on_back_button_pressed"]
