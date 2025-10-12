@@ -97,7 +97,6 @@ debug_color = Color(0, 0, 0, 1)
 target_position = Vector3(0, 0, 10)
 collision_mask = 5
 hit_from_inside = true
-hit_back_faces = false
 
 [node name="AnimationTree" type="AnimationTree" parent="." node_paths=PackedStringArray("chara")]
 tree_root = SubResource("AnimationNodeBlendTree_svcv2")

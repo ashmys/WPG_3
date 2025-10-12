@@ -39,9 +39,9 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 [global_group]
 
 player=""
-pickup_object=""
 hide_object=""
 stairs=""
+interact_object=""
 
 [input]
 

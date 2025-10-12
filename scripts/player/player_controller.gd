@@ -41,7 +41,7 @@ var freeflying := false
 
 # == UI NODES ==
 @export_group("UI Nodes")
-@export var interactText: Label
+@export var popUpText: Label
 
 func _unhandled_input(_event: InputEvent) -> void:
 	if can_freefly and Input.is_action_just_pressed(input_freefly):

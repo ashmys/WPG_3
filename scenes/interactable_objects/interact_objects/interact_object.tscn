@@ -1,18 +1,17 @@
 [gd_scene load_steps=4 format=3 uid="uid://bulb2uj4m6k4y"]
 
-[ext_resource type="Script" uid="uid://bahwm273s48h8" path="res://scripts/objects/interactable_object.gd" id="1_v4tic"]
+[ext_resource type="Script" uid="uid://bahwm273s48h8" path="res://scripts/objects/interactable_object.gd" id="1_gljqq"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hdq63"]
-size = Vector3(0.6099243, 0.17602539, 0.5661621)
+[sub_resource type="BoxShape3D" id="BoxShape3D_evhy7"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5fgx8"]
 
-[node name="Pickup_Object" type="StaticBody3D" groups=["pickup_object"]]
-script = ExtResource("1_v4tic")
+[node name="Pickup_Object" type="StaticBody3D" groups=["interact_object"]]
+script = ExtResource("1_gljqq")
 
 [node name="Interact_Collision" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
-shape = SubResource("BoxShape3D_hdq63")
+shape = SubResource("BoxShape3D_evhy7")
 
 [node name="Mesh_Placeholder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

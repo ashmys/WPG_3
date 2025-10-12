@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player/player_camera.gd" id="3_qhqgy"]
 [ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://scripts/player/interact_raycast.gd" id="3_rlr1k"]
 [ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://scripts/player/player_camAnimation.gd" id="4_tsxeq"]
-[ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/pickup_mechanic.gd" id="5_hucg6"]
+[ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/interact_mechanic.gd" id="5_hucg6"]
 [ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
 [ext_resource type="PackedScene" uid="uid://c1vf1u1lkumnh" path="res://scenes/objects/phone.tscn" id="7_l1ko6"]
 [ext_resource type="PackedScene" uid="uid://bfv446m4eumm8" path="res://scenes/mechanics/climb_stair_area_3d.tscn" id="8_ft406"]
@@ -177,19 +177,19 @@ player = NodePath("..")
 [node name="Camera3D" type="Camera3D" parent="Head"]
 transform = Transform3D(1, 0, 0, 0, 0.99999994, 0, 0, 0, 0.99999994, 0, 0, 0)
 
-[node name="Interact Raycast" type="RayCast3D" parent="Head" node_paths=PackedStringArray("player", "hiding_mechanic", "pickup_mechanic")]
+[node name="Interact Raycast" type="RayCast3D" parent="Head" node_paths=PackedStringArray("player", "hiding_mechanic", "interact_mechanic")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0)
 target_position = Vector3(0, 2, 0)
 script = ExtResource("3_rlr1k")
 player = NodePath("../..")
 hiding_mechanic = NodePath("Hiding_Mechanic")
-pickup_mechanic = NodePath("Pickup_Mechanic")
+interact_mechanic = NodePath("Interact_Mechanic")
 
 [node name="Hiding_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player")]
 script = ExtResource("5_l1ko6")
 player = NodePath("../../..")
 
-[node name="Pickup_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player")]
+[node name="Interact_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player")]
 script = ExtResource("5_hucg6")
 player = NodePath("../../..")
 

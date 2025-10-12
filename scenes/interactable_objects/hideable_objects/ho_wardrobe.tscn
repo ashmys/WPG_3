@@ -1,13 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://dy6g0jk0v3tym"]
+[gd_scene load_steps=4 format=3 uid="uid://dy6g0jk0v3tym"]
 
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/interactable_objects/hideable_objects/hideable_object.tscn" id="1_m66bp"]
 [ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/wardrobe.tscn" id="2_sxnmx"]
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_oqea2"]
+size = Vector3(1.0131226, 2.5458984, 1.6972656)
+
 [node name="HO_Wardrobe" instance=ExtResource("1_m66bp")]
+object_name = "Wardrobe"
 sfx_name = "wardrobe"
 
 [node name="Interact_Collision" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.006011963, 1.5, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09375, 1.3100586, 0)
+shape = SubResource("BoxShape3D_oqea2")
 
 [node name="Mesh_Placeholder" parent="." index="1"]
 visible = false

@@ -2,8 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bcgjdyntdov1i" path="res://scripts/hideable_object.gd" id="1_r7i6f"]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_hdq63"]
-size = Vector3(1.1112671, 3, 1.7539063)
+[sub_resource type="BoxShape3D" id="BoxShape3D_27vke"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_5fgx8"]
 
@@ -12,8 +11,8 @@ script = ExtResource("1_r7i6f")
 hide_marker = NodePath("HidePoint_Marker")
 
 [node name="Interact_Collision" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-shape = SubResource("BoxShape3D_hdq63")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_27vke")
 
 [node name="Mesh_Placeholder" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)

@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://bl01dr3iti3hk"]
 
-[ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/pickup_objects/pickup_object.tscn" id="1_ad5w2"]
+[ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_ad5w2"]
 [ext_resource type="PackedScene" uid="uid://cnond2q83jqqf" path="res://scenes/objects/battery.tscn" id="2_fldxv"]
 
 [node name="Battery" instance=ExtResource("1_ad5w2")]
-object_name = "battery"
+object_name = "Battery"
 
 [node name="Interact_Collision" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.16900994, 0)
