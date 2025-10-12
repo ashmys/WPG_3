@@ -67,7 +67,7 @@ func _ready():
 # Plays a music track from the library.
 func play_music(key: String, volume_db: float = 0.0, should_loop: bool = true):
 	if not _music_streams.has(key):
-		push_error("Audio_Manager: No music found with key: '%s'" % key)
+		push_warning("Audio_Manager: No music found with key: '%s'" % key)
 		return
 	
 	var track: AudioStream = _music_streams[key]
@@ -99,7 +99,7 @@ func stop_music():
 # Fades from the current music to a new track over a given duration.
 func fade_music_to(key: String, time: float = 1.0, to_volume_db: float = 0.0):
 	if not _music_streams.has(key):
-		push_error("Audio_Manager: No music found with key: '%s'" % key)
+		push_warning("Audio_Manager: No music found with key: '%s'" % key)
 		return
 		
 	var new_track: AudioStream = _music_streams[key]
@@ -154,7 +154,7 @@ func _on_crossfade_complete(new_player: AudioStreamPlayer):
 # Plays a sound effect from the library.
 func play_sfx(key: String, volume_db: float = 0.0, pitch_scale: float = 1.0):
 	if not _sfx_streams.has(key):
-		push_error("Audio_Manager: No SFX found with key: '%s'" % key)
+		push_warning("Audio_Manager: No SFX found with key: '%s'" % key)
 		return
 		
 	var sfx_stream: AudioStream = _sfx_streams[key]

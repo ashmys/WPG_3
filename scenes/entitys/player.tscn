@@ -212,6 +212,7 @@ playback_default_blend_time = 1.0
 
 [node name="phone" parent="Head" instance=ExtResource("7_l1ko6")]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0.23243374, -0.36907816, -0.48507154)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/phone"]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 0, -0.11394608)

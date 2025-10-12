@@ -1,6 +1,7 @@
 extends StaticBody3D
 
 # == CONFIG ==
+@export var object_name: String
 @export var hide_marker: Marker3D
 @export var sfx_name: String
 
