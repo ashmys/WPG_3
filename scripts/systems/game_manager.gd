@@ -1,8 +1,9 @@
 extends Node
 
-@export var game_scene: PackedScene
+@export var scene_path: String
 @export var timer: Timer
-@export var game_winUI: Control
+@export var game_Win_UI: Control
+@export var other_UI: Control
 
 var has_started: bool = false
 
@@ -12,9 +13,11 @@ func _physics_process(_delta: float) -> void:
 		has_started = true
 
 func _on_timer_timeout() -> void:
-	game_winUI.visible = true
+	other_UI.visible = false
+	game_Win_UI.visible = true
 	await get_tree().create_timer(2.0).timeout
-	if game_scene:
-		get_tree().change_scene_to_packed(game_scene)
+	if scene_path:
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		Global.goto_scene(scene_path)
 	else:
-		print("No game scene assigned.")
+		push_warning("scene_path is null")

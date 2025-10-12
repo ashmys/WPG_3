@@ -79,7 +79,7 @@ shadow_transmittance_bias = 1.04
 [node name="Player" parent="Entity" node_paths=PackedStringArray("popUpText") instance=ExtResource("4_ietg8")]
 transform = Transform3D(0.8456627, 0, -0.53371775, 0, 1, 0, 0.53371775, 0, 0.8456627, -4.696205, 4.715697, 8.06075)
 can_freefly = true
-popUpText = NodePath("../../CanvasLayer/BoxContainer/PopUpText")
+popUpText = NodePath("../../CanvasLayer/OtherUI/BoxContainer/PopUpText")
 
 [node name="e_bobby" parent="Entity" node_paths=PackedStringArray("patrol_points", "player", "game_overUI") instance=ExtResource("5_qr43d")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -6.023403, -4.7683716e-07, 15.9937)
@@ -330,21 +330,28 @@ visible = false
 [node name="GameWin" parent="CanvasLayer" instance=ExtResource("14_wooxa")]
 visible = false
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer"]
+[node name="OtherUI" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/OtherUI"]
+layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -149.5
-offset_top = 210.0
-offset_right = 149.5
-offset_bottom = 255.0
+offset_left = 790.5
+offset_top = 730.0
+offset_right = 1089.5
+offset_bottom = 775.0
 grow_horizontal = 2
 grow_vertical = 2
 alignment = 1
 
-[node name="PopUpText" type="Label" parent="CanvasLayer/BoxContainer"]
+[node name="PopUpText" type="Label" parent="CanvasLayer/OtherUI/BoxContainer"]
 layout_mode = 2
 text = "TEXT!"
 label_settings = SubResource("LabelSettings_cn1mh")
@@ -353,10 +360,12 @@ vertical_alignment = 1
 
 [node name="Systems" type="Node" parent="."]
 
-[node name="GameManager" type="Node" parent="Systems" node_paths=PackedStringArray("timer", "game_winUI")]
+[node name="GameManager" type="Node" parent="Systems" node_paths=PackedStringArray("timer", "game_Win_UI", "other_UI")]
 script = ExtResource("15_p8f6r")
+scene_path = "res://scenes/main_menu.tscn"
 timer = NodePath("Timer")
-game_winUI = NodePath("../../CanvasLayer/GameWin")
+game_Win_UI = NodePath("../../CanvasLayer/GameWin")
+other_UI = NodePath("../../CanvasLayer/OtherUI")
 
 [node name="Timer" type="Timer" parent="Systems/GameManager"]
 wait_time = 5.0
