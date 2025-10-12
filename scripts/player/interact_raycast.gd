@@ -38,7 +38,7 @@ func _update_popup_text() -> void:
 		player.popUpText.text = str("Get out")
 		player.popUpText.show()
 		if Input.is_action_just_pressed("interact"):
-			hiding_mechanic._toggle_hide(target)
+			hiding_mechanic.toggle_hide(target)
 	else:
 		# When not hiding
 		if target:
@@ -54,6 +54,6 @@ func _process_interaction_input() -> void:
 
 	if Input.is_action_just_pressed("interact"):
 		if target.is_in_group("hide_object"):
-			hiding_mechanic._toggle_hide(target)
+			hiding_mechanic.toggle_hide(target)
 		elif target.is_in_group("interact_object"):
 			interact_mechanic._interact(target)
