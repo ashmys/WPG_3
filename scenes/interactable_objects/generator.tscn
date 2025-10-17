@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://b6os8tyhwtuum"]
-
-[ext_resource type="PackedScene" uid="uid://bgghxwmwnwjfc" path="res://Assets/models/objects/generator.fbx" id="1_avgba"]
-
-[node name="generator" instance=ExtResource("1_avgba")]
-transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)

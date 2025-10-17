@@ -6,7 +6,7 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_5fgx8"]
 
-[node name="Pickup_Object" type="StaticBody3D" groups=["interact_object"]]
+[node name="Interact_Object" type="StaticBody3D" groups=["interact_object"]]
 script = ExtResource("1_gljqq")
 
 [node name="Interact_Collision" type="CollisionShape3D" parent="."]

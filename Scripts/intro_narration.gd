@@ -1,6 +1,7 @@
 extends Control
 
-@onready var anim = $AnimationPlayer
+@export var anim : AnimationPlayer
+@export var game_scene: PackedScene
 
 func _ready() -> void:
 	animation()
@@ -25,4 +26,4 @@ func animation():
 	$"4".visible = false
 	$"5".visible = true
 	await get_tree().create_timer(3.0).timeout
-	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+	get_tree().change_scene_to_packed(game_scene)

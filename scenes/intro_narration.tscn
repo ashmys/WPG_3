@@ -1,18 +1,51 @@
-[gd_scene load_steps=8 format=3 uid="uid://csya31j4gesq0"]
+[gd_scene load_steps=9 format=3 uid="uid://csya31j4gesq0"]
 
-[ext_resource type="Script" uid="uid://buwwy5pl5028k" path="res://Scripts/intro_narration.gd" id="1_wqyn5"]
+[ext_resource type="Script" uid="uid://buwwy5pl5028k" path="res://scripts/intro_narration.gd" id="1_wqyn5"]
+[ext_resource type="PackedScene" uid="uid://cn8ur4qy6vsfo" path="res://scenes/main_menu.tscn" id="2_6m3hr"]
 
-[sub_resource type="Animation" id="Animation_wqyn5"]
-resource_name = "type"
+[sub_resource type="Animation" id="Animation_1v4yy"]
+resource_name = "2"
 length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("1:visible_ratio")
+tracks/0/path = NodePath("2:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_mo20b"]
+resource_name = "3"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_1coey"]
+resource_name = "4"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("4:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -69,49 +102,17 @@ tracks/3/keys = {
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_1v4yy"]
-resource_name = "2"
+[sub_resource type="Animation" id="Animation_wqyn5"]
+resource_name = "type"
 length = 15.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("2:visible_ratio")
+tracks/0/path = NodePath("1:visible_ratio")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_mo20b"]
-resource_name = "3"
-length = 15.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("3:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 15),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_1coey"]
-resource_name = "4"
-length = 10.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("4:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 10),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -126,7 +127,7 @@ _data = {
 &"type": SubResource("Animation_wqyn5")
 }
 
-[node name="IntroNarration" type="Control"]
+[node name="IntroNarration" type="Control" node_paths=PackedStringArray("anim")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -134,6 +135,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_wqyn5")
+anim = NodePath("AnimationPlayer")
+game_scene = ExtResource("2_6m3hr")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

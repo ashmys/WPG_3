@@ -65,6 +65,7 @@ collider = NodePath("CharaCollider")
 nav_agent = NodePath("NavigationAgent3D")
 area_view = NodePath("head/Area3D")
 ray_view = NodePath("head/RayCast3D")
+speed_walk = 2.5
 
 [node name="CharaCollider" type="CollisionShape3D" parent="."]
 transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0, 1, 0)
@@ -78,7 +79,6 @@ mesh = SubResource("CapsuleMesh_kxjud")
 path_desired_distance = 0.5
 target_desired_distance = 0.5
 path_max_distance = 0.51
-debug_enabled = true
 
 [node name="head" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7, 0)
