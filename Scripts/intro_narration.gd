@@ -2,12 +2,22 @@ extends Control
 
 @onready var anim = $AnimationPlayer
 
+var skip:bool = false
+
 func _ready() -> void:
 	animation()
+
+func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("jump"):
+		skip = true
+	
+	if skip == true:
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 
 func animation():
 	await get_tree().create_timer(1.0).timeout
 	$"1".visible = true
+	$skipText.visible = true
 	anim.play("type")
 	await get_tree().create_timer(20.0).timeout
 	$"1".visible = false

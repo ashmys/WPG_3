@@ -1,0 +1,573 @@
+[gd_scene load_steps=12 format=3 uid="uid://dnsls0i1si0hs"]
+
+[ext_resource type="PackedScene" uid="uid://dvl2afeei728r" path="res://Assets/models/objects/tembok_0_1.tscn" id="1_6hod6"]
+[ext_resource type="PackedScene" uid="uid://c6dbyhqekm5l" path="res://Assets/models/objects/tembok_corner_0_1.tscn" id="2_2l853"]
+[ext_resource type="PackedScene" uid="uid://tcwu4arinmbw" path="res://Assets/models/objects/tembok_pintu.tscn" id="3_vt6au"]
+[ext_resource type="PackedScene" uid="uid://bamdspyobtjel" path="res://Assets/models/objects/tembok_corner_0_0.tscn" id="4_0t57q"]
+[ext_resource type="PackedScene" uid="uid://cjtrrfh4qke7w" path="res://Assets/models/objects/big_sofa.tscn" id="5_vt6au"]
+[ext_resource type="PackedScene" uid="uid://d0gsekx4f5tj" path="res://Assets/models/objects/table.tscn" id="6_5yf38"]
+[ext_resource type="PackedScene" uid="uid://h1vv08mpj7hw" path="res://Assets/models/objects/rak_dapur.tscn" id="7_d582p"]
+[ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/objects/chair.tscn" id="8_d582p"]
+[ext_resource type="PackedScene" uid="uid://2n62c3sn4yd7" path="res://Assets/models/objects/stairs.tscn" id="9_v3jr5"]
+[ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://Assets/models/objects/tv.tscn" id="10_44jqt"]
+[ext_resource type="PackedScene" uid="uid://dk58mdagclxue" path="res://Assets/models/objects/mesin_cuci.tscn" id="11_54rd1"]
+
+[node name="House" type="Node3D"]
+
+[node name="first" type="Node3D" parent="."]
+
+[node name="floor" type="CSGBox3D" parent="first"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.361084, 0, 28.911386)
+use_collision = true
+size = Vector3(23.380371, 1, 21.73581)
+
+[node name="tembok_0-7" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 37)
+
+[node name="tembok_0-39" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.159, 2, 35)
+
+[node name="tembok_0-41" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.2, 2, 39)
+
+[node name="tembok_0-42" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.2, 2.0141802, 39.180054)
+
+[node name="tembok_0-40" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.159, 2, 37)
+
+[node name="tembok_0-54" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.159, 2, 23.992596)
+
+[node name="tembok_0-59" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.15, 2, 23.993)
+
+[node name="tembok_0-55" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.159, 2, 21.975393)
+
+[node name="tembok_0-48" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.159, 2, 33)
+
+[node name="tembok_0-49" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.159, 2, 35)
+
+[node name="tembok_0-50" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.159, 2, 37)
+
+[node name="tembok_0-44" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.399315, 2, 40)
+
+[node name="tembok_0-43" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.158, 2, 38.987034)
+
+[node name="tembok_0-10" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 35)
+
+[node name="tembok_0-11" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 33)
+
+[node name="tembok_0-13" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 31)
+
+[node name="tembok_0-14" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 29)
+
+[node name="tembok_0-15" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 27)
+
+[node name="tembok_0-16" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 25)
+
+[node name="tembok_0-21" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 23)
+
+[node name="tembok_0-22" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 21)
+
+[node name="tembok_0-24" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2, 18)
+
+[node name="tembok_0-25" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 2, 18)
+
+[node name="tembok_0-26" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 2, 18)
+
+[node name="tembok_0-27" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6, 2, 18)
+
+[node name="tembok_0-28" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8, 2, 18)
+
+[node name="tembok_0-29" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10, 2, 18)
+
+[node name="tembok_0-30" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12, 2, 18)
+
+[node name="tembok_0-31" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 14, 2, 18)
+
+[node name="tembok_0-32" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 16, 2, 18)
+
+[node name="tembok_0-45" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 16, 2, 30)
+
+[node name="tembok_0-51" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 16, 2, 40)
+
+[node name="tembok_0-46" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 18, 2, 30.001)
+
+[node name="tembok_0-47" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 18, 2, 40.001)
+
+[node name="tembok_0-34" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-0.5852866, 0, 8.742278e-08, 0, 1, 0, -5.116738e-08, 0, -1, 19.54687, 2, 18)
+
+[node name="tembok_0-35" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 20.153635, 2, 19.812145)
+
+[node name="tembok_0-36" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 20.153, 2, 19.143)
+
+[node name="tembok_0-2" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 40)
+
+[node name="tembok_0-3" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 40)
+
+[node name="tembok_0-4" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 40)
+
+[node name="tembok_0-6" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, 2, 34)
+
+[node name="tembok_0-8" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.0195186, 2, 31)
+
+[node name="tembok_0-38" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 8.98, 2, 32.8)
+
+[node name="tembok_0-5" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10.169, 2, 40)
+
+[node name="tembok_corner_0-1" parent="first" instance=ExtResource("2_2l853")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9797735, 2, 40)
+
+[node name="tembok_corner_0-3" parent="first" instance=ExtResource("2_2l853")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9797735, 2, 40)
+
+[node name="tembok_corner_0-4" parent="first" instance=ExtResource("2_2l853")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.98, 2, 35)
+
+[node name="tembok_0-9" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6, 2, 34)
+
+[node name="tembok_0-12" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 28)
+
+[node name="tembok_0-17" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 28)
+
+[node name="tembok_0-18" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 28)
+
+[node name="tembok_0-19" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2, 25.235395)
+
+[node name="tembok_0-20" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 2, 25.235395)
+
+[node name="tembok_0-23" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 2, 22.235395)
+
+[node name="tembok_corner_0-5" parent="first" instance=ExtResource("2_2l853")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.98, 2, 35)
+
+[node name="tembok_corner_0-2" parent="first" instance=ExtResource("2_2l853")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 39)
+
+[node name="tembok_corner_0-6" parent="first" instance=ExtResource("2_2l853")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 2, 18)
+
+[node name="tembok_pintu" parent="first" instance=ExtResource("3_vt6au")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.98, 2.001, 37)
+
+[node name="tembok_pintu3" parent="first" instance=ExtResource("3_vt6au")]
+transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, 8.98, 2.001, 30.8)
+
+[node name="tembok_pintu4" parent="first" instance=ExtResource("3_vt6au")]
+transform = Transform3D(-0.99999994, 0, -1.6391277e-07, 0, 1, 0, 1.6391277e-07, 0, -0.99999994, 16.151, 2.001, 27)
+
+[node name="tembok_pintu5" parent="first" instance=ExtResource("3_vt6au")]
+transform = Transform3D(-0.99999994, 0, -1.6391277e-07, 0, 1, 0, 1.6391277e-07, 0, -0.99999994, 17.974712, 2.001, 18)
+
+[node name="tembok_pintu2" parent="first" instance=ExtResource("3_vt6au")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 13.158972, 2.001, 33)
+
+[node name="tembok_corner_0-0" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12.159, 2, 40)
+
+[node name="tembok_corner_0-7" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 19.159, 2, 39.999)
+
+[node name="tembok_corner_0-8" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 14.159, 2, 30)
+
+[node name="tembok_corner_0-9" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 20.159, 2, 31)
+
+[node name="tembok_0-53" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 16.139256, 2, 20.978004)
+
+[node name="tembok_0-58" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 18.139256, 2, 20.978004)
+
+[node name="tembok_0-60" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 18.139256, 2, 26.978004)
+
+[node name="tembok_0-56" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(7.4505806e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 7.4505806e-08, 20.146057, 2, 27.979914)
+
+[node name="tembok_0-57" parent="first" instance=ExtResource("1_6hod6")]
+transform = Transform3D(7.4505806e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 7.4505806e-08, 20.145, 2, 28.807)
+
+[node name="tembok_corner_0-14" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 19.156738, 2, 26.979914)
+
+[node name="tembok_corner_0-17" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.146883, 2, 21.984022)
+
+[node name="tembok_corner_0-15" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(1.3113417e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113417e-07, 13.156738, 2, 25.979914)
+
+[node name="tembok_corner_0-16" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 14.156738, 2, 20.979914)
+
+[node name="tembok_corner_0-10" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(1.3113416e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113416e-07, 3.0141134, 2, 33)
+
+[node name="tembok_corner_0-11" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 4.019558, 2, 28)
+
+[node name="tembok_corner_0-12" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 9, 2, 29)
+
+[node name="tembok_corner_0-13" parent="first" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.999, 2, 25.236)
+
+[node name="Big Sofa" parent="first" instance=ExtResource("5_vt6au")]
+transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09, 2.5472567, 1.0644344, 30.721727)
+
+[node name="Big Sofa2" parent="first" instance=ExtResource("5_vt6au")]
+transform = Transform3D(4.416303e-08, 0, -0.20000003, 0, 0.2, 0, 0.33677745, 0, 2.6226838e-08, 5.5900764, 1.0644344, 24.11729)
+
+[node name="Table" parent="first" instance=ExtResource("6_5yf38")]
+transform = Transform3D(-8.742278e-09, 0, 0.2, 0, 0.2, 0, -0.2, 0, -8.742278e-09, 0.47343516, 0.811636, 31.218498)
+
+[node name="rak dapur2" parent="first" instance=ExtResource("7_d582p")]
+transform = Transform3D(-1.3113416e-08, 0, 0.6031246, 0, 0.3, 0, -0.29999998, 0, -2.6363415e-08, -1.5686238, 2.10832, 18.406023)
+
+[node name="Table2" parent="first" instance=ExtResource("6_5yf38")]
+transform = Transform3D(0.29780704, 0, 0, 0, 0.2, 0, 0, 0, 0.38083392, -1.804127, 1.0768178, 18.388664)
+
+[node name="Table3" parent="first" instance=ExtResource("6_5yf38")]
+transform = Transform3D(-0.3642438, 0, -3.271677e-08, 0, 0.38552213, 0, 3.1843204e-08, 0, -0.37423623, 2.5992692, 1.0797141, 23.858751)
+
+[node name="Table4" parent="first" instance=ExtResource("6_5yf38")]
+transform = Transform3D(-1.5921598e-08, 0, 0.3742362, 0, 0.3855221, 0, -0.36424378, 0, -1.6358385e-08, 8.891921, 1.0797141, 23.351807)
+
+[node name="Table5" parent="first" instance=ExtResource("6_5yf38")]
+transform = Transform3D(-0.36424375, 0, -3.2716766e-08, 0, 0.38552204, 0, 3.1843197e-08, 0, -0.37423617, 15.586575, 1.0797141, 31.08611)
+
+[node name="Chair" parent="first" instance=ExtResource("8_d582p")]
+transform = Transform3D(-2.181118e-08, 0, 0.4856584, 0, 0.51402944, 0, -0.49898162, 0, -2.1228804e-08, 3.273492, 0.99407303, 24.559347)
+
+[node name="Chair2" parent="first" instance=ExtResource("8_d582p")]
+transform = Transform3D(-2.181118e-08, 0, 0.4856584, 0, 0.51402944, 0, -0.49898162, 0, -2.1228804e-08, 2.0253012, 0.99407303, 24.559347)
+
+[node name="Chair3" parent="first" instance=ExtResource("8_d582p")]
+transform = Transform3D(-2.181118e-08, 0, -0.4856584, 0, 0.51402944, 0, 0.49898162, 0, -2.1228804e-08, 2.0253017, 0.99407303, 22.50414)
+
+[node name="Chair5" parent="first" instance=ExtResource("8_d582p")]
+transform = Transform3D(0.4856584, 0, 0, 0, 0.51402944, 0, 0, 0, 0.49898162, 1.1450179, 0.99407303, 23.573692)
+
+[node name="Chair6" parent="first" instance=ExtResource("8_d582p")]
+transform = Transform3D(-0.48565838, 0, -7.534413e-08, 0, 0.51402944, 0, 7.333237e-08, 0, -0.49898162, 4.078841, 0.99407303, 23.573692)
+
+[node name="Chair4" parent="first" instance=ExtResource("8_d582p")]
+transform = Transform3D(-2.181118e-08, 0, -0.4856584, 0, 0.51402944, 0, 0.49898162, 0, -2.1228804e-08, 3.2734926, 0.99407303, 22.50414)
+
+[node name="stairs" parent="first" instance=ExtResource("9_v3jr5")]
+transform = Transform3D(0.9843927, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 11.888829, 1.6018499, 22.339754)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="first/stairs"]
+transform = Transform3D(0.99999905, 0, 0, 0, 1, 0, 0, 0, 1, -1.1613331, 1.4829104, 0.07365227)
+use_collision = true
+size = Vector3(0.25, 5.9541016, 4.2497177)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="first/stairs"]
+transform = Transform3D(1.9868207e-08, 0, 0.9999997, 0, 1, 0, -1, 0, 1.9868216e-08, -0.13179874, 3.477357, 2.21241)
+use_collision = true
+size = Vector3(0.25, 1.9429932, 2.3114128)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="first/stairs"]
+transform = Transform3D(-0.99999857, 0, -2.3843171e-08, 0, 1, 0, 2.3843171e-08, 0, -1, 1.1469498, 3.477357, 0.114118576)
+use_collision = true
+size = Vector3(0.25, 1.9429932, 4.434329)
+
+[node name="tv" parent="first" instance=ExtResource("10_44jqt")]
+transform = Transform3D(-4.371139e-09, 0, -0.1, 0, 0.1, 0, 0.1, 0, -4.371139e-09, 9.260069, 1.8404312, 23.411785)
+
+[node name="tembok_pintu6" parent="first" instance=ExtResource("3_vt6au")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007613182, 2.0007782, 39.985992)
+
+[node name="first2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.083609, 0)
+
+[node name="floor" type="CSGBox3D" parent="first2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.361084, 0.45037508, 28.911386)
+use_collision = true
+size = Vector3(23.38, 0.1, 21.736)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="first2/floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.5493011, 0.017015934, -6.5749283)
+operation = 2
+size = Vector3(2.061966, 1, 3.1560974)
+
+[node name="floor2" type="CSGBox3D" parent="first2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.361084, 3.5563154, 28.911386)
+use_collision = true
+size = Vector3(23.38, 0.1, 21.736)
+
+[node name="tembok_0-39" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.159, 2, 34.33725)
+
+[node name="tembok_0-41" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.2, 2, 38.33725)
+
+[node name="tembok_0-42" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.2, 2.0141802, 38.517303)
+
+[node name="tembok_0-40" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.159, 2, 36.33725)
+
+[node name="tembok_0-59" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.15, 2, 23.993)
+
+[node name="tembok_0-55" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.159, 2, 21.975393)
+
+[node name="tembok_0-60" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.159, 2, 19.975393)
+
+[node name="tembok_0-61" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.158, 2, 18.975)
+
+[node name="tembok_0-48" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.109083, 2, 30.303)
+
+[node name="tembok_0-49" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.159, 2, 34.33725)
+
+[node name="tembok_0-54" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.159, 2, 32.35775)
+
+[node name="tembok_0-50" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 20.159, 2, 36.33725)
+
+[node name="tembok_0-44" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 14.399315, 2, 39.33725)
+
+[node name="tembok_0-43" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 13.158, 2, 38.324284)
+
+[node name="tembok_0-10" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-2.6725363e-08, 0, -1, 0, 1, 0, 0.611405, 0, -4.371139e-08, -3, 2, 34.58727)
+
+[node name="tembok_0-11" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 33)
+
+[node name="tembok_0-13" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 31)
+
+[node name="tembok_0-14" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 29)
+
+[node name="tembok_0-15" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 27)
+
+[node name="tembok_0-16" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 25)
+
+[node name="tembok_0-21" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 23)
+
+[node name="tembok_0-22" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -3, 2, 21)
+
+[node name="tembok_0-24" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 0, 2, 18)
+
+[node name="tembok_0-25" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 2, 18)
+
+[node name="tembok_0-26" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 4, 2, 18)
+
+[node name="tembok_0-27" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 6, 2, 18)
+
+[node name="tembok_0-28" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 8, 2, 18)
+
+[node name="tembok_0-29" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 10, 2, 18)
+
+[node name="tembok_0-30" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 12, 2, 18)
+
+[node name="tembok_0-31" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 14, 2, 18)
+
+[node name="tembok_0-32" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 16, 2, 18)
+
+[node name="tembok_0-38" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 18, 2, 18)
+
+[node name="tembok_0-53" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 18, 2, 26.994259)
+
+[node name="tembok_0-45" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 16, 2, 29.381626)
+
+[node name="tembok_0-51" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 2.6226832e-07, 0, 1, 0, -2.6226832e-07, 0, -1, 16, 2, 39.33725)
+
+[node name="tembok_0-46" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 18, 2, 29.382626)
+
+[node name="tembok_0-47" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 18, 2, 39.33825)
+
+[node name="tembok_0-34" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(0.5852866, 0, -1.7484555e-07, 0, 1, 0, 1.0233476e-07, 0, 1, 19.54687, 2, 18)
+
+[node name="tembok_0-35" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, 20.153635, 2, 19.980133)
+
+[node name="tembok_0-36" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-2.1855693e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855693e-07, 20.153, 2, 19.143)
+
+[node name="tembok_0-33" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 2, 35)
+
+[node name="tembok_0-62" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 2, 35)
+
+[node name="tembok_0-63" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 2, 35)
+
+[node name="tembok_0-65" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2, 2, 35)
+
+[node name="tembok_corner_0-3" parent="first2" instance=ExtResource("2_2l853")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.9797735, 2, 35)
+
+[node name="tembok_corner_0-4" parent="first2" instance=ExtResource("2_2l853")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 8.9797735, 2, 29)
+
+[node name="tembok_0-52" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371138e-08, 0, 1, 0, 1, 0, -1, 0, -4.371138e-08, 8.98, 2, 30)
+
+[node name="tembok_0-17" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 2.007508, 2, 28)
+
+[node name="tembok_0-66" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0.0075080395, 2, 28)
+
+[node name="tembok_0-67" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.992492, 2, 28)
+
+[node name="tembok_0-18" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.0075083, 2, 28)
+
+[node name="tembok_0-37" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 6.007508, 2, 28)
+
+[node name="tembok_0-68" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 2, 25.235395)
+
+[node name="tembok_0-20" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 2, 2, 25.235395)
+
+[node name="tembok_0-23" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 2, 22.235395)
+
+[node name="tembok_0-69" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 5, 2, 20.235395)
+
+[node name="tembok_0-70" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-3.0578125e-08, 0, -1, 0, 1, 0, 0.6995459, 0, -4.371139e-08, 5, 2, 18.56203)
+
+[node name="tembok_corner_0-6" parent="first2" instance=ExtResource("2_2l853")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -2, 2, 18)
+
+[node name="tembok_pintu2" parent="first2" instance=ExtResource("3_vt6au")]
+transform = Transform3D(-2.1855693e-07, 0, 1, 0, 1, 0, -1, 0, -2.1855693e-07, 13.158972, 2.001, 32.360626)
+
+[node name="tembok_corner_0-7" parent="first2" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 19.159, 2, 39.33625)
+
+[node name="tembok_corner_0-8" parent="first2" instance=ExtResource("4_0t57q")]
+transform = Transform3D(1, 0, -1.7484555e-07, 0, 1, 0, 1.7484555e-07, 0, 1, 14.159, 2, 29.381626)
+
+[node name="tembok_corner_0-9" parent="first2" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 20.159, 2, 30.381626)
+
+[node name="tembok_0-58" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(-2.1855695e-07, 0, -1, 0, 1, 0, 1, 0, -2.1855695e-07, 20.139256, 2, 21.978004)
+
+[node name="tembok_0-56" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(7.4505806e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 7.4505806e-08, 20.146057, 2, 27.979914)
+
+[node name="tembok_0-57" parent="first2" instance=ExtResource("1_6hod6")]
+transform = Transform3D(7.4505806e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 7.4505806e-08, 20.145, 2, 28.807)
+
+[node name="tembok_corner_0-14" parent="first2" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 19.156738, 2, 26.979914)
+
+[node name="tembok_corner_0-15" parent="first2" instance=ExtResource("4_0t57q")]
+transform = Transform3D(1.3113417e-07, 0, 1, 0, 1, 0, -1, 0, 1.3113417e-07, 15.156738, 2, 25.979914)
+
+[node name="tembok_corner_0-13" parent="first2" instance=ExtResource("4_0t57q")]
+transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, 3.999, 2, 25.236)
+
+[node name="mesin_cuci" parent="first2" instance=ExtResource("11_54rd1")]
+transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-08, 19.367384, 0.5003753, 28.126398)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="first2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8842773, 1.1799316, 39.5819)
+size = Vector3(16.203125, 1.3598633, 0.5)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="first2"]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, -2.9658039, 1.1799316, 37.512177)
+size = Vector3(4.625717, 1.3598633, 0.5)
+
+[node name="tembok_pintu" parent="." instance=ExtResource("3_vt6au")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.15409, 5.084762, 28.181385)
+
+[node name="tembok_pintu2" parent="." instance=ExtResource("3_vt6au")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 15.15409, 5.084762, 23.992733)
+
+[node name="tembok_pintu3" parent="." instance=ExtResource("3_vt6au")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.004153, 5.0847626, 31.979008)
+
+[node name="tembok_pintu4" parent="." instance=ExtResource("3_vt6au")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 5.085, 25.236)
+
+[node name="tembok_pintu5" parent="." instance=ExtResource("3_vt6au")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.9512596e-05, 5.0847626, 35.002304)

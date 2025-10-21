@@ -43,6 +43,6 @@ shadow_mesh = SubResource("ArrayMesh_4t67i")
 [node name="Chair" type="Node3D"]
 
 [node name="Chair_Mesh" type="MeshInstance3D" parent="."]
-transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 5.575, 0, -50, -2.4369098e-07, 0, 1.2344701, 0)
+transform = Transform3D(50, 0, 0, 0, -2.1855694e-06, 5.575, 0, -50, -2.4369098e-07, 0, 0, 0)
 mesh = SubResource("ArrayMesh_fcrwd")
 skeleton = NodePath("")
