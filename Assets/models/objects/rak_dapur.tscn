@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://h1vv08mpj7hw"]
+
+[ext_resource type="PackedScene" uid="uid://cfuw3eoidakqq" path="res://Assets/models/objects/rak dapur.glb" id="1_4rxw4"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ankol"]
+points = PackedVector3Array(-0.99828386, -1.0615506, -1.9542086, -2.168931, 1.6665018, -1.9542086, 1.4658542, -1.0615506, -1.9542086, -2.168931, -1.0615506, 8.545292, -2.2467077, 2.0545404, 2.7346709, -2.2078195, 6.848466, -1.9542086, 1.4658542, 6.9631495, -1.9542086, 1.4658542, -1.0615506, 13.325406, -2.168931, -1.0615506, 13.325406, -2.2467077, 2.9727936, 2.7346709, -2.2467077, 2.0545404, 9.142058, -2.2078195, 6.9631495, -1.9542086, 1.4658542, 6.9631495, 13.325406, -2.2078195, 6.848466, 13.325406, -2.2467077, 2.9727936, 9.142058, -2.2078195, 6.9631495, 13.325406)
+
+[node name="rak dapur" instance=ExtResource("1_4rxw4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Rak" index="0"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Rak/StaticBody3D" index="0"]
+shape = SubResource("ConvexPolygonShape3D_ankol")

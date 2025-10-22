@@ -176,6 +176,7 @@ func _physics_process(delta: float) -> void:
 		state = State.WAIT
 		await get_tree().create_timer(2.0).timeout
 		get_tree().call_deferred("reload_current_scene")
+		Global.battery_count = 0
 
 func act(target: Vector3, speed: float, delta: float, continuous: bool = false) -> void:
 	# set target kalau continuous atau kalau agent tidak punya path
