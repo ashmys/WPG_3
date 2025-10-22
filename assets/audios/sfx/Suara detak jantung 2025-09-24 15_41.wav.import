@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dw3ig5igy5iwo"
-path="res://.godot/imported/Suara detak jantung 2025-09-24 15_41.wav-bca467b6645e3772135e9e92803767d3.sample"
+path="res://.godot/imported/Suara detak jantung 2025-09-24 15_41.wav-d29db287ba353224ef0bb377a11c5452.sample"
 
 [deps]
 
-source_file="res://Assets/audios/sfx/Suara detak jantung 2025-09-24 15_41.wav"
-dest_files=["res://.godot/imported/Suara detak jantung 2025-09-24 15_41.wav-bca467b6645e3772135e9e92803767d3.sample"]
+source_file="res://assets/audios/sfx/Suara detak jantung 2025-09-24 15_41.wav"
+dest_files=["res://.godot/imported/Suara detak jantung 2025-09-24 15_41.wav-d29db287ba353224ef0bb377a11c5452.sample"]
 
 [params]
 
