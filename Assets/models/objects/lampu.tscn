@@ -126,3 +126,8 @@ skeleton = NodePath("")
 transform = Transform3D(117.87069, 0, 0, 0, -1.4051281e-05, 173.74928, 0, -117.87068, -2.071253e-05, 1.1944512e-07, 2.0158372, 0)
 mesh = SubResource("ArrayMesh_wqsax")
 skeleton = NodePath("")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, 25.383667, 0)
+spot_range = 46.163467
+spot_angle = 89.99

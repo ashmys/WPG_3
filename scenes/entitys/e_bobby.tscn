@@ -50,16 +50,16 @@ node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"Idle", &"Movem
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Bobby/Root" index="0"]
-bones/2/rotation = Quaternion(-0.037512794, -0.045361795, 0.111747414, 0.9919918)
-bones/3/rotation = Quaternion(0.1045219, 0.70383877, -0.10887101, 0.6941421)
-bones/5/rotation = Quaternion(-0.10558468, 0.9911977, 0.051071037, -0.061408244)
-bones/6/rotation = Quaternion(0.09295978, -0.7056229, 0.096890345, 0.6957493)
-bones/13/rotation = Quaternion(0.07278761, 0.02484443, -0.98737466, 0.13847809)
-bones/14/rotation = Quaternion(0.12883684, 0.031084774, -0.158106, 0.97848725)
-bones/16/position = Vector3(0.009735124, -0.014483752, 0.0006476937)
-bones/19/rotation = Quaternion(0.07278763, -0.024843227, 0.9873749, 0.1384759)
-bones/20/rotation = Quaternion(0.12884927, -0.031085983, 0.1581215, 0.9784831)
-bones/22/position = Vector3(-0.009735126, -0.0144837815, 0.000647694)
+bones/2/rotation = Quaternion(-0.036260568, -0.04381534, 0.112177186, 0.99205935)
+bones/3/rotation = Quaternion(0.10550537, 0.70367754, -0.10988878, 0.6939964)
+bones/5/rotation = Quaternion(-0.1050327, 0.9910882, 0.0522729, -0.06308667)
+bones/6/rotation = Quaternion(0.09187723, -0.70577943, 0.09576751, 0.6958898)
+bones/13/rotation = Quaternion(0.07256612, 0.023684775, -0.9868744, 0.14231035)
+bones/14/rotation = Quaternion(0.12508911, 0.030363416, -0.15315153, 0.97978336)
+bones/16/position = Vector3(0.009729693, -0.014560124, 0.00050804805)
+bones/19/rotation = Quaternion(0.072563894, -0.023688708, 0.98687464, 0.142309)
+bones/20/rotation = Quaternion(0.12508614, -0.030363388, 0.15314804, 0.9797843)
+bones/22/position = Vector3(-0.009729695, -0.014560154, 0.0005080484)
 
 [node name="AnimationTree" parent="." index="4"]
 root_node = NodePath("../Bobby")
