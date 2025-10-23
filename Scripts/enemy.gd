@@ -144,7 +144,13 @@ func _check_game_over() -> void:
 		game_overUI.visible = true
 		state = State.IDLE
 		await get_tree().create_timer(2.0).timeout
-		get_tree().reload_current_scene()
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		Global.battery_count = 0
+		Global.stage1 = false
+		Global.generator_on = false
+		Global.call_police = false
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:

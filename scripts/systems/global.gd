@@ -4,6 +4,10 @@ var battery_count : int = 0
 var generator_on : bool = false
 var call_police : bool = false
 
+var stage1:bool = false
+var stage2:bool = false
+
+
 var sound:bool = false
 var source:Vector3
 

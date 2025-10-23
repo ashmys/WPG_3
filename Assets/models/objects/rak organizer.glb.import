@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://brnb3psl4wopf"
-path="res://.godot/imported/rak organizer.glb-b963d050a5ceeea5fcd5a5ab88f16857.scn"
+path="res://.godot/imported/rak organizer.glb-f6e5859774c2deb76ca643b2175e3a84.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/rak organizer.glb"
-dest_files=["res://.godot/imported/rak organizer.glb-b963d050a5ceeea5fcd5a5ab88f16857.scn"]
+source_file="res://Assets/models/objects/rak organizer.glb"
+dest_files=["res://.godot/imported/rak organizer.glb-f6e5859774c2deb76ca643b2175e3a84.scn"]
 
 [params]
 
