@@ -168,7 +168,10 @@ func _physics_process(delta: float) -> void:
 		game_overUI.visible = true
 		state = State.WAIT
 		await get_tree().create_timer(2.0).timeout
-		get_tree().call_deferred("reload_current_scene")
+		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
+		Global.battery_count = 0
+		Global.stage1 = false
+		Global.stage2 = false
 
 func act(target: Vector3, speed: float, delta: float, continuous: bool = false) -> void:
 	if continuous:

@@ -35,6 +35,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_7vge3")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4kcm1"]
+cull_mode = 2
 albedo_texture = ExtResource("1_idbuk")
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_idbuk"]

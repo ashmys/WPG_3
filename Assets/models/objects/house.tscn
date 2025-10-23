@@ -1,23 +1,25 @@
-[gd_scene load_steps=19 format=3 uid="uid://dnsls0i1si0hs"]
+[gd_scene load_steps=21 format=3 uid="uid://dnsls0i1si0hs"]
 
-[ext_resource type="PackedScene" uid="uid://dvl2afeei728r" path="res://assets/models/objects/tembok_0_1.tscn" id="1_6hod6"]
-[ext_resource type="PackedScene" uid="uid://c6dbyhqekm5l" path="res://assets/models/objects/tembok_corner_0_1.tscn" id="2_2l853"]
-[ext_resource type="PackedScene" uid="uid://tcwu4arinmbw" path="res://assets/models/objects/tembok_pintu.tscn" id="3_vt6au"]
-[ext_resource type="PackedScene" uid="uid://bamdspyobtjel" path="res://assets/models/objects/tembok_corner_0_0.tscn" id="4_0t57q"]
-[ext_resource type="PackedScene" uid="uid://cjtrrfh4qke7w" path="res://assets/models/objects/big_sofa.tscn" id="5_vt6au"]
-[ext_resource type="PackedScene" uid="uid://d0gsekx4f5tj" path="res://assets/models/objects/table.tscn" id="6_5yf38"]
-[ext_resource type="PackedScene" uid="uid://h1vv08mpj7hw" path="res://assets/models/objects/rak_dapur.tscn" id="7_d582p"]
+[ext_resource type="PackedScene" uid="uid://dvl2afeei728r" path="res://Assets/models/objects/tembok_0_1.tscn" id="1_6hod6"]
+[ext_resource type="PackedScene" uid="uid://c6dbyhqekm5l" path="res://Assets/models/objects/tembok_corner_0_1.tscn" id="2_2l853"]
+[ext_resource type="PackedScene" uid="uid://tcwu4arinmbw" path="res://Assets/models/objects/tembok_pintu.tscn" id="3_vt6au"]
+[ext_resource type="PackedScene" uid="uid://bamdspyobtjel" path="res://Assets/models/objects/tembok_corner_0_0.tscn" id="4_0t57q"]
+[ext_resource type="PackedScene" uid="uid://cjtrrfh4qke7w" path="res://Assets/models/objects/big_sofa.tscn" id="5_vt6au"]
+[ext_resource type="PackedScene" uid="uid://d0gsekx4f5tj" path="res://Assets/models/objects/table.tscn" id="6_5yf38"]
+[ext_resource type="PackedScene" uid="uid://h1vv08mpj7hw" path="res://Assets/models/objects/rak_dapur.tscn" id="7_d582p"]
 [ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/objects/chair.tscn" id="8_d582p"]
-[ext_resource type="PackedScene" uid="uid://2n62c3sn4yd7" path="res://assets/models/objects/stairs.tscn" id="9_v3jr5"]
-[ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://assets/models/objects/tv.tscn" id="10_44jqt"]
-[ext_resource type="PackedScene" uid="uid://dk58mdagclxue" path="res://assets/models/objects/mesin_cuci.tscn" id="11_54rd1"]
+[ext_resource type="PackedScene" uid="uid://2n62c3sn4yd7" path="res://Assets/models/objects/stairs.tscn" id="9_v3jr5"]
+[ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://Assets/models/objects/tv.tscn" id="10_44jqt"]
+[ext_resource type="PackedScene" uid="uid://dk58mdagclxue" path="res://Assets/models/objects/mesin_cuci.tscn" id="11_54rd1"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="12_2ire7"]
 [ext_resource type="PackedScene" uid="uid://ccotqn118laxb" path="res://scenes/interactable_objects/interact_objects/generator.tscn" id="13_7mhty"]
 [ext_resource type="PackedScene" uid="uid://bl01dr3iti3hk" path="res://scenes/interactable_objects/interact_objects/battery.tscn" id="14_m7ljd"]
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="14_sy4kb"]
-[ext_resource type="PackedScene" uid="uid://dbap6m3qgrbof" path="res://assets/models/objects/tembok_jendela_besar.tscn" id="15_8r1r6"]
-[ext_resource type="PackedScene" uid="uid://cdi1sahweo02s" path="res://assets/models/objects/tembok_jendela.tscn" id="16_ttk6p"]
-[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://assets/models/objects/kardus_tertutup.tscn" id="18_ovyic"]
+[ext_resource type="PackedScene" uid="uid://dbap6m3qgrbof" path="res://Assets/models/objects/tembok_jendela_besar.tscn" id="15_8r1r6"]
+[ext_resource type="PackedScene" uid="uid://cdi1sahweo02s" path="res://Assets/models/objects/tembok_jendela.tscn" id="16_ttk6p"]
+[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://Assets/models/objects/kardus_tertutup.tscn" id="18_ovyic"]
+[ext_resource type="PackedScene" uid="uid://ckkcjaxxo6eh2" path="res://scenes/interactable_objects/interact_objects/phone.tscn" id="19_ftl2v"]
+[ext_resource type="PackedScene" uid="uid://dx7hnmgo8tjgb" path="res://scenes/cas_hp.tscn" id="20_j6g2q"]
 
 [node name="House" type="Node3D"]
 
@@ -631,7 +633,13 @@ transform = Transform3D(0.18959613, 0, 0.17978662, 0, 0.35, 0, -0.1135114, 0, 0.
 transform = Transform3D(0.2109678, 0, 0.024615854, 0, 0.35, 0, -0.014874413, 0, 0.3491333, -1.6029232, 5.171686, 18.721552)
 
 [node name="Battery" parent="." instance=ExtResource("14_m7ljd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.02294, 4.4657035, 32.137043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9918332, 4.4657035, 28.977701)
 
 [node name="Battery2" parent="." instance=ExtResource("14_m7ljd")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.4711888, 4.673019, 19.838787)
+
+[node name="Phone" parent="." instance=ExtResource("19_ftl2v")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.947063, 4.4655776, 32.76477)
+
+[node name="cas Hp" parent="." instance=ExtResource("20_j6g2q")]
+transform = Transform3D(-0.028977774, 0, -0.0077645737, 0, 0.03, 0, 0.0077645737, 0, -0.028977774, 19.80812, 4.495883, 32.783463)

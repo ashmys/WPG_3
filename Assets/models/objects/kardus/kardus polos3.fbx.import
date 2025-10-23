@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dsc3sbv1q3heb"
-path="res://.godot/imported/kardus polos3.fbx-762622371099c8c9a0c4d780ab798dd9.scn"
+path="res://.godot/imported/kardus polos3.fbx-f242ec3438c118110d3ba717f3720d48.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/kardus/kardus polos3.fbx"
-dest_files=["res://.godot/imported/kardus polos3.fbx-762622371099c8c9a0c4d780ab798dd9.scn"]
+source_file="res://Assets/models/objects/kardus/kardus polos3.fbx"
+dest_files=["res://.godot/imported/kardus polos3.fbx-f242ec3438c118110d3ba717f3720d48.scn"]
 
 [params]
 

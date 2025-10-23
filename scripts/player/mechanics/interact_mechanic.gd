@@ -11,6 +11,7 @@ func _interact(target: Object) -> void:
 			print(Global.battery_count)
 			target.queue_free()
 			if Global.battery_count >= 2:
+				Global.stage2 = true
 				flashlight.visible = true
 		"Generator":
 			Global.generator_on = true
