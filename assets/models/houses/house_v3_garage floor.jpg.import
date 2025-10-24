@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dmtw4od0yvira"
-path.s3tc="res://.godot/imported/house_lantai kayu.jpg-0da0109cec4c2662eab1f94738b0f3d7.s3tc.ctex"
+uid="uid://vrvqvptll71n"
+path.s3tc="res://.godot/imported/house_v3_garage floor.jpg-07f17f8d41331e67e42df5d3aaba3cf8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "a9fff5d3a70448b55d692fc3603fe210"
+"md5": "6e51d068a4cd88eb3de2a82d3e34dfe8"
 }
 
 [deps]
 
-source_file="res://assets/models/house_lantai kayu.jpg"
-dest_files=["res://.godot/imported/house_lantai kayu.jpg-0da0109cec4c2662eab1f94738b0f3d7.s3tc.ctex"]
+source_file="res://assets/models/houses/house_v3_garage floor.jpg"
+dest_files=["res://.godot/imported/house_v3_garage floor.jpg-07f17f8d41331e67e42df5d3aaba3cf8.s3tc.ctex"]
 
 [params]
 

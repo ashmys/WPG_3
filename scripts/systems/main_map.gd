@@ -31,6 +31,7 @@ func _process(delta: float) -> void:
 	if Global.stage1:
 		e_bobby.set_physics_process(true)
 		e_bobby.set_process(true)
+		e_valeria.set_physics_process(false)
 		e_valeria.set_process(false)
 		e_valeria.visible = false
 
@@ -40,6 +41,13 @@ func _process(delta: float) -> void:
 		var baloon = Baloon.instantiate()
 		get_tree().current_scene.add_child(baloon)
 		baloon.start(dialogue_resource, dialogue_stage2)
+	
+	if Global.stage3:
+		e_bobby.set_physics_process(true)
+		e_bobby.set_process(true)
+		e_valeria.set_physics_process(true)
+		e_valeria.set_process(true)
+		e_valeria.visible = true
 
 func _on_area_3d_pembatas_1() -> void:
 	if not pembatas1_triggered:

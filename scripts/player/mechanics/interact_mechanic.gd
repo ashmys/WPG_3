@@ -15,6 +15,7 @@ func _interact(target: Object) -> void:
 				flashlight.visible = true
 		"Generator":
 			Global.generator_on = true
+			Global.stage3 = true
 		"Phone":
 			if Global.generator_on:
 				Global.call_police = true

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dv2h50mny12d"
-path="res://.godot/imported/cas hp.fbx-60f625b5c701b59516ac7a676d9369d7.scn"
+path="res://.godot/imported/cas hp.fbx-961edb33d30364fc9b431f5bbc8571ae.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/cas hp.fbx"
-dest_files=["res://.godot/imported/cas hp.fbx-60f625b5c701b59516ac7a676d9369d7.scn"]
+source_file="res://assets/models/objects/cas hp.fbx"
+dest_files=["res://.godot/imported/cas hp.fbx-961edb33d30364fc9b431f5bbc8571ae.scn"]
 
 [params]
 

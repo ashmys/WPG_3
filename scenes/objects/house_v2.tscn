@@ -1,13 +1,13 @@
 [gd_scene load_steps=524 format=4 uid="uid://b7qqsnhrqnn8t"]
 
-[ext_resource type="Texture2D" uid="uid://dmtw4od0yvira" path="res://assets/models/house_lantai kayu.jpg" id="1_3n4ms"]
-[ext_resource type="Texture2D" uid="uid://5181xtomd0jp" path="res://assets/models/house_garage floor.jpg" id="2_dmff1"]
-[ext_resource type="Texture2D" uid="uid://d3s31o88k468k" path="res://assets/models/house_rock1.jpg" id="3_4v2a6"]
-[ext_resource type="Texture2D" uid="uid://4k57purehiev" path="res://assets/models/house_download (31).jpg" id="4_lusyh"]
-[ext_resource type="Texture2D" uid="uid://blga0vgoau873" path="res://assets/models/house_Bardage peint blanc horizontal.jpg" id="5_d7b1f"]
-[ext_resource type="Texture2D" uid="uid://dvm23lb7ftk7t" path="res://assets/models/house_download (33).jpg" id="6_n7leb"]
-[ext_resource type="Texture2D" uid="uid://b0icex31al3u7" path="res://assets/models/house_PVC Door Designs That Beat Moisture & Save You___.jpg" id="7_8nlbq"]
-[ext_resource type="Texture2D" uid="uid://dq3xfr26al4xt" path="res://assets/models/house_garage.jpg" id="8_6545a"]
+[ext_resource type="Texture2D" uid="uid://dmtw4od0yvira" path="res://assets/models/houses/house_lantai kayu.jpg" id="1_3n4ms"]
+[ext_resource type="Texture2D" uid="uid://5181xtomd0jp" path="res://assets/models/houses/house_garage floor.jpg" id="2_dmff1"]
+[ext_resource type="Texture2D" uid="uid://d3s31o88k468k" path="res://assets/models/houses/house_rock1.jpg" id="3_4v2a6"]
+[ext_resource type="Texture2D" uid="uid://4k57purehiev" path="res://assets/models/houses/house_download (31).jpg" id="4_lusyh"]
+[ext_resource type="Texture2D" uid="uid://blga0vgoau873" path="res://assets/models/houses/house_Bardage peint blanc horizontal.jpg" id="5_d7b1f"]
+[ext_resource type="Texture2D" uid="uid://dvm23lb7ftk7t" path="res://assets/models/houses/house_download (33).jpg" id="6_n7leb"]
+[ext_resource type="Texture2D" uid="uid://b0icex31al3u7" path="res://assets/models/houses/house_PVC Door Designs That Beat Moisture & Save You___.jpg" id="7_8nlbq"]
+[ext_resource type="Texture2D" uid="uid://dq3xfr26al4xt" path="res://assets/models/houses/house_garage.jpg" id="8_6545a"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k31j2"]
 resource_name = "Lantai Kayu"

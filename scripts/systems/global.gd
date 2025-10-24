@@ -6,6 +6,7 @@ var call_police : bool = false
 
 var stage1:bool = false
 var stage2:bool = false
+var stage3:bool = false
 
 
 var sound:bool = false

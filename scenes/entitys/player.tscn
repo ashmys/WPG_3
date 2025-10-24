@@ -1,12 +1,12 @@
 [gd_scene load_steps=24 format=3 uid="uid://8a38my28t4v7"]
 
-[ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://Scripts/player/player_controller.gd" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://Scripts/player/player_camera.gd" id="3_qhqgy"]
-[ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://Scripts/player/interact_raycast.gd" id="3_rlr1k"]
-[ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://Scripts/player/player_camAnimation.gd" id="4_tsxeq"]
-[ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://Scripts/player/mechanics/interact_mechanic.gd" id="5_hucg6"]
-[ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://Scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
-[ext_resource type="PackedScene" uid="uid://b3x5yk88oyiyw" path="res://scenes/senter.tscn" id="7_ft406"]
+[ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player/player_controller.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player/player_camera.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://scripts/player/interact_raycast.gd" id="3_rlr1k"]
+[ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://scripts/player/player_camAnimation.gd" id="4_tsxeq"]
+[ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/interact_mechanic.gd" id="5_hucg6"]
+[ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
+[ext_resource type="PackedScene" uid="uid://b3x5yk88oyiyw" path="res://scenes/objects/senter.tscn" id="7_ft406"]
 [ext_resource type="PackedScene" uid="uid://bfv446m4eumm8" path="res://scenes/mechanics/climb_stair_area_3d.tscn" id="8_ft406"]
 
 [sub_resource type="Curve" id="Curve_ft406"]
@@ -220,7 +220,7 @@ playback_default_blend_time = 1.0
 transform = Transform3D(0, -0.049999997, 2.1855693e-09, -3.0797754e-18, -2.1855697e-09, -0.05, 0.049999997, 0, 0, 0.35967702, -0.36907816, -0.0132475495)
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/senter"]
-transform = Transform3D(0, 0, 20, -20, -8.742277e-07, -5.3848504e-23, 8.742279e-07, -19.999998, -1.2319101e-15, -7.043928, 0, -0.28882027)
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -7.043928, 0, -0.28882027)
 visible = false
 spot_range = 20.0
 spot_angle = 30.0
@@ -235,3 +235,8 @@ mesh = SubResource("CapsuleMesh_g2els")
 
 [node name="ClimbStair_Area3D" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("8_ft406")]
 chara = NodePath("..")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.574, 0)
+light_energy = 0.05
+omni_range = 4.219113

@@ -147,6 +147,8 @@ func _check_game_over() -> void:
 		get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 		Global.battery_count = 0
 		Global.stage1 = false
+		Global.stage2 = false
+		Global.stage3 = false
 		Global.generator_on = false
 		Global.call_police = false
 		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)

@@ -2,20 +2,20 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0icex31al3u7"
-path.s3tc="res://.godot/imported/house_PVC Door Designs That Beat Moisture & Save You___.jpg-2cd9e48ab34a340e8e8d5d133af16876.s3tc.ctex"
+uid="uid://cm57mu51hmrc8"
+path.s3tc="res://.godot/imported/house_v3_garage.jpg-fef2b8b1ebe7d48967192bf5b5a5cf64.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
 generator_parameters={
-"md5": "6b747fb315dab3b5c7fe5c40a2e2f1dc"
+"md5": "fadb5b7541c1346cc89fdebdb91dd8b8"
 }
 
 [deps]
 
-source_file="res://assets/models/house_PVC Door Designs That Beat Moisture & Save You___.jpg"
-dest_files=["res://.godot/imported/house_PVC Door Designs That Beat Moisture & Save You___.jpg-2cd9e48ab34a340e8e8d5d133af16876.s3tc.ctex"]
+source_file="res://assets/models/houses/house_v3_garage.jpg"
+dest_files=["res://.godot/imported/house_v3_garage.jpg-fef2b8b1ebe7d48967192bf5b5a5cf64.s3tc.ctex"]
 
 [params]
 
