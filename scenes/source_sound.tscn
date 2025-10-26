@@ -1,25 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://k03ov2i2sj1y"]
-
-[ext_resource type="AudioStream" uid="uid://13pd8swhc4dd" path="res://key-get-39925.mp3" id="1_0c2pq"]
-[ext_resource type="Script" uid="uid://cr5hu0cuiia2y" path="res://source_sound.gd" id="1_waqq3"]
+[gd_scene load_steps=2 format=3 uid="uid://k03ov2i2sj1y"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_0c2pq"]
 size = Vector3(3.77856, 1.86035, 4.6813)
 
-[sub_resource type="BoxMesh" id="BoxMesh_0u0cc"]
-
 [node name="SourceSound" type="AudioStreamPlayer3D"]
-stream = ExtResource("1_0c2pq")
-script = ExtResource("1_waqq3")
 
 [node name="Area3D" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("BoxShape3D_0c2pq")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Area3D/CollisionShape3D"]
-transform = Transform3D(3.8, 0, 0, 0, 1.8, 0, 0, 0, 4.7, 0, 0, 0)
-mesh = SubResource("BoxMesh_0u0cc")
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

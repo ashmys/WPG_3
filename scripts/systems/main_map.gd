@@ -61,3 +61,15 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_3d_body_exited(body: Node3D) -> void:
 	if body is CharacterBody3D:
 		Global.stage1 = true
+
+func _on_area_pembatas_1_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and not pengantar_stage2_triggerd:
+		pengantar_stage2_triggerd = true
+		var baloon = Baloon.instantiate()
+		get_tree().current_scene.add_child(baloon)
+		baloon.start(dialogue_resource, dialogue_pembatas1)
+
+
+func _on_area_pembatas_1_body_exited(body: Node3D) -> void:
+	if body is CharacterBody3D and pengantar_stage2_triggerd:
+		pengantar_stage2_triggerd = false

@@ -4,6 +4,8 @@ var battery_count : int = 0
 var generator_on : bool = false
 var call_police : bool = false
 
+
+var prolog:bool = true
 var stage1:bool = false
 var stage2:bool = false
 
