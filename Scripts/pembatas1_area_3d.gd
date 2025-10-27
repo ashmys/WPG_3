@@ -9,7 +9,9 @@ var player_entered:bool = false
 signal pembatas1
 
 func _on_body_entered(body: Node3D) -> void:
-		pembatas1.emit()
+	print("Sesuatu masuk")
+	if body.is_in_group("player"):
+		print("Player memasuki area")
 
 
 func _on_body_exited(body: Node3D) -> void:
