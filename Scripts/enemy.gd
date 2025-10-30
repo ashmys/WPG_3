@@ -49,11 +49,35 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not stuck:
 		_apply_gravity(delta)
 	
-	_check_visibility()
-	_handle_state_transitions()
-	_execute_state_behavior(delta)
-	move_and_slide()
-	_check_game_over()
+	if Global.prolog:
+		state = State.IDLE
+	elif Global.stage1:
+		state = State.IDLE
+	elif Global.stage2:
+		_check_visibility()
+		_handle_state_transitions()
+		_execute_state_behavior(delta)
+		move_and_slide()
+		_check_game_over()
+	elif Global.stage3:
+		_check_visibility()
+		_handle_state_transitions()
+		_execute_state_behavior(delta)
+		move_and_slide()
+		_check_game_over()
+	elif Global.stage4:
+		_check_visibility()
+		_handle_state_transitions()
+		_execute_state_behavior(delta)
+		move_and_slide()
+		_check_game_over()
+	elif Global.stage5:
+		_check_visibility()
+		_handle_state_transitions()
+		_execute_state_behavior(delta)
+		move_and_slide()
+		_check_game_over()
+
 
 func _apply_gravity(delta: float) -> void:
 	velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
