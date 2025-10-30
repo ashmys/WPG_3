@@ -1,26 +1,4 @@
 ~ start
-Selene: That was close
-Selene: I hope those people doesn't followed me
-Selene: Well, all those running make me hungry 
-Selene: I better get my self a food
-Selene: I remember  have a leftover in a refrigirator => END
-
-~ microSebelumkulkas
-Selene: I need to grab the food first => END
-
-~ kulkas
-Selene: All right, now microwave it
-Selene: No one like a cold diner => END
-
-~ makan
-Selene: Bon appétit => END
-
-~ matikanLampu
-Selene: Hoooaam.....
-Selene: I'm getting sleepy
-Selene: Before sleep, mother told me to to turn off every light in the house => END
-
-~ stage1
 Selene: The power is out
 Selene: And my phone is almost run out of battery
 Selene: Ah.. i have my flashlight

@@ -1,8 +1,6 @@
 extends CanvasLayer
 ## A basic dialogue balloon for use with Dialogue Manager.
 
-signal dialogue_finished
-
 ## The action to use for advancing the dialogue
 @export var next_action: StringName = &"ui_accept"
 
@@ -37,9 +35,7 @@ var dialogue_line: DialogueLine:
 			apply_dialogue_line()
 		else:
 			# The dialogue has finished so close the balloon
-			emit_signal("dialogue_finished")
 			queue_free()
-
 	get:
 		return dialogue_line
 
