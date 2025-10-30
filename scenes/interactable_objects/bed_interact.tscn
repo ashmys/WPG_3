@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://cevm17bmbiqtj"]
+
+[ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_m2jxp"]
+[ext_resource type="PackedScene" path="res://scenes/objects/bed.tscn" id="2_3h6w7"]
+
+[node name="Bed" instance=ExtResource("1_m2jxp")]
+object_name = "Bed"
+
+[node name="Interact_Collision" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.326599, -1.1157837)
+
+[node name="Mesh_Placeholder" parent="." index="1"]
+visible = false
+
+[node name="Bed" parent="." index="2" instance=ExtResource("2_3h6w7")]
+transform = Transform3D(383.66022, 0, 0, 0, -4.5735862e-05, 288.7231, 0, -383.6602, -3.441848e-05, -0.12678349, 0, -1.7587662)
