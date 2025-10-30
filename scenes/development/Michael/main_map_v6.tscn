@@ -11,14 +11,14 @@
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="12_su6sq"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="13_3xd4a"]
 [ext_resource type="PackedScene" uid="uid://ljdve5xdktd8" path="res://scenes/house_fix.tscn" id="13_ctpa3"]
-[ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://Scripts/pembatas1_area_3d.gd" id="13_dxapp"]
-[ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://Assets/models/objects/lampu.tscn" id="14_2y5pm"]
+[ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://scripts/pembatas1_area_3d.gd" id="13_dxapp"]
+[ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://assets/models/objects/lampu.tscn" id="14_2y5pm"]
 [ext_resource type="PackedScene" uid="uid://cvrog77yspmgn" path="res://scenes/interactable_objects/interact_objects/refrigerator.tscn" id="14_qq841"]
 [ext_resource type="PackedScene" uid="uid://br6avifn7skwy" path="res://scenes/interactable_objects/interact_objects/microwave.tscn" id="15_6n5qr"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="15_8ofni"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="16_dw30q"]
 [ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="17_odsqc"]
-[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://Scripts/systems/game_manager.gd" id="18_hfke5"]
+[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="18_hfke5"]
 [ext_resource type="PackedScene" uid="uid://c8qah2f026gpn" path="res://scenes/interactable_objects/interact_objects/saklar.tscn" id="20_jq455"]
 [ext_resource type="PackedScene" uid="uid://o7jg4g6h76r3" path="res://scenes/monitor.tscn" id="21_xlbl2"]
 
@@ -165,7 +165,7 @@ game_overUI = NodePath("../../CanvasLayer/GameOver")
 navigation_mesh = SubResource("NavigationMesh_vib1c")
 
 [node name="house_fix" parent="Static_Objects/NavigationRegion3D" instance=ExtResource("13_ctpa3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0212126, 0, 3.8715935)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.0228939, -0.01930046, 3.8656874)
 
 [node name="Interactable_Objects" type="Node3D" parent="Static_Objects/NavigationRegion3D"]
 
