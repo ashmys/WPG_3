@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="4_ywjak"]
 [ext_resource type="PackedScene" uid="uid://d2npgl64yk6cq" path="res://scenes/entitys/e_bobby.tscn" id="5_ixu1l"]
 [ext_resource type="PackedScene" uid="uid://yry8nniu7iht" path="res://scenes/entitys/e_valeria.tscn" id="6_ns5mi"]
-[ext_resource type="PackedScene" uid="uid://b7qqsnhrqnn8t" path="res://scenes/objects/house_v2.tscn" id="7_qooau"]
+[ext_resource type="PackedScene" uid="uid://b7qqsnhrqnn8t" path="res://scenes/object_assets/house_v2.tscn" id="7_qooau"]
 [ext_resource type="PackedScene" uid="uid://dnsls0i1si0hs" path="res://assets/models/objects/house.tscn" id="7_xm2i5"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="8_rmwp6"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="9_t532k"]

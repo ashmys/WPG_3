@@ -9,6 +9,10 @@ extends RayCast3D
 var target: Object = null
 
 func _physics_process(_delta: float) -> void:
+	if not Global.mouse_captured:
+		player.popUpText.hide()
+		return
+	
 	_update_collision_target()
 	_update_popup_text()
 	_process_interaction_input()

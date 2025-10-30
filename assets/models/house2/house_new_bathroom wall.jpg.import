@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c7k4fhc0srfrl"
-path.s3tc="res://.godot/imported/house_new_bathroom wall.jpg-81dce2fe6b7c740797bee1d4fabda984.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_new_bathroom wall.jpg-05f67de58b8be8b90ad599c9a7b82656.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/house2/house_new_bathroom wall.jpg"
-dest_files=["res://.godot/imported/house_new_bathroom wall.jpg-81dce2fe6b7c740797bee1d4fabda984.s3tc.ctex"]
+source_file="res://assets/models/house2/house_new_bathroom wall.jpg"
+dest_files=["res://.godot/imported/house_new_bathroom wall.jpg-05f67de58b8be8b90ad599c9a7b82656.s3tc.ctex"]
 
 [params]
 

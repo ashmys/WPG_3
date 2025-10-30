@@ -5,7 +5,11 @@ func _ready():
 
 func _on_player_caught():
 	visible = true
-	get_tree().paused = true
+	await get_tree().create_timer(2.0).timeout
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
 	Global.battery_count = 0
-	Global.stage1 = false
-	Global.stage2 = false
+	Global.gameStage = Global.State.END
+	Global.generator_on = false
+	Global.call_police = false
+	get_tree().paused = true
+	Global.release_mouse()

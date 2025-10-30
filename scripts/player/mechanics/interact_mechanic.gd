@@ -7,21 +7,20 @@ extends Node
 func _interact(target: Object) -> void:
 	match target.object_name:
 		"Refrigerator":
-			if Global.prolog:
-				Global.food = true
+			if Global.gameStage == Global.State.PROLOG1:
+				Global.gameStage = Global.State.PROLOG2
 		"Microwave":
-			if Global.prolog and Global.food:
+			if Global.gameStage == Global.State.PROLOG2:
 				print("Masakan matang")
-				Global.cooked_food = true
+				Global.gameStage = Global.State.PROLOG3
 		"Saklar":
-			if Global.prolog2:
+			if Global.gameStage == Global.State.PROLOG3:
 				print("Matikan")
 				Global.lampu_mati += 1
 			if Global.lampu_mati >= 2:
-				Global.prolog2 = false
-				Global.stage1 = true
+				Global.gameStage = Global.State.PROLOG4
 		"Battery":
-			if Global.stage1 == true:
+			if Global.gameStage == Global.State.STAGE1:
 				Global.battery_count += 1
 				print(Global.battery_count)
 				target.queue_free()
@@ -29,10 +28,10 @@ func _interact(target: Object) -> void:
 					Global.stage2 = true
 					flashlight.visible = true
 		"Generator":
-			if Global.stage3 == true:
+			if Global.gameStage == Global.State.STAGE3:
 				Global.generator_on = true
 		"Phone":
-			if Global.stage4 == true:
+			if Global.gameStage == Global.State.STAGE4:
 				if Global.generator_on:
 					Global.call_police = true
 		_:
