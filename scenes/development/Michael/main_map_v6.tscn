@@ -58,6 +58,21 @@ shadow_size = 2
 shadow_color = Color(0, 0, 0, 0.5882353)
 shadow_offset = Vector2(2, 2)
 
+[sub_resource type="Animation" id="Animation_jq455"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_6n5qr"]
 resource_name = "fade"
 length = 3.0
@@ -72,21 +87,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_jq455"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xlbl2"]
@@ -117,7 +117,7 @@ func _process(delta: float) -> void:
 [sub_resource type="BoxShape3D" id="BoxShape3D_bqvky"]
 size = Vector3(2.8745117, 1, 1.3798828)
 
-[node name="Main" type="Node" node_paths=PackedStringArray("e_bobby", "e_valeria", "player", "taskbar", "blackScreen", "blackScreenAnim")]
+[node name="Main" type="Node" node_paths=PackedStringArray("e_bobby", "e_valeria", "player", "taskbar", "blackScreen", "blackScreenAnim", "pembatasAreaStage1")]
 process_mode = 3
 script = ExtResource("1_xlbl2")
 dialogue_resource = ExtResource("2_elfv4")
@@ -127,6 +127,7 @@ player = NodePath("Entity/Player")
 taskbar = NodePath("CanvasLayer/TaskBar/VBoxContainer/task")
 blackScreen = NodePath("CanvasLayer/BlackScreen")
 blackScreenAnim = NodePath("CanvasLayer/BlackScreen/AnimationPlayer")
+pembatasAreaStage1 = NodePath("Area_pembatas1")
 
 [node name="Shader" type="Node3D" parent="."]
 

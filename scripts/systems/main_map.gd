@@ -17,6 +17,7 @@ const Baloon = preload("res://Assets/dialogue/balloon.tscn")
 @export var taskbar:Label
 @export var blackScreen:Control
 @export var blackScreenAnim:AnimationPlayer
+@export var pembatasAreaStage1:Area3D
 
 var prolog2_triggered:= false
 var stage1_triggered := false
@@ -101,7 +102,7 @@ func _process(delta: float) -> void:
 	
 	if Global.stage1 and not stage1_triggered:
 		stage1_triggered = true
-
+		pembatasAreaStage1.global_position = Vector3(3.398,3.106,-5.039)
 		e_bobby.set_physics_process(true)
 		e_bobby.set_process(true)
 		e_valeria.set_process(false)
@@ -111,6 +112,7 @@ func _process(delta: float) -> void:
 		baloon.start(dialogue_resource, dialogue_stage1)
 
 	if Global.stage2 and not stage2_triggered:
+		e_bobby.visible = true
 		$Area_pembatas1.global_position = Vector3(100,100,100)
 		stage2_triggered = true
 		var baloon = Baloon.instantiate()
@@ -127,16 +129,21 @@ func _on_area_3d_pembatas_1() -> void:
 
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D and not pengantar_stage2_triggerd:
-		pengantar_stage2_triggerd = true
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_garage)
+	if Global.stage1:
+		if body is CharacterBody3D and not pengantar_stage2_triggerd:
+			pengantar_stage2_triggerd = true
+			var baloon = Baloon.instantiate()
+			get_tree().current_scene.add_child(baloon)
+			baloon.start(dialogue_resource, dialogue_garage)
+			await  baloon.dialogue_finished
+			e_bobby.set_physics_process(true)
+			e_bobby.set_process(true)
 		
 
 func _on_area_3d_body_exited(body: Node3D) -> void:
-	if body is CharacterBody3D:
-		Global.stage1 = true
+	if Global.stage1:
+		if body is CharacterBody3D:
+			Global.stage1 = true
 
 func _on_area_pembatas_1_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D and not pengantar_stage2_triggerd:
