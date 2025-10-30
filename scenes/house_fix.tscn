@@ -1,4 +1,4 @@
-[gd_scene load_steps=581 format=4 uid="uid://ljdve5xdktd8"]
+[gd_scene load_steps=582 format=4 uid="uid://ljdve5xdktd8"]
 
 [ext_resource type="Texture2D" uid="uid://cdkaiag2d36mi" path="res://assets/models/objects/house_download (31).jpg" id="1_mr7cr"]
 [ext_resource type="Texture2D" uid="uid://c140pjxeyjqy" path="res://assets/models/objects/house_Bardage peint blanc horizontal.jpg" id="2_ylfa0"]
@@ -14,8 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/objects/chair.tscn" id="12_3nbyb"]
 [ext_resource type="PackedScene" uid="uid://bm25c1a7plprb" path="res://scenes/wastafel.tscn" id="13_3nbyb"]
 [ext_resource type="PackedScene" uid="uid://d0fho48004uy" path="res://scenes/rak_besi.tscn" id="14_ybotp"]
-[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://assets/models/objects/kardus_tertutup.tscn" id="15_8d7uw"]
-[ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://assets/models/objects/tv.tscn" id="16_ybotp"]
+[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://Assets/models/objects/kardus_tertutup.tscn" id="15_8d7uw"]
+[ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://Assets/models/objects/tv.tscn" id="16_ybotp"]
+[ext_resource type="PackedScene" uid="uid://c1ul8fbna4f26" path="res://scenes/rak_gudang.tscn" id="17_8d7uw"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rxhe"]
 resource_name = "Material.014"
@@ -13066,7 +13067,7 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lantai1/Cube_093/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_gwrff")
 
-[node name="Cube_124" type="MeshInstance3D" parent="Lantai1"]
+[node name="Cube_124" type="MeshInstance3D" parent="Lantai1" groups=["stairs"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2810273, 2.7708647, -8.088807)
 mesh = SubResource("ArrayMesh_gwrff")
 skeleton = NodePath("")
@@ -14200,188 +14201,29 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.2
 [node name="Rak_Besi2" parent="." instance=ExtResource("14_ybotp")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.260921, 0.7708647, 6.408496)
 
-[node name="Rak_Besi3" parent="." instance=ExtResource("14_ybotp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.966015, 4.8708644, -11.307594)
-
-[node name="Rak_Besi4" parent="." instance=ExtResource("14_ybotp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.14191, 4.8708644, -11.307594)
-
-[node name="Rak_Besi5" parent="." instance=ExtResource("14_ybotp")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.14081, 4.8708644, -11.307594)
-
-[node name="Rak_Besi6" parent="." instance=ExtResource("14_ybotp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.3860445, 4.8708644, -8.012793)
-
-[node name="Rak_Besi8" parent="." instance=ExtResource("14_ybotp")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -9.150419, 4.8708644, -8.012793)
-
-[node name="Rak_Besi7" parent="." instance=ExtResource("14_ybotp")]
-transform = Transform3D(1.3113416e-07, 0, -1, 0, 1, 0, 1, 0, 1.3113416e-07, -5.720037, 4.8708644, -8.012793)
-
-[node name="kardus_tertutup" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.165726, 0, 0.05982629, 0, 0.323, 0, -0.031236371, 0, 0.31741112, -9.599059, 4.878535, -11.360482)
-
-[node name="kardus_tertutup2" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.15510394, 0, 0.12680785, 0, 0.323, 0, -0.06620864, 0, 0.29706696, -8.718515, 4.878535, -11.360482)
-
-[node name="kardus_tertutup3" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16755764, 0, -0.036603846, 0, 0.323, 0, 0.01911152, 0, 0.32091925, -9.599059, 5.6144753, -11.360482)
-
-[node name="kardus_tertutup4" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16312322, 0, -0.08196927, 0, 0.323, 0, 0.042797614, 0, 0.31242606, -8.718515, 5.6144753, -11.300639)
-
-[node name="kardus_tertutup5" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16674481, 0, -0.04833893, 0, 0.323, 0, 0.025238616, 0, 0.31936243, -9.599059, 6.189851, -11.360482)
-
-[node name="kardus_tertutup7" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.163878, 0, 0.07624675, 0, 0.323, 0, -0.03980979, 0, 0.31387168, -9.599059, 6.71703, -11.360482)
-
-[node name="kardus_tertutup8" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16815601, 0, -0.02455541, 0, 0.323, 0, 0.012820817, 0, 0.32206526, -8.718515, 6.71703, -11.360482)
-
-[node name="kardus_tertutup9" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.15681536, 0, 0.1188361, 0, 0.323, 0, -0.062046442, 0, 0.3003448, -9.599059, 7.2965126, -11.360482)
-
-[node name="kardus_tertutup10" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16634673, 0, -0.05313245, 0, 0.323, 0, 0.027741397, 0, 0.3186, -8.718515, 7.2965126, -11.360482)
-
-[node name="kardus_tertutup11" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -6.50526, 4.878535, -11.360482)
-
-[node name="kardus_tertutup12" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -5.6247163, 4.878535, -11.360482)
-
-[node name="kardus_tertutup14" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -5.6247163, 5.6144753, -11.360482)
-
-[node name="kardus_tertutup15" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -6.50526, 6.189851, -11.360482)
-
-[node name="kardus_tertutup16" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -5.6247163, 6.189851, -11.360482)
-
-[node name="kardus_tertutup17" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -6.50526, 6.71703, -11.360482)
-
-[node name="kardus_tertutup18" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -5.6247163, 6.71703, -11.360482)
-
-[node name="kardus_tertutup19" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -6.50526, 7.2965126, -11.360482)
-
-[node name="kardus_tertutup20" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16864406, 0, 0, 0, 0.323, 0, 0, 0, 0.323, -5.6247163, 7.2965126, -11.360482)
-
-[node name="kardus_tertutup21" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16192728, 0, -0.090249464, 0, 0.323, 0, 0.04712085, 0, 0.31013554, -12.384712, 4.878535, -11.360482)
-
 [node name="kardus_tertutup61" parent="." instance=ExtResource("15_8d7uw")]
 transform = Transform3D(0.14605004, 0, -0.1615, 0, 0.323, 0, 0.08432203, 0, 0.2797262, -12.384712, 4.878535, -10.073762)
 
-[node name="kardus_tertutup22" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.15695573, 0, 0.118154325, 0, 0.323, 0, -0.061690476, 0, 0.30061364, -11.504168, 4.878535, -11.360482)
+[node name="kardus_tertutup62" parent="." instance=ExtResource("15_8d7uw")]
+transform = Transform3D(0.16858898, 0, 0.008252278, 0, 0.32299998, 0, -0.0043086633, 0, 0.32289457, -12.384712, 5.361458, -10.073762)
 
-[node name="kardus_tertutup23" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.09405062, 0, 0.26810655, 0, 0.323, 0, -0.1399832, 0, 0.18013296, -12.384712, 5.6144753, -11.360482)
-
-[node name="kardus_tertutup24" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16717504, 0, 0.042539995, 0, 0.323, 0, -0.022210889, 0, 0.32018644, -11.504168, 5.6144753, -11.360482)
-
-[node name="kardus_tertutup25" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16754796, 0, -0.036766276, 0, 0.323, 0, 0.019196328, 0, 0.32090068, -12.384712, 6.189851, -11.360482)
-
-[node name="kardus_tertutup26" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16544025, 0, 0.06266027, 0, 0.323, 0, -0.032716043, 0, 0.31686383, -11.504168, 6.189851, -11.360482)
-
-[node name="kardus_tertutup27" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.11495468, 0, -0.23633488, 0, 0.323, 0, 0.123394646, 0, 0.22017, -12.384712, 6.71703, -11.360482)
-
-[node name="kardus_tertutup28" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.16844885, 0, 0.015536353, 0, 0.323, 0, -0.008111807, 0, 0.32262614, -11.504168, 6.71703, -11.360482)
-
-[node name="kardus_tertutup29" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.1625404, 0, 0.086111546, 0, 0.323, 0, -0.044960372, 0, 0.3113098, -12.384712, 7.2965126, -11.360482)
-
-[node name="kardus_tertutup30" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(0.1678409, 0, 0.031485613, 0, 0.323, 0, -0.0164392, 0, 0.32146177, -11.504168, 7.2965126, -11.360482)
-
-[node name="kardus_tertutup31" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 4.878535, -7.6217012)
-
-[node name="kardus_tertutup33" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 5.6144753, -7.6217012)
-
-[node name="kardus_tertutup34" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 5.6144753, -8.502246)
-
-[node name="kardus_tertutup35" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 6.189851, -7.6217012)
-
-[node name="kardus_tertutup36" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 6.189851, -8.502246)
-
-[node name="kardus_tertutup37" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 6.71703, -7.6217012)
-
-[node name="kardus_tertutup38" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 6.71703, -8.502246)
-
-[node name="kardus_tertutup39" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 7.2965126, -7.6217012)
-
-[node name="kardus_tertutup40" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -12.456096, 7.2965126, -8.502246)
-
-[node name="kardus_tertutup41" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 4.878535, -7.6217012)
-
-[node name="kardus_tertutup42" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 4.878535, -8.502246)
-
-[node name="kardus_tertutup43" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 5.6144753, -7.6217012)
-
-[node name="kardus_tertutup44" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 5.6144753, -8.502246)
-
-[node name="kardus_tertutup46" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 6.189851, -8.502246)
-
-[node name="kardus_tertutup47" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 6.71703, -7.6217012)
-
-[node name="kardus_tertutup48" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 6.71703, -8.502246)
-
-[node name="kardus_tertutup49" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 7.2965126, -7.6217012)
-
-[node name="kardus_tertutup50" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -9.207183, 7.2965126, -8.502246)
-
-[node name="kardus_tertutup51" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 4.878535, -7.6217012)
-
-[node name="kardus_tertutup52" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 4.878535, -8.502246)
-
-[node name="kardus_tertutup53" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 5.6144753, -7.6217012)
-
-[node name="kardus_tertutup54" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 5.6144753, -8.502246)
-
-[node name="kardus_tertutup56" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 6.189851, -8.502246)
-
-[node name="kardus_tertutup57" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 6.71703, -7.6217012)
-
-[node name="kardus_tertutup58" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 6.71703, -8.502246)
-
-[node name="kardus_tertutup59" parent="." instance=ExtResource("15_8d7uw")]
-transform = Transform3D(-7.371666e-09, 0, 0.323, 0, 0.323, 0, -0.16864406, 0, -1.4118779e-08, -5.652195, 7.2965126, -7.6217012)
+[node name="kardus_tertutup63" parent="." instance=ExtResource("15_8d7uw")]
+transform = Transform3D(0.16858898, 0, 0.008252278, 0, 0.32299998, 0, -0.0043086633, 0, 0.32289457, -11.494885, 5.045127, -10.073762)
 
 [node name="tv" parent="." instance=ExtResource("16_ybotp")]
 transform = Transform3D(-4.371139e-09, 0, 0.1, 0, 0.1, 0, -0.1, 0, -4.371139e-09, -4.0984354, 3.1385157, -6.212784)
+
+[node name="Rak_gudang" parent="." instance=ExtResource("17_8d7uw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.2481956, 4.870865, -11.165231)
+
+[node name="Rak_gudang2" parent="." instance=ExtResource("17_8d7uw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.238001, 4.870865, -11.236825)
+
+[node name="Rak_gudang3" parent="." instance=ExtResource("17_8d7uw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.641108, 4.870865, -11.259442)
+
+[node name="Rak_gudang4" parent="." instance=ExtResource("17_8d7uw")]
+transform = Transform3D(0.25881907, 0, -0.9659258, 0, 1, 0, 0.9659258, 0, 0.25881907, -6.073527, 4.870865, -8.029576)
+
+[node name="Rak_gudang6" parent="." instance=ExtResource("17_8d7uw")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, -12.165828, 4.870865, -8.251938)

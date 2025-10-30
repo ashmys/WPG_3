@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bqiif3fook3wg" path="res://Assets/models/objects/Big Sofa.fbx" id="1_1j2d5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_1j2d5"]
-size = Vector3(0.05055237, 0.060180664, 0.16357422)
+size = Vector3(0.05055237, 0.06324768, 0.16357422)
 
 [node name="Big Sofa" instance=ExtResource("1_1j2d5")]
 
@@ -13,5 +13,5 @@ transform = Transform3D(-198.07925, 6.4389455e-06, -1.22648935e-05, -3.5185944e-
 [node name="StaticBody3D" type="StaticBody3D" parent="big_sofa" index="0"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="big_sofa/StaticBody3D" index="0"]
-transform = Transform3D(0.9999998, 7.781864e-11, 3.9463544e-11, -7.800338e-11, 0.99999917, 0.001256628, -4.638423e-11, -0.0012547374, 0.9999905, 0.010459917, 0.006665144, 0.03224172)
+transform = Transform3D(0.9999998, 7.781864e-11, 3.8689052e-11, -7.800338e-11, 0.99999917, 0.001256628, -4.638423e-11, -0.0012547374, 0.9999905, 0.010459918, 0.008198645, 0.032239787)
 shape = SubResource("BoxShape3D_1j2d5")

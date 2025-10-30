@@ -1,4 +1,6 @@
-[gd_scene load_steps=8 format=4 uid="uid://bccolghmoldwj"]
+[gd_scene load_steps=9 format=4 uid="uid://bccolghmoldwj"]
+
+[ext_resource type="Script" uid="uid://bya7gl1rer5lo" path="res://Scripts/objects/lampu.gd" id="1_s56w2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0fbyx"]
 resource_name = "Material.002"
@@ -116,6 +118,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_j4gq3")
 
 [node name="lampu" type="Node3D"]
+script = ExtResource("1_s56w2")
 
 [node name="Sphere2" type="MeshInstance3D" parent="."]
 transform = Transform3D(165.46935, 0, 0, 0, -1.9725483e-05, 165.46933, 0, -165.46933, -1.9725483e-05, 0, -1.3006487, 0)
