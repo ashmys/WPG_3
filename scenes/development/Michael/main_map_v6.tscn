@@ -1,8 +1,8 @@
 [gd_scene load_steps=25 format=3 uid="uid://b2icr0p8rjdji"]
 
-[ext_resource type="Script" uid="uid://c8n7j3ruoqa1l" path="res://Scripts/systems/main_map.gd" id="1_xlbl2"]
-[ext_resource type="Resource" uid="uid://clatxubm27qpd" path="res://Assets/dialogue/main.dialogue" id="2_elfv4"]
-[ext_resource type="Texture2D" uid="uid://sdh2o7jct31v" path="res://Assets/panorama/qwantani_moon_noon_puresky_1k.hdr" id="3_vlm8r"]
+[ext_resource type="Script" uid="uid://c8n7j3ruoqa1l" path="res://scripts/systems/main_map.gd" id="1_xlbl2"]
+[ext_resource type="Resource" uid="uid://clatxubm27qpd" path="res://assets/dialogue/main.dialogue" id="2_elfv4"]
+[ext_resource type="Texture2D" uid="uid://sdh2o7jct31v" path="res://assets/panorama/qwantani_moon_noon_puresky_1k.hdr" id="3_vlm8r"]
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="4_2d0jy"]
 [ext_resource type="PackedScene" uid="uid://d2npgl64yk6cq" path="res://scenes/entitys/e_bobby.tscn" id="5_7w5gk"]
 [ext_resource type="PackedScene" uid="uid://yry8nniu7iht" path="res://scenes/entitys/e_valeria.tscn" id="6_0cy6o"]
@@ -10,12 +10,12 @@
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="12_su6sq"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="13_3xd4a"]
 [ext_resource type="PackedScene" uid="uid://ljdve5xdktd8" path="res://scenes/house_fix.tscn" id="13_ctpa3"]
-[ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://Scripts/pembatas1_area_3d.gd" id="13_dxapp"]
-[ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://Assets/models/objects/lampu.tscn" id="14_2y5pm"]
+[ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://scripts/pembatas1_area_3d.gd" id="13_dxapp"]
+[ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://assets/models/objects/lampu.tscn" id="14_2y5pm"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="15_8ofni"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="16_dw30q"]
 [ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="17_odsqc"]
-[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://Scripts/systems/game_manager.gd" id="18_hfke5"]
+[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="18_hfke5"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
 panorama = ExtResource("3_vlm8r")
@@ -296,7 +296,7 @@ wait_time = 5.0
 one_shot = true
 
 [node name="Area_pembatas1" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.3976479, 3.106256, -5.0392137)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.639412, 3.106256, -5.0392137)
 collision_layer = 2
 collision_mask = 3
 script = ExtResource("13_dxapp")
@@ -313,7 +313,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.147831, 2.0110106, 2.02959
 shape = SubResource("BoxShape3D_80a12")
 
 [node name="trigger_stage2" type="Area3D" parent="."]
-transform = Transform3D(0.5831868, 0, 0.81233805, 0, 1, 0, -0.81233805, 0, 0.5831868, 3.554366, 5.408992, -8.4713745)
+transform = Transform3D(0.5831868, 0, 0.81233805, 0, 1, 0, -0.81233805, 0, 0.5831868, 16.79613, 5.408992, -8.4713745)
 collision_layer = 3
 collision_mask = 3
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c140pjxeyjqy"
-path.s3tc="res://.godot/imported/house_Bardage peint blanc horizontal.jpg-6931bd6c3f276aa0b870d84aef1a87c2.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_Bardage peint blanc horizontal.jpg-169c636dbed0829336abf2abe5e86231.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/objects/house_Bardage peint blanc horizontal.jpg"
-dest_files=["res://.godot/imported/house_Bardage peint blanc horizontal.jpg-6931bd6c3f276aa0b870d84aef1a87c2.s3tc.ctex"]
+source_file="res://assets/models/objects/house_Bardage peint blanc horizontal.jpg"
+dest_files=["res://.godot/imported/house_Bardage peint blanc horizontal.jpg-169c636dbed0829336abf2abe5e86231.s3tc.ctex"]
 
 [params]
 

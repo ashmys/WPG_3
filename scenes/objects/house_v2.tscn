@@ -12592,14 +12592,14 @@ skeleton = NodePath("")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Empty/Plane_001/Cube_093/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_ju68h")
 
-[node name="Cube_124" type="MeshInstance3D" parent="Empty/Plane_001"]
+[node name="Stair" type="MeshInstance3D" parent="Empty/Plane_001"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.2666664, 1.5, -10.873302)
 mesh = SubResource("ArrayMesh_b38xn")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Empty/Plane_001/Cube_124"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Empty/Plane_001/Stair"]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Empty/Plane_001/Cube_124/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Empty/Plane_001/Stair/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_miu5i")
 
 [node name="Cube_125" type="Node3D" parent="Empty/Plane_001"]

@@ -1,28 +1,27 @@
 [gd_scene load_steps=581 format=4 uid="uid://ljdve5xdktd8"]
 
-[ext_resource type="Texture2D" uid="uid://cdkaiag2d36mi" path="res://Assets/models/objects/house_download (31).jpg" id="1_mr7cr"]
-[ext_resource type="Texture2D" uid="uid://c140pjxeyjqy" path="res://Assets/models/objects/house_Bardage peint blanc horizontal.jpg" id="2_ylfa0"]
-[ext_resource type="Texture2D" uid="uid://c4v3o4hkmma4q" path="res://Assets/models/objects/house_PVC Door Designs That Beat Moisture & Save You___.jpg" id="3_wch12"]
-[ext_resource type="Texture2D" uid="uid://ddi6fld6wienx" path="res://Assets/models/objects/house_lantai kayu.jpg" id="4_4a1p0"]
-[ext_resource type="Texture2D" uid="uid://cthu5c0lq7meh" path="res://Assets/models/objects/house_garage floor.jpg" id="5_was16"]
-[ext_resource type="Texture2D" uid="uid://dqsood68cx6c7" path="res://Assets/models/objects/house_rock1.jpg" id="6_d2qdi"]
-[ext_resource type="Texture2D" uid="uid://da4lf4onf2ind" path="res://Assets/models/objects/house_download (33).jpg" id="7_60dd2"]
-[ext_resource type="Texture2D" uid="uid://bc41lkyybxt6q" path="res://Assets/models/objects/house_garage.jpg" id="8_3nbyb"]
-[ext_resource type="PackedScene" uid="uid://cjtrrfh4qke7w" path="res://Assets/models/objects/big_sofa.tscn" id="9_was16"]
-[ext_resource type="PackedScene" uid="uid://d0gsekx4f5tj" path="res://Assets/models/objects/table.tscn" id="10_d2qdi"]
-[ext_resource type="PackedScene" uid="uid://h1vv08mpj7hw" path="res://Assets/models/objects/rak_dapur.tscn" id="11_60dd2"]
+[ext_resource type="Texture2D" uid="uid://cdkaiag2d36mi" path="res://assets/models/objects/house_download (31).jpg" id="1_mr7cr"]
+[ext_resource type="Texture2D" uid="uid://c140pjxeyjqy" path="res://assets/models/objects/house_Bardage peint blanc horizontal.jpg" id="2_ylfa0"]
+[ext_resource type="Texture2D" uid="uid://c4v3o4hkmma4q" path="res://assets/models/objects/house_PVC Door Designs That Beat Moisture & Save You___.jpg" id="3_wch12"]
+[ext_resource type="Texture2D" uid="uid://ddi6fld6wienx" path="res://assets/models/objects/house_lantai kayu.jpg" id="4_4a1p0"]
+[ext_resource type="Texture2D" uid="uid://cthu5c0lq7meh" path="res://assets/models/objects/house_garage floor.jpg" id="5_was16"]
+[ext_resource type="Texture2D" uid="uid://dqsood68cx6c7" path="res://assets/models/objects/house_rock1.jpg" id="6_d2qdi"]
+[ext_resource type="Texture2D" uid="uid://da4lf4onf2ind" path="res://assets/models/objects/house_download (33).jpg" id="7_60dd2"]
+[ext_resource type="Texture2D" uid="uid://bc41lkyybxt6q" path="res://assets/models/objects/house_garage.jpg" id="8_3nbyb"]
+[ext_resource type="PackedScene" uid="uid://cjtrrfh4qke7w" path="res://assets/models/objects/big_sofa.tscn" id="9_was16"]
+[ext_resource type="PackedScene" uid="uid://d0gsekx4f5tj" path="res://assets/models/objects/table.tscn" id="10_d2qdi"]
+[ext_resource type="PackedScene" uid="uid://h1vv08mpj7hw" path="res://assets/models/objects/rak_dapur.tscn" id="11_60dd2"]
 [ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/objects/chair.tscn" id="12_3nbyb"]
 [ext_resource type="PackedScene" uid="uid://bm25c1a7plprb" path="res://scenes/wastafel.tscn" id="13_3nbyb"]
 [ext_resource type="PackedScene" uid="uid://d0fho48004uy" path="res://scenes/rak_besi.tscn" id="14_ybotp"]
-[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://Assets/models/objects/kardus_tertutup.tscn" id="15_8d7uw"]
-[ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://Assets/models/objects/tv.tscn" id="16_ybotp"]
+[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://assets/models/objects/kardus_tertutup.tscn" id="15_8d7uw"]
+[ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://assets/models/objects/tv.tscn" id="16_ybotp"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rxhe"]
 resource_name = "Material.014"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_mr7cr")
-roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j3mql"]
 resource_name = "Material.015"
@@ -5475,19 +5474,17 @@ data = PackedVector3Array(2.1118999, 0.7319, 10.315499, 2.1118999, 0.78139997, 1
 resource_name = "Lantai Kayu"
 cull_mode = 2
 albedo_texture = ExtResource("4_4a1p0")
-roughness = 0.5
+roughness = 0.74
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g2yg8"]
 resource_name = "Garage Floor"
 cull_mode = 2
 albedo_texture = ExtResource("5_was16")
-roughness = 0.3669725
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_glfil"]
 resource_name = "rock"
 cull_mode = 2
 albedo_texture = ExtResource("6_d2qdi")
-roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_salam"]
 _surfaces = [{
@@ -5573,7 +5570,6 @@ resource_name = "Material.020"
 cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("3_wch12")
-roughness = 0.5
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_of33w"]
 _surfaces = [{
@@ -11319,7 +11315,6 @@ data = PackedVector3Array(-0.79999995, -1.5, 0.19999999, -1.1999999, 1.5, -0.199
 resource_name = "Material.021"
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 1)
-roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_jo5j3"]
 resource_name = "Material.024"
@@ -13076,7 +13071,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.2810273, 2.7708647, -8.0888
 mesh = SubResource("ArrayMesh_gwrff")
 skeleton = NodePath("")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Lantai1/Cube_124"]
+[node name="StaticBody3D" type="StaticBody3D" parent="Lantai1/Cube_124" groups=["stairs"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Lantai1/Cube_124/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_emxsp")

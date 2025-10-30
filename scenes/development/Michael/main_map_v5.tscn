@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bloadriq07xse" path="res://assets/models/objects/blockhouse_0.png" id="16_5vm6h"]
 [ext_resource type="Texture2D" uid="uid://beaaioajpwtel" path="res://assets/models/objects/blockhouse_1.png" id="17_e4c7s"]
 [ext_resource type="PackedScene" uid="uid://dnsls0i1si0hs" path="res://assets/models/objects/house.tscn" id="18_4r5xo"]
-[ext_resource type="Script" uid="uid://bpr87gfjd3mcr" path="res://scripts/pembatas_stg1.gd" id="20_bqvky"]
+[ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://scripts/pembatas1_area_3d.gd" id="20_bqvky"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
 panorama = ExtResource("3_05wm0")
