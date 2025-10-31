@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://c30nvnvv7qbj8"]
 
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/interactable_objects/hideable_objects/hideable_object.tscn" id="1_ofvhn"]
-[ext_resource type="PackedScene" uid="uid://bof8lu2cj7bp2" path="res://scenes/objects/bed.tscn" id="2_anam7"]
+[ext_resource type="PackedScene" uid="uid://bof8lu2cj7bp2" path="res://scenes/object_assets/bed.tscn" id="2_anam7"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ofvhn"]
 size = Vector3(2.2822266, 0.91259766, 2.977539)

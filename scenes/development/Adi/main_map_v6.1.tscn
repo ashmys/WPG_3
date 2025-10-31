@@ -21,7 +21,7 @@
 [ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="18_u28bd"]
 [ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://scripts/pembatas1_area_3d.gd" id="19_hkmqx"]
 [ext_resource type="PackedScene" uid="uid://c8qah2f026gpn" path="res://scenes/interactable_objects/interact_objects/saklar.tscn" id="20_yjbb1"]
-[ext_resource type="PackedScene" uid="uid://o7jg4g6h76r3" path="res://scenes/monitor.tscn" id="21_2lcqa"]
+[ext_resource type="PackedScene" uid="uid://o7jg4g6h76r3" path="res://scenes/object_assets/monitor.tscn" id="21_2lcqa"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
 panorama = ExtResource("3_v0gjx")

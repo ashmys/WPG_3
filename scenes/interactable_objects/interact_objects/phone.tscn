@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://ckkcjaxxo6eh2"]
 
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_5jir0"]
-[ext_resource type="PackedScene" uid="uid://c1vf1u1lkumnh" path="res://scenes/objects/phone.tscn" id="2_3w13a"]
+[ext_resource type="PackedScene" uid="uid://c1vf1u1lkumnh" path="res://scenes/phone.tscn" id="2_3w13a"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_iutih"]
 size = Vector3(0.3642578, 0.16894531, 0.6044922)

@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://scripts/player/player_camAnimation.gd" id="4_tsxeq"]
 [ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/interact_mechanic.gd" id="5_hucg6"]
 [ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
-[ext_resource type="PackedScene" uid="uid://b3x5yk88oyiyw" path="res://scenes/objects/senter.tscn" id="7_ft406"]
+[ext_resource type="PackedScene" uid="uid://b3x5yk88oyiyw" path="res://scenes/object_assets/senter.tscn" id="7_ft406"]
 [ext_resource type="PackedScene" uid="uid://bfv446m4eumm8" path="res://scenes/mechanics/climb_stair_area_3d.tscn" id="8_ft406"]
 
 [sub_resource type="Curve" id="Curve_ft406"]
@@ -156,8 +156,9 @@ radius = 0.3
 radius = 0.3
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider") groups=["player"]]
-collision_layer = 2
+collision_layer = 3
 collision_mask = 3
+floor_stop_on_slope = false
 floor_block_on_wall = false
 floor_max_angle = 0.87266463
 script = ExtResource("1_3vyb7")
@@ -225,6 +226,9 @@ visible = false
 spot_range = 20.0
 spot_angle = 30.0
 
+[node name="ClimbStair_Area3D" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("8_ft406")]
+chara = NodePath("..")
+
 [node name="Chara_Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_g2els")
@@ -232,9 +236,6 @@ shape = SubResource("CapsuleShape3D_g2els")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Chara_Collider"]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
 mesh = SubResource("CapsuleMesh_g2els")
-
-[node name="ClimbStair_Area3D" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("8_ft406")]
-chara = NodePath("..")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.574, 0)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://o7jg4g6h76r3"]
+[gd_scene load_steps=9 format=4 uid="uid://o7jg4g6h76r3"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h4ahm"]
 resource_name = "Material"
@@ -78,13 +78,26 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_wwsb0")
 
-[node name="Node3D" type="Node3D"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_ocyul"]
+size = Vector3(0.5678711, 1.0776367, 1.5419922)
 
-[node name="Cube" type="MeshInstance3D" parent="."]
-transform = Transform3D(294.98093, 0, 0, 0, -9.226088e-07, 124.00813, 0, -7.7394032, -1.4782922e-05, 0, 2.2037435, 0)
+[node name="Monitor" type="Node3D"]
+
+[node name="Group" type="Node3D" parent="."]
+transform = Transform3D(-1.3113417e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.3113417e-08, 0, 0, 0)
+
+[node name="Cube" type="MeshInstance3D" parent="Group"]
+transform = Transform3D(294.98093, 0, 0, 0, -3.3830005e-07, 124.00813, 0, -7.7394032, -5.4205675e-06, 0, 2.2037435, 0)
 mesh = SubResource("ArrayMesh_7w2l4")
 skeleton = NodePath("")
 
-[node name="Icosphere" type="MeshInstance3D" parent="."]
+[node name="Icosphere" type="MeshInstance3D" parent="Group"]
 transform = Transform3D(100, 0, 0, 0, -1.1920929e-05, 9.864882, 0, -99.99999, -1.1759857e-06, 0, 0.08919436, 0.39066672)
 mesh = SubResource("ArrayMesh_d21ui")
+skeleton = NodePath("../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.07055664, 0.52060974, 0)
+shape = SubResource("BoxShape3D_ocyul")

@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dognjc0ie57wr" path="res://scripts/mechanics/climb_stair.gd" id="1_iadsf"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x3yh4"]
-height = 0.712677
+height = 0.7020416
 radius = 0.315
 
 [node name="ClimbStair_Area3D" type="Area3D"]

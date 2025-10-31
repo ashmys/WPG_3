@@ -6,12 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://d0gsekx4f5tj" path="res://assets/models/objects/table.tscn" id="11_q50lt"]
 [ext_resource type="PackedScene" uid="uid://h1vv08mpj7hw" path="res://assets/models/objects/rak_dapur.tscn" id="12_1t2we"]
 [ext_resource type="PackedScene" uid="uid://c8dipo0ashw1q" path="res://scenes/objects/door_open.tscn" id="12_1446y"]
-[ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/objects/chair.tscn" id="13_le46e"]
-[ext_resource type="PackedScene" uid="uid://bm25c1a7plprb" path="res://scenes/wastafel.tscn" id="14_rkhep"]
-[ext_resource type="PackedScene" uid="uid://d0fho48004uy" path="res://scenes/rak_besi.tscn" id="15_kvaax"]
+[ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/object_assets/chair.tscn" id="13_le46e"]
+[ext_resource type="PackedScene" uid="uid://bm25c1a7plprb" path="res://scenes/object_assets/wastafel.tscn" id="14_rkhep"]
+[ext_resource type="PackedScene" uid="uid://d0fho48004uy" path="res://scenes/object_assets/rak_besi.tscn" id="15_kvaax"]
 [ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://assets/models/objects/kardus_tertutup.tscn" id="16_4i1eb"]
 [ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://assets/models/objects/tv.tscn" id="17_jq7o5"]
-[ext_resource type="PackedScene" uid="uid://c1ul8fbna4f26" path="res://scenes/rak_gudang.tscn" id="18_re1nw"]
+[ext_resource type="PackedScene" uid="uid://c1ul8fbna4f26" path="res://scenes/object_assets/rak_gudang.tscn" id="18_re1nw"]
 
 [node name="house" type="Node3D"]
 

@@ -12,24 +12,20 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_re0bu"]
 resource_name = "Lantai Kayu"
-cull_mode = 2
 albedo_texture = ExtResource("1_uynyv")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p5gvt"]
 resource_name = "Garage Floor"
-cull_mode = 2
 albedo_texture = ExtResource("2_ceus0")
 roughness = 0.69724774
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajh8p"]
 resource_name = "rock"
-cull_mode = 2
 albedo_texture = ExtResource("3_y0xs4")
 roughness = 0.5
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ck10h"]
 resource_name = "Lantai Kamar Mandi"
-cull_mode = 2
 albedo_texture = ExtResource("4_cq33n")
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_wgj1b"]
@@ -133,18 +129,15 @@ shadow_mesh = SubResource("ArrayMesh_wgj1b")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5y8l4"]
 resource_name = "Material.016"
-cull_mode = 2
 vertex_color_use_as_albedo = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vv06d"]
 resource_name = "Material.014"
-cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("5_rw7gl")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k3ou7"]
 resource_name = "Material.015"
-cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("6_3sjf4")
 
@@ -6098,7 +6091,6 @@ data = PackedVector3Array(-0.39999998, -1.5, 0.19999999, -0.39999998, 1.5, -0.19
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y7nru"]
 resource_name = "Material.027"
-cull_mode = 2
 albedo_color = Color(0.30316275, 0.122695476, 0, 1)
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_npw21"]
@@ -13971,6 +13963,12 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Group/Plane_001/Stair" groups=["stairs"]]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Group/Plane_001/Stair/StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_oojed")
+
+[node name="StaticBody3D2" type="StaticBody3D" parent="Group/Plane_001/Stair"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.059670925, -0.056055546, -0.05166912)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Group/Plane_001/Stair/StaticBody3D2"]
 shape = SubResource("ConcavePolygonShape3D_oojed")
 
 [node name="Cube_194" type="MeshInstance3D" parent="Group/Plane_001"]

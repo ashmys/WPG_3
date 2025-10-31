@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://c1ul8fbna4f26"]
 
-[ext_resource type="Texture2D" uid="uid://daxupejo0sn3c" path="res://Assets/models/objects/rakbesi_0.png" id="1_8vmx7"]
-[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://Assets/models/objects/kardus_tertutup.tscn" id="2_d3gtc"]
+[ext_resource type="Texture2D" uid="uid://daxupejo0sn3c" path="res://assets/models/objects/rakbesi_0.png" id="1_8vmx7"]
+[ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://assets/models/objects/kardus_tertutup.tscn" id="2_d3gtc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4qop1"]
 resource_name = "Material.003"
@@ -74,7 +74,7 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_fgewl")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_x3y4n"]
-size = Vector3(0.020507813, 0.021484375, 0.04711914)
+size = Vector3(0.020507813, 0.021484375, 0.03564453)
 
 [node name="Rak_gudang" type="Node3D"]
 
@@ -86,7 +86,7 @@ skeleton = NodePath("")
 [node name="StaticBody3D" type="StaticBody3D" parent="Plane_004"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Plane_004/StaticBody3D"]
-transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, -9.698908e-13, 1, 0, -0.0001780875, 0)
+transform = Transform3D(0.9999998, 0, 0, 0, 1, 0, 0, -1.2931878e-12, 1, 0, -0.00017808715, -0.0057373047)
 shape = SubResource("BoxShape3D_x3y4n")
 
 [node name="kardus_tertutup" parent="." instance=ExtResource("2_d3gtc")]

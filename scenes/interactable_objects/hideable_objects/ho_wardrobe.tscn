@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dy6g0jk0v3tym"]
 
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/interactable_objects/hideable_objects/hideable_object.tscn" id="1_m66bp"]
-[ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/objects/wardrobe.tscn" id="2_sxnmx"]
+[ext_resource type="PackedScene" uid="uid://6ehkoo184pve" path="res://scenes/object_assets/wardrobe.tscn" id="2_sxnmx"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_oqea2"]
 size = Vector3(1.0131226, 2.5458984, 1.6972656)

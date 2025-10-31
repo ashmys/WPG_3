@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cjtrrfh4qke7w" path="res://assets/models/objects/big_sofa.tscn" id="5_vt6au"]
 [ext_resource type="PackedScene" uid="uid://d0gsekx4f5tj" path="res://assets/models/objects/table.tscn" id="6_5yf38"]
 [ext_resource type="PackedScene" uid="uid://h1vv08mpj7hw" path="res://assets/models/objects/rak_dapur.tscn" id="7_d582p"]
-[ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/objects/chair.tscn" id="8_d582p"]
+[ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/object_assets/chair.tscn" id="8_d582p"]
 [ext_resource type="PackedScene" uid="uid://2n62c3sn4yd7" path="res://assets/models/objects/stairs.tscn" id="9_v3jr5"]
 [ext_resource type="PackedScene" uid="uid://di5htaits3lnp" path="res://assets/models/objects/tv.tscn" id="10_44jqt"]
 [ext_resource type="PackedScene" uid="uid://dk58mdagclxue" path="res://assets/models/objects/mesin_cuci.tscn" id="11_54rd1"]
@@ -19,7 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://cdi1sahweo02s" path="res://assets/models/objects/tembok_jendela.tscn" id="16_ttk6p"]
 [ext_resource type="PackedScene" uid="uid://cq2sa760scoq5" path="res://assets/models/objects/kardus_tertutup.tscn" id="18_ovyic"]
 [ext_resource type="PackedScene" uid="uid://ckkcjaxxo6eh2" path="res://scenes/interactable_objects/interact_objects/phone.tscn" id="19_ftl2v"]
-[ext_resource type="PackedScene" uid="uid://dx7hnmgo8tjgb" path="res://scenes/objects/cas_hp.tscn" id="20_j6g2q"]
+[ext_resource type="PackedScene" uid="uid://dx7hnmgo8tjgb" path="res://scenes/object_assets/cas_hp.tscn" id="20_j6g2q"]
 
 [node name="House" type="Node3D"]
 

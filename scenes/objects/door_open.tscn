@@ -4,7 +4,6 @@
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o271l"]
 resource_name = "Material.020"
-cull_mode = 2
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_p4nec")
 
