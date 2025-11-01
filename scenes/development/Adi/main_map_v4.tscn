@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://ljdve5xdktd8" path="res://scenes/objects/house.tscn" id="7_n332s"]
 [ext_resource type="PackedScene" uid="uid://dnaf25yc15sdx" path="res://scenes/objects/door.tscn" id="8_o3m4o"]
 [ext_resource type="PackedScene" uid="uid://bl01dr3iti3hk" path="res://scenes/interactable_objects/interact_objects/battery.tscn" id="9_3t2if"]
-[ext_resource type="PackedScene" uid="uid://bv0j5rguiwfub" path="res://scenes/table.tscn" id="9_imej1"]
+[ext_resource type="PackedScene" uid="uid://bv0j5rguiwfub" path="res://scenes/object_assets/table.tscn" id="9_imej1"]
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="10_h5ut7"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="11_6pna6"]
 [ext_resource type="PackedScene" uid="uid://ccotqn118laxb" path="res://scenes/interactable_objects/interact_objects/generator.tscn" id="11_sdp21"]

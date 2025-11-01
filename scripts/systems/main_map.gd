@@ -32,6 +32,9 @@ func _ready() -> void:
 	_start_dialogue(key_start)
 	taskbar_label.text = "Go to the kitchen and eat"
 	black_screen.visible = false
+	bobby.is_active = true
+	valeria.is_active = false
+	Global.gameStage = Global.State.PROLOG1
 
 func _process(_delta: float) -> void:
 	_current_stage = Global.gameStage
@@ -70,14 +73,10 @@ func _enter_prolog1() -> void:
 	valeria.is_active = false
 
 func _trigger_fridge_dialogue() -> void:
-	bobby.is_active = false
-	valeria.is_active = false
 	_start_dialogue(key_fridge)
 
 func _trigger_eat_dialogue() -> void:
 	black_screen.visible = true
-	bobby.is_active = false
-	valeria.is_active = false
 	_start_dialogue(key_eat)
 	taskbar_label.text = "Go to the kitchen and eat ✓"
 	await get_tree().create_timer(1.0).timeout
@@ -89,15 +88,12 @@ func _trigger_eat_dialogue() -> void:
 	Global.gameStage = Global.State.PROLOG4
 
 func _enter_prolog4() -> void:
-	bobby.is_active = false
-	valeria.is_active = false
 	_start_dialogue(key_turn_off_light)
 	taskbar_label.text = ""
 
 func _trigger_stage1() -> void:
 	area_barrier_stage1.global_position = Vector3(3.398, 3.106, -5.039)
 	bobby.is_active = true
-	valeria.is_active = false
 	_start_dialogue(key_stage1)
 
 func _trigger_stage2() -> void:
@@ -106,19 +102,9 @@ func _trigger_stage2() -> void:
 	_start_dialogue(key_stage2)
 
 func _enter_stage3() -> void:
-	# If you only want this to run once, add a guard flag
 	bobby.is_active = true
 	valeria.is_active = true
 
-# Area signals
-func _on_area_3d_pembatas_1_entered() -> void:
-	_start_dialogue(key_barrier1)
-
-func _on_area_3d_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D:
+func _on_trigger_stage_2_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and _current_stage == Global.State.STAGE1:
 		_start_dialogue(key_garage)
-		bobby.is_active = true
-
-func _on_area_barrier1_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D:
-		_start_dialogue(key_barrier1)

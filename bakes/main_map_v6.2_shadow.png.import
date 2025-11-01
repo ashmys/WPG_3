@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://d3u4tab540o4a"
+path.s3tc="res://.godot/imported/main_map_v6.2_shadow.png-fa236368d1e2d125d47e23d1abbd5d62.s3tc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://bakes/main_map_v6.2_shadow.png"
+dest_files=["res://.godot/imported/main_map_v6.2_shadow.png-fa236368d1e2d125d47e23d1abbd5d62.s3tc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=3

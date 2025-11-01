@@ -1,20 +1,13 @@
-[gd_scene load_steps=19 format=3 uid="uid://cn8ur4qy6vsfo"]
+[gd_scene load_steps=18 format=3 uid="uid://cn8ur4qy6vsfo"]
 
 [ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://scripts/systems/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="FontFile" uid="uid://dmm43q3052sv3" path="res://assets/fonts/HelpMe.ttf" id="3_8ln24"]
+[ext_resource type="LabelSettings" uid="uid://8uhhaqn0lkfw" path="res://resources/label_settings/Title.tres" id="3_8ln24"]
 [ext_resource type="Script" uid="uid://chqps7623vldr" path="res://scripts/systems/settings.gd" id="3_bqqt6"]
 [ext_resource type="FontFile" uid="uid://dbvjkxjann8fn" path="res://assets/fonts/Dead Font Walking.otf" id="4_rtw2f"]
 [ext_resource type="Texture2D" uid="uid://cdoy2rndyh7pp" path="res://assets/images/main menu.png" id="4_wu84c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 modulate_color = Color(0.789173, 0.789172, 0.789172, 1)
-
-[sub_resource type="LabelSettings" id="LabelSettings_oa1go"]
-font = ExtResource("3_8ln24")
-font_size = 156
-shadow_size = 3
-shadow_color = Color(0, 0, 0, 0.49803922)
-shadow_offset = Vector2(5, 5)
 
 [sub_resource type="Theme" id="Theme_tbmy8"]
 default_font = ExtResource("4_rtw2f")
@@ -34,7 +27,7 @@ corner_radius_bottom_right = 30
 corner_radius_bottom_left = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
-font = ExtResource("3_8ln24")
+font = ExtResource("4_rtw2f")
 font_size = 125
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 0.49803922)
@@ -70,7 +63,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
-game_scene_path = &"res://scenes/development/Adi/main_map_v6.1.tscn"
+game_scene_path = &"res://scenes/development/Adi/main_map_v6.2.tscn"
 title = NodePath("Panel/TitleText")
 main_buttons = NodePath("Panel/MainButtons")
 first_button = NodePath("Panel/MainButtons/Start_Button")
@@ -106,7 +99,7 @@ offset_bottom = 254.0
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 152
 text = "Mysterious RV"
-label_settings = SubResource("LabelSettings_oa1go")
+label_settings = ExtResource("3_8ln24")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -191,7 +184,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Exit"
 
 [node name="Settings" type="Panel" parent="Panel"]
-visible = false
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5

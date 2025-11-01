@@ -1,12 +1,19 @@
 extends Node3D
 
+@export var bulb_mesh : MeshInstance3D
+@export var omnilight : OmniLight3D
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	light_on()
 
+func light_on() -> void:
+	var material = bulb_mesh.mesh.surface_get_material(0)
+	if material and material is StandardMaterial3D:
+		material.emission_enabled = true
+	omnilight.visible = true
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func light_off() -> void:
+	var material = bulb_mesh.mesh.surface_get_material(0)
+	if material and material is StandardMaterial3D:
+		material.emission_enabled = false
+	omnilight.visible = false

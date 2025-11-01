@@ -4,6 +4,7 @@ extends Panel
 var audio_bus_indices : Array[int] = []
 
 func _ready() -> void:
+	visible = false
 	for bus_names in audio_bus_names:
 		var idx = AudioServer.get_bus_index(bus_names)
 		audio_bus_indices.append(idx)
@@ -25,7 +26,8 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(audio_bus_indices[2], db)
 
 func _unhandled_input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("ui_cancel"):
+	print(Global.gameStage)
+	if Input.is_action_just_pressed("ui_cancel") and not Global.gameStage == Global.State.END:
 		visible = not visible
 		if visible:
 			Global.release_mouse()

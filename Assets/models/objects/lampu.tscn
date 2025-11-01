@@ -6,7 +6,6 @@
 resource_name = "Material.001"
 vertex_color_use_as_albedo = true
 albedo_color = Color(0.62106496, 0.62106496, 0.62106496, 1)
-emission_enabled = true
 emission = Color(1, 1, 1, 1)
 emission_energy_multiplier = 0.0
 
@@ -115,8 +114,10 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qddoj")
 
-[node name="lightbulb" type="Node3D"]
+[node name="lightbulb" type="Node3D" node_paths=PackedStringArray("bulb_mesh", "omnilight")]
 script = ExtResource("1_s56w2")
+bulb_mesh = NodePath("Sphere_002/Sphere2")
+omnilight = NodePath("SpotLight3D")
 
 [node name="Sphere_002" type="MeshInstance3D" parent="."]
 transform = Transform3D(117.87069, 0, 0, 0, -1.4051281e-05, 173.74928, 0, -117.87068, -2.071253e-05, 1.1944512e-07, -0.55167246, 0)
@@ -130,5 +131,6 @@ skeleton = NodePath("")
 
 [node name="SpotLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -3.4043527, 0)
+light_color = Color(1, 0.85195315, 0.6545601, 1)
 light_bake_mode = 1
 omni_range = 77.9762

@@ -41,7 +41,6 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 player=""
 hide_object=""
-stairs=""
 interact_object=""
 
 [input]
@@ -115,8 +114,4 @@ rendering_device/driver="opengl3"
 rendering_device/driver.windows="d3d12"
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
-lights_and_shadows/directional_shadow/size=2048
-lights_and_shadows/directional_shadow/soft_shadow_filter_quality=0
-lights_and_shadows/positional_shadow/soft_shadow_filter_quality=0
-lights_and_shadows/positional_shadow/atlas_size=2048
 textures/stretch/mode="disabled"

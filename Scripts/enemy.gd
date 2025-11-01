@@ -12,7 +12,7 @@ const GRAVITY_MULTIPLIER := 4.5
 @export var game_over: Control
 
 @export_group("Configs")
-@export var is_active: bool = true
+@export var is_active: bool = false
 enum State { PATROL, CHASE, SEARCH, IDLE }
 @export var state: State = State.IDLE
 @export var is_patrol: bool = true
@@ -35,15 +35,11 @@ var waiting_time: float = 1.0
 
 func _ready() -> void:
 	if !nav_agent or !player or patrol_points.is_empty(): return
-	patrol_index = 0
-	_set_patrol_target()
 	if is_patrol:
 		state = State.PATROL
 
 func _physics_process(delta: float) -> void:
 	if not is_active:
-		set_physics_process(false)
-		set_process(false)
 		visible = false
 		return
 	
@@ -53,20 +49,11 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not stuck:
 		_apply_gravity(delta)
 	
-	match Global.gameStage:
-		Global.State.PROLOG1:
-			state = State.IDLE
-		Global.State.STAGE1:
-			state = State.IDLE
-		_:
-			_active(delta)
-
-func _active(delta: float) -> void:
 	_check_visibility()
 	_handle_state_transitions()
 	_execute_state_behavior(delta)
-	move_and_slide()
 	_check_game_over()
+	move_and_slide()
 
 func _apply_gravity(delta: float) -> void:
 	velocity += get_gravity() * GRAVITY_MULTIPLIER * delta

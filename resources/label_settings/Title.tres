@@ -1,0 +1,10 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://8uhhaqn0lkfw"]
+
+[ext_resource type="FontFile" uid="uid://dbvjkxjann8fn" path="res://assets/fonts/Dead Font Walking.otf" id="1_dhik7"]
+
+[resource]
+font = ExtResource("1_dhik7")
+font_size = 170
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.3254902)
+shadow_offset = Vector2(5, 5)
