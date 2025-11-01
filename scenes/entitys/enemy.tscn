@@ -39,7 +39,7 @@ animation = &"Run"
 animation = &"Walk"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_svcv2"]
-graph_offset = Vector2(-319.52576, 81.62538)
+graph_offset = Vector2(-113.56125, 140.73695)
 nodes/output/position = Vector2(540, 180)
 nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
 nodes/Movement/position = Vector2(160, 160)

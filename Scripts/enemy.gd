@@ -117,8 +117,7 @@ func _act(target: Vector3, speed: float, delta: float, force_path: bool = false)
 		velocity.z = 0.0
 		return
 	var dir = (dest - global_position).normalized()
-	velocity.x = dir.x * speed
-	velocity.z = dir.z * speed
+	velocity = dir * speed
 	_face_target(dest, delta)
 	is_moving = true
 
