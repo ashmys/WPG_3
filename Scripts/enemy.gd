@@ -40,13 +40,7 @@ func _ready() -> void:
 	if is_patrol:
 		state = State.PATROL
 
-func _physics_process(delta: float) -> void:
-	if not is_active:
-		set_physics_process(false)
-		set_process(false)
-		visible = false
-		return
-	
+func _physics_process(delta: float) -> void:	
 	if velocity.x == 0.0 and velocity.z == 0.0:
 		is_moving = false
 	
@@ -54,11 +48,8 @@ func _physics_process(delta: float) -> void:
 		_apply_gravity(delta)
 	
 	match Global.gameStage:
-		Global.State.PROLOG1:
-			state = State.IDLE
-		Global.State.STAGE1:
-			state = State.IDLE
-		_:
+		Global.State.STAGE3:
+			print("Enemy Active")
 			_active(delta)
 
 func _active(delta: float) -> void:
