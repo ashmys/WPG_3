@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://bccolghmoldwj"]
 
-[ext_resource type="Script" uid="uid://bya7gl1rer5lo" path="res://scripts/objects/lampu.gd" id="1_s56w2"]
+[ext_resource type="Script" uid="uid://bya7gl1rer5lo" path="res://Scripts/objects/lampu.gd" id="1_s56w2"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3300r"]
 resource_name = "Material.001"
@@ -115,7 +115,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qddoj")
 
-[node name="lightbulb" type="Node3D" node_paths=PackedStringArray("bulb_mesh", "omnilight")]
+[node name="lightbulb" type="StaticBody3D"]
 script = ExtResource("1_s56w2")
 bulb_mesh = NodePath("Sphere_002/Sphere2")
 omnilight = NodePath("SpotLight3D")
@@ -131,7 +131,7 @@ mesh = SubResource("ArrayMesh_f6okq")
 skeleton = NodePath("")
 
 [node name="SpotLight3D" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -3.4043527, 0)
-light_color = Color(1, 0.85195315, 0.6545601, 1)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 0, -3.6378155, 0)
+light_energy = 1.5
 light_bake_mode = 1
-omni_range = 77.9762
+omni_range = 7.5

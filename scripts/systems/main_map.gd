@@ -25,6 +25,9 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 @export var black_screen_anim: AnimationPlayer
 @export var area_barrier_stage1: Area3D
 @export var light: Node3D
+@export var lampuID : Array[StaticBody3D]
+@export var hp_table:StaticBody3D
+@export var prolog3Position: Marker3D
 
 var _previous_stage := Global.gameStage
 var _current_stage := Global.gameStage
@@ -64,6 +67,8 @@ func _process(_delta: float) -> void:
 		Global.State.STAGE3:
 			print("Stage 3")
 			_enter_stage3()
+		Global.State.STAGE5:
+			hp_table.visible = true
 		_:
 			pass
 
@@ -95,8 +100,13 @@ func _enter_prolog3() -> void:
 	await get_tree().create_timer(1.0).timeout
 	black_screen_anim.play("fade")
 	await get_tree().create_timer(4.0).timeout
+	player.global_position = prolog3Position.global_position
+	player.rotation.y = 90
+	player.rotation.x = 0
+	player.rotation.z = 0
 	black_screen.visible = false
 	Global.gameStage = Global.State.PROLOG4
+	player.set_physics_process(true)
 
 func _enter_prolog4() -> void:
 	_start_dialogue(key_prolog4)
@@ -145,3 +155,18 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 func _on_area_barrier1_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE1:
 		await _start_dialogue(key_stage2)
+		
+func _saklar(saklarID: int) -> void:
+	# Pastikan ID valid dalam daftar lampu
+	if saklarID >= 0 and saklarID < lampuID.size():
+		var lamp = lampuID[saklarID]
+		if lamp: # pastikan lampu tidak null
+			lamp.visible = false
+
+func _lampu_on(saklarID: int):
+	if saklarID >= 0 and saklarID < lampuID.size():
+		lampuID[saklarID].visible = true
+
+func _lampu_of(saklarID: int):
+	if saklarID >= 0 and saklarID < lampuID.size():
+		lampuID[saklarID].visible = false

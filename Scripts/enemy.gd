@@ -59,7 +59,6 @@ func _physics_process(delta: float) -> void:
 	
 	match Global.gameStage:
 		Global.State.STAGE3:
-			print("Enemy Active")
 			_active(delta)
 
 func _active(delta: float) -> void:
@@ -142,6 +141,7 @@ func _face_target(target: Vector3, delta: float) -> void:
 
 func _check_game_over() -> void:
 	if global_position.distance_to(player.global_position) < 1.0:
+		Global.gameOver.emit()
 		game_over._on_player_caught()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:

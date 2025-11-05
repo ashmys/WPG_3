@@ -14,6 +14,10 @@ var source:Vector3
 
 var destinationEnemy
 
+signal gameOver
+signal saklar(saklarID: int)
+
+
 # === Mouse Capture ===
 func capture_mouse() -> void:
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
