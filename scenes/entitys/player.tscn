@@ -1,11 +1,11 @@
-[gd_scene load_steps=24 format=3 uid="uid://8a38my28t4v7"]
+[gd_scene load_steps=26 format=3 uid="uid://8a38my28t4v7"]
 
-[ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player/player_controller.gd" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player/player_camera.gd" id="3_qhqgy"]
-[ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://scripts/player/interact_raycast.gd" id="3_rlr1k"]
-[ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://scripts/player/player_camAnimation.gd" id="4_tsxeq"]
-[ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://scripts/player/mechanics/interact_mechanic.gd" id="5_hucg6"]
-[ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
+[ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://Scripts/player/player_controller.gd" id="1_3vyb7"]
+[ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://Scripts/player/player_camera.gd" id="3_qhqgy"]
+[ext_resource type="Script" uid="uid://cdeq70t3lv25b" path="res://Scripts/player/interact_raycast.gd" id="3_rlr1k"]
+[ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://Scripts/player/player_camAnimation.gd" id="4_tsxeq"]
+[ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://Scripts/player/mechanics/interact_mechanic.gd" id="5_hucg6"]
+[ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://Scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
 [ext_resource type="PackedScene" uid="uid://b3x5yk88oyiyw" path="res://scenes/objects/senter.tscn" id="7_ft406"]
 [ext_resource type="PackedScene" uid="uid://bfv446m4eumm8" path="res://scenes/mechanics/climb_stair_area_3d.tscn" id="8_ft406"]
 
@@ -149,6 +149,12 @@ _data = {
 &"Walking": SubResource("Animation_rlr1k")
 }
 
+[sub_resource type="BoxMesh" id="BoxMesh_ft406"]
+size = Vector3(0.5, 0.1, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_x3yh4"]
+albedo_color = Color(0.5882353, 0.29411766, 0, 1)
+
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
 radius = 0.3
 
@@ -194,9 +200,11 @@ script = ExtResource("5_l1ko6")
 player = NodePath("../../..")
 move_curve = SubResource("Curve_ft406")
 
-[node name="Interact_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player", "flashlight")]
+[node name="Interact_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player", "piring", "senter", "flashlight")]
 script = ExtResource("5_hucg6")
 player = NodePath("../../..")
+piring = NodePath("../../Piring")
+senter = NodePath("../../senter")
 flashlight = NodePath("../../senter/SpotLight3D")
 
 [node name="AnimationTree" type="AnimationTree" parent="Head" node_paths=PackedStringArray("player", "head")]
@@ -216,8 +224,47 @@ libraries = {
 }
 playback_default_blend_time = 1.0
 
+[node name="Piring" type="Node3D" parent="Head"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, 0)
+visible = false
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Piring"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31640697, 1.3091621, -0.54897046)
+mesh = SubResource("BoxMesh_ft406")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Head/Piring"]
+transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.31640697, 1.3794303, -0.54897046)
+mesh = SubResource("BoxMesh_ft406")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Head/Piring"]
+transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.21602204, 1.3794303, -0.54897046)
+mesh = SubResource("BoxMesh_ft406")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Head/Piring"]
+transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.21602204, 1.3794303, -0.41897914)
+mesh = SubResource("BoxMesh_ft406")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Head/Piring"]
+transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.21602204, 1.3794303, -0.686861)
+mesh = SubResource("BoxMesh_ft406")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Head/Piring"]
+transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.4382612, 1.3794303, -0.686861)
+mesh = SubResource("BoxMesh_ft406")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Head/Piring"]
+transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.4382612, 1.3794303, -0.44617766)
+mesh = SubResource("BoxMesh_ft406")
+surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
+
 [node name="senter" parent="Head" instance=ExtResource("7_ft406")]
-transform = Transform3D(0, -0.049999997, 2.1855693e-09, -3.0797754e-18, -2.1855697e-09, -0.05, 0.049999997, 0, 0, 0.35967702, -0.36907816, -0.0132475495)
+transform = Transform3D(0, -0.049999997, 2.1855693e-09, -3.0797754e-18, -2.1855697e-09, -0.05, 0.049999997, 0, 0, 0.35967702, -0.36907816, -0.2608255)
+visible = false
 
 [node name="SpotLight3D" type="SpotLight3D" parent="Head/senter"]
 transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -7.043928, 0, -0.28882027)

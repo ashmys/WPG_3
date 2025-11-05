@@ -110,6 +110,21 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6i22p")
 
+[sub_resource type="Animation" id="Animation_jynbj"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("button:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, -0.07369548)]
+}
+
 [sub_resource type="Animation" id="Animation_5wvaw"]
 resource_name = "press"
 length = 0.5
@@ -124,21 +139,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector3(0, 0, -0.07369548), Vector3(0, 0, 0.07980317), Vector3(0, 0, -0.074)]
-}
-
-[sub_resource type="Animation" id="Animation_jynbj"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("button:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, -0.07369548)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_em8qg"]
