@@ -57,6 +57,12 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not stuck:
 		_apply_gravity(delta)
 	
+	match Global.gameStage:
+		Global.State.STAGE3:
+			print("Enemy Active")
+			_active(delta)
+
+func _active(delta: float) -> void:
 	_check_visibility()
 	_handle_state_transitions()
 	_execute_state_behavior(delta)

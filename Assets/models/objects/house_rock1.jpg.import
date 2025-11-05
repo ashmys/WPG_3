@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dqsood68cx6c7"
-path.s3tc="res://.godot/imported/house_rock1.jpg-019e5aa08806972778e875e90b18d1f9.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_rock1.jpg-fdd95429ef0482861ecf6a412797906a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/objects/house_rock1.jpg"
-dest_files=["res://.godot/imported/house_rock1.jpg-019e5aa08806972778e875e90b18d1f9.s3tc.ctex"]
+source_file="res://Assets/models/objects/house_rock1.jpg"
+dest_files=["res://.godot/imported/house_rock1.jpg-fdd95429ef0482861ecf6a412797906a.s3tc.ctex"]
 
 [params]
 

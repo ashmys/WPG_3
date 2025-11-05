@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c4v3o4hkmma4q"
-path.s3tc="res://.godot/imported/house_PVC Door Designs That Beat Moisture & Save You___.jpg-72ab836dda5658b668b86d47c058a4c7.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_PVC Door Designs That Beat Moisture & Save You___.jpg-bb74d1091aa6122b59163dfbdf880b24.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/objects/house_PVC Door Designs That Beat Moisture & Save You___.jpg"
-dest_files=["res://.godot/imported/house_PVC Door Designs That Beat Moisture & Save You___.jpg-72ab836dda5658b668b86d47c058a4c7.s3tc.ctex"]
+source_file="res://Assets/models/objects/house_PVC Door Designs That Beat Moisture & Save You___.jpg"
+dest_files=["res://.godot/imported/house_PVC Door Designs That Beat Moisture & Save You___.jpg-bb74d1091aa6122b59163dfbdf880b24.s3tc.ctex"]
 
 [params]
 

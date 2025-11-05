@@ -24,6 +24,7 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 @export var black_screen: Control
 @export var black_screen_anim: AnimationPlayer
 @export var area_barrier_stage1: Area3D
+@export var light: Node3D
 
 var _previous_stage := Global.gameStage
 var _current_stage := Global.gameStage
@@ -43,18 +44,25 @@ func _process(_delta: float) -> void:
 
 	match _current_stage:
 		Global.State.PROLOG1:
+			print("Prolog 1")
 			_enter_prolog1()
 		Global.State.PROLOG2:
-			_enter_prolog2()
+			print("Prolog 2")
+			_trigger_fridge_dialogue()
 		Global.State.PROLOG3:
-			_enter_prolog3()
+			print("Prolog 3")
+			_trigger_eat_dialogue()
 		Global.State.PROLOG4:
+			print("Prolog 4")
 			_enter_prolog4()
 		Global.State.STAGE1:
+			print("Stage 1")
 			_trigger_stage1()
 		Global.State.STAGE2:
+			print("Stage 2")
 			_trigger_stage2()
 		Global.State.STAGE3:
+			print("Stage 3")
 			_enter_stage3()
 		_:
 			pass
@@ -63,14 +71,17 @@ func _process(_delta: float) -> void:
 
 # Instantiates and starts a dialogue balloon
 func _start_dialogue(key: String) -> void:
+	player.set_physics_process(false)
 	var balloon = BALLOON_SCENE.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, key)
 	await balloon.dialogue_finished
+	player.set_physics_process(true)
 
 func _enter_prolog1() -> void:
-	bobby.is_active = false
-	valeria.is_active = false
+	taskbar_label.text = "Go to the kitchen and eat"
+	black_screen.visible = false
+	_enemy_visible(bobby,valeria,false)
 
 func _enter_prolog2() -> void:
 	_start_dialogue(key_prolog2)
@@ -93,18 +104,44 @@ func _enter_prolog4() -> void:
 
 func _trigger_stage1() -> void:
 	area_barrier_stage1.global_position = Vector3(3.398, 3.106, -5.039)
-	bobby.is_active = true
-	_start_dialogue(key_stage1)
+	light.visible = false
+	_enemy_visible(bobby,valeria,false)
+	await _start_dialogue(key_stage1)
+	taskbar_label.text = "Find 2 Battery"
 
 func _trigger_stage2() -> void:
-	bobby.is_active = true
+	taskbar_label.text = "Find Battery " + str(Global.battery_count) + "/2 ✓"
+	await get_tree().create_timer(1.0).timeout
+	_enemy_visible(bobby,null, true)
 	$Area_pembatas1.global_position = Vector3(100, 100, 100)
-	_start_dialogue(key_stage2)
+	await _start_dialogue(key_stage2)
 
 func _enter_stage3() -> void:
-	bobby.is_active = true
-	valeria.is_active = true
+	# If you only want this to run once, add a guard flag
+	taskbar_label.text = "Find a way to active the electricity"
+	await get_tree().create_timer(5.0).timeout
+	print("Enemy Active")
+	_enemy_logic(bobby,true)
 
-func _on_trigger_stage_2_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D and _current_stage == Global.State.STAGE1:
-		_start_dialogue(key_garage)
+func _enemy_visible(gender1: CharacterBody3D, gender2: CharacterBody3D = null, visible: bool = true) -> void:
+	gender1.visible = visible
+	if gender2:
+		gender2.visible = visible
+
+func _enemy_logic(enemy: CharacterBody3D, active:bool)-> void:
+	enemy.set_physics_process(active)
+	enemy.set_process(active)
+
+# Area signals
+func _on_area_3d_pembatas_1_entered() -> void:
+	await _start_dialogue(key_barrier1)
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE2:
+		await _start_dialogue(key_garage)
+		$trigger_stage2.global_position = Vector3(5.492, -10, 6.971)
+		Global.gameStage = Global.State.STAGE3
+
+func _on_area_barrier1_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE1:
+		await _start_dialogue(key_barrier1)

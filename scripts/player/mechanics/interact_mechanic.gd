@@ -14,7 +14,7 @@ func _interact(target: Object) -> void:
 				print("Masakan matang")
 				Global.gameStage = Global.State.PROLOG3
 		"Saklar":
-			if Global.gameStage == Global.State.PROLOG3:
+			if Global.gameStage == Global.State.PROLOG4:
 				print("Matikan")
 				Global.gameStage = Global.State.PROLOG4
 		"Battery":
@@ -23,7 +23,7 @@ func _interact(target: Object) -> void:
 				print(Global.battery_count)
 				target.queue_free()
 				if Global.battery_count >= 2:
-					Global.stage2 = true
+					Global.gameStage = Global.State.STAGE2 
 					flashlight.visible = true
 		"Generator":
 			if Global.gameStage == Global.State.STAGE3:
