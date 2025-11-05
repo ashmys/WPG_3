@@ -7,9 +7,9 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 # Dialogue keys
 @export_group("Dialogues")
 @export var key_start: String = "start"
-@export var key_prolog2: String = "kulkas"
-@export var key_prolog3: String = "makan"
-@export var key_prolog4: String = "tidur"
+@export var key_prolog2: String = "prolog2"
+@export var key_prolog3: String = "prolog3"
+@export var key_prolog4: String = "prolog4"
 @export var key_stage1: String = "stage1"
 @export var key_stage2: String = "stage2"
 @export var key_stage3: String = "pembatas1"
@@ -48,10 +48,10 @@ func _process(_delta: float) -> void:
 			_enter_prolog1()
 		Global.State.PROLOG2:
 			print("Prolog 2")
-			_trigger_fridge_dialogue()
+			_enter_prolog2()
 		Global.State.PROLOG3:
 			print("Prolog 3")
-			_trigger_eat_dialogue()
+			_enter_prolog3()
 		Global.State.PROLOG4:
 			print("Prolog 4")
 			_enter_prolog4()
@@ -134,7 +134,7 @@ func _enemy_logic(enemy: CharacterBody3D, active:bool)-> void:
 
 # Area signals
 func _on_area_3d_pembatas_1_entered() -> void:
-	await _start_dialogue(key_barrier1)
+	await _start_dialogue(key_stage1)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE2:
@@ -144,4 +144,4 @@ func _on_area_3d_body_entered(body: Node3D) -> void:
 
 func _on_area_barrier1_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE1:
-		await _start_dialogue(key_barrier1)
+		await _start_dialogue(key_stage2)
