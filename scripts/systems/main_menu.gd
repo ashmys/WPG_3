@@ -1,6 +1,6 @@
 extends Control
 
-@export var game_scene_path: StringName
+@export_dir var game_scene_dir: String
 
 @export var title: Label
 @export var main_buttons: VBoxContainer
@@ -22,9 +22,9 @@ func show_main_menu() -> void:
 	credits.visible = false
 
 func _on_start_button_pressed() -> void:
-	if game_scene_path:
+	if game_scene_dir:
 		AudioManager.stop_music()
-		get_tree().change_scene_to_file(game_scene_path)
+		get_tree().change_scene_to_file(game_scene_dir)
 	else:
 		print("No game scene assigned.")
 

@@ -7,12 +7,12 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 # Dialogue keys
 @export_group("Dialogues")
 @export var key_start: String = "start"
-@export var key_fridge: String = "kulkas"
-@export var key_eat: String = "makan"
-@export var key_turn_off_light: String = "matikanLampu"
+@export var key_prolog2: String = "kulkas"
+@export var key_prolog3: String = "makan"
+@export var key_prolog4: String = "tidur"
 @export var key_stage1: String = "stage1"
 @export var key_stage2: String = "stage2"
-@export var key_barrier1: String = "pembatas1"
+@export var key_stage3: String = "pembatas1"
 @export var key_garage: String = "garage"
 
 # References to nodes
@@ -29,11 +29,11 @@ var _previous_stage := Global.gameStage
 var _current_stage := Global.gameStage
 
 func _ready() -> void:
-	_start_dialogue(key_start)
 	taskbar_label.text = "Go to the kitchen and eat"
 	black_screen.visible = false
-	bobby.is_active = true
+	bobby.is_active = false
 	valeria.is_active = false
+	_start_dialogue(key_start)
 	Global.gameStage = Global.State.PROLOG1
 
 func _process(_delta: float) -> void:
@@ -45,9 +45,9 @@ func _process(_delta: float) -> void:
 		Global.State.PROLOG1:
 			_enter_prolog1()
 		Global.State.PROLOG2:
-			_trigger_fridge_dialogue()
+			_enter_prolog2()
 		Global.State.PROLOG3:
-			_trigger_eat_dialogue()
+			_enter_prolog3()
 		Global.State.PROLOG4:
 			_enter_prolog4()
 		Global.State.STAGE1:
@@ -72,12 +72,12 @@ func _enter_prolog1() -> void:
 	bobby.is_active = false
 	valeria.is_active = false
 
-func _trigger_fridge_dialogue() -> void:
-	_start_dialogue(key_fridge)
+func _enter_prolog2() -> void:
+	_start_dialogue(key_prolog2)
 
-func _trigger_eat_dialogue() -> void:
+func _enter_prolog3() -> void:
 	black_screen.visible = true
-	_start_dialogue(key_eat)
+	_start_dialogue(key_prolog3)
 	taskbar_label.text = "Go to the kitchen and eat ✓"
 	await get_tree().create_timer(1.0).timeout
 	taskbar_label.text = ""
@@ -88,7 +88,7 @@ func _trigger_eat_dialogue() -> void:
 	Global.gameStage = Global.State.PROLOG4
 
 func _enter_prolog4() -> void:
-	_start_dialogue(key_turn_off_light)
+	_start_dialogue(key_prolog4)
 	taskbar_label.text = ""
 
 func _trigger_stage1() -> void:

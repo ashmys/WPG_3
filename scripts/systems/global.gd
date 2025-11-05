@@ -5,7 +5,6 @@ var mouse_captured := false
 var battery_count : int = 0
 var generator_on : bool = false
 var call_police : bool = false
-var lampu_mati: int = 0
 
 enum State {PROLOG1,PROLOG2,PROLOG3,PROLOG4,STAGE1,STAGE2,STAGE3,STAGE4,STAGE5,END}
 var gameStage := State.PROLOG1

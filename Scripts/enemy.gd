@@ -13,6 +13,7 @@ const GRAVITY_MULTIPLIER := 4.5
 
 @export_group("Configs")
 @export var is_active: bool = false
+@export var can_move: bool = false
 enum State { PATROL, CHASE, SEARCH, IDLE }
 @export var state: State = State.IDLE
 @export var is_patrol: bool = true
@@ -34,15 +35,22 @@ var searching_time: float = 10.0
 var waiting_time: float = 1.0
 
 func _ready() -> void:
-	if !nav_agent or !player or patrol_points.is_empty(): return
-	if is_patrol:
-		state = State.PATROL
+	if !nav_agent or !player or patrol_points.is_empty(): 
+		print("nav_agent or player or patrol_points missing on enemy script")
+		return
 
 func _physics_process(delta: float) -> void:
 	if not is_active:
 		visible = false
+		collider.disabled = true
 		return
+	else:
+		visible = true
+		collider.disabled = false
 	
+	if not can_move:
+		return
+		
 	if velocity.x == 0.0 and velocity.z == 0.0:
 		is_moving = false
 	

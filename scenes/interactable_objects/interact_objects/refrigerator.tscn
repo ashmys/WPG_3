@@ -75,8 +75,8 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_6ibn2")
 
-[node name="Refrigerator" instance=ExtResource("1_vec8a")]
-object_name = "Refrigerator"
+[node name="Fridge" instance=ExtResource("1_vec8a")]
+object_name = "Fridge"
 
 [node name="Interact_Collision" parent="." index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014892578, 0.92268705, -0.03338623)

@@ -6,7 +6,7 @@ extends Node
 
 func _interact(target: Object) -> void:
 	match target.object_name:
-		"Refrigerator":
+		"Fridge":
 			if Global.gameStage == Global.State.PROLOG1:
 				Global.gameStage = Global.State.PROLOG2
 		"Microwave":
@@ -16,8 +16,6 @@ func _interact(target: Object) -> void:
 		"Saklar":
 			if Global.gameStage == Global.State.PROLOG3:
 				print("Matikan")
-				Global.lampu_mati += 1
-			if Global.lampu_mati >= 2:
 				Global.gameStage = Global.State.PROLOG4
 		"Battery":
 			if Global.gameStage == Global.State.STAGE1:

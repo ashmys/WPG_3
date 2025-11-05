@@ -2,45 +2,43 @@
 Selene: That was close
 Selene: I hope those people doesn't followed me
 Selene: Well, all those running make me hungry 
-Selene: I better get my self a food
-Selene: I remember  have a leftover in a refrigirator => END
+Selene: I better get myself some food
+Selene: I remember we have a leftover in the fridge => END
 
-~ microSebelumkulkas
+~ prolog1
 Selene: I need to grab the food first => END
 
-~ kulkas
+~ prolog2
 Selene: All right, now microwave it
-Selene: No one like a cold diner => END
+Selene: No one like a cold dinner => END
 
-~ makan
+~ prolog3
 Selene: Bon appétit => END
 
-~ matikanLampu
+~ prolog4
 Selene: Hoooaam.....
 Selene: I'm getting sleepy
-Selene: Before sleep, mother told me to to turn off every light in the house => END
+Selene: I should go to bed => END
 
 ~ stage1
-Selene: The power is out
+Selene: Huh.. suddenly the power is out
 Selene: And my phone is almost run out of battery
 Selene: Ah.. i have my flashlight
 Selene: But, it run out of battery
-Selene: I should be looking for battery
+Selene: I should be looking for the flashlight battery first
 Selene: It should be near => END
 
-~ pembatas1
-Selene: The Battery should be near => END
+~ stage1_blocked
+Selene: The flashlight battery should be near => END
 
 ~ stage2
 Selene: Alright, now let's go find out why the power is out => END
 
-~ before_garage
-Selene: What's that sound, I should check it out => END
+~ stage3
+Selene: Who is that?
+Selene: Isn't he the person I met this afternoon?
+Selene: I better call the police => END
 
-~ garage
-Selene: Who is that ?
-Selene: Isn't he the person I met this afternoon ?
-Selene: I better call the police
-
+~ stage3_after_hiding
 Selene: My Phone battery is dead
 Selene: I need to find a way to recharge my Phone => END
