@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://h165fuqfr1le"]
 
 [ext_resource type="PackedScene" uid="uid://cwox368hgjlss" path="res://scenes/interactable_objects/hideable_objects/hideable_object.tscn" id="1_sbiw8"]
-[ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/objects/chair.tscn" id="2_sbiw8"]
+[ext_resource type="PackedScene" uid="uid://ct8fgq7xb8klw" path="res://scenes/object_assets/chair.tscn" id="2_sbiw8"]
 
 [node name="HO_Chair" instance=ExtResource("1_sbiw8")]
 object_name = "Chair"

@@ -50,16 +50,16 @@ node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"Idle", &"Movem
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 
 [node name="Skeleton3D" parent="Bobby/Root" index="0"]
-bones/2/rotation = Quaternion(-0.044167623, -0.053514294, 0.109210916, 0.99159396)
-bones/3/rotation = Quaternion(0.099721976, 0.70460457, -0.10389977, 0.6948329)
-bones/5/rotation = Quaternion(-0.1090708, 0.9915714, 0.044397116, -0.054023556)
-bones/6/rotation = Quaternion(0.09944806, -0.7046472, 0.103616, 0.6948713)
-bones/13/rotation = Quaternion(0.07472298, 0.012579988, -0.99011666, 0.11801395)
-bones/14/rotation = Quaternion(0.09952336, 0.0312513, -0.12410108, 0.9867713)
-bones/16/position = Vector3(0.009711977, -0.014809243, 5.2535528e-05)
-bones/19/rotation = Quaternion(0.07472298, -0.012578685, 0.99011695, 0.11801192)
-bones/20/rotation = Quaternion(0.099520236, -0.031251267, 0.124097355, 0.98677206)
-bones/22/position = Vector3(-0.009711979, -0.014809272, 5.253585e-05)
+bones/2/rotation = Quaternion(-0.036432598, -0.0440266, 0.1120883, 0.9920538)
+bones/3/rotation = Quaternion(0.10521697, 0.703725, -0.10959035, 0.6940393)
+bones/5/rotation = Quaternion(-0.10509268, 0.99110353, 0.052165505, -0.06283459)
+bones/6/rotation = Quaternion(0.09220405, -0.7057323, 0.09610652, 0.6958476)
+bones/13/rotation = Quaternion(0.07257448, 0.025277613, -0.9869762, 0.14132284)
+bones/14/rotation = Quaternion(0.12992127, 0.030766055, -0.15903403, 0.97820354)
+bones/16/position = Vector3(0.00973173, -0.014531462, 0.0005604551)
+bones/19/rotation = Quaternion(0.07257075, -0.025317226, 0.98697525, 0.14132382)
+bones/20/rotation = Quaternion(0.12989563, -0.030764164, 0.15894905, 0.9782208)
+bones/22/position = Vector3(-0.009731732, -0.014531492, 0.0005604554)
 
 [node name="AnimationTree" parent="." index="4"]
 root_node = NodePath("../Bobby")
@@ -67,4 +67,3 @@ tree_root = SubResource("AnimationNodeBlendTree_judic")
 anim_player = NodePath("../Bobby/AnimationPlayer")
 
 [editable path="Bobby"]
-[editable path="ClimbStair_Area3D"]

@@ -21,17 +21,16 @@ const DEFAULT_PITCH := deg_to_rad(-25)
 const DOUBLE_PRESS_INTERVAL := 0.3  # seconds
 
 # === State ===
-var mouse_captured := false
 var look_rotation := Vector3.ZERO
 var target_look_rotation := Vector3.ZERO
 var mouse_idle_time := 0.0
 
 # === Lifecycle ===
 func _ready() -> void:
-	_capture_mouse()
+	Global.capture_mouse()
 
 func _process(delta: float) -> void:
-	if not mouse_captured:
+	if not Global.mouse_captured:
 		return
 
 	_handle_arrow_input(delta)
@@ -41,11 +40,9 @@ func _process(delta: float) -> void:
 
 func _unhandled_input(event: InputEvent) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		_capture_mouse()
-	elif Input.is_key_pressed(KEY_ESCAPE):
-		_release_mouse()
+		Global.capture_mouse()
 
-	if mouse_captured and event is InputEventMouseMotion:
+	if Global.mouse_captured and event is InputEventMouseMotion:
 		_rotate_look(event.relative)
 		mouse_idle_time = 0.0
 
@@ -64,15 +61,6 @@ func _handle_arrow_input(delta: float) -> void:
 		var rad_per_sec := deg_to_rad(arrow_sensitivity)
 		look_rotation.y += yaw_input * rad_per_sec * delta
 		look_rotation.x = clamp(look_rotation.x + pitch_input * rad_per_sec * delta, min_vertical_angle, max_vertical_angle)
-
-# === Mouse Capture ===
-func _capture_mouse() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
-	mouse_captured = true
-
-func _release_mouse() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-	mouse_captured = false
 
 # === Utility ===
 func _update_camera_transform() -> void:

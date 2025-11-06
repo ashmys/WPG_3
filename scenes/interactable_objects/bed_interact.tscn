@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cevm17bmbiqtj"]
 
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_m2jxp"]
-[ext_resource type="PackedScene" path="res://scenes/objects/bed.tscn" id="2_3h6w7"]
+[ext_resource type="PackedScene" uid="uid://bof8lu2cj7bp2" path="res://scenes/object_assets/bed.tscn" id="2_3h6w7"]
 
 [node name="Bed" instance=ExtResource("1_m2jxp")]
 object_name = "Bed"

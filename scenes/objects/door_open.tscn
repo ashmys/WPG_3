@@ -1,0 +1,65 @@
+[gd_scene load_steps=6 format=4 uid="uid://c8dipo0ashw1q"]
+
+[ext_resource type="Texture2D" uid="uid://t3olchs1vmyj" path="res://assets/models/houses/house_v3_PVC Door Designs That Beat Moisture & Save You___.jpg" id="1_p4nec"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o271l"]
+resource_name = "Material.020"
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("1_p4nec")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bx4pt"]
+_surfaces = [{
+"aabb": AABB(-0.6217748, -1.4899685, -0.00094456226, 1.2435496, 2.3202674, 0.08585824),
+"format": 34896613377,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAAAEAAEAAgAFAAMAAQAFAAIAAAADAAYABgADAAUAAAAGAAQAAQAHAAUABgAFAAcABAAHAAEABAAGAAcA"),
+"name": "Material.020",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 8,
+"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAAAAD/////AAD//wAA//8AAAAA//8AAAAA////////AAD/////AAAAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_p4nec"]
+resource_name = "house_v3_Cube_002"
+lightmap_size_hint = Vector2i(62, 66)
+_surfaces = [{
+"aabb": AABB(-0.6217748, -1.4899685, -0.00094456226, 1.2435496, 2.3202674, 0.08585824),
+"attribute_data": PackedByteArray("/////5L8kT6jeCM+fO99P4QPfj//////vew8P4NIAz6ttRY/q6pqP/////+S/JE+g0gDPnzvfT+rqmo//////73sPD+jeCM+rbUWP4QPfj//////yK9HP+WYZD9TSmk/ED74O/////+8njs/vEi8PnzvfT8AAEA//////7yeOz/lmGQ/fO99PxA++Dv/////yK9HP7xIvD5TSmk/AABAP/////+iYCI+gviBPTrnXD8QPvg7/////9tjWz/1NnU/11rrPgAAQD//////22RbP4L4gT3XWus+ED74O/////+iYCI+9TZ1PzrnXD8AAEA//////8cORz/k82M/GWNMP8IHXz//////u/06P7v+uj4IIQQ86aJLP/////+7/To/5PNjPxljTD/poks//////8cORz+7/ro+CCEEPMIHXz//////u3k7P/2w/D2llNI+hA9+P/////+PFo8+n4wePgghBDyrqmo//////7t5Oz+fjB4+pZTSPquqaj//////jxaPPv2w/D0IIQQ8hA9+P//////aQFo/9qx1P6WU0j4QPvg7/////6LoIT6OgI09CCEEPAAAQD//////oughPvasdT8IIQQ8ED74O//////aQFo/joCNPaWU0j4AAEA/"),
+"format": 34359742527,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
+"material": SubResource("StandardMaterial3D_o271l"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("oiwfv0q3vr855609oiwfP0q3vr+AnHe6oiwfv0q3vr+AnHe6oiwfP0q3vr855609oiwfv0q3vr+AnHe6oiwfv3iOVD855609oiwfv0q3vr855609oiwfv3iOVD+AnHe6oiwfP0q3vr+AnHe6oiwfv3iOVD+AnHe6oiwfv0q3vr+AnHe6oiwfP3iOVD+AnHe6oiwfP0q3vr855609oiwfP3iOVD+AnHe6oiwfP0q3vr+AnHe6oiwfP3iOVD855609oiwfP3iOVD855609oiwfv3iOVD+AnHe6oiwfP3iOVD+AnHe6oiwfv3iOVD855609oiwfv0q3vr855609oiwfP3iOVD855609oiwfP0q3vr855609oiwfv3iOVD855609AoAAAP7//z8CgAAA/v//PwKAAAD+//8/AoAAAP7//z8AAPp//v8BAAAA+n/+/wEAAAD6f/7/AQAAAPp//v8BAP7///8AAABA/v8AAAAA/z/+////AAAAQP7/AAAAAP8//v/+f/9/AED+//5//38AQP7//n//fwBA/v/+f/9/AED8f/7//v//P/x//v/+//8//H/+//7//z/8f/7//v//P/5//n8AAP8//n/+fwAA/z/+f/5/AAD/P/5//n8AAP8/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_bx4pt")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_s1i3e"]
+size = Vector3(1.2567139, 2.3043213, 0.11859131)
+
+[node name="Door" type="Node3D"]
+
+[node name="HingeJoint3D" type="HingeJoint3D" parent="."]
+transform = Transform3D(1.7881393e-07, -0.99999994, -4.3711385e-08, 0, -4.371139e-08, 1, -0.99999994, -1.7881393e-07, -7.816205e-15, 0.028344046, 1.2049916, 0.6615233)
+node_b = NodePath("../RigidDoor")
+angular_limit/enable = true
+angular_limit/relaxation = 1.5
+
+[node name="RigidDoor" type="RigidBody3D" parent="."]
+transform = Transform3D(1.7881393e-07, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, 1.7881393e-07, 0, 0, 0)
+collision_layer = 4
+collision_mask = 2
+
+[node name="Door" type="MeshInstance3D" parent="RigidDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("ArrayMesh_p4nec")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidDoor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.1035156e-05, 1.1764526, 0.029022217)
+shape = SubResource("BoxShape3D_s1i3e")

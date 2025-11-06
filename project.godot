@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="WPG_3"
+config/name="Mysterious_RV"
 run/main_scene="uid://csya31j4gesq0"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://icon.svg"
@@ -41,7 +41,6 @@ enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")
 
 player=""
 hide_object=""
-stairs=""
 interact_object=""
 
 [input]

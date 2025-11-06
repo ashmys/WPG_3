@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://br6avifn7skwy"]
 
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_kmgqh"]
-[ext_resource type="PackedScene" uid="uid://cnond2q83jqqf" path="res://scenes/objects/battery.tscn" id="2_bq7tl"]
+[ext_resource type="PackedScene" uid="uid://cnond2q83jqqf" path="res://scenes/object_assets/battery.tscn" id="2_bq7tl"]
 
 [node name="Microwave" instance=ExtResource("1_kmgqh")]
 object_name = "Microwave"

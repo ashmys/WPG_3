@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bl01dr3iti3hk"]
 
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_ad5w2"]
-[ext_resource type="PackedScene" uid="uid://cnond2q83jqqf" path="res://scenes/objects/battery.tscn" id="2_fldxv"]
+[ext_resource type="PackedScene" uid="uid://cnond2q83jqqf" path="res://scenes/object_assets/battery.tscn" id="2_fldxv"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_becpu"]
 size = Vector3(0.4326172, 0.2993164, 0.62890625)

@@ -1,8 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://jc5brxiy3gq7"]
+[gd_scene load_steps=12 format=3 uid="uid://jc5brxiy3gq7"]
 
 [ext_resource type="Script" uid="uid://dwwll2nwa38dq" path="res://scripts/enemy.gd" id="1_hghv2"]
 [ext_resource type="Script" uid="uid://gspyubnm75dm" path="res://scripts/enemy/enemy_animation.gd" id="2_jxmnh"]
-[ext_resource type="PackedScene" uid="uid://bfv446m4eumm8" path="res://scenes/mechanics/climb_stair_area_3d.tscn" id="2_otfum"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_7xaro"]
 radius = 0.1
@@ -40,7 +39,7 @@ animation = &"Run"
 animation = &"Walk"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_svcv2"]
-graph_offset = Vector2(-319.52576, 81.62538)
+graph_offset = Vector2(-113.56125, 140.73695)
 nodes/output/position = Vector2(540, 180)
 nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
 nodes/Movement/position = Vector2(160, 160)
@@ -57,9 +56,9 @@ node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"Idle", &"Movem
 [node name="enemy" type="CharacterBody3D" node_paths=PackedStringArray("collider", "nav_agent", "area_view", "ray_view")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 collision_layer = 2
-wall_min_slide_angle = 0.08726646
+floor_constant_speed = true
 floor_block_on_wall = false
-floor_max_angle = 1.4835298
+floor_max_angle = 0.87266463
 script = ExtResource("1_hghv2")
 collider = NodePath("CharaCollider")
 nav_agent = NodePath("NavigationAgent3D")
@@ -105,9 +104,6 @@ parameters/Movement/transition_request = ""
 parameters/Movement/current_index = 0
 parameters/TimeScale/scale = 1.75
 script = ExtResource("2_jxmnh")
-chara = NodePath("..")
-
-[node name="ClimbStair_Area3D" parent="." node_paths=PackedStringArray("chara") instance=ExtResource("2_otfum")]
 chara = NodePath("..")
 
 [connection signal="body_entered" from="head/Area3D" to="." method="_on_area_3d_body_entered"]

@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bov4iv61fdb5k"]
+[gd_scene load_steps=4 format=3 uid="uid://bov4iv61fdb5k"]
 
-[ext_resource type="Script" uid="uid://dr07r1w2otrf" path="res://Scripts/game_over.gd" id="1_v420q"]
+[ext_resource type="Script" uid="uid://dr07r1w2otrf" path="res://scripts/game_over.gd" id="1_v420q"]
+[ext_resource type="FontFile" uid="uid://dbvjkxjann8fn" path="res://assets/fonts/Dead Font Walking.otf" id="2_cnu5t"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_tbwuq"]
+font = ExtResource("2_cnu5t")
+font_size = 170
+font_color = Color(0.8819366, 0.8819366, 0.88193655, 1)
+shadow_size = 3
+shadow_color = Color(0, 0, 0, 0.3254902)
+shadow_offset = Vector2(5, 5)
 
 [node name="GameWin" type="Control"]
 layout_mode = 3
@@ -27,6 +36,7 @@ size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_font_sizes/font_size = 150
 text = "You are Saved"
+label_settings = SubResource("LabelSettings_tbwuq")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 z_index = -1

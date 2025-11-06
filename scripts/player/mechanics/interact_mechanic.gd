@@ -2,39 +2,43 @@ extends Node
 
 # == NODE ==
 @export var player: CharacterBody3D
+@export var piring: Node3D
+@export var senter: Node3D
 @export var flashlight: Node3D
 
 func _interact(target: Object) -> void:
 	match target.object_name:
 		"Refrigerator":
-			if Global.prolog:
-				Global.food = true
+			if Global.gameStage == Global.State.PROLOG1:
+				piring.visible = true
+				Global.gameStage = Global.State.PROLOG2
 		"Microwave":
-			if Global.prolog and Global.food:
-				print("Masakan matang")
-				Global.cooked_food = true
+			if Global.gameStage == Global.State.PROLOG2:
+				Global.gameStage = Global.State.PROLOG3
+				await get_tree().create_timer(5.0).timeout
+				piring.visible = false
 		"Saklar":
-			if Global.prolog2:
-				print("Matikan")
+			if Global.gameStage == Global.State.PROLOG4:
+				Global.emit_signal("saklar", target.saklarID)
 				Global.lampu_mati += 1
-			if Global.lampu_mati >= 2:
-				Global.prolog2 = false
-				Global.stage1 = true
+			if Global.lampu_mati >= 11:
+				Global.gameStage = Global.State.STAGE1
+				senter.visible = true
 		"Battery":
-			if Global.stage1 == true:
+			if Global.gameStage == Global.State.STAGE1:
 				Global.battery_count += 1
 				print(Global.battery_count)
 				target.queue_free()
 				if Global.battery_count >= 2:
-					Global.stage2 = true
+					Global.gameStage = Global.State.STAGE2 
 					flashlight.visible = true
 		"Generator":
-			if Global.stage3 == true:
+			if Global.gameStage == Global.State.STAGE3:
 				Global.generator_on = true
-		"Phone":
-			if Global.stage4 == true:
+		"cas_hp":
+			if Global.gameStage == Global.State.STAGE4:
 				if Global.generator_on:
-					Global.call_police = true
+					Global.gameStage = Global.State.STAGE5
 		_:
 			push_warning("object has no name(invalid)")
 	

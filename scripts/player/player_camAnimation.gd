@@ -4,28 +4,28 @@ extends AnimationTree
 @export var head: Node3D
 
 # == VAR ==
-enum {RESET,IDLE,WALK,RUN}
-var curAnim := RESET
+enum State {RESET,IDLE,WALK,RUN}
+var curAnim := State.RESET
 var idle_cooldown := 1.0
 
 func _physics_process(_delta: float) -> void:
 	if player.is_moving:
 		if not player.is_sprint:
-			curAnim = WALK
+			curAnim = State.WALK
 		else:
-			curAnim = RUN
+			curAnim = State.RUN
 	else:
 		if head.mouse_idle_time >= idle_cooldown:
-			curAnim = IDLE
+			curAnim = State.IDLE
 		else:
-			curAnim = RESET
+			curAnim = State.RESET
 	
 	match curAnim:
-		RESET:
+		State.RESET:
 			set("parameters/Movement/transition_request","RESET")
-		IDLE:
+		State.IDLE:
 			set("parameters/Movement/transition_request","Idle")
-		WALK:
+		State.WALK:
 			set("parameters/Movement/transition_request","Walk")
-		RUN:
+		State.RUN:
 			set("parameters/Movement/transition_request","Run")

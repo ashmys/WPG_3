@@ -10,7 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://ccotqn118laxb" path="res://scenes/interactable_objects/interact_objects/generator.tscn" id="11_tsoa1"]
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="12_su6sq"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="13_3xd4a"]
-[ext_resource type="PackedScene" uid="uid://ljdve5xdktd8" path="res://scenes/house_fix.tscn" id="13_ctpa3"]
+[ext_resource type="PackedScene" uid="uid://ljdve5xdktd8" path="res://scenes/objects/house.tscn" id="13_ctpa3"]
 [ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://scripts/pembatas1_area_3d.gd" id="13_dxapp"]
 [ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://assets/models/objects/lampu.tscn" id="14_2y5pm"]
 [ext_resource type="PackedScene" uid="uid://cvrog77yspmgn" path="res://scenes/interactable_objects/interact_objects/refrigerator.tscn" id="14_qq841"]
@@ -20,7 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="17_odsqc"]
 [ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="18_hfke5"]
 [ext_resource type="PackedScene" uid="uid://c8qah2f026gpn" path="res://scenes/interactable_objects/interact_objects/saklar.tscn" id="20_jq455"]
-[ext_resource type="PackedScene" uid="uid://o7jg4g6h76r3" path="res://scenes/monitor.tscn" id="21_xlbl2"]
+[ext_resource type="PackedScene" uid="uid://o7jg4g6h76r3" path="res://scenes/object_assets/monitor.tscn" id="21_xlbl2"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
 panorama = ExtResource("3_vlm8r")

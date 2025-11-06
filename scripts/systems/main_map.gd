@@ -1,166 +1,172 @@
 extends Node
 
-const Baloon = preload("res://Assets/dialogue/balloon.tscn")
+const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 
 @export var dialogue_resource: DialogueResource
-@export var dialogue_start: String = "start"
-@export var dialogue_kulkas: String = "kulkas"
-@export var dialogue_makan: String = "makan"
-@export var dialogue_matikanLampu: String = "matikanLampu"
-@export var dialogue_stage1: String = "stage1"
-@export var dialogue_stage2: String = "stage2"
-@export var dialogue_pembatas1: String = "pembatas1"
-@export var dialogue_garage: String = "garage"
-@export var e_bobby: CharacterBody3D
-@export var e_valeria: CharacterBody3D
-@export var player:CharacterBody3D
-@export var taskbar:Label
-@export var blackScreen:Control
-@export var blackScreenAnim:AnimationPlayer
-@export var pembatasAreaStage1:Area3D
 
-var prolog2_triggered:= false
-var stage1_triggered := false
-var stage2_triggered := false
-var kulkas_triggered := false
-var makan_triggered := false
-var pengantar_stage2_triggerd:bool = false
-var pembatas1_triggered := false
+# Dialogue keys
+@export_group("Dialogues")
+@export var key_start: String = "start"
+@export var key_fridge: String = "kulkas"
+@export var key_eat: String = "makan"
+@export var key_turn_off_light: String = "matikanLampu"
+@export var key_stage1: String = "stage1"
+@export var key_stage2: String = "stage2"
+@export var key_barrier1: String = "pembatas1"
+@export var key_garage: String = "garage"
+
+# References to nodes
+@export_group("Nodes")
+@export var bobby: CharacterBody3D
+@export var valeria: CharacterBody3D
+@export var player: CharacterBody3D
+@export var taskbar_label: Label
+@export var black_screen: Control
+@export var black_screen_anim: AnimationPlayer
+@export var area_barrier_stage1: Area3D
+@export var light: Node3D
+@export var lampuID : Array[StaticBody3D]
+@export var hp_table:StaticBody3D
+@export var prolog3Position: Marker3D
+
+var _previous_stage := Global.gameStage
+var _current_stage := Global.gameStage
 
 func _ready() -> void:
-	var baloon = Baloon.instantiate()
-	get_tree().current_scene.add_child(baloon)
-	baloon.start(dialogue_resource, dialogue_start)
-	await baloon.dialogue_finished
-	taskbar.text = "Go to the kitchen and eat"
-	blackScreen.visible = false
+	Global.saklar.connect(_saklar)
+	_enemy_logic(bobby,false)
+	_enemy_logic(valeria,false)
+	await _start_dialogue(key_start)
+	_enter_prolog1()
 
-func _process(delta: float) -> void:
-	if Global.prolog:
-		e_bobby.set_physics_process(false)
-		e_bobby.set_process(false)
-		e_bobby.visible = false
-		e_valeria.set_physics_process(false)
-		e_valeria.set_process(false)
-		e_valeria.visible = false
+func _process(_delta: float) -> void:
+	_current_stage = Global.gameStage
+	if _previous_stage == _current_stage:
+		return
 
-		
-	if Global.prolog and Global.food and not kulkas_triggered:
-		kulkas_triggered = true
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_kulkas)
-		e_bobby.set_physics_process(false)
-		e_bobby.set_process(false)
-		e_bobby.visible = false
-		e_valeria.set_physics_process(false)
-		e_valeria.set_process(false)
-		e_valeria.visible = false
-		
-	if Global.prolog and Global.food and Global.cooked_food and not makan_triggered:
-		blackScreen.visible = true
-		e_bobby.set_physics_process(false)
-		e_bobby.set_process(false)
-		e_bobby.visible = false
-		e_valeria.set_physics_process(false)
-		e_valeria.set_process(false)
-		e_valeria.visible = false
-		makan_triggered = true
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_makan)
-		await baloon.dialogue_finished
-		taskbar.text = "Go to the kitchen and eat ✓"
-		await get_tree().create_timer(1.0).timeout
-		taskbar.text = ""
-		await get_tree().create_timer(1.0).timeout
-		blackScreenAnim.play("fade")
-		await get_tree().create_timer(4.0).timeout
-		blackScreen.visible = false
-		Global.prolog = false
-		Global.prolog2 = true
-		
-	
-	if Global.prolog2 and not prolog2_triggered:
-		prolog2_triggered = true
-		
-		#Enemy controller
-		e_bobby.set_physics_process(false)
-		e_bobby.set_process(false)
-		e_bobby.visible = false
-		e_valeria.set_physics_process(false)
-		e_valeria.set_process(false)
-		e_valeria.visible = false
-		
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_matikanLampu)
-		await baloon.dialogue_finished
-		taskbar.text = ""
+	match _current_stage:
+		Global.State.PROLOG1:
+			print("Prolog 1")
+			_enter_prolog1()
+		Global.State.PROLOG2:
+			print("Prolog 2")
+			_trigger_fridge_dialogue()
+		Global.State.PROLOG3:
+			print("Prolog 3")
+			_trigger_eat_dialogue()
+		Global.State.PROLOG4:
+			print("Prolog 4")
+			_enter_prolog4()
+		Global.State.STAGE1:
+			print("Stage 1")
+			_trigger_stage1()
+		Global.State.STAGE2:
+			print("Stage 2")
+			_trigger_stage2()
+		Global.State.STAGE3:
+			print("Stage 3")
+			_enter_stage3()
+		Global.State.STAGE5:
+			hp_table.visible = true
+		_:
+			pass
 
+	_previous_stage = _current_stage
 
-	
-	if Global.stage1 and not stage1_triggered:
-		stage1_triggered = true
-		pembatasAreaStage1.global_position = Vector3(3.398,3.106,-5.039)
-		e_bobby.set_physics_process(true)
-		e_bobby.set_process(true)
-		e_valeria.set_physics_process(false)
-		e_valeria.set_process(false)
-		e_valeria.visible = false
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_stage1)
+# Instantiates and starts a dialogue balloon
+func _start_dialogue(key: String) -> void:
+	player.set_physics_process(false)
+	var balloon = BALLOON_SCENE.instantiate()
+	get_tree().current_scene.add_child(balloon)
+	balloon.start(dialogue_resource, key)
+	await balloon.dialogue_finished
+	player.set_physics_process(true)
 
-	if Global.stage2 and not stage2_triggered:
-		e_bobby.visible = true
-		$Area_pembatas1.global_position = Vector3(100,100,100)
-		stage2_triggered = true
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_stage2)
-	
-	if Global.stage3:
-		e_bobby.set_physics_process(true)
-		e_bobby.set_process(true)
-		e_valeria.set_physics_process(true)
-		e_valeria.set_process(true)
-		e_valeria.visible = true
+func _enter_prolog1() -> void:
+	taskbar_label.text = "Go to the kitchen and eat"
+	black_screen.visible = false
+	_enemy_visible(bobby,valeria,false)
 
-func _on_area_3d_pembatas_1() -> void:
-	if not pembatas1_triggered:
-		print("Masuk area pembatas 1")
-		pembatas1_triggered = true
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_pembatas1)
+func _trigger_fridge_dialogue() -> void:
+	await _start_dialogue(key_fridge)
 
+func _trigger_eat_dialogue() -> void:
+	black_screen.visible = true
+	await _start_dialogue(key_eat)
+	player.set_physics_process(false)
+	taskbar_label.text = "Go to the kitchen and eat ✓"
+	await get_tree().create_timer(1.0).timeout
+	taskbar_label.text = ""
+	await get_tree().create_timer(1.0).timeout
+	black_screen_anim.play("fade")
+	await get_tree().create_timer(4.0).timeout
+	player.global_position = prolog3Position.global_position
+	player.rotation.y = 90
+	player.rotation.x = 0
+	player.rotation.z = 0
+	black_screen.visible = false
+	Global.gameStage = Global.State.PROLOG4
+	player.set_physics_process(true)
+
+func _enter_prolog4() -> void:
+	await _start_dialogue(key_turn_off_light)
+	taskbar_label.text = "Turn Off the Light on the house"
+
+func _trigger_stage1() -> void:
+	area_barrier_stage1.global_position = Vector3(3.398, 3.106, -5.039)
+	light.visible = false
+	_enemy_visible(bobby,valeria,false)
+	await _start_dialogue(key_stage1)
+	taskbar_label.text = "Find 2 Battery"
+
+func _trigger_stage2() -> void:
+	taskbar_label.text = "Find Battery " + str(Global.battery_count) + "/2 ✓"
+	await get_tree().create_timer(1.0).timeout
+	_enemy_visible(bobby,null, true)
+	$Area_pembatas1.global_position = Vector3(100, 100, 100)
+	await _start_dialogue(key_stage2)
+
+func _enter_stage3() -> void:
+	# If you only want this to run once, add a guard flag
+	taskbar_label.text = "Find a way to active the electricity"
+	await get_tree().create_timer(5.0).timeout
+	print("Enemy Active")
+	_enemy_logic(bobby,true)
+
+func _enemy_visible(gender1: CharacterBody3D, gender2: CharacterBody3D = null, visible: bool = true) -> void:
+	gender1.visible = visible
+	if gender2:
+		gender2.visible = visible
+
+func _enemy_logic(enemy: CharacterBody3D, active:bool)-> void:
+	enemy.set_physics_process(active)
+	enemy.set_process(active)
+
+# Area signals
+func _on_area_3d_pembatas_1_entered() -> void:
+	await _start_dialogue(key_barrier1)
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
-	if Global.stage1:
-		if body is CharacterBody3D and not pengantar_stage2_triggerd:
-			pengantar_stage2_triggerd = true
-			var baloon = Baloon.instantiate()
-			get_tree().current_scene.add_child(baloon)
-			baloon.start(dialogue_resource, dialogue_garage)
-			await  baloon.dialogue_finished
-			e_bobby.set_physics_process(true)
-			e_bobby.set_process(true)
-		
+	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE2:
+		await _start_dialogue(key_garage)
+		$trigger_stage2.global_position = Vector3(5.492, -10, 6.971)
+		Global.gameStage = Global.State.STAGE3
 
-func _on_area_3d_body_exited(body: Node3D) -> void:
-	if Global.stage1:
-		if body is CharacterBody3D:
-			Global.stage1 = true
+func _on_area_barrier1_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE1:
+		await _start_dialogue(key_barrier1)
 
-func _on_area_pembatas_1_body_entered(body: Node3D) -> void:
-	if body is CharacterBody3D and not pengantar_stage2_triggerd:
-		pengantar_stage2_triggerd = true
-		var baloon = Baloon.instantiate()
-		get_tree().current_scene.add_child(baloon)
-		baloon.start(dialogue_resource, dialogue_pembatas1)
+func _saklar(saklarID: int) -> void:
+	# Pastikan ID valid dalam daftar lampu
+	if saklarID >= 0 and saklarID < lampuID.size():
+		var lamp = lampuID[saklarID]
+		if lamp: # pastikan lampu tidak null
+			lamp.visible = false
 
+func _lampu_on(saklarID: int):
+	if saklarID >= 0 and saklarID < lampuID.size():
+		lampuID[saklarID].visible = true
 
-func _on_area_pembatas_1_body_exited(body: Node3D) -> void:
-	if body is CharacterBody3D and pengantar_stage2_triggerd:
-		pengantar_stage2_triggerd = false
+func _lampu_of(saklarID: int):
+	if saklarID >= 0 and saklarID < lampuID.size():
+		lampuID[saklarID].visible = false

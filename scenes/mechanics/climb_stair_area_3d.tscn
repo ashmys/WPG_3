@@ -1,13 +1,37 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfv446m4eumm8"]
+[gd_scene load_steps=3 format=3 uid="uid://bqovkhgvhac4r"]
 
-[ext_resource type="Script" uid="uid://dognjc0ie57wr" path="res://scripts/mechanics/climb_stair.gd" id="1_iadsf"]
+[sub_resource type="GDScript" id="GDScript_0s286"]
+script/source = "extends Area3D
+
+@export var chara: CharacterBody3D
+@export var stair_lift_speed: float = 4.0
+
+var on_stair: bool = false
+
+func _physics_process(_delta: float) -> void:
+	# Only consider stairs when the character is moving and on floor
+	if chara.is_moving and chara.is_on_floor:
+		# Assume no stair until we find one
+		var found_stair = false
+		for body in get_overlapping_bodies():
+			if body.is_in_group(\"stairs\"):
+				found_stair = true
+				break
+		on_stair = found_stair
+	else:
+		on_stair = false
+
+	if on_stair:
+		# Gradually pull the character upward (or toward stair lift speed)
+		chara.velocity.y += (stair_lift_speed - chara.velocity.y)
+"
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_x3yh4"]
-height = 0.712677
+height = 0.7020416
 radius = 0.315
 
 [node name="ClimbStair_Area3D" type="Area3D"]
-script = ExtResource("1_iadsf")
+script = SubResource("GDScript_0s286")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.35871887, 0)
