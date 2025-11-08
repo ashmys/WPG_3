@@ -1,43 +1,45 @@
 [gd_scene load_steps=6 format=4 uid="uid://c8dipo0ashw1q"]
 
-[ext_resource type="Texture2D" uid="uid://t3olchs1vmyj" path="res://assets/models/houses/house_v3_PVC Door Designs That Beat Moisture & Save You___.jpg" id="1_p4nec"]
+[ext_resource type="Texture2D" uid="uid://fjwfmwrwy5qx" path="res://assets/models/objects/blockhouse_3.png" id="1_p4nec"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o271l"]
-resource_name = "Material.020"
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w87vj"]
+resource_name = "Material.004"
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("1_p4nec")
+emission = Color(1, 1, 1, 1)
+emission_energy_multiplier = 0.0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_bx4pt"]
+[sub_resource type="ArrayMesh" id="ArrayMesh_p4nec"]
 _surfaces = [{
-"aabb": AABB(-0.6217748, -1.4899685, -0.00094456226, 1.2435496, 2.3202674, 0.08585824),
-"format": 34896613377,
+"aabb": AABB(-0.006901458, -0.00071834686, -0.01, 0.013802916, 0.0014366937, 0.024),
+"format": 34359742465,
 "index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAgADAAAAAAAEAAEAAgAFAAMAAQAFAAIAAAADAAYABgADAAUAAAAGAAQAAQAHAAUABgAFAAcABAAHAAEABAAGAAcA"),
-"name": "Material.020",
+"index_data": PackedByteArray("AAABAAIAAgADAAAAAQAAAAQABAAAAAMABQACAAEAAwACAAUABAAGAAEAAQAGAAUAAwAHAAQABgAEAAcABQAHAAMABwAFAAYA"),
+"name": "Material.004",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 8,
-"vertex_data": PackedByteArray("AAAAAP//AAD//wAAAAAAAAAAAAAAAAAAAAD/////AAD//wAA//8AAAAA//8AAAAA////////AAD/////AAAAAA==")
+"vertex_data": PackedByteArray("oCXiu3FPPLpBYGU8oCXiu3FPPLoK1yO8oCXiu3FPPDoK1yO8oCXiu3FPPDpBYGU8oCXiO3FPPLpBYGU8oCXiO3FPPDoK1yO8oCXiO3FPPLoK1yO8oCXiO3FPPDpBYGU8")
 }]
 blend_shape_mode = 0
 
-[sub_resource type="ArrayMesh" id="ArrayMesh_p4nec"]
-resource_name = "house_v3_Cube_002"
-lightmap_size_hint = Vector2i(62, 66)
+[sub_resource type="ArrayMesh" id="ArrayMesh_gfk23"]
+resource_name = "Cube"
 _surfaces = [{
-"aabb": AABB(-0.6217748, -1.4899685, -0.00094456226, 1.2435496, 2.3202674, 0.08585824),
-"attribute_data": PackedByteArray("/////5L8kT6jeCM+fO99P4QPfj//////vew8P4NIAz6ttRY/q6pqP/////+S/JE+g0gDPnzvfT+rqmo//////73sPD+jeCM+rbUWP4QPfj//////yK9HP+WYZD9TSmk/ED74O/////+8njs/vEi8PnzvfT8AAEA//////7yeOz/lmGQ/fO99PxA++Dv/////yK9HP7xIvD5TSmk/AABAP/////+iYCI+gviBPTrnXD8QPvg7/////9tjWz/1NnU/11rrPgAAQD//////22RbP4L4gT3XWus+ED74O/////+iYCI+9TZ1PzrnXD8AAEA//////8cORz/k82M/GWNMP8IHXz//////u/06P7v+uj4IIQQ86aJLP/////+7/To/5PNjPxljTD/poks//////8cORz+7/ro+CCEEPMIHXz//////u3k7P/2w/D2llNI+hA9+P/////+PFo8+n4wePgghBDyrqmo//////7t5Oz+fjB4+pZTSPquqaj//////jxaPPv2w/D0IIQQ8hA9+P//////aQFo/9qx1P6WU0j4QPvg7/////6LoIT6OgI09CCEEPAAAQD//////oughPvasdT8IIQQ8ED74O//////aQFo/joCNPaWU0j4AAEA/"),
-"format": 34359742527,
+"aabb": AABB(-0.006901458, -0.00071834686, -0.01, 0.013802916, 0.0014366937, 0.024),
+"attribute_data": PackedByteArray("vZ47P4BKvD69njs/b5lkP+avRz9vmWQ/5q9HP4BKvD6E7CE+GIaNPXTsIT7brXU/fkFaP+GtdT+EQVo/MIaNPXL+Oj86ALs+cv46P0z0Yz+aD0c/TPRjP5oPRz86ALs+2WRbPzc3dT/bZFs/CPyBPYBhIj74+4E9eGEiPjc3dT+a7Tw/5EkDPor9kT7kSQM+iv2RPsR7Iz6b7Tw/xHsjPs0Wjz7UjB4+PHo7P9SMHj48ejs/6LX8Pc0Wjz7otfw9"),
+"format": 34359742487,
 "index_count": 36,
-"index_data": PackedByteArray("AAABAAIAAAADAAEABAAFAAYABAAHAAUACAAJAAoACAALAAkADAANAA4ADAAPAA0AEAARABIAEAATABEAFAAVABYAFAAXABUA"),
-"material": SubResource("StandardMaterial3D_o271l"),
+"index_data": PackedByteArray("AAABAAIAAgADAAAABAAFAAYABgAHAAQACAAJAAoACgALAAgADAANAA4ADgAPAAwAEAARABIAEgATABAAFAAVABYAFgAXABQA"),
+"material": SubResource("StandardMaterial3D_w87vj"),
+"name": "Material.004",
 "primitive": 3,
 "uv_scale": Vector4(0, 0, 0, 0),
 "vertex_count": 24,
-"vertex_data": PackedByteArray("oiwfv0q3vr855609oiwfP0q3vr+AnHe6oiwfv0q3vr+AnHe6oiwfP0q3vr855609oiwfv0q3vr+AnHe6oiwfv3iOVD855609oiwfv0q3vr855609oiwfv3iOVD+AnHe6oiwfP0q3vr+AnHe6oiwfv3iOVD+AnHe6oiwfv0q3vr+AnHe6oiwfP3iOVD+AnHe6oiwfP0q3vr855609oiwfP3iOVD+AnHe6oiwfP0q3vr+AnHe6oiwfP3iOVD855609oiwfP3iOVD855609oiwfv3iOVD+AnHe6oiwfP3iOVD+AnHe6oiwfv3iOVD855609oiwfv0q3vr855609oiwfP3iOVD855609oiwfP0q3vr855609oiwfv3iOVD855609AoAAAP7//z8CgAAA/v//PwKAAAD+//8/AoAAAP7//z8AAPp//v8BAAAA+n/+/wEAAAD6f/7/AQAAAPp//v8BAP7///8AAABA/v8AAAAA/z/+////AAAAQP7/AAAAAP8//v/+f/9/AED+//5//38AQP7//n//fwBA/v/+f/9/AED8f/7//v//P/x//v/+//8//H/+//7//z/8f/7//v//P/5//n8AAP8//n/+fwAA/z/+f/5/AAD/P/5//n8AAP8/")
+"vertex_data": PackedByteArray("oCXiu3FPPLpBYGU8oCXiu3FPPLoK1yO8oCXiu3FPPDoK1yO8oCXiu3FPPDpBYGU8oCXiO3FPPLpBYGU8oCXiO3FPPLoK1yO8oCXiu3FPPLoK1yO8oCXiu3FPPLpBYGU8oCXiO3FPPDpBYGU8oCXiO3FPPDoK1yO8oCXiO3FPPLoK1yO8oCXiO3FPPLpBYGU8oCXiu3FPPDpBYGU8oCXiu3FPPDoK1yO8oCXiO3FPPDoK1yO8oCXiO3FPPDpBYGU8oCXiO3FPPDoK1yO8oCXiu3FPPDoK1yO8oCXiu3FPPLoK1yO8oCXiO3FPPLoK1yO8oCXiu3FPPDpBYGU8oCXiO3FPPDpBYGU8oCXiO3FPPLpBYGU8oCXiu3FPPLpBYGU8AAD/f/9/AAAAAP9//38AAAAA/3//fwAAAAD/f/9/AAD/fwAAAAD/P/9/AAAAAP8//38AAAAA/z//fwAAAAD/P////3//f/5/////f/9//n////9//3/+f////3//f/5//3///wAA/z//f///AAD/P/9///8AAP8//3///wAA/z//////////P/////////8//////////z//////////P/9//3////8//3//f////z//f/9/////P/9//3////8/")
 }]
 blend_shape_mode = 0
-shadow_mesh = SubResource("ArrayMesh_bx4pt")
+shadow_mesh = SubResource("ArrayMesh_p4nec")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_s1i3e"]
 size = Vector3(1.2567139, 2.3043213, 0.11859131)
@@ -57,8 +59,8 @@ collision_mask = 2
 mass = 10.0
 
 [node name="Door" type="MeshInstance3D" parent="RigidDoor"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
-mesh = SubResource("ArrayMesh_p4nec")
+transform = Transform3D(90.09325, -9.094947e-13, -5.421011e-20, 0, -2.612236e-06, 96.67781, -1.8189894e-12, -59.760986, -4.2259207e-06, -8.4703295e-22, 0.9848813, -4.3050523e-08)
+mesh = SubResource("ArrayMesh_gfk23")
 skeleton = NodePath("")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidDoor"]

@@ -13,7 +13,7 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 @export var key_stage1: String = "stage1"
 @export var key_stage2: String = "stage2"
 @export var key_stage3: String = "pembatas1"
-@export var key_garage: String = "garage"
+@export var key_garage: String = "stage3"
 
 # References to nodes
 @export_group("Nodes")
@@ -25,7 +25,7 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 @export var black_screen_anim: AnimationPlayer
 @export var area_barrier_stage1: Area3D
 @export var light: Node3D
-@export var lampuID : Array[StaticBody3D]
+@export var lampuID : Array[Node3D]
 @export var hp_table:StaticBody3D
 @export var prolog3Position: Marker3D
 
@@ -33,6 +33,7 @@ var _previous_stage := Global.gameStage
 var _current_stage := Global.gameStage
 
 func _ready() -> void:
+	Global.saklar.connect(_saklar)
 	taskbar_label.text = "Go to the kitchen and eat"
 	black_screen.visible = false
 	bobby.is_active = false
@@ -86,7 +87,7 @@ func _start_dialogue(key: String) -> void:
 func _enter_prolog1() -> void:
 	taskbar_label.text = "Go to the kitchen and eat"
 	black_screen.visible = false
-	_enemy_visible(bobby,valeria,false)
+	bobby.is_active = false
 
 func _enter_prolog2() -> void:
 	_start_dialogue(key_prolog2)
@@ -109,20 +110,21 @@ func _enter_prolog3() -> void:
 	player.set_physics_process(true)
 
 func _enter_prolog4() -> void:
-	_start_dialogue(key_prolog4)
-	taskbar_label.text = ""
+	await _start_dialogue(key_prolog4)
+	taskbar_label.text = "Turn of all light in the House"
 
 func _trigger_stage1() -> void:
+	taskbar_label.text = "Turn of all light in the House X"
 	area_barrier_stage1.global_position = Vector3(3.398, 3.106, -5.039)
 	light.visible = false
-	_enemy_visible(bobby,valeria,false)
+	bobby.is_active = true
 	await _start_dialogue(key_stage1)
 	taskbar_label.text = "Find 2 Battery"
 
 func _trigger_stage2() -> void:
-	taskbar_label.text = "Find Battery " + str(Global.battery_count) + "/2 ✓"
+	taskbar_label.text = "Find 2 Battery ✓"
 	await get_tree().create_timer(1.0).timeout
-	_enemy_visible(bobby,null, true)
+	taskbar_label.text = "Go to garage"
 	$Area_pembatas1.global_position = Vector3(100, 100, 100)
 	await _start_dialogue(key_stage2)
 
@@ -131,16 +133,7 @@ func _enter_stage3() -> void:
 	taskbar_label.text = "Find a way to active the electricity"
 	await get_tree().create_timer(5.0).timeout
 	print("Enemy Active")
-	_enemy_logic(bobby,true)
-
-func _enemy_visible(gender1: CharacterBody3D, gender2: CharacterBody3D = null, visible: bool = true) -> void:
-	gender1.visible = visible
-	if gender2:
-		gender2.visible = visible
-
-func _enemy_logic(enemy: CharacterBody3D, active:bool)-> void:
-	enemy.set_physics_process(active)
-	enemy.set_process(active)
+	bobby.is_active = true
 
 # Area signals
 func _on_area_3d_pembatas_1_entered() -> void:
@@ -161,12 +154,17 @@ func _saklar(saklarID: int) -> void:
 	if saklarID >= 0 and saklarID < lampuID.size():
 		var lamp = lampuID[saklarID]
 		if lamp: # pastikan lampu tidak null
-			lamp.visible = false
+			lamp.light_off()
 
 func _lampu_on(saklarID: int):
 	if saklarID >= 0 and saklarID < lampuID.size():
-		lampuID[saklarID].visible = true
+		lampuID[saklarID].light_on()
 
 func _lampu_of(saklarID: int):
 	if saklarID >= 0 and saklarID < lampuID.size():
-		lampuID[saklarID].visible = false
+		lampuID[saklarID].light_off()
+
+
+func _on_trigger_stage_1_body_entered(body: Node3D) -> void:
+	if body is CharacterBody3D and Global.gameStage == Global.State.PROLOG4:
+		Global.gameStage = Global.State.STAGE1

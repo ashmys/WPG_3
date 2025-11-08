@@ -28,6 +28,7 @@ var mouse_idle_time := 0.0
 # === Lifecycle ===
 func _ready() -> void:
 	Global.capture_mouse()
+	
 
 func _process(delta: float) -> void:
 	if not Global.mouse_captured:

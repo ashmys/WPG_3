@@ -13,7 +13,7 @@ const GRAVITY_MULTIPLIER := 4.5
 
 @export_group("Configs")
 @export var is_active: bool = false
-@export var can_move: bool = false
+@export var can_move: bool = true
 enum State { PATROL, CHASE, SEARCH, IDLE }
 @export var state: State = State.IDLE
 @export var is_patrol: bool = true

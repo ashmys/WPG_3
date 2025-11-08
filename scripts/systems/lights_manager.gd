@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var light_array: Array[Node3D] = []
-var all_lights_on: bool = true
+var all_lights_on: bool = false
 
 func _ready() -> void:
 	# Populate the light array when the scene starts

@@ -6,6 +6,11 @@ extends Node
 @export var senter: Node3D
 @export var flashlight: Node3D
 
+func _process(delta: float) -> void:
+	match Global.gameStage:
+		Global.State.STAGE1:
+			senter.visible = true
+
 func _interact(target: Object) -> void:
 	match target.object_name:
 		"Fridge":
@@ -22,10 +27,7 @@ func _interact(target: Object) -> void:
 				print("Matikan")
 				Global.gameStage = Global.State.PROLOG4
 				Global.emit_signal("saklar", target.saklarID)
-				Global.lampu_mati += 1
-			if Global.lampu_mati >= 11:
-				Global.gameStage = Global.State.STAGE1
-				senter.visible = true
+
 		"Battery":
 			if Global.gameStage == Global.State.STAGE1:
 				Global.battery_count += 1
@@ -39,8 +41,7 @@ func _interact(target: Object) -> void:
 				Global.generator_on = true
 		"cas_hp":
 			if Global.gameStage == Global.State.STAGE4:
-				if Global.generator_on:
-					Global.gameStage = Global.State.STAGE5
+				Global.gameStage = Global.State.STAGE5
 		_:
 			push_warning("object has no name(invalid)")
 	

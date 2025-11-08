@@ -3,6 +3,7 @@ extends Node
 var mouse_captured := false
 
 var battery_count : int = 0
+var lampu_mati : int = 0
 var generator_on : bool = false
 var call_police : bool = false
 
@@ -15,6 +16,7 @@ var source:Vector3
 var destinationEnemy
 
 signal gameOver
+signal senter_on
 signal saklar(saklarID: int)
 
 
