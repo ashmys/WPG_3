@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dgan1v5wiq441"
-path.s3tc="res://.godot/imported/rak dapur_360_F_228680721_gGbh5ylrMPMikdBIzWb8N1yGBLg8dmu9.jpg-68cfdd7ac148865ad3123d985d930fc6.s3tc.ctex"
+path.s3tc="res://.godot/imported/rak dapur_360_F_228680721_gGbh5ylrMPMikdBIzWb8N1yGBLg8dmu9.jpg-7f9bac70bcba88375d1ee8d4db43014f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/objects/rak dapur_360_F_228680721_gGbh5ylrMPMikdBIzWb8N1yGBLg8dmu9.jpg"
-dest_files=["res://.godot/imported/rak dapur_360_F_228680721_gGbh5ylrMPMikdBIzWb8N1yGBLg8dmu9.jpg-68cfdd7ac148865ad3123d985d930fc6.s3tc.ctex"]
+source_file="res://assets/models/objects/rak dapur_360_F_228680721_gGbh5ylrMPMikdBIzWb8N1yGBLg8dmu9.jpg"
+dest_files=["res://.godot/imported/rak dapur_360_F_228680721_gGbh5ylrMPMikdBIzWb8N1yGBLg8dmu9.jpg-7f9bac70bcba88375d1ee8d4db43014f.s3tc.ctex"]
 
 [params]
 

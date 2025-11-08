@@ -1,7 +1,9 @@
-[gd_resource type="Resource" script_class="AudioLibraryEntry" load_steps=2 format=3 uid="uid://n708pcnpfko6"]
+[gd_resource type="Resource" script_class="AudioLibraryEntry" load_steps=3 format=3 uid="uid://n708pcnpfko6"]
 
 [ext_resource type="Script" uid="uid://bptjoqr5aavn5" path="res://scripts/systems/audio_library_entry.gd" id="1_hsb4f"]
+[ext_resource type="AudioStream" uid="uid://bhqymr8nf0kiw" path="res://assets/audios/sfx/Suara Distraksi.wav" id="2_fdmag"]
 
 [resource]
 script = ExtResource("1_hsb4f")
-key = &""
+key = &"keys_ratling"
+stream = ExtResource("2_fdmag")

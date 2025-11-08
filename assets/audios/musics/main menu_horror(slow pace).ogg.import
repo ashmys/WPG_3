@@ -3,12 +3,12 @@
 importer="oggvorbisstr"
 type="AudioStreamOggVorbis"
 uid="uid://ci7ykpu2dfbbu"
-path="res://.godot/imported/main menu_horror(slow pace).ogg-95b82b1b791722f5cc7a1bbead082e16.oggvorbisstr"
+path="res://.godot/imported/main menu_horror(slow pace).ogg-7af401a71bc5a975a0cf10c46f9deede.oggvorbisstr"
 
 [deps]
 
-source_file="res://Assets/audios/musics/main menu_horror(slow pace).ogg"
-dest_files=["res://.godot/imported/main menu_horror(slow pace).ogg-95b82b1b791722f5cc7a1bbead082e16.oggvorbisstr"]
+source_file="res://assets/audios/musics/main menu_horror(slow pace).ogg"
+dest_files=["res://.godot/imported/main menu_horror(slow pace).ogg-7af401a71bc5a975a0cf10c46f9deede.oggvorbisstr"]
 
 [params]
 

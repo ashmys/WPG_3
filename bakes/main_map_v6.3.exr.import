@@ -1,0 +1,29 @@
+[remap]
+
+importer="2d_array_texture"
+type="CompressedTexture2DArray"
+uid="uid://d03j2w81ftn8g"
+path.bptc="res://.godot/imported/main_map_v6.3.exr-96e8f23c51995edbf7030c7460883cdf.bptc.ctexarray"
+metadata={
+"imported_formats": ["s3tc_bptc"],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://bakes/main_map_v6.3.exr"
+dest_files=["res://.godot/imported/main_map_v6.3.exr-96e8f23c51995edbf7030c7460883cdf.bptc.ctexarray"]
+
+[params]
+
+compress/mode=2
+compress/high_quality=false
+compress/lossy_quality=0.7
+compress/uastc_level=0
+compress/rdo_quality_loss=0.0
+compress/hdr_compression=1
+compress/channel_pack=1
+mipmaps/generate=false
+mipmaps/limit=-1
+slices/horizontal=1
+slices/vertical=3

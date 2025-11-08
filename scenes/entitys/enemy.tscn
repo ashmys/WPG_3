@@ -75,9 +75,9 @@ visible = false
 mesh = SubResource("CapsuleMesh_kxjud")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
-path_desired_distance = 0.5
-target_desired_distance = 0.5
-path_max_distance = 0.51
+path_desired_distance = 0.3
+target_desired_distance = 0.3
+path_max_distance = 0.31
 debug_enabled = true
 
 [node name="head" type="Node3D" parent="."]

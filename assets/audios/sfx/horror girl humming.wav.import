@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://n12tg1j4ewm1"
+path="res://.godot/imported/horror girl humming.wav-a0fa5f16a64c8d3f6b0c49ef9460b608.sample"
+
+[deps]
+
+source_file="res://assets/audios/sfx/horror girl humming.wav"
+dest_files=["res://.godot/imported/horror girl humming.wav-a0fa5f16a64c8d3f6b0c49ef9460b608.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

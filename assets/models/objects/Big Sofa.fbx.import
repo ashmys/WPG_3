@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bqiif3fook3wg"
-path="res://.godot/imported/Big Sofa.fbx-adc78288ab24aca2ee7e452d390049c8.scn"
+path="res://.godot/imported/Big Sofa.fbx-30b761e560d2c0ec1477edefdd16ff98.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/Big Sofa.fbx"
-dest_files=["res://.godot/imported/Big Sofa.fbx-adc78288ab24aca2ee7e452d390049c8.scn"]
+source_file="res://assets/models/objects/Big Sofa.fbx"
+dest_files=["res://.godot/imported/Big Sofa.fbx-30b761e560d2c0ec1477edefdd16ff98.scn"]
 
 [params]
 

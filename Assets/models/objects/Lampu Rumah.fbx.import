@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bldg5c7m4pidg"
-path="res://.godot/imported/Lampu Rumah.fbx-455020bda09ee0569f17c153999efea5.scn"
+path="res://.godot/imported/Lampu Rumah.fbx-10bc12b0fa57b755b154834acf893496.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/Lampu Rumah.fbx"
-dest_files=["res://.godot/imported/Lampu Rumah.fbx-455020bda09ee0569f17c153999efea5.scn"]
+source_file="res://assets/models/objects/Lampu Rumah.fbx"
+dest_files=["res://.godot/imported/Lampu Rumah.fbx-10bc12b0fa57b755b154834acf893496.scn"]
 
 [params]
 
