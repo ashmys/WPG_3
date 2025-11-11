@@ -1,18 +1,12 @@
-[gd_scene load_steps=25 format=3 uid="uid://dngiuhq5ehbk6"]
+[gd_scene load_steps=13 format=3 uid="uid://dngiuhq5ehbk6"]
 
 [ext_resource type="Script" uid="uid://ds32lkm14q26f" path="res://scripts/systems/audio_manager.gd" id="1_hrhdx"]
 [ext_resource type="AudioStream" uid="uid://ci7ykpu2dfbbu" path="res://assets/audios/musics/main menu_horror(slow pace).ogg" id="3_7ijxr"]
 [ext_resource type="Script" uid="uid://bptjoqr5aavn5" path="res://scripts/systems/audio_library_entry.gd" id="3_aac8q"]
-[ext_resource type="AudioStream" uid="uid://biroxunua7jgb" path="res://assets/audios/sfx/Suara Generator.wav" id="4_hds1h"]
-[ext_resource type="AudioStream" uid="uid://bb2bsif516pxl" path="res://assets/audios/sfx/Lari.wav" id="5_hds1h"]
-[ext_resource type="AudioStream" uid="uid://bq87hweo3oakq" path="res://assets/audios/sfx/suara jalan kaki.wav" id="5_hl7fh"]
-[ext_resource type="AudioStream" uid="uid://c53qo6n74bv8g" path="res://assets/audios/sfx/Suara detak jantung.wav" id="6_hl7fh"]
-[ext_resource type="AudioStream" uid="uid://dnim4c1ryf0cc" path="res://assets/audios/sfx/Suara Sirine Polisi.wav" id="7_m8juj"]
-[ext_resource type="AudioStream" uid="uid://bv5qxv7dlddwe" path="res://assets/audios/sfx/Suara Lemari.wav" id="8_age6g"]
-[ext_resource type="AudioStream" uid="uid://bb6mnkqiviffb" path="res://assets/audios/sfx/Suara Keran.wav" id="9_x8ipi"]
-[ext_resource type="AudioStream" uid="uid://bhqymr8nf0kiw" path="res://assets/audios/sfx/Suara Distraksi.wav" id="10_hds1h"]
-[ext_resource type="AudioStream" uid="uid://cgv8prewp8k4b" path="res://assets/audios/sfx/Suara nafas cepat.wav" id="10_tqgbg"]
-[ext_resource type="AudioStream" uid="uid://n12tg1j4ewm1" path="res://assets/audios/sfx/horror girl humming.wav" id="11_dn23d"]
+[ext_resource type="AudioStream" uid="uid://dl5an1b5uuj4b" path="res://assets/audios/sfx/footsteps-male-362053.wav" id="4_kix12"]
+[ext_resource type="AudioStream" uid="uid://dw3ig5igy5iwo" path="res://assets/audios/sfx/Suara detak jantung 2025-09-24 15_41.wav" id="5_3xok3"]
+[ext_resource type="AudioStream" uid="uid://dj1tjuhgbold6" path="res://assets/audios/sfx/Suara sirine polisi eropa 2025-09-20 21_42.wav" id="6_03wka"]
+[ext_resource type="AudioStream" uid="uid://d3y7una53e7rm" path="res://assets/audios/sfx/Suara Lemari 2025-09-30 23_48.wav" id="7_uydfr"]
 
 [sub_resource type="Resource" id="Resource_aac8q"]
 script = ExtResource("3_aac8q")
@@ -22,64 +16,29 @@ metadata/_custom_type_script = "uid://bptjoqr5aavn5"
 
 [sub_resource type="Resource" id="Resource_uxk66"]
 script = ExtResource("3_aac8q")
-key = &"run"
-stream = ExtResource("5_hds1h")
-metadata/_custom_type_script = "uid://bptjoqr5aavn5"
-
-[sub_resource type="Resource" id="Resource_tqgbg"]
-script = ExtResource("3_aac8q")
-key = &"footsteps_hard"
-stream = ExtResource("5_hl7fh")
+key = &"footsteps"
+stream = ExtResource("4_kix12")
 metadata/_custom_type_script = "uid://bptjoqr5aavn5"
 
 [sub_resource type="Resource" id="Resource_hds1h"]
 script = ExtResource("3_aac8q")
 key = &"heartbeat"
-stream = ExtResource("6_hl7fh")
+stream = ExtResource("5_3xok3")
 metadata/_custom_type_script = "uid://bptjoqr5aavn5"
 
 [sub_resource type="Resource" id="Resource_hl7fh"]
 script = ExtResource("3_aac8q")
 key = &"sirene_police"
-stream = ExtResource("7_m8juj")
+stream = ExtResource("6_03wka")
 metadata/_custom_type_script = "uid://bptjoqr5aavn5"
 
 [sub_resource type="Resource" id="Resource_m8juj"]
 script = ExtResource("3_aac8q")
 key = &"wardrobe"
-stream = ExtResource("8_age6g")
+stream = ExtResource("7_uydfr")
 metadata/_custom_type_script = "uid://bptjoqr5aavn5"
-
-[sub_resource type="Resource" id="Resource_g5aiy"]
-script = ExtResource("3_aac8q")
-key = &"wastafel"
-stream = ExtResource("9_x8ipi")
-metadata/_custom_type_script = "uid://bptjoqr5aavn5"
-
-[sub_resource type="Resource" id="Resource_age6g"]
-script = ExtResource("3_aac8q")
-key = &"keys_rattling"
-stream = ExtResource("10_hds1h")
-metadata/_custom_type_script = "uid://bptjoqr5aavn5"
-
-[sub_resource type="Resource" id="Resource_tdiaa"]
-script = ExtResource("3_aac8q")
-key = &"fast_breath"
-stream = ExtResource("10_tqgbg")
-metadata/_custom_type_script = "uid://bptjoqr5aavn5"
-
-[sub_resource type="Resource" id="Resource_qqotu"]
-script = ExtResource("3_aac8q")
-key = &"horror_girl_humming"
-stream = ExtResource("11_dn23d")
-metadata/_custom_type_script = "uid://bptjoqr5aavn5"
-
-[sub_resource type="Resource" id="Resource_x8ipi"]
-script = ExtResource("3_aac8q")
-key = &"generator"
-stream = ExtResource("4_hds1h")
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_hrhdx")
 music_library = Array[ExtResource("3_aac8q")]([SubResource("Resource_aac8q")])
-sfx_library = Array[ExtResource("3_aac8q")]([SubResource("Resource_uxk66"), SubResource("Resource_tqgbg"), SubResource("Resource_hds1h"), SubResource("Resource_hl7fh"), SubResource("Resource_m8juj"), SubResource("Resource_g5aiy"), SubResource("Resource_age6g"), SubResource("Resource_tdiaa"), SubResource("Resource_qqotu"), SubResource("Resource_x8ipi")])
+sfx_library = Array[ExtResource("3_aac8q")]([SubResource("Resource_uxk66"), SubResource("Resource_hds1h"), SubResource("Resource_hl7fh"), SubResource("Resource_m8juj")])

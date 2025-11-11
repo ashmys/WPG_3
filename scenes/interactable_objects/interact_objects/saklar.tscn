@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_bs8l6"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_bs8l6"]
-size = Vector3(5.653, 5.865, 2.37)
+size = Vector3(5.6533203, 5.8652344, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xix0o"]
 resource_name = "Material"
