@@ -4,7 +4,6 @@ extends CharacterBody3D
 @export var player_point: Node3D
 @export var head: Node3D
 @export var collider: CollisionShape3D
-@export var push_component: PushAwayRigidBodies
 
 @export_group("Configs")
 @export var can_move := true
@@ -61,7 +60,6 @@ func _physics_process(delta: float) -> void:
 	_handle_jump()
 	_apply_movement(delta)
 
-	push_component.apply_push_forces()
 	move_and_slide()
 
 # == MOVEMENT & PHYSICS ==

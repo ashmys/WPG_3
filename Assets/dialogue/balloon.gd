@@ -4,10 +4,10 @@ extends CanvasLayer
 signal dialogue_finished
 
 ## The action to use for advancing the dialogue
-@export var next_action: StringName = &"interact"
+@export var next_action: StringName = &"ui_accept"
 
 ## The action to use to skip typing the dialogue
-@export var skip_action: StringName = &"interact"
+@export var skip_action: StringName = &"ui_cancel"
 
 ## A sound player for voice lines (if they exist).
 @onready var audio_stream_player: AudioStreamPlayer = %AudioStreamPlayer

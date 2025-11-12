@@ -1,16 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvrog77yspmgn"]
+[gd_scene load_steps=8 format=4 uid="uid://cvrog77yspmgn"]
 
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_vec8a"]
 [ext_resource type="PackedScene" uid="uid://fjlsox1564n5" path="res://scenes/kulkas.tscn" id="2_dscgw"]
 
-[node name="Fridge" instance=ExtResource("1_vec8a")]
-object_name = "Fridge"
+[node name="Refrigerator" instance=ExtResource("1_vec8a")]
+object_name = "Refrigerator"
 
 [node name="Interact_Collision" parent="." index="0"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014892578, 0.9505801, -0.03338623)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.014892578, 0.92268705, -0.03338623)
+shape = SubResource("BoxShape3D_dscgw")
 
 [node name="Kulkas" parent="." index="1" instance=ExtResource("2_dscgw")]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.027832508, 0.14906669)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, -0.48227447, 0.14906669)
 
 [node name="Mesh_Placeholder" parent="." index="2"]
 visible = false
