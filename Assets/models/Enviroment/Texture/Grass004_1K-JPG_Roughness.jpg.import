@@ -2,20 +2,17 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ygjb3rq03lpa"
-path.s3tc="res://.godot/imported/house_kosong_garage.jpg-d5be33ecb86aa511a2f8e3e1fcf60e6d.s3tc.ctex"
+uid="uid://c7vsfa8gu031b"
+path.s3tc="res://.godot/imported/Grass004_1K-JPG_Roughness.jpg-2de36357563ea6bca2b086bced815e54.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
 }
-generator_parameters={
-"md5": "fadb5b7541c1346cc89fdebdb91dd8b8"
-}
 
 [deps]
 
-source_file="res://Assets/models/Enviroment/Empty House/house_kosong_garage.jpg"
-dest_files=["res://.godot/imported/house_kosong_garage.jpg-d5be33ecb86aa511a2f8e3e1fcf60e6d.s3tc.ctex"]
+source_file="res://Assets/models/Enviroment/Texture/Grass004_1K-JPG_Roughness.jpg"
+dest_files=["res://.godot/imported/Grass004_1K-JPG_Roughness.jpg-2de36357563ea6bca2b086bced815e54.s3tc.ctex"]
 
 [params]
 

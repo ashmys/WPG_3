@@ -1,0 +1,403 @@
+[gd_scene load_steps=6 format=4 uid="uid://boyprlc0wm7b8"]
+
+[ext_resource type="PackedScene" uid="uid://pkhd6qsodfei" path="res://Assets/models/Enviroment/Pinecone Tree/pinecone.glb" id="1_scyul"]
+[ext_resource type="Texture2D" uid="uid://drupaw5dcckcs" path="res://Assets/models/Enviroment/Pinecone Tree/pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099.png" id="2_3n5ty"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2vwm0"]
+resource_name = "Pine_Realistic_Tree_PNG_Clip_Art-1099"
+transparency = 4
+cull_mode = 2
+albedo_texture = ExtResource("2_3n5ty")
+texture_repeat = false
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_84juf"]
+_surfaces = [{
+"aabb": AABB(-0.322, -0.322, -0.5, 0.644, 0.644, 1),
+"format": 34896613377,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAAAwAFAAYAAwAHAAUABAAHAAMACAAEAAkACgAEAAgACwAEAAoABwAEAAsACwAKAAwABwALAA0ADQALAA4ABwANAA8AEAARABIAEAATABEAFAATABAAEwAVABYAEwAXABUAFAAXABMAGAAUABkAGgAUABgAGwAUABoAFwAUABsAGwAaABwAFwAbAB0AHQAbAB4AFwAdAB8A"),
+"name": "Pine_Realistic_Tree_PNG_Clip_Art-1099",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AAD/f8KVAADsGv9/X9sAAAAA/3/uzwAAAk7/f3fZAAA4F/9/qpcAAKWQ/3///wAAlm7/f///AACvjf9/+O0AAAU6/386JQAA7Br/f3B9AAAbbf9/AAAAAP///391sAAA76D/fwAAAAD0xf9/kuEAAGHy/39f2wAA2br/f+zuAAD/f///wpUAAP9/EuVf2wAA/3///+7PAAD/f/yxd9kAAP9/xuiqlwAA/39Zb///AAD/f2iR//8AAP9/T3L47QAA/3/5xTolAAD/fxLlcH0AAP9/45IAAAAA/38AAHWwAAD/fw9fAAAAAP9/CjqS4QAA/3+dDV/bAAD/fyVF7O4AAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ogv1i"]
+resource_name = "pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099_001"
+_surfaces = [{
+"aabb": AABB(-0.322, -0.322, -0.5, 0.644, 0.644, 1),
+"attribute_data": PackedByteArray("AADClewaX9sAAO7PAk532TgXqpelkP//lm4c66+N+O0FOjol7BpwfRttAAD//3Ww76AAAPTFkuFh8l/b2brs7gAAwpXsGl/bAADuzwJOd9k4F6qXpZD//5ZuHOuvjfjtBTo6JewacH0bbQAA//91sO+gAAD0xZLhYfJf29m67O4="),
+"format": 34896613399,
+"index_count": 84,
+"index_data": PackedByteArray("AAABAAIAAAADAAEABAADAAAAAwAFAAYAAwAHAAUABAAHAAMACAAEAAkACgAEAAgACwAEAAoABwAEAAsACwAKAAwABwALAA0ADQALAA4ABwANAA8AEAARABIAEAATABEAFAATABAAEwAVABYAEwAXABUAFAAXABMAGAAUABkAGgAUABgAGwAUABoAFwAUABsAGwAaABwAFwAbAB0AHQAbAB4AFwAdAB8A"),
+"material": SubResource("StandardMaterial3D_2vwm0"),
+"name": "Pine_Realistic_Tree_PNG_Clip_Art-1099",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 32,
+"vertex_data": PackedByteArray("AAD/f8KV/7/sGv9/X9v/vwAA/3/uz/+/Ak7/f3fZ/784F/9/qpf/v6WQ/3////+/lm7/f///JSyvjf9/+O3/vwU6/386Jf+/7Br/f3B9/78bbf9/AAD/v////391sP+/76D/fwAA/7/0xf9/kuH/v2Hy/39f2/+/2br/f+zu/7//f///wpVU1f9/EuVf21TV/3///+7PVNX/f/yxd9lU1f9/xuiql1TV/39Zb///VNX/f2iR///UAf9/T3L47VTV/3/5xTolVNX/fxLlcH1U1f9/45IAAFTV/38AAHWwVNX/fw9fAABU1f9/CjqS4VTV/3+dDV/bVNX/fyVF7O5U1f///3////9//v//f////3////9/////f36sv6n///9//v//f/7//3////9/////f////3////9//v//f/7//3+qqlRVqqpUVaqqVVWqqlRVqqpUVamqVFX+vv59qqpUVamqVFWqqlVVqqpUVaqqVFWqqlRVqqpUVamqVFWpqlRV")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_84juf")
+
+[node name="pinecone" instance=ExtResource("1_scyul")]
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_001" parent="." index="0"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 12.864965, 7.73615, 0.3412994)
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_003" type="MeshInstance3D" parent="." index="1"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 8.984411, 7.73615, 5.8852)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_004" type="MeshInstance3D" parent="." index="2"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -2.8396492, 7.73615, 7.112886)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_005" type="MeshInstance3D" parent="." index="3"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 1.8445358, 7.73615, 7.112886)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_006" type="MeshInstance3D" parent="." index="4"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 8.170374, 7.73615, -7.513348)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_007" type="MeshInstance3D" parent="." index="5"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 22.549223, 7.73615, -7.513348)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_008" type="MeshInstance3D" parent="." index="6"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 22.549223, 7.73615, 5.8449016)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_009" type="MeshInstance3D" parent="." index="7"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 22.549223, 7.73615, -1.0011544)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_010" type="MeshInstance3D" parent="." index="8"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 17.11497, 7.73615, -7.802199)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_011" type="MeshInstance3D" parent="." index="9"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 17.11497, 7.73615, -0.6823554)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_012" type="MeshInstance3D" parent="." index="10"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -12.317368, 7.73615, 4.914478)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_002" type="MeshInstance3D" parent="." index="11"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 3.0015597, 7.73615, 0.3412994)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_013" type="MeshInstance3D" parent="." index="12"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -14.073641, 7.73615, -6.9246883)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_014" type="MeshInstance3D" parent="." index="13"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -17.954195, 7.73615, -1.3807869)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_015" type="MeshInstance3D" parent="." index="14"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -29.778255, 7.73615, -0.15310144)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_016" type="MeshInstance3D" parent="." index="15"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -25.09407, 7.73615, -0.15310144)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_017" type="MeshInstance3D" parent="." index="16"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -18.768232, 7.73615, -14.779335)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_018" type="MeshInstance3D" parent="." index="17"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -4.3893833, 7.73615, -14.779335)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_019" type="MeshInstance3D" parent="." index="18"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -4.3893833, 7.73615, -1.4210854)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_020" type="MeshInstance3D" parent="." index="19"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -4.3893833, 7.73615, -8.267141)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_021" type="MeshInstance3D" parent="." index="20"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -9.823637, 7.73615, -15.068186)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_022" type="MeshInstance3D" parent="." index="21"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -9.823637, 7.73615, -7.9483433)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_060" type="MeshInstance3D" parent="." index="22"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -48.4187, 7.73615, -6.9246883)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_061" type="MeshInstance3D" parent="." index="23"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -53.11329, 7.73615, -14.779335)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_062" type="MeshInstance3D" parent="." index="24"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -38.734444, 7.73615, -14.779335)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_063" type="MeshInstance3D" parent="." index="25"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -38.734444, 7.73615, -1.4210854)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_064" type="MeshInstance3D" parent="." index="26"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -38.734444, 7.73615, -8.267141)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_065" type="MeshInstance3D" parent="." index="27"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -44.168694, 7.73615, -15.068186)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_066" type="MeshInstance3D" parent="." index="28"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -44.168694, 7.73615, -7.9483433)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_049" type="MeshInstance3D" parent="." index="29"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 5.943939, 7.73615, 11.246624)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_050" type="MeshInstance3D" parent="." index="30"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -14.073641, 7.73615, 14.18162)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_051" type="MeshInstance3D" parent="." index="31"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -18.768232, 7.73615, 6.326973)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_052" type="MeshInstance3D" parent="." index="32"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -9.823637, 7.73615, 6.038122)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_053" type="MeshInstance3D" parent="." index="33"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -9.823637, 7.73615, 13.157965)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_023" type="MeshInstance3D" parent="." index="34"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -39.255974, 7.73615, -2.351509)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_024" type="MeshInstance3D" parent="." index="35"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -23.937046, 7.73615, -6.9246883)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_025" type="MeshInstance3D" parent="." index="36"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 47.2863, 7.73615, -17.19091)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_026" type="MeshInstance3D" parent="." index="37"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 43.405746, 7.73615, -11.647009)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_027" type="MeshInstance3D" parent="." index="38"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 31.581684, 7.73615, -10.419323)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_028" type="MeshInstance3D" parent="." index="39"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 36.26587, 7.73615, -10.419323)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_029" type="MeshInstance3D" parent="." index="40"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 42.591705, 7.73615, -25.045557)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_030" type="MeshInstance3D" parent="." index="41"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 56.97056, 7.73615, -25.045557)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_031" type="MeshInstance3D" parent="." index="42"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 56.97056, 7.73615, -11.687307)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_032" type="MeshInstance3D" parent="." index="43"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 56.97056, 7.73615, -18.533363)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_033" type="MeshInstance3D" parent="." index="44"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 51.5363, 7.73615, -25.334408)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_034" type="MeshInstance3D" parent="." index="45"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 51.5363, 7.73615, -18.214565)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_067" type="MeshInstance3D" parent="." index="46"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 20.076324, 7.73615, -17.19091)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_068" type="MeshInstance3D" parent="." index="47"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 15.381729, 7.73615, -25.045557)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_069" type="MeshInstance3D" parent="." index="48"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 29.760582, 7.73615, -25.045557)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_070" type="MeshInstance3D" parent="." index="49"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 29.760582, 7.73615, -18.533363)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_071" type="MeshInstance3D" parent="." index="50"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 24.326324, 7.73615, -25.334408)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_072" type="MeshInstance3D" parent="." index="51"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 24.326324, 7.73615, -18.214565)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_035" type="MeshInstance3D" parent="." index="52"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 22.103966, 7.73615, -12.617731)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_036" type="MeshInstance3D" parent="." index="53"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 37.422894, 7.73615, -17.19091)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_037" type="MeshInstance3D" parent="." index="54"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 38.74366, 7.73615, 7.43392)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_038" type="MeshInstance3D" parent="." index="55"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 34.863106, 7.73615, 12.977821)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_039" type="MeshInstance3D" parent="." index="56"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 23.039043, 7.73615, 14.205507)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_040" type="MeshInstance3D" parent="." index="57"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 27.723228, 7.73615, 14.205507)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_041" type="MeshInstance3D" parent="." index="58"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 34.049065, 7.73615, -0.42072678)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_042" type="MeshInstance3D" parent="." index="59"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 48.427917, 7.73615, -0.42072678)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_043" type="MeshInstance3D" parent="." index="60"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 48.427917, 7.73615, 12.937523)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_044" type="MeshInstance3D" parent="." index="61"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 7.80949, 7.73615, 13.602343)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_045" type="MeshInstance3D" parent="." index="62"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 42.99366, 7.73615, -0.70957756)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_046" type="MeshInstance3D" parent="." index="63"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 42.99366, 7.73615, 6.410265)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_047" type="MeshInstance3D" parent="." index="64"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 13.561325, 7.73615, 12.007099)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_054" type="MeshInstance3D" parent="." index="65"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -36.45201, 7.73615, 18.056675)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_055" type="MeshInstance3D" parent="." index="66"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -37.509224, 7.73615, 12.977821)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_056" type="MeshInstance3D" parent="." index="67"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -19.356905, 7.73615, 21.015558)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_057" type="MeshInstance3D" parent="." index="68"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -44.6491, 7.73615, 14.205507)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_058" type="MeshInstance3D" parent="." index="69"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -23.944412, 7.73615, 12.937523)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_059" type="MeshInstance3D" parent="." index="70"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, -28.834623, 7.73615, 18.81715)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")
+
+[node name="Pine_Realistic_Tree_PNG_Clip_Art-1099_048" type="MeshInstance3D" parent="." index="71"]
+transform = Transform3D(-15.739095, -2.5642244e-06, -2.5642244e-06, 2.5642244e-06, 0, -15.739095, 2.5642244e-06, -15.739095, 4.1776521e-13, 28.880253, 7.73615, 7.43392)
+mesh = SubResource("ArrayMesh_ogv1i")
+skeleton = NodePath("")

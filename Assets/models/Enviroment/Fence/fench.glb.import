@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ckyh46y8qtde6"
-path="res://.godot/imported/fench.glb-5ea304aaee128b59b24b970efae78db0.scn"
+path="res://.godot/imported/fench.glb-a50c3b14e33d12b86888b886bd653e71.scn"
 
 [deps]
 
-source_file="res://assets/models/Enviroment/Fence/fench.glb"
-dest_files=["res://.godot/imported/fench.glb-5ea304aaee128b59b24b970efae78db0.scn"]
+source_file="res://Assets/models/Enviroment/Fence/fench.glb"
+dest_files=["res://.godot/imported/fench.glb-a50c3b14e33d12b86888b886bd653e71.scn"]
 
 [params]
 

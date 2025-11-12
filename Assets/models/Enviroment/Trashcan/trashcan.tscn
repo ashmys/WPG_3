@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://bu582ppojtdhb"]
+
+[ext_resource type="PackedScene" uid="uid://csix3xh2wh62n" path="res://Assets/models/Enviroment/Trashcan/Trashcan.glb" id="1_14awc"]
+
+[node name="Trashcan" instance=ExtResource("1_14awc")]

@@ -1,8 +1,8 @@
-[gd_scene load_steps=49 format=3 uid="uid://34rwprdiwq7n"]
+[gd_scene load_steps=57 format=3 uid="uid://34rwprdiwq7n"]
 
-[ext_resource type="Script" uid="uid://c8n7j3ruoqa1l" path="res://scripts/systems/main_map.gd" id="1_sau28"]
-[ext_resource type="Resource" uid="uid://clatxubm27qpd" path="res://assets/dialogue/main.dialogue" id="2_vp43x"]
-[ext_resource type="Texture2D" uid="uid://sdh2o7jct31v" path="res://assets/panorama/qwantani_moon_noon_puresky_1k.hdr" id="3_1q68s"]
+[ext_resource type="Script" uid="uid://c8n7j3ruoqa1l" path="res://Scripts/systems/main_map.gd" id="1_sau28"]
+[ext_resource type="Resource" uid="uid://clatxubm27qpd" path="res://Assets/dialogue/main.dialogue" id="2_vp43x"]
+[ext_resource type="Texture2D" uid="uid://sdh2o7jct31v" path="res://Assets/panorama/qwantani_moon_noon_puresky_1k.hdr" id="3_1q68s"]
 [ext_resource type="PackedScene" uid="uid://8a38my28t4v7" path="res://scenes/entitys/player.tscn" id="4_jx18k"]
 [ext_resource type="PackedScene" uid="uid://d2npgl64yk6cq" path="res://scenes/entitys/e_bobby.tscn" id="5_sn681"]
 [ext_resource type="PackedScene" uid="uid://yry8nniu7iht" path="res://scenes/entitys/e_valeria.tscn" id="6_6xq4a"]
@@ -16,15 +16,23 @@
 [ext_resource type="PackedScene" uid="uid://c8qah2f026gpn" path="res://scenes/interactable_objects/interact_objects/saklar.tscn" id="14_btbay"]
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="15_cqsrg"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="16_o8pf1"]
-[ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://assets/models/objects/lampu.tscn" id="17_3mphu"]
+[ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://Assets/models/objects/lampu.tscn" id="17_3mphu"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="18_fb8rp"]
+[ext_resource type="Texture2D" uid="uid://c2y7t6lpkm06b" path="res://Assets/models/Enviroment/Texture/Grass004_1K-JPG_Color.jpg" id="18_iuflm"]
+[ext_resource type="Texture2D" uid="uid://cibaki5di0fs4" path="res://Assets/models/Enviroment/Texture/Grass004_1K-JPG_NormalGL.jpg" id="19_eejpt"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="19_s86o4"]
 [ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="20_ds7pi"]
-[ext_resource type="Script" uid="uid://dum4nyjo4ue7r" path="res://scripts/systems/game_settings.gd" id="21_ew3a1"]
-[ext_resource type="FontFile" uid="uid://dbvjkxjann8fn" path="res://assets/fonts/Dead Font Walking.otf" id="22_pqn7s"]
-[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="23_jfg5k"]
-[ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://scripts/pembatas1_area_3d.gd" id="24_5r58d"]
+[ext_resource type="PackedScene" uid="uid://vm2pin1mue5w" path="res://Assets/models/Enviroment/Empty House/house_kosong.tscn" id="20_vyfrw"]
+[ext_resource type="Texture2D" uid="uid://c7vsfa8gu031b" path="res://Assets/models/Enviroment/Texture/Grass004_1K-JPG_Roughness.jpg" id="20_yvyrj"]
+[ext_resource type="PackedScene" uid="uid://cua8ecbor534r" path="res://Assets/models/Enviroment/Fence/fench.tscn" id="21_c03gh"]
+[ext_resource type="Script" uid="uid://dum4nyjo4ue7r" path="res://Scripts/systems/game_settings.gd" id="21_ew3a1"]
+[ext_resource type="PackedScene" uid="uid://daaygr307fi5i" path="res://Assets/models/Enviroment/Tree/tree.tscn" id="21_yvyrj"]
+[ext_resource type="FontFile" uid="uid://dbvjkxjann8fn" path="res://Assets/fonts/Dead Font Walking.otf" id="22_pqn7s"]
+[ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://Scripts/systems/game_manager.gd" id="23_jfg5k"]
+[ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://Scripts/pembatas1_area_3d.gd" id="24_5r58d"]
 [ext_resource type="PackedScene" uid="uid://o7jg4g6h76r3" path="res://scenes/object_assets/monitor.tscn" id="25_dkfma"]
+[ext_resource type="PackedScene" uid="uid://bu582ppojtdhb" path="res://Assets/models/Enviroment/Trashcan/trashcan.tscn" id="32_hbt77"]
+[ext_resource type="PackedScene" uid="uid://boyprlc0wm7b8" path="res://Assets/models/Enviroment/Pinecone Tree/pinecone.tscn" id="33_hbt77"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
 panorama = ExtResource("3_1q68s")
@@ -57,12 +65,16 @@ agent_max_slope = 85.0
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_m3tok"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_m3tok"]
-albedo_color = Color(4.4520945e-07, 0.22321275, 0.08154865, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_h3rhr"]
+albedo_texture = ExtResource("18_iuflm")
+roughness_texture = ExtResource("20_yvyrj")
+normal_enabled = true
+normal_texture = ExtResource("19_eejpt")
+uv1_scale = Vector3(120, 120, 120)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_7dj5k"]
-material = SubResource("StandardMaterial3D_m3tok")
-size = Vector2(1000, 1000)
+[sub_resource type="PlaneMesh" id="PlaneMesh_rovsu"]
+material = SubResource("StandardMaterial3D_h3rhr")
+size = Vector2(500, 500)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_wo82r"]
 size = Vector3(150, 0.15, 150)
@@ -427,8 +439,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.06836963, 0)
 shape = SubResource("WorldBoundaryShape3D_m3tok")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="World/Entity/Static_Objects/NavigationRegion3D/World Plane"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, -0.1966381)
-mesh = SubResource("PlaneMesh_7dj5k")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3684461, 0)
+mesh = SubResource("PlaneMesh_rovsu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="World/Entity/Static_Objects/NavigationRegion3D/World Plane"]
 
@@ -464,6 +476,1192 @@ transform = Transform3D(-2.1855694e-08, 0, 0.5, 0, 0.5, 0, -0.5, 0, -2.1855694e-
 
 [node name="road6" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("18_fb8rp")]
 transform = Transform3D(-2.1855694e-08, 0, -0.5, 0, 0.5, 0, 0.5, 0, -2.1855694e-08, -57.62597, 0.42484117, 27.585217)
+
+[node name="house_kosong" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.027, 0.035651997, 53.931)
+
+[node name="house_kosong5" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 39.027, 0.035651997, 53.931)
+
+[node name="house_kosong8" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.027, 0.036, 3.868)
+
+[node name="house_kosong11" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -41.027, 0.036, 3.868)
+
+[node name="house_kosong12" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -81.027, 0.036, 3.868)
+
+[node name="Fench" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench3" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.70964, 0, 0)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench3" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench4" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.27564, 0, 0)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench4" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench5" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.155655, 0, 0)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench5" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench6" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.66266, 0, 0)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench6" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench7" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -79.50693, 0, 0)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench7" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench8" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.35119, 0, 0)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench8" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench2" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench2" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench9" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.4670105, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench9" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench10" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 38.24263, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench10" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench11" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 77.80863, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench11" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench12" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 117.688644, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench12" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench13" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -41.12967, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench13" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench14" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -80.97394, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench14" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench15" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -120.8182, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench15" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="Fench16" type="Node3D" parent="World/Entity/Static_Objects/Roads"]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -1.4670105, 0, 55.021835)
+
+[node name="fench" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 19.910536)
+
+[node name="fench2" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 15.200541)
+
+[node name="fench3" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 10.503938)
+
+[node name="fench4" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 5.7939425)
+
+[node name="fench5" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, 1.1111598)
+
+[node name="fench6" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -3.5988355)
+
+[node name="fench7" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -8.295439)
+
+[node name="fench8" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -13.005434)
+
+[node name="fench9" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -17.693972)
+
+[node name="fench10" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -22.403967)
+
+[node name="fench11" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(1.3, 0, 0, 0, 1.3, 0, 0, 0, 1.3, 18.94284, 0.109643295, -27.10057)
+
+[node name="fench12" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 17.615433, 0.109643295, -30.280201)
+
+[node name="fench13" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 12.914366, 0.109643295, -30.280201)
+
+[node name="fench14" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 8.2124195, 0.109643295, -30.280201)
+
+[node name="fench15" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, 3.511352, 0.109643295, -30.280201)
+
+[node name="fench16" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -1.1669521, 0.109643295, -30.280201)
+
+[node name="fench17" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -5.868019, 0.109643295, -30.280201)
+
+[node name="fench18" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -10.569965, 0.109643295, -30.280201)
+
+[node name="fench19" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -15.271032, 0.109643295, -30.280201)
+
+[node name="fench20" parent="World/Entity/Static_Objects/Roads/Fench16" instance=ExtResource("21_c03gh")]
+transform = Transform3D(-5.6824803e-08, 0, 1.3, 0, 1.3, 0, -1.3, 0, -5.6824803e-08, -17.411793, 0.109643295, -30.280201)
+
+[node name="house_kosong13" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -121.027, 0.036, 3.868)
+
+[node name="house_kosong9" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.027, 0.036, 3.868)
+
+[node name="house_kosong10" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 119.027, 0.036, 3.868)
+
+[node name="house_kosong6" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 79.027, 0.035651997, 53.931)
+
+[node name="house_kosong7" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 119.027, 0.035651997, 53.931)
+
+[node name="house_kosong2" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -41.027, 0.035651997, 53.931)
+
+[node name="house_kosong3" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -81.027, 0.035651997, 53.931)
+
+[node name="house_kosong4" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("20_vyfrw")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -121.027, 0.035651997, 53.931)
+
+[node name="Trashcan" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 56.596016, 0.035282373, 33.624493)
+
+[node name="Trashcan2" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 11.736649, 0.035282373, 34.99025)
+
+[node name="Trashcan4" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -25.793388, 0.035282373, 33.77587)
+
+[node name="Trashcan5" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -79.37016, 0.035282373, 34.169243)
+
+[node name="Trashcan6" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -127.86313, 0.035282373, 20.551214)
+
+[node name="Trashcan8" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -96.438126, 0.035282373, 20.551214)
+
+[node name="Trashcan9" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -42.208286, 0.035282373, 20.551214)
+
+[node name="Trashcan10" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -4.3384805, 0.035282373, 20.551214)
+
+[node name="Trashcan11" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 26.141373, 0.035282373, 20.551214)
+
+[node name="Trashcan12" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 63.97856, 0.035282373, 20.551214)
+
+[node name="Trashcan13" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 106.4455, 0.035282373, 20.551214)
+
+[node name="Trashcan7" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -103.079895, 0.035282373, 34.169243)
+
+[node name="Trashcan3" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("32_hbt77")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 92.37848, 0.035282373, 34.792274)
+
+[node name="pinecone" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.482605, 0.1686809, -63.628216)
+
+[node name="pinecone18" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 71.482605, 0.1686809, -137.3389)
+
+[node name="pinecone19" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 134.97008, 0.1686809, -137.3389)
+
+[node name="pinecone20" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -18.628448, 0.1686809, -137.3389)
+
+[node name="pinecone2" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -76.26878, 0.1686809, -63.628216)
+
+[node name="pinecone3" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.7949066, 0.1686809, -63.628216)
+
+[node name="pinecone4" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -5.7949066, 0.1686809, 120.585175)
+
+[node name="pinecone5" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 115.87027, 0.1686809, 120.585175)
+
+[node name="pinecone16" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 115.87027, 0.1686809, 175.37527)
+
+[node name="pinecone17" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 197.01826, 0.1686809, 175.37527)
+
+[node name="pinecone14" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 188.13007, 0.1686809, 57.961884)
+
+[node name="pinecone15" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 188.13007, 0.1686809, -5.517475)
+
+[node name="pinecone6" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -100.667145, 0.1686809, 120.585175)
+
+[node name="pinecone7" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -38.268295, 0.1686809, 146.98074)
+
+[node name="pinecone8" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 49.51718, 0.1686809, 146.98074)
+
+[node name="pinecone9" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 49.51718, 0.1686809, -137.06238)
+
+[node name="pinecone10" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -111.21933, 0.1686809, -137.06238)
+
+[node name="pinecone11" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -201.82318, 0.1686809, 33.70894)
+
+[node name="pinecone12" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -201.82318, 0.1686809, 69.522705)
+
+[node name="pinecone13" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("33_hbt77")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, -201.82318, 0.1686809, -27.726318)
+
+[node name="tree" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -105.5741, 0.046106935, 19.792467)
+
+[node name="tree2" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -90.12101, 0.046106935, 37.53681)
+
+[node name="tree3" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -130.19635, 0.046106935, 37.53681)
+
+[node name="tree4" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -47.385098, 0.046106935, 37.53681)
+
+[node name="tree5" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.694817, 0.046106935, 37.53681)
+
+[node name="tree6" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.971252, 0.046106935, 37.53681)
+
+[node name="tree7" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.80861, 0.046106935, 37.53681)
+
+[node name="tree8" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.95349, 0.046106935, 37.53681)
+
+[node name="tree9" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 126.984314, 0.046106935, 20.254707)
+
+[node name="tree10" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.651405, 0.046106935, 20.254707)
+
+[node name="tree11" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.75306, 0.046106935, 20.254707)
+
+[node name="tree12" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.428195, 0.046106935, 20.254707)
+
+[node name="tree13" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.375153, 0.046106935, 20.254707)
+
+[node name="tree14" parent="World/Entity/Static_Objects/Roads" instance=ExtResource("21_yvyrj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.54971, 0.046106935, 20.254707)
 
 [node name="Enemy_Patrol_Marker" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 21.438065, -0.04206562, 0)
