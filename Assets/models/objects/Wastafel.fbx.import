@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://uvmu5pt7j64u"
-path="res://.godot/imported/Wastafel.fbx-e4a3dba8d39a29d555c236e3bbd6a7c5.scn"
+path="res://.godot/imported/Wastafel.fbx-75c56420fd56b4374b860946ea936194.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/Wastafel.fbx"
-dest_files=["res://.godot/imported/Wastafel.fbx-e4a3dba8d39a29d555c236e3bbd6a7c5.scn"]
+source_file="res://Assets/models/objects/Wastafel.fbx"
+dest_files=["res://.godot/imported/Wastafel.fbx-75c56420fd56b4374b860946ea936194.scn"]
 
 [params]
 

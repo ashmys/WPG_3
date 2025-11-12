@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ddi6fld6wienx"
-path.s3tc="res://.godot/imported/house_lantai kayu.jpg-04f8d0b4e505fd8ace9bb264732cb4cb.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_lantai kayu.jpg-0d570977055b643e42a9f9337ca5553d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/objects/house_lantai kayu.jpg"
-dest_files=["res://.godot/imported/house_lantai kayu.jpg-04f8d0b4e505fd8ace9bb264732cb4cb.s3tc.ctex"]
+source_file="res://Assets/models/objects/house_lantai kayu.jpg"
+dest_files=["res://.godot/imported/house_lantai kayu.jpg-0d570977055b643e42a9f9337ca5553d.s3tc.ctex"]
 
 [params]
 

@@ -1,5 +1,4 @@
 extends Node
-class_name PushAwayRigidBodies
 
 ## The body this component is attached to (e.g. player or NPC)
 @export var parent_body_path: NodePath

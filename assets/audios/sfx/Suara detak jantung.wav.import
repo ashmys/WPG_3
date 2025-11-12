@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c53qo6n74bv8g"
-path="res://.godot/imported/Suara detak jantung.wav-7dfb1e9570b32ee411343b702ce2b1fa.sample"
+path="res://.godot/imported/Suara detak jantung.wav-861a8e134c2b666b71afddc102259eca.sample"
 
 [deps]
 
-source_file="res://assets/audios/sfx/Suara detak jantung.wav"
-dest_files=["res://.godot/imported/Suara detak jantung.wav-7dfb1e9570b32ee411343b702ce2b1fa.sample"]
+source_file="res://Assets/audios/sfx/Suara detak jantung.wav"
+dest_files=["res://.godot/imported/Suara detak jantung.wav-861a8e134c2b666b71afddc102259eca.sample"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cgv8prewp8k4b"
-path="res://.godot/imported/Suara nafas cepat.wav-847e7721efad0a430535b2401ca5c116.sample"
+path="res://.godot/imported/Suara nafas cepat.wav-c1d08dd1309101aeb2c7ad068b389eef.sample"
 
 [deps]
 
-source_file="res://assets/audios/sfx/Suara nafas cepat.wav"
-dest_files=["res://.godot/imported/Suara nafas cepat.wav-847e7721efad0a430535b2401ca5c116.sample"]
+source_file="res://Assets/audios/sfx/Suara nafas cepat.wav"
+dest_files=["res://.godot/imported/Suara nafas cepat.wav-c1d08dd1309101aeb2c7ad068b389eef.sample"]
 
 [params]
 
