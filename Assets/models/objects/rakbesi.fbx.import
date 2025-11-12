@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://wupqjyx74nxi"
-path="res://.godot/imported/rakbesi.fbx-eb266eea5e081bce842dae14af215d7a.scn"
+path="res://.godot/imported/rakbesi.fbx-1e1a5fadb90f130bade13527817f0151.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/rakbesi.fbx"
-dest_files=["res://.godot/imported/rakbesi.fbx-eb266eea5e081bce842dae14af215d7a.scn"]
+source_file="res://Assets/models/objects/rakbesi.fbx"
+dest_files=["res://.godot/imported/rakbesi.fbx-1e1a5fadb90f130bade13527817f0151.scn"]
 
 [params]
 

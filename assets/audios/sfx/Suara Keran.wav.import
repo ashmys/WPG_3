@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bb6mnkqiviffb"
-path="res://.godot/imported/Suara Keran.wav-40e283c04991a786721b4333d25126b1.sample"
+path="res://.godot/imported/Suara Keran.wav-748923c4c243be4fee6cecb2dd5e8b76.sample"
 
 [deps]
 
-source_file="res://assets/audios/sfx/Suara Keran.wav"
-dest_files=["res://.godot/imported/Suara Keran.wav-40e283c04991a786721b4333d25126b1.sample"]
+source_file="res://Assets/audios/sfx/Suara Keran.wav"
+dest_files=["res://.godot/imported/Suara Keran.wav-748923c4c243be4fee6cecb2dd5e8b76.sample"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bqivvbgf0sprc"
-path="res://.godot/imported/Jirigen Bensin.fbx-b79f816c0c08f68516b22710bf114496.scn"
+path="res://.godot/imported/Jirigen Bensin.fbx-57b5d8cb84ce53002bf2b9bef85e8439.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/Jirigen Bensin.fbx"
-dest_files=["res://.godot/imported/Jirigen Bensin.fbx-b79f816c0c08f68516b22710bf114496.scn"]
+source_file="res://Assets/models/objects/Jirigen Bensin.fbx"
+dest_files=["res://.godot/imported/Jirigen Bensin.fbx-57b5d8cb84ce53002bf2b9bef85e8439.scn"]
 
 [params]
 

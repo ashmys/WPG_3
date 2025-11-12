@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://baetfic4kngqo"
-path.s3tc="res://.godot/imported/Bobby_0.png-a6acb596ab68581f30d3b5d6a84ac97e.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bobby_0.png-7fb8b619163cad3a114e9bdd84605c9f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/characters/Bobby_0.png"
-dest_files=["res://.godot/imported/Bobby_0.png-a6acb596ab68581f30d3b5d6a84ac97e.s3tc.ctex"]
+source_file="res://Assets/models/characters/Bobby_0.png"
+dest_files=["res://.godot/imported/Bobby_0.png-7fb8b619163cad3a114e9bdd84605c9f.s3tc.ctex"]
 
 [params]
 

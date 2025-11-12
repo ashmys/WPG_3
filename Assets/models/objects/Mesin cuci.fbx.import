@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ch7i02i3erfq0"
-path="res://.godot/imported/Mesin cuci.fbx-21b9589e46dc4c5573a24d743b799f7b.scn"
+path="res://.godot/imported/Mesin cuci.fbx-1e49fe7c00c7348fb2422f71d6a51b70.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/Mesin cuci.fbx"
-dest_files=["res://.godot/imported/Mesin cuci.fbx-21b9589e46dc4c5573a24d743b799f7b.scn"]
+source_file="res://Assets/models/objects/Mesin cuci.fbx"
+dest_files=["res://.godot/imported/Mesin cuci.fbx-1e49fe7c00c7348fb2422f71d6a51b70.scn"]
 
 [params]
 

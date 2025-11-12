@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bb2bsif516pxl"
-path="res://.godot/imported/Lari.wav-385eedb77854c6cae7ef38e041d9c6c9.sample"
+path="res://.godot/imported/Lari.wav-8f20ca4e85e64c2aa5e9854604fdf7cb.sample"
 
 [deps]
 
-source_file="res://assets/audios/sfx/Lari.wav"
-dest_files=["res://.godot/imported/Lari.wav-385eedb77854c6cae7ef38e041d9c6c9.sample"]
+source_file="res://Assets/audios/sfx/Lari.wav"
+dest_files=["res://.godot/imported/Lari.wav-8f20ca4e85e64c2aa5e9854604fdf7cb.sample"]
 
 [params]
 
