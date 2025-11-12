@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://ghwrxo1cx3ih"
-path="res://.godot/imported/HauntAOE.ttf-6f26686ca435bcd55cf1421f81050fc4.fontdata"
+path="res://.godot/imported/HauntAOE.ttf-eac25a16a70f2d97072f47f530d8fb39.fontdata"
 
 [deps]
 
-source_file="res://Assets/fonts/HauntAOE.ttf"
-dest_files=["res://.godot/imported/HauntAOE.ttf-6f26686ca435bcd55cf1421f81050fc4.fontdata"]
+source_file="res://assets/fonts/HauntAOE.ttf"
+dest_files=["res://.godot/imported/HauntAOE.ttf-eac25a16a70f2d97072f47f530d8fb39.fontdata"]
 
 [params]
 

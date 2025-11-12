@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dnim4c1ryf0cc"
-path="res://.godot/imported/Suara Sirine Polisi.wav-14f086d88cc2bf5e1908fcada407777b.sample"
+path="res://.godot/imported/Suara Sirine Polisi.wav-1dcea5a2de27610eb90e17739c0f1f82.sample"
 
 [deps]
 
-source_file="res://Assets/audios/sfx/Suara Sirine Polisi.wav"
-dest_files=["res://.godot/imported/Suara Sirine Polisi.wav-14f086d88cc2bf5e1908fcada407777b.sample"]
+source_file="res://assets/audios/sfx/Suara Sirine Polisi.wav"
+dest_files=["res://.godot/imported/Suara Sirine Polisi.wav-1dcea5a2de27610eb90e17739c0f1f82.sample"]
 
 [params]
 

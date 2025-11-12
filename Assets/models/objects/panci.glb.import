@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dj1tv1laprkw3"
-path="res://.godot/imported/panci.glb-43511bf9df5a1285d03486f48fd65fb2.scn"
+path="res://.godot/imported/panci.glb-b7e05c50292724eeece4e23b6e38de98.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/panci.glb"
-dest_files=["res://.godot/imported/panci.glb-43511bf9df5a1285d03486f48fd65fb2.scn"]
+source_file="res://assets/models/objects/panci.glb"
+dest_files=["res://.godot/imported/panci.glb-b7e05c50292724eeece4e23b6e38de98.scn"]
 
 [params]
 

@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dejlny274c1md"
-path="res://.godot/imported/phone.fbx-8fafe20782035d055f4ca4e292e16d08.scn"
+path="res://.godot/imported/phone.fbx-c8c459b5f2ec8841bbb81632d3e6d504.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/phone.fbx"
-dest_files=["res://.godot/imported/phone.fbx-8fafe20782035d055f4ca4e292e16d08.scn"]
+source_file="res://assets/models/objects/phone.fbx"
+dest_files=["res://.godot/imported/phone.fbx-c8c459b5f2ec8841bbb81632d3e6d504.scn"]
 
 [params]
 

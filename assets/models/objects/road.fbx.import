@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dketc2drn78fq"
-path="res://.godot/imported/road.fbx-e2710f91f332f513e9bcf12d2896e7f7.scn"
+path="res://.godot/imported/road.fbx-2f2e50f2dd0afae48b7606f8e76613c5.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/road.fbx"
-dest_files=["res://.godot/imported/road.fbx-e2710f91f332f513e9bcf12d2896e7f7.scn"]
+source_file="res://assets/models/objects/road.fbx"
+dest_files=["res://.godot/imported/road.fbx-2f2e50f2dd0afae48b7606f8e76613c5.scn"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bq87hweo3oakq"
-path="res://.godot/imported/suara jalan kaki.wav-165941ad576db2824f9b7fce4cc48761.sample"
+path="res://.godot/imported/suara jalan kaki.wav-c18195afb07df662b5b21aca6f82e626.sample"
 
 [deps]
 
-source_file="res://Assets/audios/sfx/suara jalan kaki.wav"
-dest_files=["res://.godot/imported/suara jalan kaki.wav-165941ad576db2824f9b7fce4cc48761.sample"]
+source_file="res://assets/audios/sfx/suara jalan kaki.wav"
+dest_files=["res://.godot/imported/suara jalan kaki.wav-c18195afb07df662b5b21aca6f82e626.sample"]
 
 [params]
 

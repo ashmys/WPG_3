@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://diwjg7krwghqi"
-path="res://.godot/imported/kardus tutup.fbx-21680f7c27d0a8b747190f6f6a54561f.scn"
+path="res://.godot/imported/kardus tutup.fbx-f03af17d9d39f898320b69621a4c211a.scn"
 
 [deps]
 
-source_file="res://Assets/models/objects/kardus tutup.fbx"
-dest_files=["res://.godot/imported/kardus tutup.fbx-21680f7c27d0a8b747190f6f6a54561f.scn"]
+source_file="res://assets/models/objects/kardus tutup.fbx"
+dest_files=["res://.godot/imported/kardus tutup.fbx-f03af17d9d39f898320b69621a4c211a.scn"]
 
 [params]
 

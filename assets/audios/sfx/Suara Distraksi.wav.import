@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bhqymr8nf0kiw"
-path="res://.godot/imported/Suara Distraksi.wav-35175593fe404e74249f3bcb2af0fbda.sample"
+path="res://.godot/imported/Suara Distraksi.wav-82660d1b43502b3ce0cd0da7012939ec.sample"
 
 [deps]
 
-source_file="res://Assets/audios/sfx/Suara Distraksi.wav"
-dest_files=["res://.godot/imported/Suara Distraksi.wav-35175593fe404e74249f3bcb2af0fbda.sample"]
+source_file="res://assets/audios/sfx/Suara Distraksi.wav"
+dest_files=["res://.godot/imported/Suara Distraksi.wav-82660d1b43502b3ce0cd0da7012939ec.sample"]
 
 [params]
 

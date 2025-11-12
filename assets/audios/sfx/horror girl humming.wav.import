@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://n12tg1j4ewm1"
-path="res://.godot/imported/horror girl humming.wav-97885c7450405da27c09ceb07b3789a4.sample"
+path="res://.godot/imported/horror girl humming.wav-a0fa5f16a64c8d3f6b0c49ef9460b608.sample"
 
 [deps]
 
-source_file="res://Assets/audios/sfx/horror girl humming.wav"
-dest_files=["res://.godot/imported/horror girl humming.wav-97885c7450405da27c09ceb07b3789a4.sample"]
+source_file="res://assets/audios/sfx/horror girl humming.wav"
+dest_files=["res://.godot/imported/horror girl humming.wav-a0fa5f16a64c8d3f6b0c49ef9460b608.sample"]
 
 [params]
 
