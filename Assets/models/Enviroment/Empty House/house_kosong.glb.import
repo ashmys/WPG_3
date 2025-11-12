@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dw6xgrn1paw3y"
-path="res://.godot/imported/house_kosong.glb-ba7870d72d8dcbebc74935e59a577cf7.scn"
+path="res://.godot/imported/house_kosong.glb-6799ccc7443e018c61cb00e781bfdf99.scn"
 
 [deps]
 
-source_file="res://Assets/models/Enviroment/Empty House/house_kosong.glb"
-dest_files=["res://.godot/imported/house_kosong.glb-ba7870d72d8dcbebc74935e59a577cf7.scn"]
+source_file="res://assets/models/Enviroment/Empty House/house_kosong.glb"
+dest_files=["res://.godot/imported/house_kosong.glb-6799ccc7443e018c61cb00e781bfdf99.scn"]
 
 [params]
 

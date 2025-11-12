@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ygjb3rq03lpa"
-path.s3tc="res://.godot/imported/house_kosong_garage.jpg-d5be33ecb86aa511a2f8e3e1fcf60e6d.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_kosong_garage.jpg-3636acc85e0b8aade6a143a654875301.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/Enviroment/Empty House/house_kosong_garage.jpg"
-dest_files=["res://.godot/imported/house_kosong_garage.jpg-d5be33ecb86aa511a2f8e3e1fcf60e6d.s3tc.ctex"]
+source_file="res://assets/models/Enviroment/Empty House/house_kosong_garage.jpg"
+dest_files=["res://.godot/imported/house_kosong_garage.jpg-3636acc85e0b8aade6a143a654875301.s3tc.ctex"]
 
 [params]
 
