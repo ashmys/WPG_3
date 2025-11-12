@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://8a38my28t4v7"]
+[gd_scene load_steps=25 format=3 uid="uid://8a38my28t4v7"]
 
 [ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://Scripts/player/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://Scripts/player/player_camera.gd" id="3_qhqgy"]
@@ -6,8 +6,7 @@
 [ext_resource type="Script" uid="uid://by3x0qnbxovoe" path="res://Scripts/player/player_camAnimation.gd" id="4_tsxeq"]
 [ext_resource type="Script" uid="uid://cbnq6vevp8x1g" path="res://Scripts/player/mechanics/interact_mechanic.gd" id="5_hucg6"]
 [ext_resource type="Script" uid="uid://dje6fy2v8xc8f" path="res://Scripts/player/mechanics/hiding_mechanic.gd" id="5_l1ko6"]
-[ext_resource type="PackedScene" uid="uid://b3x5yk88oyiyw" path="res://scenes/objects/senter.tscn" id="7_ft406"]
-[ext_resource type="PackedScene" uid="uid://bfv446m4eumm8" path="res://scenes/mechanics/climb_stair_area_3d.tscn" id="8_ft406"]
+[ext_resource type="PackedScene" uid="uid://b3x5yk88oyiyw" path="res://scenes/object_assets/senter.tscn" id="7_ft406"]
 
 [sub_resource type="Curve" id="Curve_ft406"]
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]

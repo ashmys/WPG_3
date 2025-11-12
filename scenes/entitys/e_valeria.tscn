@@ -1,10 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://yry8nniu7iht"]
+[gd_scene load_steps=10 format=3 uid="uid://yry8nniu7iht"]
 
 [ext_resource type="PackedScene" uid="uid://jc5brxiy3gq7" path="res://scenes/entitys/enemy.tscn" id="1_vptdu"]
-[ext_resource type="PackedScene" uid="uid://ci3m26biaugbt" path="res://scenes/character_assets/valeria.tscn" id="3_q0kd0"]
+[ext_resource type="PackedScene" uid="uid://0lb117wiff1s" path="res://Assets/models/characters/valeria_fix.fbx" id="2_vptdu"]
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l1ko6"]
 animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rjll5"]
+animation = &"Jumpscare"
 
 [sub_resource type="AnimationNodeTransition" id="AnimationNodeTransition_ft406"]
 xfade_time = 0.3
@@ -20,6 +23,10 @@ input_2/name = "Run"
 input_2/auto_advance = false
 input_2/break_loop_at_end = false
 input_2/reset = true
+input_3/name = "Jumpscare"
+input_3/auto_advance = false
+input_3/break_loop_at_end = false
+input_3/reset = true
 
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_rlr1k"]
 animation = &"Run"
@@ -30,7 +37,7 @@ animation = &"Run"
 animation = &"Walk"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_rjll5"]
-graph_offset = Vector2(-319.52576, 81.62538)
+graph_offset = Vector2(-629.49866, -60.699726)
 nodes/output/position = Vector2(540, 180)
 nodes/Movement/node = SubResource("AnimationNodeTransition_ft406")
 nodes/Movement/position = Vector2(160, 160)
@@ -42,47 +49,51 @@ nodes/Run/node = SubResource("AnimationNodeAnimation_rlr1k")
 nodes/Run/position = Vector2(-260, 380)
 nodes/TimeScale/node = SubResource("AnimationNodeTimeScale_vptdu")
 nodes/TimeScale/position = Vector2(380, 160)
-node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"Idle", &"Movement", 1, &"Walk", &"Movement", 2, &"Run", &"TimeScale", 0, &"Movement"]
+nodes/Jumpscare/node = SubResource("AnimationNodeAnimation_rjll5")
+nodes/Jumpscare/position = Vector2(-240, 586.6667)
+node_connections = [&"output", 0, &"TimeScale", &"Movement", 0, &"Idle", &"Movement", 1, &"Walk", &"Movement", 2, &"Run", &"Movement", 3, &"Jumpscare", &"TimeScale", 0, &"Movement"]
 
 [node name="e_valeria" instance=ExtResource("1_vptdu")]
 
-[node name="valeria" parent="." index="0" instance=ExtResource("3_q0kd0")]
+[node name="valeria_fix" parent="." index="0" instance=ExtResource("2_vptdu")]
 transform = Transform3D(0.7, 0, 0, 0, 0.7, 0, 0, 0, 0.7, 0, 0, 0)
 
-[node name="Skeleton3D" parent="valeria/Armature" index="0"]
+[node name="Skeleton3D" parent="valeria_fix/Armature" index="0"]
 bones/0/position = Vector3(0, 0, 0)
-bones/1/position = Vector3(0.1228524, 3.8348324, 0.10680357)
-bones/1/rotation = Quaternion(0.99603546, -2.338199e-07, 2.3988475e-08, -0.088956885)
-bones/2/rotation = Quaternion(-0.11545074, -0.10802049, -0.008946247, 0.98738176)
-bones/3/rotation = Quaternion(0.070834234, 0.038055394, -0.004314674, 0.9967526)
-bones/4/rotation = Quaternion(-0.09119663, 0.17263775, 0.058431763, 0.9790123)
-bones/5/rotation = Quaternion(0.0028249132, -0.03815143, 0.000172063, 0.999268)
-bones/6/rotation = Quaternion(0.99759424, -2.2503814e-07, 1.4750535e-07, 0.06932474)
-bones/9/rotation = Quaternion(-0.076825075, -4.231682e-15, -1.831652e-08, 0.9970446)
-bones/10/rotation = Quaternion(0.053377323, 0.0917812, -0.9818669, 0.15704924)
-bones/11/rotation = Quaternion(0.07986476, 0.051860522, -0.114245124, 0.98887825)
-bones/12/rotation = Quaternion(0.04826549, -0.10582282, 0.977637, 0.17520835)
-bones/13/rotation = Quaternion(0.0972137, -0.051410694, 0.14145198, 0.983818)
-bones/14/position = Vector3(1.14103, -1.1212126, -0.3072547)
-bones/14/rotation = Quaternion(-0.0015666039, 0.014443744, -0.7521733, 0.65880525)
-bones/16/position = Vector3(-1.1497731, -1.1049546, -0.33321756)
-bones/16/rotation = Quaternion(-0.0049233586, -0.017771155, 0.7700558, 0.6377101)
-bones/18/position = Vector3(0.74321216, 0.47284925, -0.10718885)
-bones/18/rotation = Quaternion(-0.70562875, 0.0069095953, -0.00688145, 0.70851463)
-bones/19/rotation = Quaternion(0.9122425, 0.0051580956, 0.006304214, -0.40956992)
-bones/20/rotation = Quaternion(-0.30986816, -4.5500284e-09, 0.001760907, 0.9507779)
-bones/21/position = Vector3(0.12763934, -0.93591917, 1.3462869)
-bones/21/rotation = Quaternion(0.9997669, -4.431067e-06, 0.021475397, -0.0022449908)
-bones/22/position = Vector3(-0.8114722, 0.47284925, -0.10718885)
-bones/22/rotation = Quaternion(-0.70562875, -0.0069095953, 0.00688145, 0.70851463)
-bones/23/rotation = Quaternion(0.9122425, -0.0051580956, -0.006304214, -0.40956992)
-bones/24/rotation = Quaternion(-0.30986816, 4.5500284e-09, -0.001760907, 0.9507779)
-bones/25/position = Vector3(-0.1045587, -0.93604815, 1.3142292)
-bones/25/rotation = Quaternion(0.9997669, 4.431067e-06, -0.021475397, -0.0022449908)
+bones/1/position = Vector3(4.780339e-05, 0.038251206, 0.0010680355)
+bones/1/rotation = Quaternion(0.99603546, -2.3381993e-07, 2.3988505e-08, -0.088957004)
+bones/2/rotation = Quaternion(-0.12939669, -0.1281286, -0.022694532, 0.98301816)
+bones/3/rotation = Quaternion(0.095009446, 0.03790043, -0.0057798093, 0.99473786)
+bones/5/rotation = Quaternion(-0.088175274, 0.15477689, 0.046623006, 0.98290163)
+bones/6/rotation = Quaternion(0.0028245437, -0.038221933, 0.00017223367, 0.9992653)
+bones/8/rotation = Quaternion(0.9975942, -2.2503816e-07, 1.4750538e-07, 0.069324754)
+bones/11/rotation = Quaternion(-0.07682508, -2.9580432e-17, -1.831652e-08, 0.9970446)
+bones/13/rotation = Quaternion(0.44946277, 0.13595115, -0.8786465, 0.08649247)
+bones/14/rotation = Quaternion(0.11774096, 0.00058561517, 0.012422645, 0.99296653)
+bones/16/rotation = Quaternion(0.46329725, -0.1656348, 0.86488116, 0.09950583)
+bones/17/rotation = Quaternion(0.15915228, -0.0005821483, -0.016791852, 0.9871111)
+bones/19/position = Vector3(0.010960182, -0.011415078, -0.0022217063)
+bones/19/rotation = Quaternion(-0.0015666076, 0.014443744, -0.7521733, 0.65880525)
+bones/22/position = Vector3(-0.01171379, -0.011089153, -0.003030291)
+bones/22/rotation = Quaternion(-0.004923347, -0.017771153, 0.7700557, 0.63771003)
+bones/25/position = Vector3(0.007432122, 0.0047284923, -0.0010718885)
+bones/25/rotation = Quaternion(-0.70562875, 0.006909595, -0.006881451, 0.70851463)
+bones/26/rotation = Quaternion(0.9122424, 0.0051580956, 0.0063042147, -0.40956983)
+bones/27/rotation = Quaternion(-0.3098682, -4.505996e-09, 0.0017609074, 0.9507779)
+bones/29/position = Vector3(0.0012763928, -0.009359192, 0.0134628685)
+bones/29/rotation = Quaternion(0.9997669, -4.4310605e-06, 0.021475399, -0.002244991)
+bones/31/position = Vector3(-0.008114722, 0.0047284923, -0.0010718885)
+bones/31/rotation = Quaternion(-0.70562875, -0.006909595, 0.006881451, 0.70851463)
+bones/32/rotation = Quaternion(0.9122424, -0.0051580956, -0.0063042147, -0.40956983)
+bones/33/rotation = Quaternion(-0.3098682, 4.505996e-09, -0.0017609074, 0.9507779)
+bones/35/position = Vector3(-0.0010455869, -0.009360481, 0.013142292)
+bones/35/rotation = Quaternion(0.9997669, 4.4310605e-06, -0.021475399, -0.002244991)
+bones/37/position = Vector3(0.017416608, 0.008533338, 0.055097528)
+bones/39/position = Vector3(-0.017416608, 0.008533338, 0.055097528)
 
 [node name="AnimationTree" parent="." index="4"]
-root_node = NodePath("../valeria")
+root_node = NodePath("../valeria_fix")
 tree_root = SubResource("AnimationNodeBlendTree_rjll5")
-anim_player = NodePath("../valeria/AnimationPlayer")
+anim_player = NodePath("../valeria_fix/AnimationPlayer")
 
-[editable path="valeria"]
+[editable path="valeria_fix"]

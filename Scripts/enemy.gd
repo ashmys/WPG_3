@@ -9,11 +9,10 @@ const GRAVITY_MULTIPLIER := 4.5
 @export var ray_view: RayCast3D
 @export var patrol_points: Array[Marker3D]
 @export var player: CharacterBody3D
-@export var game_over: Control
 
 @export_group("Configs")
 @export var is_active: bool = false
-enum State { PATROL, CHASE, SEARCH, IDLE }
+enum State { PATROL, CHASE, SEARCH, IDLE, JUMPSCARE }
 @export var state: State = State.IDLE
 @export var is_patrol: bool = true
 @export var speed_run: float = 5.0
@@ -104,6 +103,8 @@ func _execute_state_behavior(delta: float) -> void:
 			if wait_timer >= waiting_time and is_patrol:
 				state = State.PATROL
 				_set_patrol_target()
+		State.JUMPSCARE:
+			set_physics_process(false)
 
 func _set_patrol_target() -> void:
 	var target = patrol_points[patrol_index].global_position
@@ -129,8 +130,9 @@ func _face_target(target: Vector3, delta: float) -> void:
 
 func _check_game_over() -> void:
 	if global_position.distance_to(player.global_position) < 1.0:
+		state = State.JUMPSCARE
+		await get_tree().create_timer(2.0).timeout
 		Global.gameOver.emit()
-		game_over._on_player_caught()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:

@@ -13,6 +13,8 @@ func _physics_process(_delta: float) -> void:
 			new_state_name = "Run"
 		chara.State.IDLE:
 			new_state_name = "Idle"
+		chara.State.JUMPSCARE:
+			new_state_name = "Jumpscare"
 		_:
 			new_state_name = "Idle"
 			
