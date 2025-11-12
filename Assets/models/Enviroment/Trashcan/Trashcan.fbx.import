@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://dj3bfkp6ymfup"
-path="res://.godot/imported/Trashcan.fbx-ead61657a00d6028ce1d2b4def222519.scn"
+path="res://.godot/imported/Trashcan.fbx-efb47e1195759894f9eba505d1c8041b.scn"
 
 [deps]
 
-source_file="res://Assets/models/Enviroment/Trashcan/Trashcan.fbx"
-dest_files=["res://.godot/imported/Trashcan.fbx-ead61657a00d6028ce1d2b4def222519.scn"]
+source_file="res://assets/models/Enviroment/Trashcan/Trashcan.fbx"
+dest_files=["res://.godot/imported/Trashcan.fbx-efb47e1195759894f9eba505d1c8041b.scn"]
 
 [params]
 

@@ -47,7 +47,7 @@ animation = &"RESET"
 animation = &"Walking"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_csod7"]
-graph_offset = Vector2(-361.9994, 92.300125)
+graph_offset = Vector2(-226.14244, 68.61014)
 nodes/output/position = Vector2(540, 180)
 nodes/RESET/node = SubResource("AnimationNodeAnimation_tsxeq")
 nodes/RESET/position = Vector2(-320, -20)
