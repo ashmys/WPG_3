@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://d21uxxb84igs6"
-path="res://.godot/imported/Kulkas.fbx-a593849188f878f995a38398d721c6ff.scn"
+path="res://.godot/imported/Kulkas.fbx-11e14d2310623c2b43bce1889c6456bd.scn"
 
 [deps]
 
-source_file="res://Assets/models/Kulkas.fbx"
-dest_files=["res://.godot/imported/Kulkas.fbx-a593849188f878f995a38398d721c6ff.scn"]
+source_file="res://assets/models/Kulkas.fbx"
+dest_files=["res://.godot/imported/Kulkas.fbx-11e14d2310623c2b43bce1889c6456bd.scn"]
 
 [params]
 

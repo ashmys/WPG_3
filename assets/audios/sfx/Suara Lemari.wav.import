@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bv5qxv7dlddwe"
-path="res://.godot/imported/Suara Lemari.wav-de03bf7c98d201451a3f2b93e9a08b72.sample"
+path="res://.godot/imported/Suara Lemari.wav-e2e5275c741e614023c7f2f087090939.sample"
 
 [deps]
 
-source_file="res://Assets/audios/sfx/Suara Lemari.wav"
-dest_files=["res://.godot/imported/Suara Lemari.wav-de03bf7c98d201451a3f2b93e9a08b72.sample"]
+source_file="res://assets/audios/sfx/Suara Lemari.wav"
+dest_files=["res://.godot/imported/Suara Lemari.wav-e2e5275c741e614023c7f2f087090939.sample"]
 
 [params]
 

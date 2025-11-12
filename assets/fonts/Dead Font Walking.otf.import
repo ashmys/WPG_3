@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://dbvjkxjann8fn"
-path="res://.godot/imported/Dead Font Walking.otf-7073a960113bf28f3334fe45d77c3518.fontdata"
+path="res://.godot/imported/Dead Font Walking.otf-9b7826d5ec1118ca1a45aaf7ba494185.fontdata"
 
 [deps]
 
-source_file="res://Assets/fonts/Dead Font Walking.otf"
-dest_files=["res://.godot/imported/Dead Font Walking.otf-7073a960113bf28f3334fe45d77c3518.fontdata"]
+source_file="res://assets/fonts/Dead Font Walking.otf"
+dest_files=["res://.godot/imported/Dead Font Walking.otf-9b7826d5ec1118ca1a45aaf7ba494185.fontdata"]
 
 [params]
 

@@ -168,13 +168,13 @@ floor_constant_speed = true
 floor_block_on_wall = false
 floor_max_angle = 0.87266463
 script = ExtResource("1_3vyb7")
+base_speed = 2.5
+sprint_speed = 5.0
+jump_velocity = 9.0
 player_point = NodePath("CentralPoint")
 head = NodePath("Head")
 collider = NodePath("Chara_Collider")
 push_component = NodePath("PushAwayRigidBodies")
-base_speed = 2.5
-sprint_speed = 5.0
-jump_velocity = 9.0
 
 [node name="CentralPoint" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1, 0)

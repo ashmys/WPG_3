@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bloadriq07xse"
-path.s3tc="res://.godot/imported/blockhouse_0.png-ee18a129203473f1c47331278f1b23c2.s3tc.ctex"
+path.s3tc="res://.godot/imported/blockhouse_0.png-5c915bbd7429597bf177fc1d368eeb85.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/objects/blockhouse_0.png"
-dest_files=["res://.godot/imported/blockhouse_0.png-ee18a129203473f1c47331278f1b23c2.s3tc.ctex"]
+source_file="res://assets/models/objects/blockhouse_0.png"
+dest_files=["res://.godot/imported/blockhouse_0.png-5c915bbd7429597bf177fc1d368eeb85.s3tc.ctex"]
 
 [params]
 
