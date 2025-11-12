@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dyld6mbiq68tm"
-path="res://.godot/imported/Microwave.fbx-9d328694e20c42cda3e7205e31ff1c38.scn"
+uid="uid://dasf001ounqhi"
+path="res://.godot/imported/Microwave.fbx-8c515abdf010abfc9e1babc4640f6b7a.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/Microwave.fbx"
-dest_files=["res://.godot/imported/Microwave.fbx-9d328694e20c42cda3e7205e31ff1c38.scn"]
+source_file="res://Assets/models/objects/Microwave.fbx"
+dest_files=["res://.godot/imported/Microwave.fbx-8c515abdf010abfc9e1babc4640f6b7a.scn"]
 
 [params]
 

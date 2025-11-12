@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cfuw3eoidakqq"
-path="res://.godot/imported/rak dapur.glb-44fb4834d3225961742119ecc9adf1cc.scn"
+path="res://.godot/imported/rak dapur.glb-7535dcfb4129b64a0b186e3cbeade513.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/rak dapur.glb"
-dest_files=["res://.godot/imported/rak dapur.glb-44fb4834d3225961742119ecc9adf1cc.scn"]
+source_file="res://Assets/models/objects/rak dapur.glb"
+dest_files=["res://.godot/imported/rak dapur.glb-7535dcfb4129b64a0b186e3cbeade513.scn"]
 
 [params]
 

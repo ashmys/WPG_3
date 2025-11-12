@@ -26,6 +26,7 @@ func _on_sfx_slider_value_changed(value: float) -> void:
 	AudioServer.set_bus_volume_db(audio_bus_indices[2], db)
 
 func _unhandled_input(_event: InputEvent) -> void:
+	print(Global.gameStage)
 	if Input.is_action_just_pressed("ui_cancel") and not Global.gameStage == Global.State.END:
 		visible = not visible
 		if visible:

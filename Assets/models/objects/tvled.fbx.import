@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bp3v00ml3muce"
-path="res://.godot/imported/tvled.fbx-0d6a9705bedc5ff5d944bd5038194dcc.scn"
+path="res://.godot/imported/tvled.fbx-7755806a7ac2b4dd27f82528174d3b34.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/tvled.fbx"
-dest_files=["res://.godot/imported/tvled.fbx-0d6a9705bedc5ff5d944bd5038194dcc.scn"]
+source_file="res://Assets/models/objects/tvled.fbx"
+dest_files=["res://.godot/imported/tvled.fbx-7755806a7ac2b4dd27f82528174d3b34.scn"]
 
 [params]
 
