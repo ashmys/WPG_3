@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c41vyu635dbjd"
-path.s3tc="res://.godot/imported/Bobby_Fix_2.png-47d6a476c8a8fe7db6aa62159dd8fe04.s3tc.ctex"
+path.s3tc="res://.godot/imported/Bobby_Fix_2.png-ee7cf45b9b0c3f5fc04d1e931c47b077.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/characters/Bobby_Fix_2.png"
-dest_files=["res://.godot/imported/Bobby_Fix_2.png-47d6a476c8a8fe7db6aa62159dd8fe04.s3tc.ctex"]
+source_file="res://assets/models/characters/Bobby_Fix_2.png"
+dest_files=["res://.godot/imported/Bobby_Fix_2.png-ee7cf45b9b0c3f5fc04d1e931c47b077.s3tc.ctex"]
 
 [params]
 

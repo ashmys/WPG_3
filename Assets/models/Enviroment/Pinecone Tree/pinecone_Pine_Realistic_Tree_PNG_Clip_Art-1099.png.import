@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drupaw5dcckcs"
-path.s3tc="res://.godot/imported/pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099.png-5467cf2ea5a9aa9e4dd3887f0da07b18.s3tc.ctex"
+path.s3tc="res://.godot/imported/pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099.png-31c92052d03f6ff71de812a28a08fa50.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/Enviroment/Pinecone Tree/pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099.png"
-dest_files=["res://.godot/imported/pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099.png-5467cf2ea5a9aa9e4dd3887f0da07b18.s3tc.ctex"]
+source_file="res://assets/models/Enviroment/Pinecone Tree/pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099.png"
+dest_files=["res://.godot/imported/pinecone_Pine_Realistic_Tree_PNG_Clip_Art-1099.png-31c92052d03f6ff71de812a28a08fa50.s3tc.ctex"]
 
 [params]
 

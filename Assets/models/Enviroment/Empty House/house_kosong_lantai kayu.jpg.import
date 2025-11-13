@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://wayxtlfjp6nw"
-path.s3tc="res://.godot/imported/house_kosong_lantai kayu.jpg-51b545686c62080cbdde7861b80b2523.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_kosong_lantai kayu.jpg-1fd3cdf77e8e3b0c72bf17094ce8122d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/Enviroment/Empty House/house_kosong_lantai kayu.jpg"
-dest_files=["res://.godot/imported/house_kosong_lantai kayu.jpg-51b545686c62080cbdde7861b80b2523.s3tc.ctex"]
+source_file="res://assets/models/Enviroment/Empty House/house_kosong_lantai kayu.jpg"
+dest_files=["res://.godot/imported/house_kosong_lantai kayu.jpg-1fd3cdf77e8e3b0c72bf17094ce8122d.s3tc.ctex"]
 
 [params]
 

@@ -3,12 +3,12 @@
 importer="mp3"
 type="AudioStreamMP3"
 uid="uid://cbqajfmp85m4g"
-path="res://.godot/imported/horror-ambience-01-66708.mp3-8a60c798b301eba71cc1146ded80b3be.mp3str"
+path="res://.godot/imported/horror-ambience-01-66708.mp3-13859091859603a3455d11e1dfd14e71.mp3str"
 
 [deps]
 
-source_file="res://Assets/audios/musics/horror-ambience-01-66708.mp3"
-dest_files=["res://.godot/imported/horror-ambience-01-66708.mp3-8a60c798b301eba71cc1146ded80b3be.mp3str"]
+source_file="res://assets/audios/musics/horror-ambience-01-66708.mp3"
+dest_files=["res://.godot/imported/horror-ambience-01-66708.mp3-13859091859603a3455d11e1dfd14e71.mp3str"]
 
 [params]
 
