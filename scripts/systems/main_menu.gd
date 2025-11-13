@@ -1,6 +1,6 @@
 extends Control
 
-@export var game_scene_path: StringName
+@export_file_path() var game_scene_path: String
 
 @export var title: Label
 @export var main_buttons: VBoxContainer

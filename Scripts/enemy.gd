@@ -9,10 +9,12 @@ const GRAVITY_MULTIPLIER := 4.5
 @export var ray_view: RayCast3D
 @export var patrol_points: Array[Marker3D]
 @export var player: CharacterBody3D
+@export var game_over: Control
 
 @export_group("Configs")
 @export var is_active: bool = false
 enum State { PATROL, CHASE, SEARCH, IDLE, JUMPSCARE }
+@export var can_move: bool = true
 @export var state: State = State.IDLE
 @export var is_patrol: bool = true
 @export var speed_run: float = 5.0
@@ -36,8 +38,22 @@ func _ready() -> void:
 	if !nav_agent or !player or patrol_points.is_empty(): return
 	if is_patrol:
 		state = State.PATROL
+	if !nav_agent or !player or patrol_points.is_empty(): 
+		print("nav_agent or player or patrol_points missing on enemy script")
+		return
 
-func _physics_process(delta: float) -> void:	
+func _physics_process(delta: float) -> void:
+	if not is_active:
+		visible = false
+		collider.disabled = true
+		return
+	else:
+		visible = true
+		collider.disabled = false
+	
+	if not can_move:
+		return
+		
 	if velocity.x == 0.0 and velocity.z == 0.0:
 		is_moving = false
 	
@@ -133,6 +149,7 @@ func _check_game_over() -> void:
 		state = State.JUMPSCARE
 		await get_tree().create_timer(2.0).timeout
 		Global.gameOver.emit()
+		game_over._on_player_caught()
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body == player:
