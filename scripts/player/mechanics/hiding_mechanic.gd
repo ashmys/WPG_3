@@ -4,6 +4,7 @@ extends Node
 @export var hide_duration: float = 1.0
 @export var move_curve: Curve
 @export var snap_threshold: float = 0.05
+@export var items_group: Node3D
 
 var _saved_transform: Transform3D
 var _target_transform: Transform3D
@@ -19,6 +20,11 @@ func toggle_hide(target: Object) -> void:
 		_start_unhide_transition()
 	else:
 		_start_hide_transition(target)
+
+	if Global.gameStage == Global.State.STAGE3:
+		Global.gameStage = Global.State.STAGE4
+	elif Global.gameStage == Global.State.STAGE5:
+		Global.gameStage = Global.State.STAGE6
 
 func _start_hide_transition(target: Object) -> void:
 	_saved_transform = player.global_transform
@@ -39,6 +45,7 @@ func _start_hide_transition(target: Object) -> void:
 	_unhiding = false
 	_progress = 0.0
 	_transitioning = true
+	items_group.visible = false
 
 	if target.has_method("play_object_sfx"):
 		target.play_object_sfx()
@@ -53,6 +60,7 @@ func _start_unhide_transition() -> void:
 	_unhiding = true
 	_progress = 0.0
 	_transitioning = true
+	items_group.visible = true
 
 func _compute_target_basis_toward_marker(marker_xform: Transform3D) -> Basis:
 	var marker_forward = -marker_xform.basis.z  # adjust if your “forward” is +z

@@ -23,10 +23,8 @@ func _interact(target: Object) -> void:
 				await get_tree().create_timer(5.0).timeout
 				piring.visible = false
 		"Saklar":
-			if Global.gameStage == Global.State.PROLOG4:
-				print("Matikan")
-				Global.gameStage = Global.State.PROLOG4
-				Global.emit_signal("saklar", target.saklarID)
+			print("Toggle")
+			Global.emit_signal("saklar", target.saklarID)
 
 		"Battery":
 			if Global.gameStage == Global.State.STAGE1:
@@ -37,11 +35,12 @@ func _interact(target: Object) -> void:
 					Global.gameStage = Global.State.STAGE2 
 					flashlight.visible = true
 		"Generator":
-			if Global.gameStage == Global.State.STAGE3:
-				Global.generator_on = true
-		"cas_hp":
 			if Global.gameStage == Global.State.STAGE4:
+				Global.generator_on = true
 				Global.gameStage = Global.State.STAGE5
+		"cas_hp":
+			if Global.gameStage == Global.State.STAGE5:
+				Global.gameStage = Global.State.STAGE6
 		_:
 			push_warning("object has no name(invalid)")
 	

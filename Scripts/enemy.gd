@@ -6,7 +6,7 @@ const GRAVITY_MULTIPLIER := 4.5
 @export var collider: CollisionShape3D
 @export var nav_agent: NavigationAgent3D
 @export var area_view: Area3D
-@export var ray_view: RayCast3D
+@export var ray_target: RayCast3D
 @export var patrol_points: Array[Marker3D]
 @export var player: CharacterBody3D
 @export var game_over: Control
@@ -60,9 +60,7 @@ func _physics_process(delta: float) -> void:
 	if not is_on_floor() and not stuck:
 		_apply_gravity(delta)
 	
-	match Global.gameStage:
-		Global.State.STAGE3:
-			_active(delta)
+	_active(delta)
 
 func _active(delta: float) -> void:
 	_check_visibility()
@@ -75,13 +73,13 @@ func _apply_gravity(delta: float) -> void:
 	velocity += get_gravity() * GRAVITY_MULTIPLIER * delta
 
 func _check_visibility() -> void:
-	ray_view.target_position = ray_view.to_local(player.head.global_position)
+	ray_target.target_position = ray_target.to_local(player.head.global_position)
 	
-	if not player or not ray_view or not area_view:
+	if not player or not ray_target or not area_view:
 		player_visible = false
 		return
 
-	if player_inside_view and not ray_view.is_colliding():
+	if player_inside_view and not ray_target.is_colliding():
 		player_visible = true
 	else:
 		player_visible = false

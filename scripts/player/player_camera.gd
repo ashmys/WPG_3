@@ -31,7 +31,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	if not Global.mouse_captured:
+	if not Global.mouse_captured or not player.can_move:
 		return
 
 	_handle_arrow_input(delta)

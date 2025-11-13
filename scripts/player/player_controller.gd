@@ -49,6 +49,11 @@ func _unhandled_input(_event: InputEvent) -> void:
 		_toggle_freefly()
 
 func _physics_process(delta: float) -> void:
+	if not can_move:
+		velocity = Vector3.ZERO
+		is_moving = false
+		return
+
 	input_dir = Input.get_vector(input_left, input_right, input_forward, input_back)
 
 	if can_freefly and freeflying:
@@ -67,11 +72,6 @@ func _physics_process(delta: float) -> void:
 # == MOVEMENT & PHYSICS ==
 
 func _apply_movement(delta: float) -> void:
-	if not can_move:
-		velocity = Vector3.ZERO
-		is_moving = false
-		return
-
 	is_sprint = can_sprint and Input.is_action_pressed(input_sprint)
 	var current_speed = sprint_speed if is_sprint else base_speed
 

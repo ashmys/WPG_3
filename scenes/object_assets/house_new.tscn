@@ -369,9 +369,9 @@ roughness = 0.5
 resource_name = "Material.019"
 transparency = 4
 cull_mode = 2
-albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.443038)
+albedo_color = Color(0.91, 0.91, 0.91, 0.25490198)
 metallic = 1.0
-roughness = 0.0
+roughness = 0.05
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4xuql"]
 _surfaces = [{

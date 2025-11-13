@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://8a38my28t4v7"]
+[gd_scene load_steps=25 format=3 uid="uid://8a38my28t4v7"]
 
 [ext_resource type="Script" uid="uid://do26akhy6mswo" path="res://scripts/player/player_controller.gd" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://dj8iv07v360j1" path="res://scripts/player/player_camera.gd" id="3_qhqgy"]
@@ -158,9 +158,6 @@ albedo_color = Color(0.5882353, 0.29411766, 0, 1)
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g2els"]
 radius = 0.3
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_g2els"]
-radius = 0.3
-
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("player_point", "head", "collider", "push_component") groups=["player"]]
 collision_layer = 7
 collision_mask = 7
@@ -168,13 +165,13 @@ floor_constant_speed = true
 floor_block_on_wall = false
 floor_max_angle = 0.87266463
 script = ExtResource("1_3vyb7")
-base_speed = 2.5
-sprint_speed = 5.0
-jump_velocity = 9.0
 player_point = NodePath("CentralPoint")
 head = NodePath("Head")
 collider = NodePath("Chara_Collider")
 push_component = NodePath("PushAwayRigidBodies")
+base_speed = 2.5
+sprint_speed = 5.0
+jump_velocity = 9.0
 
 [node name="CentralPoint" type="Node3D" parent="."]
 transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 1, 0)
@@ -197,17 +194,18 @@ player = NodePath("../..")
 hiding_mechanic = NodePath("Hiding_Mechanic")
 interact_mechanic = NodePath("Interact_Mechanic")
 
-[node name="Hiding_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player")]
+[node name="Hiding_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player", "items_group")]
 script = ExtResource("5_l1ko6")
 player = NodePath("../../..")
 move_curve = SubResource("Curve_ft406")
+items_group = NodePath("../../Items")
 
 [node name="Interact_Mechanic" type="Node" parent="Head/Interact Raycast" node_paths=PackedStringArray("player", "piring", "senter", "flashlight")]
 script = ExtResource("5_hucg6")
 player = NodePath("../../..")
-piring = NodePath("../../Piring")
-senter = NodePath("../../senter")
-flashlight = NodePath("../../senter/SpotLight3D")
+piring = NodePath("../../Items/Piring")
+senter = NodePath("../../Items/senter")
+flashlight = NodePath("../../Items/senter/SpotLight3D")
 
 [node name="AnimationTree" type="AnimationTree" parent="Head" node_paths=PackedStringArray("player", "head")]
 tree_root = SubResource("AnimationNodeBlendTree_csod7")
@@ -226,50 +224,52 @@ libraries = {
 }
 playback_default_blend_time = 1.0
 
-[node name="Piring" type="Node3D" parent="Head"]
+[node name="Items" type="Node3D" parent="Head"]
+
+[node name="Piring" type="Node3D" parent="Head/Items"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.7, 0)
 visible = false
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Piring"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Head/Items/Piring"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.31640697, 1.3091621, -0.54897046)
 mesh = SubResource("BoxMesh_ft406")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="Head/Piring"]
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Head/Items/Piring"]
 transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.31640697, 1.3794303, -0.54897046)
 mesh = SubResource("BoxMesh_ft406")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
 
-[node name="MeshInstance3D3" type="MeshInstance3D" parent="Head/Piring"]
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Head/Items/Piring"]
 transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.21602204, 1.3794303, -0.54897046)
 mesh = SubResource("BoxMesh_ft406")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
 
-[node name="MeshInstance3D4" type="MeshInstance3D" parent="Head/Piring"]
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Head/Items/Piring"]
 transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.21602204, 1.3794303, -0.41897914)
 mesh = SubResource("BoxMesh_ft406")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
 
-[node name="MeshInstance3D5" type="MeshInstance3D" parent="Head/Piring"]
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Head/Items/Piring"]
 transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.21602204, 1.3794303, -0.686861)
 mesh = SubResource("BoxMesh_ft406")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
 
-[node name="MeshInstance3D6" type="MeshInstance3D" parent="Head/Piring"]
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Head/Items/Piring"]
 transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.4382612, 1.3794303, -0.686861)
 mesh = SubResource("BoxMesh_ft406")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
 
-[node name="MeshInstance3D7" type="MeshInstance3D" parent="Head/Piring"]
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Head/Items/Piring"]
 transform = Transform3D(0.100368164, 0, 0, 0, 0.39604968, 0, 0, 0, 0.10294671, 0.4382612, 1.3794303, -0.44617766)
 mesh = SubResource("BoxMesh_ft406")
 surface_material_override/0 = SubResource("StandardMaterial3D_x3yh4")
 
-[node name="senter" parent="Head" instance=ExtResource("7_ft406")]
+[node name="senter" parent="Head/Items" instance=ExtResource("7_ft406")]
 transform = Transform3D(0, -0.049999997, 2.1855693e-09, -3.0797754e-18, -2.1855697e-09, -0.05, 0.049999997, 0, 0, 0.35967702, -0.36907816, -0.2608255)
 visible = false
 
-[node name="SpotLight3D" type="SpotLight3D" parent="Head/senter"]
-transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, 0, 4.371139e-08, -1, -4.371139e-08, -7.043928, 0, -0.28882027)
+[node name="SpotLight3D" type="SpotLight3D" parent="Head/Items/senter"]
+transform = Transform3D(1.9106855e-15, -4.371139e-08, 1, -1, -4.371139e-08, -3.658493e-23, 4.371139e-08, -1, -4.371139e-08, -4.661551, 0, 0)
 visible = false
 spot_range = 20.0
 spot_angle = 30.0
@@ -277,10 +277,6 @@ spot_angle = 30.0
 [node name="Chara_Collider" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 shape = SubResource("CapsuleShape3D_g2els")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Chara_Collider"]
-transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0, 0, 0)
-mesh = SubResource("CapsuleMesh_g2els")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.574, 0)

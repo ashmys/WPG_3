@@ -32,13 +32,14 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 var _previous_stage := Global.gameStage
 var _current_stage := Global.gameStage
 
+var balloon
+
 func _ready() -> void:
 	Global.saklar.connect(_saklar)
-	taskbar_label.text = "Go to the kitchen and eat"
 	black_screen.visible = false
 	bobby.is_active = false
 	valeria.is_active = false
-	_start_dialogue(key_start)
+	await _start_dialogue(key_start)
 	Global.gameStage = Global.State.PROLOG1
 
 func _process(_delta: float) -> void:
@@ -68,8 +69,16 @@ func _process(_delta: float) -> void:
 		Global.State.STAGE3:
 			print("Stage 3")
 			_enter_stage3()
+		Global.State.STAGE4:
+			print("Stage 4")
+			_enter_stage4()
 		Global.State.STAGE5:
+			print("Stage 5")
+			_enter_stage5()
 			hp_table.visible = true
+		Global.State.STAGE6:
+			print("Stage 6")
+			_enter_stage5()
 		_:
 			pass
 
@@ -77,12 +86,12 @@ func _process(_delta: float) -> void:
 
 # Instantiates and starts a dialogue balloon
 func _start_dialogue(key: String) -> void:
-	player.set_physics_process(false)
-	var balloon = BALLOON_SCENE.instantiate()
+	player.can_move = false
+	balloon = BALLOON_SCENE.instantiate()
 	get_tree().current_scene.add_child(balloon)
 	balloon.start(dialogue_resource, key)
 	await balloon.dialogue_finished
-	player.set_physics_process(true)
+	player.can_move = true
 
 func _enter_prolog1() -> void:
 	taskbar_label.text = "Go to the kitchen and eat"
@@ -93,6 +102,7 @@ func _enter_prolog2() -> void:
 	_start_dialogue(key_prolog2)
 
 func _enter_prolog3() -> void:
+	player.can_move = false
 	black_screen.visible = true
 	_start_dialogue(key_prolog3)
 	taskbar_label.text = "Go to the kitchen and eat ✓"
@@ -106,34 +116,49 @@ func _enter_prolog3() -> void:
 	player.rotation.x = 0
 	player.rotation.z = 0
 	black_screen.visible = false
+	player.can_move = true
 	Global.gameStage = Global.State.PROLOG4
-	player.set_physics_process(true)
 
 func _enter_prolog4() -> void:
 	await _start_dialogue(key_prolog4)
-	taskbar_label.text = "Turn of all light in the House"
+	taskbar_label.text = "Turn off lights and go to bed"
 
 func _trigger_stage1() -> void:
-	taskbar_label.text = "Turn of all light in the House X"
+	taskbar_label.text = "Turn off lights and go to bed"
 	area_barrier_stage1.global_position = Vector3(3.398, 3.106, -5.039)
 	light.visible = false
-	bobby.is_active = true
 	await _start_dialogue(key_stage1)
-	taskbar_label.text = "Find 2 Battery"
+	taskbar_label.text = "I need to find 2 Battery"
 
 func _trigger_stage2() -> void:
-	taskbar_label.text = "Find 2 Battery ✓"
+	taskbar_label.text = "2 Battery found"
 	await get_tree().create_timer(1.0).timeout
-	taskbar_label.text = "Go to garage"
+	taskbar_label.text = "Check Garage"
 	$Area_pembatas1.global_position = Vector3(100, 100, 100)
 	await _start_dialogue(key_stage2)
+	bobby.is_active = true
+	bobby.can_move = false
 
 func _enter_stage3() -> void:
-	# If you only want this to run once, add a guard flag
-	taskbar_label.text = "Find a way to active the electricity"
-	await get_tree().create_timer(5.0).timeout
-	print("Enemy Active")
-	bobby.is_active = true
+	await _start_dialogue(key_garage)
+	$trigger_stage2.global_position = Vector3(5.492, -10, 6.971)
+	taskbar_label.text = "Run and Hide!"
+	print("Bobby is Active")
+	bobby.can_move = true
+
+func _enter_stage4() -> void:
+	taskbar_label.text = "Find a way to turn on the lights"
+
+func _enter_stage5() -> void:
+	valeria.is_active = true
+	valeria.can_move = false
+	taskbar_label.text = "Hide again!"
+	await get_tree().create_timer(0.5).timeout
+	print("Valeria is Active too")
+	valeria.can_move = true
+
+func _enter_stage6() -> void:
+	taskbar_label.text = "Survive until Police arrive"
 
 # Area signals
 func _on_area_3d_pembatas_1_entered() -> void:
@@ -141,8 +166,6 @@ func _on_area_3d_pembatas_1_entered() -> void:
 
 func _on_area_3d_body_entered(body: Node3D) -> void:
 	if body is CharacterBody3D and Global.gameStage == Global.State.STAGE2:
-		await _start_dialogue(key_garage)
-		$trigger_stage2.global_position = Vector3(5.492, -10, 6.971)
 		Global.gameStage = Global.State.STAGE3
 
 func _on_area_barrier1_body_entered(body: Node3D) -> void:
@@ -150,17 +173,18 @@ func _on_area_barrier1_body_entered(body: Node3D) -> void:
 		await _start_dialogue(key_stage2)
 		
 func _saklar(saklarID: int) -> void:
-	# Pastikan ID valid dalam daftar lampu
 	if saklarID >= 0 and saklarID < lampuID.size():
 		var lamp = lampuID[saklarID]
-		if lamp: # pastikan lampu tidak null
-			lamp.light_off()
+		if lamp.is_on:
+			_lampu_off(saklarID)
+		else:
+			_lampu_on(saklarID)
 
 func _lampu_on(saklarID: int):
 	if saklarID >= 0 and saklarID < lampuID.size():
 		lampuID[saklarID].light_on()
 
-func _lampu_of(saklarID: int):
+func _lampu_off(saklarID: int):
 	if saklarID >= 0 and saklarID < lampuID.size():
 		lampuID[saklarID].light_off()
 
