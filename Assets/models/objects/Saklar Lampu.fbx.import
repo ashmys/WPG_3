@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://bch8658c27806"
-path="res://.godot/imported/Saklar Lampu.fbx-754bbcd8c1835bcfa56dbd9c4905b3d4.scn"
+path="res://.godot/imported/Saklar Lampu.fbx-b62e40cc3b740da58f5f133dbe069ffc.scn"
 
 [deps]
 
-source_file="res://assets/models/objects/Saklar Lampu.fbx"
-dest_files=["res://.godot/imported/Saklar Lampu.fbx-754bbcd8c1835bcfa56dbd9c4905b3d4.scn"]
+source_file="res://Assets/models/objects/Saklar Lampu.fbx"
+dest_files=["res://.godot/imported/Saklar Lampu.fbx-b62e40cc3b740da58f5f133dbe069ffc.scn"]
 
 [params]
 

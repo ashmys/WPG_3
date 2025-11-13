@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://scufesrpoffs"
-path.s3tc="res://.godot/imported/valeria_Material Base Color.png-ce48e9b05af6d433d4222335151c79e3.s3tc.ctex"
+path.s3tc="res://.godot/imported/valeria_Material Base Color.png-1da008f1a992c7826ffc2c7037b8c048.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/characters/valeria_Material Base Color.png"
-dest_files=["res://.godot/imported/valeria_Material Base Color.png-ce48e9b05af6d433d4222335151c79e3.s3tc.ctex"]
+source_file="res://Assets/models/characters/valeria_Material Base Color.png"
+dest_files=["res://.godot/imported/valeria_Material Base Color.png-1da008f1a992c7826ffc2c7037b8c048.s3tc.ctex"]
 
 [params]
 

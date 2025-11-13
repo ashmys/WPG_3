@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjw2qfmsfw4k5"
-path.s3tc="res://.godot/imported/tree_tree-branch-isolated-on-transparent-background-png.png-be5e2f91657f7534c364bd74d4205759.s3tc.ctex"
+path.s3tc="res://.godot/imported/tree_tree-branch-isolated-on-transparent-background-png.png-5855db7d2776ded6c4be88aeedcd56a9.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://assets/models/Enviroment/Tree/tree_tree-branch-isolated-on-transparent-background-png.png"
-dest_files=["res://.godot/imported/tree_tree-branch-isolated-on-transparent-background-png.png-be5e2f91657f7534c364bd74d4205759.s3tc.ctex"]
+source_file="res://Assets/models/Enviroment/Tree/tree_tree-branch-isolated-on-transparent-background-png.png"
+dest_files=["res://.godot/imported/tree_tree-branch-isolated-on-transparent-background-png.png-5855db7d2776ded6c4be88aeedcd56a9.s3tc.ctex"]
 
 [params]
 

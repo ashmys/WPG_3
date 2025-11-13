@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dckl6toiiqxc5"
-path.s3tc="res://.godot/imported/paper_0021_color_1k.jpg-0f504ca3b0d9051009db79fb4baf19e9.s3tc.ctex"
+path.s3tc="res://.godot/imported/paper_0021_color_1k.jpg-bc908600cdf6759c559506dec6292a1f.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://assets/models/objects/kardus/paper_0021_color_1k.jpg"
-dest_files=["res://.godot/imported/paper_0021_color_1k.jpg-0f504ca3b0d9051009db79fb4baf19e9.s3tc.ctex"]
+source_file="res://Assets/models/objects/kardus/paper_0021_color_1k.jpg"
+dest_files=["res://.godot/imported/paper_0021_color_1k.jpg-bc908600cdf6759c559506dec6292a1f.s3tc.ctex"]
 
 [params]
 

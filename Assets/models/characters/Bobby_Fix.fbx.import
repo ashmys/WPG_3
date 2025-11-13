@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://kuk3osvajdyx"
-path="res://.godot/imported/Bobby_Fix.fbx-21a02b9d396549258fc85479f6af9c5f.scn"
+path="res://.godot/imported/Bobby_Fix.fbx-55e779502f13e36543d82f5f664d29d7.scn"
 
 [deps]
 
-source_file="res://assets/models/characters/Bobby_Fix.fbx"
-dest_files=["res://.godot/imported/Bobby_Fix.fbx-21a02b9d396549258fc85479f6af9c5f.scn"]
+source_file="res://Assets/models/characters/Bobby_Fix.fbx"
+dest_files=["res://.godot/imported/Bobby_Fix.fbx-55e779502f13e36543d82f5f664d29d7.scn"]
 
 [params]
 
