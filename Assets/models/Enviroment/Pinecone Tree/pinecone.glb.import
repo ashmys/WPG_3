@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://pkhd6qsodfei"
-path="res://.godot/imported/pinecone.glb-80bdb295fa5f9e99b581e10fe2b62366.scn"
+path="res://.godot/imported/pinecone.glb-c0362238f55e6ce64ab14f7c2f71b866.scn"
 
 [deps]
 
-source_file="res://Assets/models/Enviroment/Pinecone Tree/pinecone.glb"
-dest_files=["res://.godot/imported/pinecone.glb-80bdb295fa5f9e99b581e10fe2b62366.scn"]
+source_file="res://assets/models/Enviroment/Pinecone Tree/pinecone.glb"
+dest_files=["res://.godot/imported/pinecone.glb-c0362238f55e6ce64ab14f7c2f71b866.scn"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://vrvqvptll71n"
-path.s3tc="res://.godot/imported/house_v3_garage floor.jpg-4a3111a53592b0c9c7f3bb6e7f28a040.s3tc.ctex"
+path.s3tc="res://.godot/imported/house_v3_garage floor.jpg-07f17f8d41331e67e42df5d3aaba3cf8.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -14,8 +14,8 @@ generator_parameters={
 
 [deps]
 
-source_file="res://Assets/models/houses/house_v3_garage floor.jpg"
-dest_files=["res://.godot/imported/house_v3_garage floor.jpg-4a3111a53592b0c9c7f3bb6e7f28a040.s3tc.ctex"]
+source_file="res://assets/models/houses/house_v3_garage floor.jpg"
+dest_files=["res://.godot/imported/house_v3_garage floor.jpg-07f17f8d41331e67e42df5d3aaba3cf8.s3tc.ctex"]
 
 [params]
 
