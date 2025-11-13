@@ -371,7 +371,7 @@ transparency = 4
 cull_mode = 2
 albedo_color = Color(0.9063318, 0.9063318, 0.9063318, 0.443038)
 metallic = 1.0
-roughness = 0.5
+roughness = 0.0
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_4xuql"]
 _surfaces = [{
