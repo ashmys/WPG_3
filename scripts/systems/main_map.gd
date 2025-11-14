@@ -26,7 +26,7 @@ const BALLOON_SCENE := preload("res://Assets/dialogue/balloon.tscn")
 @export var area_barrier_stage1: Area3D
 @export var light: Node3D
 @export var lampuID : Array[Node3D]
-@export var hp_table:StaticBody3D
+@export var hp_table: StaticBody3D
 @export var prolog3Position: Marker3D
 
 var _previous_stage := Global.gameStage
@@ -36,6 +36,7 @@ var balloon
 
 func _ready() -> void:
 	Global.saklar.connect(_saklar)
+	hp_table.toggle_active()
 	black_screen.visible = false
 	bobby.is_active = false
 	valeria.is_active = false
@@ -75,10 +76,12 @@ func _process(_delta: float) -> void:
 		Global.State.STAGE5:
 			print("Stage 5")
 			_enter_stage5()
-			hp_table.visible = true
 		Global.State.STAGE6:
 			print("Stage 6")
-			_enter_stage5()
+			_enter_stage6()
+		Global.State.STAGE7:
+			print("Stage 7")
+			_enter_stage7()
 		_:
 			pass
 
@@ -141,6 +144,7 @@ func _trigger_stage2() -> void:
 
 func _enter_stage3() -> void:
 	await _start_dialogue(key_garage)
+	await get_tree().create_timer(1.0).timeout
 	$trigger_stage2.global_position = Vector3(5.492, -10, 6.971)
 	taskbar_label.text = "Run and Hide!"
 	print("Bobby is Active")
@@ -153,11 +157,16 @@ func _enter_stage5() -> void:
 	valeria.is_active = true
 	valeria.can_move = false
 	taskbar_label.text = "Hide again!"
-	await get_tree().create_timer(0.5).timeout
+	await get_tree().create_timer(3.0).timeout
 	print("Valeria is Active too")
 	valeria.can_move = true
 
 func _enter_stage6() -> void:
+	taskbar_label.text = "Call police using my phone on my bedroom"
+	hp_table.toggle_active()
+
+func _enter_stage7() -> void:
+	Global.call_police = true
 	taskbar_label.text = "Survive until Police arrive"
 
 # Area signals

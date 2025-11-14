@@ -7,7 +7,7 @@ var lampu_mati : int = 0
 var generator_on : bool = false
 var call_police : bool = false
 
-enum State {START, PROLOG1,PROLOG2,PROLOG3,PROLOG4,STAGE1,STAGE2,STAGE3,STAGE4,STAGE5,STAGE6,END}
+enum State {START, PROLOG1,PROLOG2,PROLOG3,PROLOG4,STAGE1,STAGE2,STAGE3,STAGE4,STAGE5,STAGE6, STAGE7,END}
 var gameStage := State.START
 
 var sound:bool = false

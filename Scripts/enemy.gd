@@ -52,6 +52,7 @@ func _physics_process(delta: float) -> void:
 		collider.disabled = false
 	
 	if not can_move:
+		state = State.IDLE
 		return
 		
 	if velocity.x == 0.0 and velocity.z == 0.0:

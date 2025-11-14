@@ -38,9 +38,9 @@ func _interact(target: Object) -> void:
 			if Global.gameStage == Global.State.STAGE4:
 				Global.generator_on = true
 				Global.gameStage = Global.State.STAGE5
-		"Charger":
-			if Global.gameStage == Global.State.STAGE5:
-				Global.gameStage = Global.State.STAGE6
+		"Phone":
+			if Global.gameStage == Global.State.STAGE6:
+				Global.gameStage = Global.State.STAGE7
 		_:
 			push_warning("object has no name(invalid)")
 	

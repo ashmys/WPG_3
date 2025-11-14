@@ -1,6 +1,5 @@
-[gd_scene load_steps=4 format=3 uid="uid://bov4iv61fdb5k"]
+[gd_scene load_steps=3 format=3 uid="uid://bov4iv61fdb5k"]
 
-[ext_resource type="Script" uid="uid://dr07r1w2otrf" path="res://scripts/game_over.gd" id="1_v420q"]
 [ext_resource type="FontFile" uid="uid://dbvjkxjann8fn" path="res://assets/fonts/Dead Font Walking.otf" id="2_cnu5t"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_tbwuq"]
@@ -18,7 +17,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_v420q")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1

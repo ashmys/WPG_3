@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://34rwprdiwq7n"]
+[gd_scene load_steps=57 format=3 uid="uid://34rwprdiwq7n"]
 
 [ext_resource type="Script" uid="uid://c8n7j3ruoqa1l" path="res://scripts/systems/main_map.gd" id="1_sau28"]
 [ext_resource type="Resource" uid="uid://clatxubm27qpd" path="res://assets/dialogue/main.dialogue" id="2_vp43x"]
@@ -12,7 +12,6 @@
 [ext_resource type="PackedScene" uid="uid://ccotqn118laxb" path="res://scenes/interactable_objects/interact_objects/generator.tscn" id="10_k8vax"]
 [ext_resource type="PackedScene" uid="uid://br6avifn7skwy" path="res://scenes/interactable_objects/interact_objects/microwave.tscn" id="11_mv6v3"]
 [ext_resource type="PackedScene" uid="uid://ckkcjaxxo6eh2" path="res://scenes/interactable_objects/interact_objects/phone.tscn" id="12_sdlm8"]
-[ext_resource type="PackedScene" uid="uid://bvvxjb2gjnpfn" path="res://scenes/interactable_objects/interact_objects/cas_hp.tscn" id="13_bc1ei"]
 [ext_resource type="PackedScene" uid="uid://c8qah2f026gpn" path="res://scenes/interactable_objects/interact_objects/saklar.tscn" id="14_btbay"]
 [ext_resource type="PackedScene" uid="uid://dy6g0jk0v3tym" path="res://scenes/interactable_objects/hideable_objects/ho_wardrobe.tscn" id="15_cqsrg"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="16_o8pf1"]
@@ -21,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c2y7t6lpkm06b" path="res://assets/models/Enviroment/Texture/Grass004_1K-JPG_Color.jpg" id="18_iuflm"]
 [ext_resource type="Texture2D" uid="uid://cibaki5di0fs4" path="res://assets/models/Enviroment/Texture/Grass004_1K-JPG_NormalGL.jpg" id="19_eejpt"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="19_s86o4"]
-[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="20_ds7pi"]
+[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://game_win.tscn" id="20_ds7pi"]
 [ext_resource type="PackedScene" uid="uid://vm2pin1mue5w" path="res://assets/models/Enviroment/Empty House/house_kosong.tscn" id="20_vyfrw"]
 [ext_resource type="Texture2D" uid="uid://c7vsfa8gu031b" path="res://assets/models/Enviroment/Texture/Grass004_1K-JPG_Roughness.jpg" id="20_yvyrj"]
 [ext_resource type="PackedScene" uid="uid://cua8ecbor534r" path="res://assets/models/Enviroment/Fence/fench.tscn" id="21_c03gh"]
@@ -262,93 +261,85 @@ transform = Transform3D(0.29746073, 0, 0.03895022, 0, 0.3, 0, -0.03895022, 0, 0.
 
 [node name="Phone" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("12_sdlm8")]
 transform = Transform3D(-1, 0, 8.742278e-08, 0, 1, 0, -8.742278e-08, 0, -1, -5.336809, 5.8083735, 3.6341197)
-visible = false
 
-[node name="cas_hp" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("13_bc1ei")]
-transform = Transform3D(5.6623428e-08, 0, -0.75, 0, 0.75, 0, 0.75, 0, 5.6623428e-08, -5.273264, 5.8615427, 3.459305)
+[node name="Switchs" type="Node3D" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects"]
 
-[node name="BézierCurve" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/cas_hp/asset" index="0"]
-transform = Transform3D(0.7982194, 7.1054274e-15, 2.1175824e-22, -7.1054274e-15, 1.0000001, 2.4915209e-22, 0, 2.4915204e-22, 1.0000001, -0.16828835, -0.017104506, -0.0066075325)
-
-[node name="Cube_001" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/cas_hp/asset" index="2"]
-transform = Transform3D(1.0000001, 2.842171e-14, 6.352747e-22, -2.842171e-14, 1.0000001, -1.0658141e-14, 0, 1.0658141e-14, 1.0000001, -0.03685552, -0.0006517172, 0)
-
-[node name="saklar" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-0.04999999, 0, 6.5567063e-09, 0, 0.049999993, 0, -6.5567063e-09, 0, -0.04999999, -8.056371, 6.4120097, 2.7113943)
 
-[node name="saklar1" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar1" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-2.1855693e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -2.1855693e-09, -5.7279544, 6.4120097, -1.8321127)
 saklarID = 1
 
-[node name="saklar2" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar2" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(0.049999997, 0, -2.1855695e-09, 0, 0.049999993, 0, 2.1855695e-09, 0, 0.049999997, -9.828494, 6.4120097, -0.9893177)
 saklarID = 2
 
-[node name="saklar3" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar3" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-4.371139e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -4.371139e-09, -5.7279544, 6.4120097, -2.2657068)
 saklarID = 3
 
-[node name="saklar4" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar4" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-4.371139e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -4.371139e-09, -1.8683012, 6.4120097, 3.1283908)
 saklarID = 4
 
-[node name="saklar5" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar5" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-4.371139e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -4.371139e-09, 2.8389375, 6.4120097, 8.048893)
 saklarID = 5
 
-[node name="saklar6" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar6" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-4.371139e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -4.371139e-09, 4.940547, 6.4120097, 1.3863227)
 saklarID = 6
 
-[node name="saklar7" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar7" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-4.371139e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -4.371139e-09, 4.9491396, 6.4120097, -2.3025546)
 saklarID = 7
 
-[node name="saklar8" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar8" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-0.049999997, 0, 6.556708e-09, 0, 0.049999993, 0, -6.556708e-09, 0, -0.049999997, -1.2501831, 6.4120097, 9.727908)
 saklarID = 8
 
-[node name="saklar9" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar9" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-0.049999997, 0, 6.556708e-09, 0, 0.049999993, 0, -6.556708e-09, 0, -0.049999997, -1.6498561, 6.4120097, 9.727908)
 saklarID = 9
 
-[node name="saklar10" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar10" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-0.049999997, 0, 6.556708e-09, 0, 0.049999993, 0, -6.556708e-09, 0, -0.049999997, -7.8976884, 3.1888063, 8.243595)
 saklarID = 10
 
-[node name="saklar19" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar19" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-0.049999997, 0, 6.556708e-09, 0, 0.049999993, 0, -6.556708e-09, 0, -0.049999997, -7.50895, 3.1888063, 8.243595)
 saklarID = 19
 
-[node name="saklar11" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar11" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(4.440892e-16, 0, 0.049999997, 0, 0.049999993, 0, -0.049999997, 0, 4.440892e-16, -2.2959836, 3.1888063, 6.3091726)
 saklarID = 11
 
-[node name="saklar12" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar12" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(4.440892e-16, 0, 0.049999997, 0, 0.049999993, 0, -0.049999997, 0, 4.440892e-16, -6.1612377, 3.1888063, -4.133391)
 saklarID = 12
 
-[node name="saklar13" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar13" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-4.656613e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -4.656613e-09, -5.732552, 3.1888063, -4.133391)
 saklarID = 13
 
-[node name="saklar14" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar14" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(9.027751e-09, 0, 0.049999997, 0, 0.049999993, 0, -0.049999997, 0, 9.027751e-09, 2.242741, 3.1888063, 4.5869455)
 saklarID = 14
 
-[node name="saklar15" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar15" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(-4.6566124e-09, 0, -0.049999997, 0, 0.049999993, 0, 0.049999997, 0, -4.6566124e-09, 2.666904, 2.5238583, 8.75449)
 saklarID = 15
 
-[node name="saklar16" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar16" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(9.027751e-09, 0, 0.049999997, 0, 0.049999993, 0, -0.049999997, 0, 9.027751e-09, 2.242741, 3.1888063, 4.194794)
 saklarID = 16
 
-[node name="saklar18" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar18" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(9.027751e-09, 0, 0.049999997, 0, 0.049999993, 0, -0.049999997, 0, 9.027751e-09, 2.242741, 3.1888063, 4.990137)
 saklarID = 18
 
-[node name="saklar17" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects" instance=ExtResource("14_btbay")]
+[node name="saklar17" parent="World/Static_Objects/NavigationRegion3D/Interactable_Objects/Switchs" instance=ExtResource("14_btbay")]
 transform = Transform3D(0.049999997, 0, -7.450581e-09, 0, 0.04999999, 0, 7.450581e-09, 0, 0.049999997, 3.9809341, 3.1888063, 0.7685553)
 saklarID = 17
 
@@ -1982,5 +1973,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.7289376, 1.202134, -2.9963
 [connection signal="body_entered" from="trigger_stage2" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="trigger_stage2" to="." method="_on_area_3d_body_exited"]
 [connection signal="body_entered" from="trigger_stage1" to="." method="_on_trigger_stage_1_body_entered"]
-
-[editable path="World/Static_Objects/NavigationRegion3D/Interactable_Objects/cas_hp"]

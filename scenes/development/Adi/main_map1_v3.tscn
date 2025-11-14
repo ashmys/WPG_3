@@ -9,11 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dnaf25yc15sdx" path="res://scenes/objects/door.tscn" id="5_eg8y4"]
 [ext_resource type="PackedScene" uid="uid://yry8nniu7iht" path="res://scenes/entitys/e_valeria.tscn" id="5_oglvg"]
 [ext_resource type="PackedScene" uid="uid://bl01dr3iti3hk" path="res://scenes/interactable_objects/interact_objects/battery.tscn" id="5_y8bx0"]
-[ext_resource type="PackedScene" uid="uid://cwitn2k3gv7xt" path="res://scenes/objects/house.tscn" id="6_2ks80"]
+[ext_resource type="PackedScene" uid="uid://ljdve5xdktd8" path="res://scenes/objects/house.tscn" id="6_2ks80"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="8_48jyq"]
 [ext_resource type="PackedScene" uid="uid://c30nvnvv7qbj8" path="res://scenes/interactable_objects/hideable_objects/ho_bed.tscn" id="8_eg8y4"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="9_y8bx0"]
-[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="9_yqpw0"]
+[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://game_win.tscn" id="9_yqpw0"]
 [ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="10_28xvs"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]
