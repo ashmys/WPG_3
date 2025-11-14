@@ -218,7 +218,7 @@ shadow_transmittance_bias = 1.04
 [node name="Player" parent="World/Entity" node_paths=PackedStringArray("popUpText") instance=ExtResource("4_jx18k")]
 transform = Transform3D(0.99999994, 0, 0, 0, 1, 0, 0, 0, 0.99999994, -11.275372, 1.0514615, 12.342666)
 can_freefly = true
-popUpText = NodePath("../../../CanvasLayer/OtherUI/BoxContainer/PopUpText")
+popUpText = NodePath("../../../CanvasLayer/OtherUI/PopUpText")
 
 [node name="e_bobby" parent="World/Entity" node_paths=PackedStringArray("patrol_points", "player", "game_over") instance=ExtResource("5_sn681")]
 transform = Transform3D(-0.9962281, 0, 0.08677322, 0, 1, 0, -0.08677322, 0, -0.9962281, 7.212949, 0.34296215, 12.11991)
@@ -1723,28 +1723,26 @@ visible = false
 
 [node name="OtherUI" type="Control" parent="CanvasLayer"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
-[node name="BoxContainer" type="BoxContainer" parent="CanvasLayer/OtherUI"]
+[node name="PopUpText" type="Label" parent="CanvasLayer/OtherUI"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 790.5
-offset_top = 730.0
-offset_right = 1089.5
-offset_bottom = 775.0
+offset_left = -41.5
+offset_top = 160.0
+offset_right = 41.5
+offset_bottom = 205.0
 grow_horizontal = 2
 grow_vertical = 2
-alignment = 1
-
-[node name="PopUpText" type="Label" parent="CanvasLayer/OtherUI/BoxContainer"]
-visible = false
-layout_mode = 2
 text = "TEXT!"
 label_settings = SubResource("LabelSettings_cn1mh")
 horizontal_alignment = 1

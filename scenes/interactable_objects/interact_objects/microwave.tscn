@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://br6avifn7skwy"]
+[gd_scene load_steps=4 format=3 uid="uid://br6avifn7skwy"]
 
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_kmgqh"]
 [ext_resource type="PackedScene" uid="uid://cnond2q83jqqf" path="res://scenes/object_assets/battery.tscn" id="2_bq7tl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kmgqh"]
+size = Vector3(2.0082397, 1.4619141, 2.0255127)
 
 [node name="Microwave" instance=ExtResource("1_kmgqh")]
 object_name = "Microwave"
 
 [node name="Battery" parent="." index="0" instance=ExtResource("2_bq7tl")]
+
+[node name="Interact_Collision" parent="." index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.47802734, 0)
+shape = SubResource("BoxShape3D_kmgqh")
 
 [node name="Mesh_Placeholder" parent="." index="2"]
 transform = Transform3D(3.281468, 0, 0, 0, 1.7825549, 0, 0, 0, 2.625654, 0, 0.5, 0)

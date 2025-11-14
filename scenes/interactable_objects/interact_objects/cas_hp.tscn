@@ -1,6 +1,9 @@
-[gd_scene load_steps=11 format=4 uid="uid://bvvxjb2gjnpfn"]
+[gd_scene load_steps=12 format=4 uid="uid://bvvxjb2gjnpfn"]
 
 [ext_resource type="PackedScene" uid="uid://bulb2uj4m6k4y" path="res://scenes/interactable_objects/interact_objects/interact_object.tscn" id="1_d807n"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d807n"]
+size = Vector3(1.5732422, 0.44726563, 0.71972656)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_j622i"]
 
@@ -169,13 +172,17 @@ blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_m5ae3")
 
 [node name="cas_hp" instance=ExtResource("1_d807n")]
-object_name = "cas_hp"
+object_name = "Charger"
+
+[node name="Interact_Collision" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.20885468, 0.030273438, 0.013320923)
+shape = SubResource("BoxShape3D_d807n")
 
 [node name="Mesh_Placeholder" parent="." index="1"]
 visible = false
 
 [node name="asset" type="Node3D" parent="." index="2"]
-transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0, 0, 0)
+transform = Transform3D(5, 0, 0, 0, -2.1855695e-07, 5, 0, -5, -2.1855695e-07, 0.59990215, 0, -0.07109943)
 
 [node name="BézierCurve" type="MeshInstance3D" parent="asset" index="0"]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 3.5527137e-15, 0, -3.5527137e-15, 1.0000001, -0.16828834, -0.017104542, -0.0066075465)

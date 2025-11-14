@@ -22,7 +22,7 @@ func _interact(target: Object) -> void:
 				Global.gameStage = Global.State.PROLOG3
 				await get_tree().create_timer(5.0).timeout
 				piring.visible = false
-		"Saklar":
+		"Switch":
 			print("Toggle")
 			Global.emit_signal("saklar", target.saklarID)
 
@@ -38,7 +38,7 @@ func _interact(target: Object) -> void:
 			if Global.gameStage == Global.State.STAGE4:
 				Global.generator_on = true
 				Global.gameStage = Global.State.STAGE5
-		"cas_hp":
+		"Charger":
 			if Global.gameStage == Global.State.STAGE5:
 				Global.gameStage = Global.State.STAGE6
 		_:
