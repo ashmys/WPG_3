@@ -1,10 +1,11 @@
-[gd_scene load_steps=18 format=3 uid="uid://cn8ur4qy6vsfo"]
+[gd_scene load_steps=20 format=3 uid="uid://cn8ur4qy6vsfo"]
 
 [ext_resource type="Script" uid="uid://dixcttmomg5aa" path="res://scripts/systems/main_menu.gd" id="1_l6cm7"]
+[ext_resource type="Texture2D" uid="uid://btw85h1b37y7x" path="res://homescreen_image.png" id="2_rtw2f"]
 [ext_resource type="LabelSettings" uid="uid://8uhhaqn0lkfw" path="res://resources/label_settings/Title.tres" id="3_8ln24"]
 [ext_resource type="Script" uid="uid://chqps7623vldr" path="res://scripts/systems/settings.gd" id="3_bqqt6"]
+[ext_resource type="Texture2D" uid="uid://c4ifbtuo5w3fp" path="res://mysterious_rv_text_transparent.png" id="3_oa1go"]
 [ext_resource type="FontFile" uid="uid://dbvjkxjann8fn" path="res://assets/fonts/Dead Font Walking.otf" id="4_rtw2f"]
-[ext_resource type="Texture2D" uid="uid://cdoy2rndyh7pp" path="res://assets/images/main menu.png" id="4_wu84c"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_n45e2"]
 modulate_color = Color(0.789173, 0.789172, 0.789172, 1)
@@ -28,7 +29,8 @@ corner_radius_bottom_left = 30
 
 [sub_resource type="LabelSettings" id="LabelSettings_jk1qb"]
 font = ExtResource("4_rtw2f")
-font_size = 125
+font_size = 170
+font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 shadow_size = 3
 shadow_color = Color(0, 0, 0, 0.49803922)
 shadow_offset = Vector2(5, 5)
@@ -36,6 +38,7 @@ shadow_offset = Vector2(5, 5)
 [sub_resource type="LabelSettings" id="LabelSettings_5dd4i"]
 font = ExtResource("4_rtw2f")
 font_size = 65
+font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_ce3w2"]
 color = Color(1, 1, 1, 1)
@@ -51,9 +54,15 @@ default_font_size = 65
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_16hvj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+[sub_resource type="LabelSettings" id="LabelSettings_rtw2f"]
 font = ExtResource("4_rtw2f")
 font_size = 55
+font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_8ln24"]
+font = ExtResource("4_rtw2f")
+font_size = 45
+font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 
 [node name="MainMenu" type="Control" node_paths=PackedStringArray("title", "main_buttons", "first_button", "settings", "credits")]
 layout_mode = 3
@@ -64,7 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_l6cm7")
 game_scene_path = "res://scenes/development/Adi/main_map_v6.4.tscn"
-title = NodePath("Panel/TitleText")
+title = NodePath("Panel/Title_TextureRect")
 main_buttons = NodePath("Panel/MainButtons")
 first_button = NodePath("Panel/MainButtons/Start_Button")
 settings = NodePath("Panel/Settings")
@@ -87,10 +96,19 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("4_wu84c")
+texture = ExtResource("2_rtw2f")
 stretch_mode = 6
 
+[node name="Title_TextureRect" type="TextureRect" parent="Panel"]
+layout_mode = 0
+offset_left = 74.0
+offset_top = -14.0
+offset_right = 1053.6421
+offset_bottom = 315.0
+texture = ExtResource("3_oa1go")
+
 [node name="TitleText" type="Label" parent="Panel"]
+visible = false
 layout_mode = 0
 offset_left = 75.0
 offset_top = 46.0
@@ -119,7 +137,7 @@ focus_neighbor_bottom = NodePath("../Settings_Button")
 focus_next = NodePath("../Settings_Button")
 focus_previous = NodePath("../Exit_Button")
 theme = SubResource("Theme_tbmy8")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
@@ -137,7 +155,7 @@ focus_neighbor_bottom = NodePath("../Credits_Button")
 focus_next = NodePath("../Credits_Button")
 focus_previous = NodePath("../Start_Button")
 theme = SubResource("Theme_tbmy8")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
@@ -155,7 +173,7 @@ focus_neighbor_bottom = NodePath("../Exit_Button")
 focus_next = NodePath("../Exit_Button")
 focus_previous = NodePath("../Settings_Button")
 theme = SubResource("Theme_tbmy8")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
@@ -173,7 +191,7 @@ focus_neighbor_bottom = NodePath("../Start_Button")
 focus_next = NodePath("../Start_Button")
 focus_previous = NodePath("../Credits_Button")
 theme = SubResource("Theme_tbmy8")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_focus_color = Color(0.5921569, 0.5921569, 0.5921569, 1)
 theme_override_colors/font_pressed_color = Color(0.197937, 0.197937, 0.197937, 1)
 theme_override_colors/font_hover_color = Color(0.593133, 0.593134, 0.593134, 1)
@@ -184,6 +202,7 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_28flt")
 text = "Exit"
 
 [node name="Settings" type="Panel" parent="Panel"]
+visible = false
 layout_mode = 0
 anchor_left = 0.5
 anchor_top = 0.5
@@ -283,8 +302,8 @@ text = "Fullscreen"
 layout_mode = 2
 size_flags_vertical = 3
 theme = SubResource("Theme_lgwnu")
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
+theme_override_colors/font_focus_color = Color(0.9019608, 0.9019608, 0.9019608, 1)
 theme_override_colors/font_pressed_color = Color(0.196078, 0.196078, 0.196078, 1)
 theme_override_colors/font_hover_color = Color(0.592157, 0.592157, 0.592157, 1)
 theme_override_styles/normal = SubResource("StyleBoxFlat_erv1k")
@@ -306,36 +325,73 @@ offset_right = 814.0
 offset_bottom = 429.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_1ehe0")
 
-[node name="TitleTxt" type="Label" parent="Panel/Credits"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/Credits"]
 layout_mode = 1
-anchors_preset = 5
+anchors_preset = 8
 anchor_left = 0.5
+anchor_top = 0.5
 anchor_right = 0.5
-offset_left = -291.0
-offset_top = 25.005
-offset_right = 249.0
-offset_bottom = 168.005
+anchor_bottom = 0.5
+offset_left = -691.0
+offset_top = -409.5
+offset_right = 691.0
+offset_bottom = 409.5
 grow_horizontal = 2
-theme_override_font_sizes/font_size = 100
+grow_vertical = 2
+
+[node name="TitleTxt" type="Label" parent="Panel/Credits/VBoxContainer"]
+layout_mode = 2
 text = "Credits"
 label_settings = SubResource("LabelSettings_jk1qb")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Back_Button2" type="Button" parent="Panel/Credits"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -157.5
-offset_top = -128.0
-offset_right = 157.5
-offset_bottom = -32.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="StudioTxt" type="Label" parent="Panel/Credits/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/font_size = 38
+text = "by ShiftNPlay Studio"
+label_settings = SubResource("LabelSettings_rtw2f")
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Credits/VBoxContainer"]
+layout_mode = 2
 size_flags_vertical = 3
+theme_override_constants/separation = 4
+
+[node name="CreditsTxt" type="Label" parent="Panel/Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 38
+text = "- Project Manager
+Arzikh Isfahan Farizdiansyah
+
+- Game Designer
+Michael Budiputra
+
+- Sound Composer
+Tyrell Andever Santosa"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="CreditsTxt2" type="Label" parent="Panel/Credits/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 38
+text = "- Programmer
+Adi Setiawan Hidayatulloh (Lead)
+Michael Budiputra
+
+- 3D Artist
+El Zaim Gibbrian Islamy Arifin (Lead)
+Ananda Setiyowati
+Arzikh Isfahan Farizdiansyah
+Mikal Alhadian"
+label_settings = SubResource("LabelSettings_8ln24")
+
+[node name="Back_Button2" type="Button" parent="Panel/Credits/VBoxContainer"]
+layout_mode = 2
 theme = SubResource("Theme_lgwnu")
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
@@ -347,37 +403,6 @@ theme_override_styles/hover = SubResource("StyleBoxFlat_erv1k")
 theme_override_styles/focus = SubResource("StyleBoxFlat_erv1k")
 text = "Back"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Panel/Credits"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 158.0
-offset_top = 197.0
-offset_right = -158.0
-offset_bottom = -125.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 4
-
-[node name="CreditsTxt" type="Label" parent="Panel/Credits/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 38
-text = "Deskripsi"
-label_settings = SubResource("LabelSettings_8ln24")
-horizontal_alignment = 1
-
-[node name="CreditsTxt2" type="Label" parent="Panel/Credits/HBoxContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 1
-theme_override_font_sizes/font_size = 38
-text = "Deskripsi"
-label_settings = SubResource("LabelSettings_8ln24")
-horizontal_alignment = 1
-
 [connection signal="pressed" from="Panel/MainButtons/Start_Button" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="Panel/MainButtons/Settings_Button" to="." method="_on_settings_button_pressed"]
 [connection signal="pressed" from="Panel/MainButtons/Credits_Button" to="." method="_on_credits_button_pressed"]
@@ -386,4 +411,4 @@ horizontal_alignment = 1
 [connection signal="value_changed" from="Panel/Settings/SettingsContainer/SFXContainer/SFXSlider" to="Panel/Settings" method="_on_sfx_slider_value_changed"]
 [connection signal="toggled" from="Panel/Settings/SettingsContainer/FullscreenControl" to="Panel/Settings" method="_on_fullscreen_control_toggled"]
 [connection signal="pressed" from="Panel/Settings/SettingsContainer/Back_Button" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="Panel/Credits/Back_Button2" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Panel/Credits/VBoxContainer/Back_Button2" to="." method="_on_back_button_pressed"]

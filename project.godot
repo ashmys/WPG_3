@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="Mysterious_RV"
+config/version="1.0 alpha"
 run/main_scene="uid://csya31j4gesq0"
 config/features=PackedStringArray("4.5", "Forward Plus")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0, 0, 0, 1)
+boot_splash/fullsize=false
+boot_splash/image="uid://c4ifbtuo5w3fp"
+config/icon="uid://ctyg1ynh5kgiy"
 
 [autoload]
 

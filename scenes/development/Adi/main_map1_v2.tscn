@@ -8,7 +8,7 @@
 [ext_resource type="Material" uid="uid://cn0ewteyqd5ug" path="res://assets/materials/main_map1_v1.1.tres" id="5_pdv1o"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="6_lvxuh"]
 [ext_resource type="Texture2D" uid="uid://wmdxmwxaatxh" path="res://assets/images/Lantai 2 rumah.jpg" id="6_qkde4"]
-[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://game_win.tscn" id="8_p380l"]
+[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="8_p380l"]
 [ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="10_pdv1o"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_p380l"]

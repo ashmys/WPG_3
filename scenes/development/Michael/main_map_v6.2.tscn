@@ -18,7 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://bccolghmoldwj" path="res://assets/models/objects/lampu.tscn" id="14_q5q4t"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="15_88b77"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="16_bircr"]
-[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://game_win.tscn" id="17_8yf16"]
+[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="17_8yf16"]
 [ext_resource type="Script" uid="uid://dum4nyjo4ue7r" path="res://scripts/systems/game_settings.gd" id="18_svcu1"]
 [ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="19_elput"]
 [ext_resource type="Script" uid="uid://5g5mgqrec03n" path="res://scripts/pembatas1_area_3d.gd" id="20_mflew"]

@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://c2y7t6lpkm06b" path="res://assets/models/Enviroment/Texture/Grass004_1K-JPG_Color.jpg" id="18_iuflm"]
 [ext_resource type="Texture2D" uid="uid://cibaki5di0fs4" path="res://assets/models/Enviroment/Texture/Grass004_1K-JPG_NormalGL.jpg" id="19_eejpt"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="19_s86o4"]
-[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://game_win.tscn" id="20_ds7pi"]
+[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="20_ds7pi"]
 [ext_resource type="PackedScene" uid="uid://vm2pin1mue5w" path="res://assets/models/Enviroment/Empty House/house_kosong.tscn" id="20_vyfrw"]
 [ext_resource type="Texture2D" uid="uid://c7vsfa8gu031b" path="res://assets/models/Enviroment/Texture/Grass004_1K-JPG_Roughness.jpg" id="20_yvyrj"]
 [ext_resource type="PackedScene" uid="uid://cua8ecbor534r" path="res://assets/models/Enviroment/Fence/fench.tscn" id="21_c03gh"]
@@ -1722,6 +1722,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="PopUpText" type="Label" parent="CanvasLayer/OtherUI"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5

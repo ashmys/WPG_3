@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://ccotqn118laxb" path="res://scenes/interactable_objects/interact_objects/generator.tscn" id="11_sdp21"]
 [ext_resource type="PackedScene" uid="uid://ctol2kehjknxd" path="res://scenes/objects/road.tscn" id="12_si1hk"]
 [ext_resource type="PackedScene" uid="uid://bxqjeloq6pufv" path="res://scenes/game_over.tscn" id="13_1dxnv"]
-[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://game_win.tscn" id="14_wooxa"]
+[ext_resource type="PackedScene" uid="uid://bov4iv61fdb5k" path="res://scenes/game_win.tscn" id="14_wooxa"]
 [ext_resource type="Script" uid="uid://dqnovsnptgwhp" path="res://scripts/systems/game_manager.gd" id="15_p8f6r"]
 [ext_resource type="PackedScene" uid="uid://ckkcjaxxo6eh2" path="res://scenes/interactable_objects/interact_objects/phone.tscn" id="18_ietg8"]
 [ext_resource type="Texture2D" uid="uid://bloadriq07xse" path="res://assets/models/objects/blockhouse_0.png" id="16_sdp21"]

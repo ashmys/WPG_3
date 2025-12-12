@@ -2,7 +2,7 @@ extends Control
 
 @export_file_path() var game_scene_path: String
 
-@export var title: Label
+@export var title: Control
 @export var main_buttons: VBoxContainer
 @export var first_button: Button
 
